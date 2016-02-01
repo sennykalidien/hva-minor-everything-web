@@ -21,7 +21,6 @@ Je hebt heel veel verschillende versies van jQuery. jQuery kan daarnaast langzam
 
 **Bronnen**
 [Vizteams](http://www.vizteams.com/blog/advantages-and-disadvantages-of-frameworks/)
-
 [Quora](https://www.quora.com/What-are-the-advantages-and-disadvantages-of-different-JavaScript-libraries)
 
 
@@ -35,5 +34,4 @@ Voor- en nadelen single page webapp
 
 **Bronnen**
 [Vizteams](http://www.vizteams.com/blog/advantages-and-disadvantages-of-frameworks/)
-
 [Quora](https://www.quora.com/What-are-the-advantages-and-disadvantages-of-different-JavaScript-libraries)
