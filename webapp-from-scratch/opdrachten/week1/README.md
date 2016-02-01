@@ -9,10 +9,10 @@ Voor- en nadelen JavaScript libraries/frameworks
 
 | Voordelen | Nadelen |
 | ------------- | ------------- |
-| Efficient: je kan moeilijke JavaScript code makkelijker toepassen | Grootte: Je gebruikt waarschijnlijk niet alle delen van de library / framework |
-| Support: grote support omdat het open source is  | Taal: Je leert de library / framework, niet de taal  |
-| Makkelijk: je hoeft geen genie in programmerem (JavaScript) te zijn om een library / framework toe te passen | Restricties: de kern van een libray / framework kan je niet aanpassen |
-| Debugging: snelle debugging | Beveiliging: De library / framework is toegankelijk (open source) en daardoor makkelijk te manipuleren. |
+| Efficient: je kan (complexe) JavaScript code makkelijker toepassen | Grootte: Je gebruikt waarschijnlijk niet alle delen van de library / framework |
+| Support: grote support-community omdat het open source is  | Taal: Je leert de library / framework, niet de taal (JavaScript) |
+| Makkelijk: je hoeft geen genie in programerem (JavaScript) te zijn om een library / framework toe te passen | Restricties: de kern van een library / framework kan je niet aanpassen |
+| Debugging: snelle debugging van de code | Beveiliging: De library / framework is toegankelijk (open source) en daardoor makkelijk te manipuleren |
 
 
 **Waarom geen Jquery?**
@@ -21,6 +21,7 @@ Je hebt heel veel verschillende versies van jQuery. jQuery kan daarnaast langzam
 
 **Bronnen**
 [Vizteams](http://www.vizteams.com/blog/advantages-and-disadvantages-of-frameworks/)
+
 [Quora](https://www.quora.com/What-are-the-advantages-and-disadvantages-of-different-JavaScript-libraries)
 
 
@@ -29,9 +30,10 @@ Voor- en nadelen single page webapp
 
 | Voordelen | Nadelen |
 | ------------- | ------------- |
-| Storytelling: Door alles op ŽŽn pagina te doen, kan je zonder de user flow te onderbreken een verhaal (lineaire) vertellen. | Javascript is vereist: Als JavaScript het niet doet, dan doet de applicatie het niet meer. |
+| Storytelling: Door alles op 1 pagina te doen, kan je zonder de user flow te onderbreken een verhaal (lineaire) vertellen. | Javascript is vereist: Als JavaScript het niet doet, dan doet de applicatie het niet meer. |
 
 
 **Bronnen**
 [Vizteams](http://www.vizteams.com/blog/advantages-and-disadvantages-of-frameworks/)
+
 [Quora](https://www.quora.com/What-are-the-advantages-and-disadvantages-of-different-JavaScript-libraries)
