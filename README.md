@@ -1,1 +1,1 @@
-<b>Opdracht 2</b>
+<b>Welkom bij Everything Web</b>
