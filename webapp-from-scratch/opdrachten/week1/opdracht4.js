@@ -9,8 +9,8 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
 	***************************************************/
     //var SANDBOX = "SANDBOX";
     var LINEAIR = "LINEAIR";
-    //var GPS_AVAILABLE = 'GPS_AVAILABLE';
-    //var GPS_UNAVAILABLE = 'GPS_UNAVAILABLE';
+    var GPS_AVAILABLE = 'GPS_AVAILABLE';
+    var GPS_UNAVAILABLE = 'GPS_UNAVAILABLE';
     var POSITION_UPDATED = 'POSITION_UPDATED';
     var REFRESH_RATE = 1000;
     var currentPosition = currentPositionMarker = customDebugging = debugId = map = interval = intervalCounter = updateMap = false;
@@ -18,16 +18,7 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
     var locatieRij = markerRij = [];
 
 
-	/*************************************************** 
-		START de flow van de APP.
-	***************************************************/
-	APP.flow = { 	// Literal object: Flow. Vuur af!
-		init: function () {	// Start/initialiseer object router met daarin de de essentiele methods om de APP te laten werken.
-			APP.gps.init();
-		}
-	};	
-
-
+    /* GPS object */
     var APP.gps = {	
     	init: function () {
             //function init(){            
@@ -99,7 +90,7 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
     };
 
     
-    // The map object
+    /* MAP object */
     var APP.map = {
     	generateMap: function () {	
             //function generate_map(myOptions, canvasId){
@@ -181,7 +172,7 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
     	}
     };
     
-    // The debug object
+    /* Debug object */
     var APP.debug = {
     	geoErrorHandler: function (code, message) {
             //function _geo_error_handler(code, message) {

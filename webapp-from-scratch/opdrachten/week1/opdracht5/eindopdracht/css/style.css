@@ -1,0 +1,367 @@
+/* General styles, mobile first */
+* {
+	box-sizing:border-box;
+}
+
+body {
+	font-size:100%;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	color:#333;
+	background-color: #fff;
+	cursor: all-scroll;
+	margin: 0;
+	min-width: 310px;
+}
+h1 {
+	font-family: 'Tahoma';
+}
+p {
+
+}
+a {
+	font-weight:bold;
+	color:#06266F;
+	-webkit-transition:all .5s ease;
+}
+a:hover {
+	color:#ffb400;
+}
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+	nav  { overflow: hidden; }
+	nav ul { overflow: hidden; }
+	nav ul li {
+	}
+		nav ul li a {
+			display:block;
+			border-color:#333;
+			border-style:solid;
+			border-width:1px 0 0;
+			background-color: #f5f5f5;
+			line-height:2;
+			text-decoration: none;
+			padding:0 3%;
+		}
+			nav ul li a strong {
+				display:block;
+				font-weight:normal;
+				color:#333;
+			}
+		nav ul li:last-child a {
+			border-bottom-width:1px;
+		}
+
+		nav ul li a:hover {
+			background-color: #eee;
+		}
+#loading-schedule, 
+#loading-ranking,
+#loading-gamePost {
+	display: none;
+}
+#loading-schedule.active, 
+#loading-ranking.active,
+#loading-gamePost.active {
+	display: block;
+}
+video {
+	width:100%;
+}
+figure {
+	margin:0;
+}
+figcaption {
+	font-size:.8em;
+	color:#666;
+	font-style: italic;
+}
+#wrapper { 
+}
+/* header section */
+header {
+	position:relative;
+	padding-left: 0;
+}
+	header img {
+		opacity:.3;
+		width:50px;
+		position:absolute;
+		top:-.8em;
+		-webkit-transition:all 1s ease;
+	}
+	header img:hover {
+		opacity:1;
+	}
+	header h1 {
+		font-size: 1.6em;
+		margin: 0;
+		background: #F5F5F5;
+		padding: 20px;
+		color: #ffb400;
+		text-align: center;
+		font-weight: normal;
+		border-bottom: dashed 2px #333;
+	}
+	header h2 {
+		background: #333;
+		font-size: 1.6em;
+		margin: 0;
+		padding: 10px 25px;
+		color: #fff;
+		font-weight: normal;
+	}
+/* Content section */
+#content {
+	clear:left;
+	width: 100%;
+	height: 100%;
+	min-height: 400px;
+}
+	article > section {
+		display:none;
+	}
+	article > section.active {
+		display:block;
+	}
+	article h1 {
+		margin-bottom: .5em;
+	}
+
+	article ul {
+		list-style: none;
+		margin-bottom:3em;
+	}
+#content article 	{ padding: 10px 25px; }
+#content article p 	{ margin-top: 0; }
+/* Aside */
+aside {
+	text-align: center;
+}
+	aside h1 {
+		font-size:1.2em
+	}
+	aside img {
+		margin-bottom:1em;
+	}
+/* Section */
+#content section {
+	display: none;
+}
+#content section.active {
+	display: block;
+}
+.swiper-container, .swiper-slide { 
+	height: auto !important;
+}
+#pullDown span { display: none; }
+#pullDown span.active { display: block; }
+#pullDown, #pullUp {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    color: #888888;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 10px;
+}
+#pullDown .pullDownLabel {
+    background: url("../media/images/pull-icon@2x.png") no-repeat scroll 0 0 / 40px 80px rgba(0, 0, 0, 0);
+    float: left;
+    padding-left: 40px;
+    text-align: center;
+}
+#pullDown .pullReleaseLabel {
+    background: url("../media/images/pull-icon@2x.png") no-repeat scroll 0 0 / 40px 80px rgba(0, 0, 0, 0);
+    float: left;
+    padding-left: 40px;
+    text-align: center;
+}
+#pullDown .pullDownIcon {
+}
+#pullUp .pullUpIcon {
+}
+#pullDown.flip .pullDownIcon {
+}
+#pullUp.flip .pullUpIcon {
+}
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+    background-position: 0 100%;
+}
+/* Dead Simple Grid (c) 2012 Vladimir Agafonkin */
+
+.col {
+	padding: 0 .5em;
+}
+.row .row {
+	margin: 0 -.5em;
+}
+
+.row:before, .row:after {
+	content: "";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+
+@media only screen {
+	.col {
+		float: left;
+		width: 100%;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+}
+
+/* Form */
+form { }
+label { display: block }
+input { margin-bottom: 15px; }
+/* Table */
+table{
+	width: 100%;
+	background-color: #6C8CD5;
+	margin-bottom: 1em;
+	color: #f1f1f1;
+}
+tr{
+	text-align: center;
+}
+tr:nth-child(even){
+	background-color: #4671D5;
+}
+tr, td{
+    word-wrap:break-all;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+section[data-route="schedule"] td:first-child{
+word-break: break-all;
+	
+}
+.winner:after{
+	content: "*"; 
+	color: red;
+	font-size: 180%;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+	/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	/* Styles */
+	.col {
+		width:50%;
+	}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+	/* Styles */
+}
+/**********
+iPad 3
+**********/
+@media
+only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2) {
+	/* Styles */
+}
+
+@media
+only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+	/* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1024px) {
+
+	nav { overflow: hidden; }	
+	nav ul { margin: 0 auto; width: 400px; }
+	nav ul li {
+		float: left;
+		margin: 20px 50px 20px 0;
+	}
+	nav ul li:last-child { 
+		margin-right: 0;
+	} 
+	nav ul li a {
+		display:block;
+		background-color: #f5f5f5;
+		text-decoration: none;
+		padding: 20px;
+		border-radius: 5px; 
+		border: 0;
+	}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media
+only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}

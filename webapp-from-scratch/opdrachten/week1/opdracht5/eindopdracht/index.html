@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Frisbee App</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css" />
+	
+</head>
+
+<body>
+	
+	<header>
+		<h1><span>Tournament: </span>Amsterdam Ultimate Autumn</h1>	
+	</header>
+	
+	<section id="wrapper">
+		<div class="scroller">	
+	
+		<div id="pullDown">
+			<span class="pullDownLabel">Trek naar beneden om te verversen...</span>
+			<span class="pullReleaseLabel">Laat los om te verversen...</span>
+		</div> 
+		
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#/schedule">Schedule</a></li>
+				<li><a href="#/ranking">Ranking</a></li>
+			</ul>
+		</nav>
+	
+			<section id="content">
+					<section data-route="home">
+						<header>
+							<h2> Welkom bij de frisbee app </h2>	
+						</header>
+						
+						<article>
+							<p> Dit is de eindopdracht voor FED2 CMDA HVA. </p>
+													
+							<p> Klik boven in het menu om te navigeren naar de schedule en ranking pagina. </p>
+							
+							<p> Als je op de pagina's bent kan je naar links/rechts swipen om naar de vorige/volgende pagina te gaan. </p>
+							
+							<p> Gemaakt door: Senny Kalidien. </p>
+						</article>
+					</section>
+
+					<section data-route="schedule">
+						<header>
+							<h2> De schedule van Pool C</h2>	
+						</header>
+						
+						<div id="loading-schedule">
+							<img src="media/images/loader.gif" alt="Loading..." /> Even geduld a.u.b...
+						</div>
+								
+						<table>	
+							<thead>
+							    <tr>
+				                    <th>Datum</th>
+				                    <th>Team (thuis)</th>
+				                    <th>Resultaat</th>
+				                    <th>Team (uit)</th>
+				                    <th>Update</th>
+							    </tr>
+							</thead>								
+							
+						    <tbody data-bind="objects">
+								<tr>
+									<td data-bind="start_time"><span data-bind="name"></span></td>
+									<td data-bind="team_1"><span data-bind="name"></span></td>
+									<td> <span data-bind="team_1_score"></span> - <span data-bind="team_2_score"></span></td>
+									<td data-bind="team_2"><span data-bind="name"></span></td>	
+									<td><a data-bind="id" href="">   </td>											
+								</tr>	
+						    </tbody>			    
+						</table>		
+					</section>
+					
+					<section data-route="gamePost">
+						<header>
+							<h2> Update de score tussen <span data-bind="team_1"><span data-bind="name"></span></span> - <span data-bind="team_2"><span data-bind="name"></span></span> </h2>			
+						</header>
+						
+						<article>
+						
+						<div id="loading-gamePost">
+							<img src="media/images/loader.gif" alt="Loading..." /> Even geduld a.u.b...
+						</div>
+						
+						<form onsubmit="APP.page.gamePost.post();">
+							<label data-bind="team_1"><span data-bind="name"></span></label> <input id="inputScore1" type="text"> <br />
+							<label data-bind="team_2"><span data-bind="name"></span></label> <input id="inputScore2" type="text"> <br />
+							<input type="submit" name="action" value="Update score"> 
+						</form>
+						<p><a href="index.html#/schedule"> Terug naar de schedule pagina</a></p>
+
+						</article>
+
+					</section>
+				
+					<section data-route="ranking">
+						<header>
+							<h2> De ranking in pool C</h2>	
+						</header>	
+						<div id="loading-ranking">
+							<img src="media/images/loader.gif" alt="Loading..." /> Even geduld a.u.b...
+						</div>
+								
+						<table>	
+							<thead>
+							    <tr>
+				                    <th>Team</th>
+				                    <th>Gewonnen</th>
+				                    <th>Verloren</th>
+				                    <th>GS</th>
+				                    <th>GA</th>
+				                    <th>+/-</th>	                    
+							    </tr>
+							</thead>								
+							
+						    <tbody data-bind="standings">
+								<tr>
+									<td data-bind="team"> <span data-bind="name"> </span></td>
+									<td data-bind="wins"></td>
+									<td data-bind="losses"></td>
+									<td data-bind="points_scored"> </td>
+									<td data-bind="points_allowed"></td>
+									<td data-bind="plus_minus"></td>		
+								</tr>	
+						    </tbody>			    
+						</table>	
+					</section>		
+				</div>
+			</section>
+		
+			<!-- Libs -->
+			<script src="js/lib/routie.min.js"></script>
+			<script src="js/lib/ready.min.js" type="text/javascript"></script>
+			<script src="js/lib/qwery.min.js" type="text/javascript"></script>
+			<script src="js/lib/transparancy.min.js" type="text/javascript"></script>
+			<script src="js/lib/quo.js" type="text/javascript"></script>
+			<script src="js/lib/iscroll.js" type="text/javascript"></script>
+			
+			<!-- Application -->
+			<script src="js/app.js"></script>
+	</section>
+</body>
+</html>
