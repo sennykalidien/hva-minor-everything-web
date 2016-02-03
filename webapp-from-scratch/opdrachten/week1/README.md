@@ -11,7 +11,7 @@ Voor- en nadelen JavaScript libraries/frameworks
 | ------------- | ------------- |
 | Efficient: je kan (complexe) JavaScript code makkelijker toepassen | Grootte: je gebruikt waarschijnlijk niet alle delen van de library / framework |
 | Support: grote support-community omdat het open source is  | Taal: Je leert de library / framework, niet de taal (JavaScript) |
-| Makkelijk: je hoeft geen genie in programerem (JavaScript) te zijn om een library / framework toe te passen | Restricties: de kern van een library / framework kan je niet aanpassen |
+| Makkelijk: je hoeft geen genie in programeren (JavaScript) te zijn om een library / framework toe te passen | Restricties: de kern van een library / framework kan je niet aanpassen |
 | Debugging: snelle debugging van de code | Beveiliging: De library / framework is toegankelijk (open source) en daardoor makkelijk te manipuleren |
 
 **Waarom geen Jquery?**

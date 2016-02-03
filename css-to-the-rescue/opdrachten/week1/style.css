@@ -1,0 +1,123 @@
+/*--------------------------------------------------------------
+>>> WEBSITE COLORS:
+----------------------------------------------------------------
+	Background: 	#HEX;
+	Normal text: 	#HEX;	
+	Second text: 	#HEX;	
+	Ancor text: 	#HEX;	
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Reset & Normalize
+# Typography & Text Color
+# Structure
+# Navigation
+	## Sub Navigation
+# Content	
+	## Post & Pages
+# Templates		
+# Widgets
+# Comments
+# Forms
+# Extra CSS
+	## Media Queries
+	## Browser Hacks
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Reset & Normalize
+--------------------------------------------------------------*/
+*									{ margin: 0; padding: 0; outline: 0; vertical-align: baseline; font-size: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+html								{ overflow-y: scroll; overflow-x: hidden; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body								{ color: 333; }
+ul, ol								{ list-style: none;  }
+a img								{ border: 0; }
+a:hover, a:active, a:focus 			{ outline: 0; }
+img									{ vertical-align: none; height: auto; max-width: 100%; }
+table								{ border-collapse: collapse; }
+blockquote, q 						{ quotes: "" ""; }
+
+blockquote:before,
+blockquote:after, 
+q:before, 
+q:after 							{ content: ""; }
+
+caption, th, td 					{ font-weight: normal; text-align: left; }
+input, textarea						{ }
+table 								{ border-collapse: separate; background: #f7f7f7; }
+table, th, td						{ border: 1px solid #ececec; }
+th, td								{ padding: 7px 10px; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary
+{
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+svg     { width: 10%; }
+
+/*--------------------------------------------------------------
+# Structure
+--------------------------------------------------------------*/
+#wrapper {   
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;  
+    
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;  
+    justify-content: space-around;         
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+#header { 
+    background: #2980b9;
+    width: 30%;
+}
+
+#header img { border-radius: 5em; }
+
+#header nav ul li { 
+}
+
+#header nav ul li a svg { 
+    float: left; 
+    height: 15px; 
+    margin-right: 5px; 
+}
+
+
+main { }
