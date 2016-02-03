@@ -30,14 +30,14 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
 
     var APP.gps = {	
     	init: function () {
-            function init(){            
+            //function init(){            
                 debug_message("Controleer of GPS beschikbaar is...");
             
                 ET.addListener(GPS_AVAILABLE, _start_interval);
                 ET.addListener(GPS_UNAVAILABLE, function(){debug_message('GPS is niet beschikbaar.')});
             
                 (geo_position_js.init())?ET.fire(GPS_AVAILABLE):ET.fire(GPS_UNAVAILABLE); 
-            }
+            //}
     	},
     	startInterval: function (event) {
             //function _start_interval(event){
@@ -48,9 +48,10 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
             //}    	
     	},
     	updatePosition: function () {
-            currentPosition = position;
-            ET.fire("POSITION_UPDATED");
-            debug_message(intervalCounter+" positie lat:"+position.coords.latitude+" long:"+position.coords.longitude);    	
+            //function _update_position(){
+                intervalCounter++;
+                geo_position_js.getCurrentPosition(_set_position, _geo_error_handler, {enableHighAccuracy:true});
+            //}   	
     	},
     	
     	setPosition: function (position) {
@@ -77,9 +78,7 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
                             } catch(error) {
                                 debug_message("Localstorage kan niet aangesproken worden: "+error);
                             }
-            
-            // TODO: Animeer de betreffende marker
-            
+                            // TODO: Animeer de betreffende marker
                             window.location = locaties[i][1];
                             debug_message("Speler is binnen een straal van "+ locaties[i][2] +" meter van "+locaties[i][0]);
                         }
