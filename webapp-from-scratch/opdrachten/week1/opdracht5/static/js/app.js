@@ -1,43 +1,51 @@
-
 var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een nieuwe ruimte maakt binnen de 'window'. Hierdoor kan je conflicten voorkomen. Maar nooit 100%.
 
 (function () {
 	'use strict'; 	// Scrict is een nieuwe feature in ECMAScript 5. Met EMCAscript5 kunnen we een programma of een functie in strict javascripttaal plaatsen. Het kijkt naar fouten en schakelt features uit die slecht zijn bedacht. 
 
-	APP.flow = { 
+	APP.myApp = { // Literal object =)
         init: function() { 
             APP.routes.init();
-            APP.sections.toggle();                 
         }
     };
     
 	APP.routes = { 
-        init: function() { 
-
+        init: function(event) { 
+            window.addEventListener("hashchange",APP.sections.toggle); // if hashtag has change, toggle please.
+            window.addEventListener("load",APP.sections.toggle); // on load: toggle too please!                           
         }    
     };    
 
 	APP.sections = { 
         toggle: function() {
-            window.location.hash = 'foobar';            
+            var currentHash = location.hash,
+                sections = document.getElementsByClassName("section");
+                console.log(currentHash);
+                
+            if(currentHash === "#home"){
+    	        // remove active on all sections
+    	        for (var i=0; i < sections.length; i++) { 
+    				sections[i].classList.remove('active');
+    	        }
+    	        // add active to the right section
+                sections[0].classList.add('active');
+            } else if(currentHash === "#best-practices"){
+    	        // remove active on all sections
+    	        for (var i=0; i < sections.length; i++) { 
+    				sections[i].classList.remove('active');
+    	        }
+                sections[1].classList.add('active');
+            }  
+			
+			// Default route
+			if (!currentHash) {
+			    sections[0].classList.add('active'); // Make first section active!
+			    console.log("It's alive!");
+			}              
+                   
         }
     };
     
-    APP.flow.init()
+    APP.myApp.init();  
 
 })();
-    
-    var MyApp = {
-        handleHashChange : function(event){
-            var currentHash = location.hash,
-                message= document.getElementById("messageContainer");
-            if(currentHash === "#name"){
-                message.innerText ="Name: Sandeep";
-            } else if(currentHash === "#subject"){
-                message.innerText ="Name: Computer Science";
-            }
-        }
-    };
-    window.addEventListener("hashchange",MyApp.handleHashChange);
-    window.addEventListener("load",MyApp.handleHashChange);
-    Read more at http://www.tutorialsavvy.com/2015/02/javascript-hashchange-event-demo.html/#xHUrKRej5t0iKEeO.99;
