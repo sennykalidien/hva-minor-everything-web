@@ -34,6 +34,7 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
     	        for (var i=0; i < sections.length; i++) { 
     				sections[i].classList.remove('active');
     	        }
+    	        // add active to the right section
                 sections[1].classList.add('active');
             }  
 			
