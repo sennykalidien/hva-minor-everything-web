@@ -7,7 +7,7 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
 	/*************************************************** 
 		GLOBALE VARIABELEN
 	***************************************************/
-    //var SANDBOX = "SANDBOX";
+    var SANDBOX = "SANDBOX";
     var LINEAIR = "LINEAIR";
     var GPS_AVAILABLE = 'GPS_AVAILABLE';
     var GPS_UNAVAILABLE = 'GPS_UNAVAILABLE';
