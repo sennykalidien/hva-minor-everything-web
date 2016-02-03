@@ -166,7 +166,9 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
     	},
     
     	isNumber: function (n) {
-            return !isNaN(parseFloat(n)) && isFinite(n);    
+            //function isNumber(n) {
+              return !isNaN(parseFloat(n)) && isFinite(n);
+            //}   
     	},
     
     	updatePosition: function (event) {
@@ -183,9 +185,9 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
     // The debug object
     var APP.debug = {
     	geoErrorHandler: function (code, message) {
-            function _geo_error_handler(code, message) {
+            //function _geo_error_handler(code, message) {
                 debug_message('geo.js error '+code+': '+message);
-            }    	
+            //}    	
     	},
     
     	message: function (message) {
@@ -200,3 +202,6 @@ var APP = APP || { }; // Namespace als globale object. Zorgt ervoor dat je een n
                 customDebugging = true;
             //}    
     	}
+    };
+    
+})();	
