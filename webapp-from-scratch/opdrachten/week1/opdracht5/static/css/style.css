@@ -90,6 +90,6 @@ svg     { width: 10%; }
     
 }
 
-#wrapper main > section { display: none; }
+/* #wrapper main > section { display: none; } */
 
-#wrapper main > section.active { display: block; }
+#wrapper main > section.inactive { display: none; }
