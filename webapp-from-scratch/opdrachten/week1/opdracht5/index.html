@@ -9,7 +9,7 @@
 	
     <body>
         <div id="wrapper">	
-        	<header>
+        	<header id="header">
         		<h1>WebApp From Scratch: Opdracht 5</h1>	
         	</header> 
                 
@@ -17,17 +17,27 @@
                 <section id="home" data-route="home">
                     <header>
                         <h1>Startscherm</h1>
+                        <p>Welkom bij de webapp</p>
                     </header>  
                 </section>         
         
                 <section id="best-practices" data-route="best-practices">
                     <header>
                         <h1>FE: Best Practices</h1>
+                        <ul>
+                            <li>Don't use global variables/objects</li>
+                            <li>Declare variables at top of scope</li>
+                            <li>Use short clear meaningful names (English)</li>
+                            <li>Work in strict mode</li>
+                            <li>camelCase your code if(code != Constructor || CONSTANTS)</li>
+                            <li>Place external scripts at the bottom of the page</li>
+                            <li>Indent your code</li>
+                        </ul>                        
                     </header>      	
                 </section>
             </main>
             
-            <footer>
+            <footer id="footer">
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>

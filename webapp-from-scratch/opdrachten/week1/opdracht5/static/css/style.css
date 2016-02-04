@@ -86,10 +86,47 @@ svg     { width: 10%; }
 /*--------------------------------------------------------------
 # Structure
 --------------------------------------------------------------*/
-#wrapper {   
-    
+#header { 
+    background: #f9f9f9;
+    padding: 1.5em;
+    text-align: center; 
+    color: #1e1e1e;
 }
 
-/* #wrapper main > section { display: none; } */
+#content { 
+    margin-top: 2.5em;
+    padding: 1em;
+}
 
+#content ul {   
+    list-style: outside;
+    margin-left: 1.2em;
+}
+
+#footer nav { 
+    position: absolute;
+    top: 3.4em;
+    float: left;
+    width: 100%;
+    background: #ddd;
+    padding: 0.5em;
+}
+
+#footer nav ul li { 
+    float: left;
+    margin-right: 1em;
+}
+
+#footer nav ul li a {
+    display: block;
+    padding: 0.4em;
+    background: #f9f9f9;
+    color: #000;
+    text-decoration: none;
+    border-radius: 0.2em;
+}
+
+
+/* Toggle */
+/* #wrapper main > section { display: none; } */
 #wrapper main > section.inactive { display: none; }
