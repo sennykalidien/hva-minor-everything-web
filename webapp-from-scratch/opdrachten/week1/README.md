@@ -47,3 +47,7 @@ Zie opdracht4.js
 
 ##Opdracht 5
 Zie opdracht5.html
+
+##Opdracht 6
+Pull Request 1: Matthias 
+Pull Request 2: Melvin

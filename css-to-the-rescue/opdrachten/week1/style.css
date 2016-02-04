@@ -86,6 +86,18 @@ svg     { width: 10%; }
 /*--------------------------------------------------------------
 # Structure
 --------------------------------------------------------------*/
+body { 
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;  
+    
+    -webkit-flex-flow: row;
+    flex-flow: row;  
+    justify-content: space-around;
+}
+
 #wrapper {   
     display: -webkit-box;
     display: -moz-box;
@@ -93,19 +105,18 @@ svg     { width: 10%; }
     display: -webkit-flex;
     display: flex;  
     
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;  
-    justify-content: space-around;         
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;  
+    justify-content: space-around; 
 }
 
-.wrapper > * {
+#wrapper > * {
   padding: 10px;
   flex: 1 100%;
 }
 
 #header { 
     background: #2980b9;
-    width: 30%;
 }
 
 #header img { border-radius: 5em; }
@@ -120,4 +131,49 @@ svg     { width: 10%; }
 }
 
 
-main { }
+main svg  { 
+    float: left; 
+    height: 15px; 
+    margin-right: 5px; 
+}
+main figure {
+    border: solid 1px #ddd;
+    padding: 0.5em 0;
+}
+
+main figure img { 
+    display: block;
+    margin: 0 auto;
+}
+
+main figcaption { 
+    text-align: center;
+}
+
+main article { 
+    background: #f9f9f9;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+main article#password { 
+    
+}
+
+/*--------------------------------------------------------------
+# EXTRA CSS
+--------------------------------------------------------------*/
+    
+    /*--------------------------------------------------------------
+    ## MEDIA QUERIES
+    --------------------------------------------------------------*/
+    @media (max-width: 800px) {
+        body {    
+            -webkit-flex-flow: column;
+            flex-flow: column;  
+            justify-content: space-around;
+        }
+        #header { 
+            width: 100%; 
+        }
+    }

@@ -19,6 +19,7 @@ var APP = APP || {}; // Namespace als globale object. Zorgt ervoor dat je een ni
     APP.sections = {
         toggle: function () {
             var currentHash = location.hash,
+<<<<<<< Updated upstream
                 sections = document.querySelectorAll("section");
 
 
@@ -34,6 +35,33 @@ var APP = APP || {}; // Namespace als globale object. Zorgt ervoor dat je een ni
                 // add active to the right section
                 document.querySelector(currentHash).classList.add('active');
             }
+=======
+                sections = document.getElementsByClassName("section");
+                console.log(currentHash);
+                
+            if(currentHash === "#home"){
+    	        // remove active on all sections
+    	        for (var i=0; i < sections.length; i++) { 
+    				sections[i].classList.remove('active');
+    	        }
+    	        // add active to the right section
+                sections[0].classList.add('active');
+            } else if(currentHash === "#best-practices") {
+    	        // remove active on all sections
+    	        for (var i=0; i < sections.length; i++) { 
+    				sections[i].classList.remove('active');
+    	        }
+    	        // add active to the right section
+                sections[1].classList.add('active');
+            }  
+			
+			// Default route
+			if (!currentHash) {
+			    sections[0].classList.add('active'); // Make first section active!
+			    console.log("It's alive!");
+			}              
+                   
+>>>>>>> Stashed changes
         }
     };
 
