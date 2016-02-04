@@ -1,8 +1,8 @@
 /*--------------------------------------------------------------
 >>> WEBSITE COLORS:
 ----------------------------------------------------------------
-	Background: 	#HEX;
-	Normal text: 	#HEX;	
+	Background: 	#fff;
+	Normal text: 	#1e1e1e;	
 	Second text: 	#HEX;	
 	Ancor text: 	#HEX;	
 --------------------------------------------------------------*/
@@ -11,16 +11,9 @@
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Reset & Normalize
+# Utilities
 # Typography & Text Color
 # Structure
-# Navigation
-	## Sub Navigation
-# Content	
-	## Post & Pages
-# Templates		
-# Widgets
-# Comments
-# Forms
 # Extra CSS
 	## Media Queries
 	## Browser Hacks
@@ -49,7 +42,7 @@ caption, th, td 					{ font-weight: normal; text-align: left; }
 input, textarea						{ }
 table 								{ border-collapse: separate; background: #f7f7f7; }
 table, th, td						{ border: 1px solid #ececec; }
-th, td								{ padding: 7px 10px; }
+th, td								{ padding: 0.5em 0.7em; }
 
 article,
 aside,
@@ -81,9 +74,15 @@ object {
 	max-width: 100%;
 }
 
+button { 
+    box-shadow: 0;
+    outline: 0;
+    border: 0;
+}
 svg { 
     height: 1em; 
-    width: 1em; 
+    width: 1em;
+    margin: 0 0.2em 0 0; 
 }
 
 .flex { 
@@ -91,15 +90,28 @@ svg {
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;    
-    display: flex;     
+    display: flex;    
 }
+
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+.floatleft 							{ float: left; }
+.floatright							{ float: right; }
+
+.clear								{ clear: both; }
+.clearfix:after 					{ content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix							{ display: block; }
+html[xmlns] .clearfix 				{ display: block; }
+* html .clearfix 					{ height: 1%; }
 
 
 /*--------------------------------------------------------------
 # Typography & Text Color
 --------------------------------------------------------------*/
 html									{ font-size: 100%; }
-body, button, input, select, textarea 	{ font-size: 16px; font: 1em/1.4 'Helvetica neue', sans-serif;  }
+body, button, input, select, textarea 	{ font-size: 16px; font: 1em/1.4 Ampersand, 'Helvetica neue', sans-serif;  }
 
 p										{ }
 a										{ text-decoration: none; cursor: pointer; }
@@ -119,17 +131,8 @@ h5										{ font-size: 1.2em; font-weight: bold; }
 # Structure
 --------------------------------------------------------------*/
 body {    
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;    
-    display: flex;  
     flex-direction: column; 
-    background: #58a;
-    background-image: repeating-linear-gradient(30deg,
-                        hsla(0,0%,100%,.1),
-                        hsla(0,0%,100%,.1) 15px,
-                        transparent 0, transparent 30px);   
+    background: #fff;  
 }
 
 #header { 
@@ -151,31 +154,27 @@ body {
     margin: 1em 0; 
 }
 
-main { 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;      
-    flex-direction: row; 
+#header p { 
+    font-size: 1.2em;
 }
 
-main svg  { 
-    height: 1.0em; 
-}
-main figure {
-    border: solid 1px #ddd;
-    padding: 0 0 0.5em;
-    margin: 0 0 0.5em;
+#header p em { 
+    font-weight: bold;
 }
 
-main figure img { 
+#header nav { 
+    margin: 1em 0 0;
+}
+
+#header nav ul li a {
     display: block;
-    margin: 0 auto;
+    background: #ececec;
+    border-bottom: solid 2px #f9f9f9;
+    padding: 0.3em;
 }
 
-main figcaption { 
-    text-align: center;
+main {    
+    flex-direction: row; 
 }
 
 main article { 
@@ -186,11 +185,28 @@ main article {
 
 main article header { 
     text-align: center;
-    border-bottom: dashed 4px #1e1e1e;
+    border-bottom: solid 2px #ddd;
     padding-bottom: 0.2em;
     margin-bottom: 0.2em;
 }
 
+main article figure {
+    border: solid 1px #ddd;
+    margin: 0 0 1em;
+}
+
+main article figure img { 
+    display: block;
+    margin: 0 auto;
+}
+
+main article figure figcaption { 
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+
+/* Specific articles */
 main article#password { 
     
 }
@@ -207,11 +223,6 @@ main article#photo-albums {
 }
 
 #footer {  
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;    
-    display: flex;  
     flex-direction: row;
     flex-wrap: wrap-reverse;            
     align-content: space-between;    
@@ -223,9 +234,15 @@ main article#photo-albums {
 #footer nav { 
     width: 40%; 
 }
-#footer nav ul li a { color: #fff; }
 
-#footer address { order: 3; }
+#footer nav ul li a { 
+    color: #fff; 
+}
+
+#footer address { 
+    order: 3; 
+}
+
 #footer address pre  { 
     white-space: pre-line;  
     color: #fff; 
@@ -233,24 +250,29 @@ main article#photo-albums {
 
 
 /*--------------------------------------------------------------
-# EXTRA CSS
+# Extra CSS
 --------------------------------------------------------------*/
     
     /*--------------------------------------------------------------
     ## MEDIA QUERIES
     --------------------------------------------------------------*/
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
         main {  
             flex-direction: column; 
         }  
         #footer { 
             flex-direction: column;            
         }      
-        #footer nav { 
+        #footer nav,  #footer address pre { 
             width: 100%;
             text-align: center;
-        }   
-        #footer address pre { 
-            text-align: center;
-        }     
+        } 
     }
+
+    /*--------------------------------------------------------------
+    ## BROWSER HACKS
+    --------------------------------------------------------------*/
+    
+    
+    
+    
