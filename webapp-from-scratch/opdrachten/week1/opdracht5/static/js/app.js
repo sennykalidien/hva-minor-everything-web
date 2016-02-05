@@ -28,11 +28,10 @@ var APP = APP || {}; // Namespace als globale object. Zorgt ervoor dat je een ni
             for (var i = 0; i < sections.length; i++) { // For loop to check all sections.
                 sections[i].classList.add('inactive'); // add inactive to ALL sections                                 
                 
-                // Default route
-                if (!route) {
-                    sections[0].classList.remove('inactive');  // remove inactive                 
+                if (!route) {  // Default route
+                    sections[0].classList.remove('inactive');  // remove inactive if no hashtag in the link                
                 } else {
-                    document.querySelector(route).classList.remove('inactive'); //remove inactive                    
+                    document.querySelector(route).classList.remove('inactive'); //remove inactive to the section that corresponds with the hashtag in the links                    
                 }
             }
         }   
