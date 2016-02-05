@@ -33,7 +33,7 @@ Voor- en nadelen single page webapp
 | Server: je hoeft geen code te schrijven om de pagina's te laten werken op de server. | Data: je moet rekening houden met terug-knop & refresh-knop van de pagina. De ingevulde data moet niet verloren gaan. |
 
 **Waarom geen SPA**
-Twitter and Lifehacker hebben gerealiseerd dat een SPA architectuur een fout was en hebben hun architectuur sinds (2012) aangepast.
+Twitter and Lifehacker hebben gerealiseerd dat een SPA architectuur een fout was en hebben hun architectuur sinds 2012 aangepast, door de bovenstaande nadelen.
 
 
 **Bronnen**

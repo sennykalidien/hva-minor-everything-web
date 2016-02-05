@@ -1,18 +1,23 @@
-var APP = APP || {}; // Namespace als globale object. Zorgt ervoor dat je een nieuwe ruimte maakt binnen de 'window'. Hierdoor kan je conflicten voorkomen. Maar nooit 100%.
+var APP = APP || {}; // Namespace als globale object. Zorgt ervoor dat je een nieuwe ruimte (module) maakt binnen de 'window' ter beveiliging. Hierdoor kan je conflicten voorkomen met objects or variables (vooral bij toepassen van 3d party scripts). Maar nooit 100%. Daarnaast zijn de erg handig om blokken van functionaliteit beter the organiseren in mijn applicatie door ze een unieke identiteit mee te geven (zie APP.launch, APP.routes, APP.sections).
 
-(function () {
+(function () { // IIFE: Immediately-invoked Function Expressions
     'use strict'; // Scrict is een nieuwe feature in ECMAScript 5. Met EMCAscript5 kunnen we een programma of een functie in strict javascripttaal plaatsen. Het kijkt naar fouten en schakelt features uit die slecht zijn bedacht.
 
-    APP.fire = { // Literal object =)
+    APP.launch = { // Literal object 
         init: function () {
-            APP.routes.init();
+            APP.routes.init(); // Fire object routes.
         }
     };
 
     APP.routes = {
         init: function () {                    
-            window.addEventListener("hashchange", function () { APP.sections.toggle(location.hash) }); // if hashtag has change, toggle please.
-            window.addEventListener("load", function () { APP.sections.toggle(location.hash) }); // on load: toggle too please!
+            window.addEventListener("hashchange", function () {
+                APP.sections.toggle(location.hash)
+            }); // if hashtag has change, toggle please.
+            
+            window.addEventListener("load", function () {
+                APP.sections.toggle(location.hash)
+            }); // on load: toggle too please!   
         }
     };
 
@@ -20,21 +25,19 @@ var APP = APP || {}; // Namespace als globale object. Zorgt ervoor dat je een ni
         toggle: function (route) {
             var sections = document.querySelectorAll("section");
             
-            for (var i = 0; i < sections.length; i++) {
+            for (var i = 0; i < sections.length; i++) { // For loop to check all sections.
                 sections[i].classList.add('inactive'); // add inactive to ALL sections                                 
                 
                 // Default route
                 if (!route) {
                     sections[0].classList.remove('inactive');  // remove inactive                 
                 } else {
-                    document.querySelector(route).classList.remove('inactive'); //remove inactive                   
+                    document.querySelector(route).classList.remove('inactive'); //remove inactive                    
                 }
             }
         }   
     };
 
-    APP.fire.init();
+    APP.launch.init(); // fire object 'fire'.
 
 })();
-
-
