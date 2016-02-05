@@ -51,5 +51,5 @@ Twitter and Lifehacker hebben gerealiseerd dat een SPA architectuur een fout was
 [Demo](http://sennykalidien.github.io/webapp-from-scratch/)
 
 ##Opdracht 6
-Pull Request 1: Matthias Dolstra
-Pull Request 2: Martijn Nieuwenhuizen
+Pull Request 1: Matthias Dolstra (Link niet meer beschikbaar)
+[Pull Request 2: Martijn Nieuwenhuizen](https://github.com/MartijnNieuwenhuizen/WebAppFromScratch/pull/2)
