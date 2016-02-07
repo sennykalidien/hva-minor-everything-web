@@ -1,0 +1,423 @@
+/*--------------------------------------------------------------
+>>> ABOUT:
+----------------------------------------------------------------
+    Author:         Senny Kalidien
+    Project:        CSS TO THE RESCUE
+    Version:        0.2
+    External CSS:   reset.css, fonts.css
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> COLORS:
+----------------------------------------------------------------
+    Background:     #ffffff;
+    Normal text:    #1e1e1e;	
+    Anchor:         #2980b9;
+    Buttons:        #2980b9;
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENT:
+----------------------------------------------------------------
+# STRUCTURE
+	## HEADER
+	## MAIN
+    	### SPECIFIC ARTICLES
+	## FOOTER
+# EXTRA CSS
+	## MEDIA QEARIES
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# STRUCTURE
+--------------------------------------------------------------*/
+body {    
+    -webkit-box-orient: vertical;    
+    -webkit-box-direction: normal;    
+    -webkit-flex-direction: column;    
+        -ms-flex-direction: column;    
+            flex-direction: column; 
+}
+
+#header { 
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;                
+    -webkit-box-align: center;                
+    -webkit-align-items: center;                
+        -ms-flex-align: center;                
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center; 
+    -webkit-box-pack: justify; 
+    -webkit-justify-content: space-between; 
+        -ms-flex-pack: justify; 
+            justify-content: space-between;   
+    text-align: center;  
+    background: #1e1e1e;    
+    color: #fff;       
+}
+
+#content {    
+    -webkit-box-orient: horizontal;    
+    -webkit-box-direction: normal;    
+    -webkit-flex-direction: row;    
+        -ms-flex-direction: row;    
+            flex-direction: row; 
+}
+
+#footer {  
+    -webkit-box-orient: horizontal;  
+    -webkit-box-direction: normal;  
+    -webkit-flex-direction: row;  
+        -ms-flex-direction: row;  
+            flex-direction: row;
+    -webkit-flex-wrap: wrap-reverse;
+        -ms-flex-wrap: wrap-reverse;
+            flex-wrap: wrap-reverse;            
+    -webkit-align-content: space-between;            
+        -ms-flex-line-pack: justify;            
+            align-content: space-between;    
+    -webkit-box-pack: center;    
+    -webkit-justify-content: center;    
+        -ms-flex-pack: center;    
+            justify-content: center;   
+    background: #1e1e1e; 
+    padding: 1em 0;
+}
+
+
+/*--------------------------------------------------------------
+## HEADER
+--------------------------------------------------------------*/
+#header h1 { 
+    background: #1e1e1e;
+    text-align: left;   
+    color: #f9f9f9; 
+    padding: 0.3em 1em;
+}
+
+#header > section {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center;         
+}
+
+#header > section figure {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center;
+    padding: 0.3em 2em;
+}
+
+#header > section figure img { 
+    border-radius: 8em; 
+    width: 2.3em;
+    margin-right: 1em;
+}
+
+#header > section figure figcaption { 
+    font-size: 0.9em;
+    margin: 0.1em;
+}
+
+#header > section figure figcaption em { 
+    font-weight: bold;
+}
+
+#header nav { 
+    -webkit-box-pack: end; 
+    -webkit-justify-content: flex-end; 
+        -ms-flex-pack: end; 
+            justify-content: flex-end;
+}
+
+#header nav .pull { 
+    display: block; 
+    padding: 1.3em 2em; 
+    color: #fff;
+    margin: 0.2em 0 0;
+    border-left: solid 0.1rem #fff;        
+}
+
+#header nav .pull svg { 
+    fill: #fff;
+}    
+
+#header nav > ul li ul {
+    display: none;
+    background: #f1f1f1;
+    position: absolute;
+    right: 0; 
+    top: 4.2em;    
+    border-top: solid 0.2em #ececec;                  
+    border-bottom: solid 0.2em #ececec;            
+}       
+
+#header nav > ul li ul li a {
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;                
+    -webkit-box-align: center;                
+    -webkit-align-items: center;                
+        -ms-flex-align: center;                
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center; 
+    -webkit-box-pack: justify; 
+    -webkit-justify-content: space-between; 
+        -ms-flex-pack: justify; 
+            justify-content: space-between;
+    display: block;
+    padding: 1em 1em;                
+    text-align: left;   
+    color: #1e1e1e; 
+    border-bottom: solid 0.2em #ececec;
+}
+
+#header nav > ul li ul li a:hover {
+    background: #1e1e1e;
+    color: #f9f9f9;    
+}
+
+#header nav > ul li ul li a svg {
+    fill: #000;
+}
+
+#header nav > ul li ul li a:hover svg {
+    fill: #fff;
+}
+
+#header nav > ul li ul li:last-of-type a {
+    border: 0;
+}
+
+#header nav > ul li:hover ul { 
+    display: block; 
+}     
+
+
+/*--------------------------------------------------------------
+## MAIN
+--------------------------------------------------------------*/   
+main article { 
+    background: #f9f9f9;
+    padding: 1.5em;
+    margin: 1em;
+}
+
+main article header { 
+    text-align: center;
+    border-bottom: solid 2px #ddd;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+main article header h1, 
+main article header h2 {
+    font-size: 1.2rem;
+}     
+
+main article header h1 + h2 { 
+    font-size: 1em;
+    font-style: italic;
+}
+
+main article figure {
+    border: solid 1px #ddd;
+    margin: 0 0 1em;
+}
+
+main article figure img { 
+    display: block;
+    margin: 0 auto;
+}
+
+main article figure figcaption { 
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+
+/*--------------------------------------------------------------
+### SPECIFIC ARTICLES
+--------------------------------------------------------------*/  
+main article#about {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;      
+}
+main article#password { 
+    width: 60%;  
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;     
+}
+
+main article#photo-albums {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;      
+}
+
+main article#password form fieldset {
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;                
+    -webkit-box-align: center;                
+    -webkit-align-items: center;                
+        -ms-flex-align: center;                
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center; 
+    -webkit-box-pack: justify; 
+    -webkit-justify-content: space-between; 
+        -ms-flex-pack: justify; 
+            justify-content: space-between;  
+    padding: 0.5em;
+}
+
+main article#password form fieldset legend {
+    padding: 0 0.5em;
+}        
+
+main article#password form fieldset label {
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;                
+    -webkit-box-align: center;                
+    -webkit-align-items: center;                
+        -ms-flex-align: center;                
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center; 
+    -webkit-box-pack: justify; 
+    -webkit-justify-content: space-between; 
+        -ms-flex-pack: justify; 
+            justify-content: space-between;  
+    padding: 0.5em;
+}    
+
+main article#password form fieldset label input[type="password"] {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    padding: 0.2em;
+    width: 100%;
+}   
+
+main article#password form fieldset label span {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;        
+}     
+
+main article#password form fieldset button[type="submit"] {
+    width: 100%;
+    background: #2980b9;
+    padding: 0.7em;
+    margin: 1em 0 0.5em;
+    color: #f9f9f9;
+} 
+
+
+/*--------------------------------------------------------------
+## FOOTER
+--------------------------------------------------------------*/   
+#footer nav { 
+    width: 40%; 
+}
+
+#footer nav ul li a { 
+    color: #fff; 
+}
+
+#footer address { 
+    -webkit-box-ordinal-group: 4; 
+    -webkit-order: 3; 
+        -ms-flex-order: 3; 
+            order: 3; 
+}
+
+#footer address pre  { 
+    white-space: pre-line;  
+    color: #fff; 
+}
+
+
+/*--------------------------------------------------------------
+# EXTRA CSS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## MEDIA QUERIES
+--------------------------------------------------------------*/
+@media (max-width: 55em) {
+    body {
+        font-size: 98%;
+    }   
+    main {  
+        -webkit-flex-flow: column wrap;  
+            -ms-flex-flow: column wrap;  
+                flex-flow: column wrap;  
+    }  
+    
+    main article {
+        width: 100% !important;
+    } 
+    
+    #footer { 
+        -webkit-flex-flow: column wrap; 
+            -ms-flex-flow: column wrap; 
+                flex-flow: column wrap;            
+    }      
+    
+    #footer nav, #footer address pre { 
+        width: 100%;
+        text-align: center;
+    } 
+    
+    #footer address pre {
+        border-top: dashed 0.3em #fff;            
+        margin: 2em 0 ;
+        padding: 1.5em 0;
+    }        
+}  
+
+@media (max-width: 40em) {
+    body {
+        font-size: 96%;
+    }
+    #header h1 {
+        border-bottom: solid 0.1rem #fff;  
+        width: 100%;    
+        text-align: center;                       
+    }
+    #header {
+        -webkit-flex-flow: column wrap;
+            -ms-flex-flow: column wrap;
+                flex-flow: column wrap;                            
+    }    
+    
+    #header nav > ul li ul {     
+        width: 100%;
+        top: 7.5em;
+    }       
+}       

@@ -5,60 +5,67 @@
 		<title>Profile of Mona Krajeck</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href='favicon.ico' rel='shortcut icon'>
+		<!--<link href='favicon.ico' rel='shortcut icon'>-->
         <link rel="stylesheet" type="text/css" href="assets/css/fonts.css" />	
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />		
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />	        
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css" />		
 	</head>
-	<body class="flex">
-		<header id="header">
+	<body>
+		<header id="header" class="flex clearfix">
 			<h1>Rescue &amp; Secrets</h1>
-			<figure>
-				<img src="images/profile-picture-thumb.jpg" alt="Profile picture of Monica Krajeck">
-			</figure>
-			<p>Welcome back, <em>Mona</em></p>
-			<nav>
-				<ul>
-					<li>
-						<a href="#profile-picture">
-							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="622.4" height="622.4" viewBox="0 0 622.4 622.4" xml:space="preserve"><path d="M312.5 430.4c-95.3 0-172.9-77.6-172.9-172.9v-84.6C139.6 77.6 217.1 0 312.5 0 407.8 0 485.4 77.6 485.4 172.9v84.6C485.4 352.8 407.8 430.4 312.5 430.4zM312.5 27.4c-80.2 0-145.5 65.3-145.5 145.5v84.6c0 80.2 65.3 145.5 145.5 145.5 80.2 0 145.5-65.3 145.5-145.5v-84.6C458 92.7 392.7 27.4 312.5 27.4zM543.8 622.4H78.6c-40.5 0-73.4-32.9-73.4-73.4V484.6c0-24 12.1-56.1 69.6-72.9l69.6-19.3c7.3-2 14.8 2.3 16.9 9.6 2 7.3-2.3 14.8-9.6 16.9l-69.4 19.2c-49.7 14.5-49.7 38.6-49.7 46.5v64.4c0 25.4 20.6 46 46 46h465.2c25.4 0 46-20.6 46-46V484.6c0-21.4-16.8-37-49.8-46.5l-66.2-18.5c-7.3-2-11.5-9.6-9.5-16.9 2-7.3 9.6-11.6 16.9-9.5l66.3 18.5c57.6 16.6 69.7 48.8 69.7 72.9v64.4C617.2 589.5 584.3 622.4 543.8 622.4z"/></svg>
-							Profile picture
-						</a>
-					</li>
-					<li>
-						<a href="#password">
-							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="663.1" height="663.1" viewBox="0 0 663.1 663.1" xml:space="preserve"><path d="M552.4 170.2c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1C637.5 132.1 599.3 170.2 552.4 170.2zM552.4 28.6c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6 31.2 0 56.6-25.4 56.6-56.6C609 53.9 583.6 28.6 552.4 28.6zM552.4 318.4L552.4 318.4c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1C637.5 280.2 599.4 318.4 552.4 318.4zM552.4 176.7c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6 31.2 0 56.6-25.4 56.6-56.6C609 202.1 583.6 176.7 552.4 176.7z"/><path d="M410.4 170.2h0c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1 0 22.7-8.8 44.1-24.9 60.2C454.5 161.4 433.1 170.2 410.4 170.2zM410.3 28.6c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6h0c15.1 0 29.3-5.9 40-16.6 10.7-10.7 16.6-24.9 16.6-40C466.9 53.9 441.5 28.6 410.3 28.6zM410.3 318.4L410.3 318.4c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1C495.4 280.2 457.3 318.4 410.3 318.4zM410.3 176.7c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6 31.2 0 56.6-25.4 56.6-56.6C466.9 202.1 441.5 176.7 410.3 176.7z"/><path d="M39.8 611.4c-3.7 0-7.3-1.4-10.1-4.2 -5.6-5.6-5.6-14.6 0-20.2l313.5-313.5c5.6-5.6 14.6-5.6 20.2 0 5.6 5.6 5.6 14.6 0 20.2L49.9 607.2C47.1 610 43.5 611.4 39.8 611.4zM202.8 585.6c-3.7 0-7.3-1.4-10.1-4.2l-63.5-63.5c-5.6-5.6-5.6-14.6 0-20.2 5.6-5.6 14.6-5.6 20.2 0l63.5 63.5c5.6 5.6 5.6 14.6 0 20.2C210.1 584.2 206.4 585.6 202.8 585.6zM176.1 663.1c-3.7 0-7.3-1.4-10.1-4.2L77.1 570c-5.6-5.6-5.6-14.6 0-20.2 5.6-5.6 14.6-5.6 20.2 0l88.9 88.9c5.6 5.6 5.6 14.6 0 20.2C183.4 661.7 179.7 663.1 176.1 663.1z"/></svg>
-							Password
-						</a>
-					</li>
-					<li>
-						<a href="#photo-albums">
-							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="612" height="612" viewBox="0 0 612 612" xml:space="preserve"><path d="M581.3 541.3H30.7C13.8 541.3 0 527.5 0 510.5V145.2c0-17 13.8-30.7 30.7-30.7h149.7c4.9 0 13.2-3.8 16.4-7.4l16.7-19c8.6-9.8 24.9-17.2 38-17.2h107.4c13.1 0 29.4 7.4 38 17.2l16.7 19c3.2 3.7 11.5 7.4 16.4 7.4h151.3c17 0 30.7 13.8 30.7 30.7v365.3C612 527.5 598.2 541.3 581.3 541.3zM30.7 143.2c-1.1 0-2 0.9-2 2v365.3c0 1.1 0.9 2 2 2h550.5c1.1 0 2-0.9 2-2V145.2c0-1.1-0.9-2-2-2H430c-13.1 0-29.4-7.4-38-17.2l-16.7-19c-3.2-3.7-11.5-7.4-16.4-7.4H251.5c-4.9 0-13.2 3.7-16.4 7.4l-16.7 19c-8.6 9.8-24.9 17.2-38 17.2H30.7zM306 476.7c-79.2 0-143.6-64.4-143.6-143.6 0-79.2 64.4-143.6 143.6-143.6s143.6 64.4 143.6 143.6C449.6 412.2 385.2 476.7 306 476.7zM306 218.1c-63.4 0-114.9 51.6-114.9 114.9 0 63.4 51.6 114.9 114.9 114.9s114.9-51.6 114.9-114.9C420.9 269.7 369.4 218.1 306 218.1zM593 350.7h-81.2c-7.9 0-14.4-6.4-14.4-14.4s6.4-14.4 14.4-14.4h81.2c7.9 0 14.4 6.4 14.4 14.4S600.9 350.7 593 350.7zM105.7 350.7H19.7c-7.9 0-14.4-6.4-14.4-14.4s6.4-14.4 14.4-14.4h86c7.9 0 14.4 6.4 14.4 14.4S113.6 350.7 105.7 350.7zM306 419.6c-47.7 0-86.5-38.8-86.5-86.5 0-47.7 38.8-86.5 86.5-86.5 47.7 0 86.5 38.8 86.5 86.5C392.5 380.8 353.7 419.6 306 419.6zM306 275.3c-31.9 0-57.8 25.9-57.8 57.8 0 31.9 25.9 57.8 57.8 57.8 31.9 0 57.8-25.9 57.8-57.8C363.8 301.2 337.9 275.3 306 275.3z"/></svg>
-							Photo albums
-						</a>
-					</li>
-					<li>
-						<a href="#find-friends">
-							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="612" height="612" viewBox="0 0 612 612" xml:space="preserve"><path d="M408 407.9c-54.5 0-105.7-21.2-144.2-59.7 -79.5-79.5-79.5-208.9 0-288.4 38.5-38.5 89.7-59.7 144.2-59.7 54.5 0 105.7 21.2 144.2 59.7C590.8 98.3 612 149.5 612 204s-21.2 105.7-59.7 144.2C513.7 386.7 462.5 407.9 408 407.9zM408 29.2c-46.7 0-90.6 18.2-123.6 51.2 -68.1 68.1-68.1 179 0 247.2 33 33 76.9 51.2 123.6 51.2 46.7 0 90.6-18.2 123.6-51.2 33-33 51.2-76.9 51.2-123.6s-18.2-90.6-51.2-123.6C498.6 47.4 454.7 29.2 408 29.2zM244.2 382.4c-3.7 0-7.5-1.4-10.3-4.3 -5.7-5.7-5.7-14.9 0-20.6l23.4-23.4c5.7-5.7 14.9-5.7 20.6 0 5.7 5.7 5.7 14.9 0 20.6L254.5 378.1C251.7 381 247.9 382.4 244.2 382.4zM75.6 612c-20.2 0-39.2-7.9-53.4-22.1C7.9 575.6 0 556.6 0 536.4c0-20.2 7.9-39.2 22.1-53.4l116.3-116.3c14.3-14.3 33.2-22.1 53.4-22.1 20.2 0 39.2 7.9 53.4 22.1 29.5 29.5 29.5 77.4 0 106.9L129 589.9C114.7 604.1 95.7 612 75.6 612zM191.8 373.8c-12.4 0-24 4.8-32.8 13.6L42.8 503.7c-8.8 8.8-13.6 20.4-13.6 32.8 0 12.4 4.8 24 13.6 32.8 8.8 8.8 20.4 13.6 32.8 13.6 12.4 0 24-4.8 32.8-13.6l116.3-116.3c18.1-18.1 18.1-47.5 0-65.6C215.9 378.6 204.2 373.8 191.8 373.8zM408 332.3c-34.3 0-66.5-13.4-90.7-37.6 -50-50-50-131.4 0-181.5 24.2-24.2 56.5-37.6 90.7-37.6 34.3 0 66.5 13.4 90.7 37.6 50 50 50 131.4 0 181.5C474.5 318.9 442.3 332.3 408 332.3zM408 104.8c-26.5 0-51.4 10.3-70.1 29 -38.6 38.6-38.6 101.5 0 140.2 18.7 18.7 43.6 29 70.1 29 26.5 0 51.4-10.3 70.1-29 38.6-38.7 38.6-101.5 0-140.2C459.4 115.2 434.5 104.8 408 104.8z"/></svg>
-							Find friends
-						</a>
-					</li>
-					<!--
-					<li><a href="#">Another list item</a></li>
-					<li><a href="#">Another list item</a></li>
-					<li><a href="#">Another list item</a></li>
-					<li><a href="#">Another list item</a></li>
-					<li><a href="#">Another list item</a></li>
-					<li><a href="#">Another list item</a></li>
-					-->
-				</ul>
-			</nav>
+			<section class="flex">
+    			<figure class="flex">
+    				<img src="images/profile-picture-thumb.jpg" alt="Profile picture of Monica Krajeck">
+    				<figcaption>Welcome back, <em>Mona</em></figcaption>
+    			</figure>
+    			<nav>
+    				<ul>
+        				<li>
+            				<a href="#" class="pull"><svg version="1.1" id="Dots_three_vertical" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path d="M10.001,7.8C8.786,7.8,7.8,8.785,7.8,10s0.986,2.2,2.201,2.2c1.215,0,2.199-0.985,2.199-2.2S11.216,7.8,10.001,7.8z M10.001,5.2C11.216,5.2,12.2,4.214,12.2,3S11.216,0.8,10.001,0.8C8.786,0.8,7.8,1.785,7.8,3S8.786,5.2,10.001,5.2z M10.001,14.8 C8.786,14.8,7.8,15.785,7.8,17s0.986,2.2,2.201,2.2c1.215,0,2.199-0.985,2.199-2.2S11.216,14.8,10.001,14.8z"/></svg></a>          
+        				    <ul>      						
+            					<li>
+            						<a href="#profile-picture" class="flex">
+            							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="622.4" height="622.4" viewBox="0 0 622.4 622.4" xml:space="preserve"><path d="M312.5 430.4c-95.3 0-172.9-77.6-172.9-172.9v-84.6C139.6 77.6 217.1 0 312.5 0 407.8 0 485.4 77.6 485.4 172.9v84.6C485.4 352.8 407.8 430.4 312.5 430.4zM312.5 27.4c-80.2 0-145.5 65.3-145.5 145.5v84.6c0 80.2 65.3 145.5 145.5 145.5 80.2 0 145.5-65.3 145.5-145.5v-84.6C458 92.7 392.7 27.4 312.5 27.4zM543.8 622.4H78.6c-40.5 0-73.4-32.9-73.4-73.4V484.6c0-24 12.1-56.1 69.6-72.9l69.6-19.3c7.3-2 14.8 2.3 16.9 9.6 2 7.3-2.3 14.8-9.6 16.9l-69.4 19.2c-49.7 14.5-49.7 38.6-49.7 46.5v64.4c0 25.4 20.6 46 46 46h465.2c25.4 0 46-20.6 46-46V484.6c0-21.4-16.8-37-49.8-46.5l-66.2-18.5c-7.3-2-11.5-9.6-9.5-16.9 2-7.3 9.6-11.6 16.9-9.5l66.3 18.5c57.6 16.6 69.7 48.8 69.7 72.9v64.4C617.2 589.5 584.3 622.4 543.8 622.4z"/></svg>
+            							<span>Profile picture</span>
+            						</a>
+            					</li>
+            					<li>
+            						<a href="#password">
+            							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="663.1" height="663.1" viewBox="0 0 663.1 663.1" xml:space="preserve"><path d="M552.4 170.2c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1C637.5 132.1 599.3 170.2 552.4 170.2zM552.4 28.6c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6 31.2 0 56.6-25.4 56.6-56.6C609 53.9 583.6 28.6 552.4 28.6zM552.4 318.4L552.4 318.4c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1C637.5 280.2 599.4 318.4 552.4 318.4zM552.4 176.7c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6 31.2 0 56.6-25.4 56.6-56.6C609 202.1 583.6 176.7 552.4 176.7z"/><path d="M410.4 170.2h0c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1 0 22.7-8.8 44.1-24.9 60.2C454.5 161.4 433.1 170.2 410.4 170.2zM410.3 28.6c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6h0c15.1 0 29.3-5.9 40-16.6 10.7-10.7 16.6-24.9 16.6-40C466.9 53.9 441.5 28.6 410.3 28.6zM410.3 318.4L410.3 318.4c-46.9 0-85.1-38.2-85.1-85.1 0-46.9 38.2-85.1 85.1-85.1 46.9 0 85.1 38.2 85.1 85.1C495.4 280.2 457.3 318.4 410.3 318.4zM410.3 176.7c-31.2 0-56.6 25.4-56.6 56.6 0 31.2 25.4 56.6 56.6 56.6 31.2 0 56.6-25.4 56.6-56.6C466.9 202.1 441.5 176.7 410.3 176.7z"/><path d="M39.8 611.4c-3.7 0-7.3-1.4-10.1-4.2 -5.6-5.6-5.6-14.6 0-20.2l313.5-313.5c5.6-5.6 14.6-5.6 20.2 0 5.6 5.6 5.6 14.6 0 20.2L49.9 607.2C47.1 610 43.5 611.4 39.8 611.4zM202.8 585.6c-3.7 0-7.3-1.4-10.1-4.2l-63.5-63.5c-5.6-5.6-5.6-14.6 0-20.2 5.6-5.6 14.6-5.6 20.2 0l63.5 63.5c5.6 5.6 5.6 14.6 0 20.2C210.1 584.2 206.4 585.6 202.8 585.6zM176.1 663.1c-3.7 0-7.3-1.4-10.1-4.2L77.1 570c-5.6-5.6-5.6-14.6 0-20.2 5.6-5.6 14.6-5.6 20.2 0l88.9 88.9c5.6 5.6 5.6 14.6 0 20.2C183.4 661.7 179.7 663.1 176.1 663.1z"/></svg>
+            							<span>Password</span>
+            						</a>
+            					</li>
+            					<li>
+            						<a href="#photo-albums">
+            							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="612" height="612" viewBox="0 0 612 612" xml:space="preserve"><path d="M581.3 541.3H30.7C13.8 541.3 0 527.5 0 510.5V145.2c0-17 13.8-30.7 30.7-30.7h149.7c4.9 0 13.2-3.8 16.4-7.4l16.7-19c8.6-9.8 24.9-17.2 38-17.2h107.4c13.1 0 29.4 7.4 38 17.2l16.7 19c3.2 3.7 11.5 7.4 16.4 7.4h151.3c17 0 30.7 13.8 30.7 30.7v365.3C612 527.5 598.2 541.3 581.3 541.3zM30.7 143.2c-1.1 0-2 0.9-2 2v365.3c0 1.1 0.9 2 2 2h550.5c1.1 0 2-0.9 2-2V145.2c0-1.1-0.9-2-2-2H430c-13.1 0-29.4-7.4-38-17.2l-16.7-19c-3.2-3.7-11.5-7.4-16.4-7.4H251.5c-4.9 0-13.2 3.7-16.4 7.4l-16.7 19c-8.6 9.8-24.9 17.2-38 17.2H30.7zM306 476.7c-79.2 0-143.6-64.4-143.6-143.6 0-79.2 64.4-143.6 143.6-143.6s143.6 64.4 143.6 143.6C449.6 412.2 385.2 476.7 306 476.7zM306 218.1c-63.4 0-114.9 51.6-114.9 114.9 0 63.4 51.6 114.9 114.9 114.9s114.9-51.6 114.9-114.9C420.9 269.7 369.4 218.1 306 218.1zM593 350.7h-81.2c-7.9 0-14.4-6.4-14.4-14.4s6.4-14.4 14.4-14.4h81.2c7.9 0 14.4 6.4 14.4 14.4S600.9 350.7 593 350.7zM105.7 350.7H19.7c-7.9 0-14.4-6.4-14.4-14.4s6.4-14.4 14.4-14.4h86c7.9 0 14.4 6.4 14.4 14.4S113.6 350.7 105.7 350.7zM306 419.6c-47.7 0-86.5-38.8-86.5-86.5 0-47.7 38.8-86.5 86.5-86.5 47.7 0 86.5 38.8 86.5 86.5C392.5 380.8 353.7 419.6 306 419.6zM306 275.3c-31.9 0-57.8 25.9-57.8 57.8 0 31.9 25.9 57.8 57.8 57.8 31.9 0 57.8-25.9 57.8-57.8C363.8 301.2 337.9 275.3 306 275.3z"/></svg>
+            							<span>Photo albums</span>
+            						</a>
+            					</li>
+            					<li>
+            						<a href="#find-friends">
+            							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="612" height="612" viewBox="0 0 612 612" xml:space="preserve"><path d="M408 407.9c-54.5 0-105.7-21.2-144.2-59.7 -79.5-79.5-79.5-208.9 0-288.4 38.5-38.5 89.7-59.7 144.2-59.7 54.5 0 105.7 21.2 144.2 59.7C590.8 98.3 612 149.5 612 204s-21.2 105.7-59.7 144.2C513.7 386.7 462.5 407.9 408 407.9zM408 29.2c-46.7 0-90.6 18.2-123.6 51.2 -68.1 68.1-68.1 179 0 247.2 33 33 76.9 51.2 123.6 51.2 46.7 0 90.6-18.2 123.6-51.2 33-33 51.2-76.9 51.2-123.6s-18.2-90.6-51.2-123.6C498.6 47.4 454.7 29.2 408 29.2zM244.2 382.4c-3.7 0-7.5-1.4-10.3-4.3 -5.7-5.7-5.7-14.9 0-20.6l23.4-23.4c5.7-5.7 14.9-5.7 20.6 0 5.7 5.7 5.7 14.9 0 20.6L254.5 378.1C251.7 381 247.9 382.4 244.2 382.4zM75.6 612c-20.2 0-39.2-7.9-53.4-22.1C7.9 575.6 0 556.6 0 536.4c0-20.2 7.9-39.2 22.1-53.4l116.3-116.3c14.3-14.3 33.2-22.1 53.4-22.1 20.2 0 39.2 7.9 53.4 22.1 29.5 29.5 29.5 77.4 0 106.9L129 589.9C114.7 604.1 95.7 612 75.6 612zM191.8 373.8c-12.4 0-24 4.8-32.8 13.6L42.8 503.7c-8.8 8.8-13.6 20.4-13.6 32.8 0 12.4 4.8 24 13.6 32.8 8.8 8.8 20.4 13.6 32.8 13.6 12.4 0 24-4.8 32.8-13.6l116.3-116.3c18.1-18.1 18.1-47.5 0-65.6C215.9 378.6 204.2 373.8 191.8 373.8zM408 332.3c-34.3 0-66.5-13.4-90.7-37.6 -50-50-50-131.4 0-181.5 24.2-24.2 56.5-37.6 90.7-37.6 34.3 0 66.5 13.4 90.7 37.6 50 50 50 131.4 0 181.5C474.5 318.9 442.3 332.3 408 332.3zM408 104.8c-26.5 0-51.4 10.3-70.1 29 -38.6 38.6-38.6 101.5 0 140.2 18.7 18.7 43.6 29 70.1 29 26.5 0 51.4-10.3 70.1-29 38.6-38.7 38.6-101.5 0-140.2C459.4 115.2 434.5 104.8 408 104.8z"/></svg>
+            							<span>Find friends</span>
+            						</a>
+            					</li>
+            					<!--
+            					<li><a href="#">Another list item</a></li>
+            					<li><a href="#">Another list item</a></li>
+            					<li><a href="#">Another list item</a></li>
+            					<li><a href="#">Another list item</a></li>
+            					<li><a href="#">Another list item</a></li>
+            					<li><a href="#">Another list item</a></li>
+            					-->
+            				</ul>
+        				</li>
+                    </ul>
+    			</nav>
+			</section>
 		</header>
-
 
 
 		<!-- De main content begint hier -->
 		<main id="content" class="flex">
-			<article>
+			<article id="about">
 				<header>
 					<h1>Mona Krajeck <span>@monakrajeck</span></h1>
 					<h2>Soul searching wanderer</h2>
@@ -77,39 +84,39 @@
 						<img class="profile-picture" src="images/profile-picture.jpg">
 					</figure>
 				</div>
-								<div>
+                <div>
 					<header>
-										<h2>Your profile picture</h2>
+                        <h2>Your profile picture</h2>
 						<h3>Upload a new profile picture</h3>
 					</header>
 					<a title="Opens upload window" role="button" href="/">Upload</a>
 				</div>
-				<section class="filter-effects">
-					<header>
-								<h3>Select a filter</h3>
-					</header>
-									<figure class="effect-01">
-						<img class="profile-picture " src="images/profile-picture.jpg" alt="Image effect: lighten">
-						<figcaption>Lighten</figcaption>
-					</figure>
-									<figure class="effect-02">
-						<img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: overlay">
-						<figcaption>Overlay</figcaption>
-					</figure>
-								<figure class="effect-03">
-						<img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: soft light">
-						<figcaption>Soft Light</figcaption>
-					</figure>
-					<figure class="effect-04">
-							<img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: color">
-						<figcaption>Color</figcaption>
-					</figure>
-										<figure class="effect-05">
-						<img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: difference">
-						<figcaption>Difference</figcaption>
-					</figure>
-				</section>
-						<a role="button" href="/">Save</a>
+                <section class="filter-effects">
+                <header>
+                    <h3>Select a filter</h3>
+                </header>
+                <figure class="effect-01">
+                    <img class="profile-picture " src="images/profile-picture.jpg" alt="Image effect: lighten">
+                    <figcaption>Lighten</figcaption>
+                </figure>
+                <figure class="effect-02">
+                    <img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: overlay">
+                    <figcaption>Overlay</figcaption>
+                </figure>
+                <figure class="effect-03">
+                    <img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: soft light">
+                    <figcaption>Soft Light</figcaption>
+                </figure>
+                <figure class="effect-04">
+                    <img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: color">
+                    <figcaption>Color</figcaption>
+                </figure>
+                <figure class="effect-05">
+                    <img class="profile-picture" src="images/profile-picture.jpg" alt="Image effect: difference">
+                    <figcaption>Difference</figcaption>
+                </figure>
+                </section>
+				<a role="button" href="/">Save</a>
 			</article> -->
 
 
@@ -121,15 +128,15 @@
 				<form action="" method="post">
 					<fieldset>
 						<legend>Change your password:</legend>
-						<label>
+						<label class="flex">
 							<input id="current-password" type="password" required>
 							<span>Current password</span>
 						</label>
-						<label>
+						<label class="flex">
 							<input id="current-password" type="password" required>
 							<span>New password</span>
 						</label>
-						<label>
+						<label class="flex">
 							<input id="current-password" type="password" required>
 							<span>Verify new password</span>
 						</label>
@@ -158,46 +165,46 @@
 				</figure>
 			</article>
 			<!-- Dit mag je in week 3 uit de comments halen. -->
-				<!-- <article id="find-friends">
-					<header>
-						<h2>Find friends</h2>
-						<a href="#password">
-													<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="612" height="612" viewBox="0 0 612 612" xml:space="preserve"><path d="M423.2 438c-3.8 0-7.5-1.4-10.4-4.3L178.4 199.2c-5.7-5.7-5.7-15.1 0-20.8 5.8-5.8 15.1-5.8 20.8 0l234.5 234.5c5.8 5.8 5.8 15.1 0 20.8C430.8 436.5 427 438 423.2 438zM188.8 438c-3.8 0-7.5-1.4-10.4-4.3 -5.7-5.7-5.7-15.1 0-20.8l234.4-234.5c5.8-5.8 15.1-5.8 20.8 0 5.8 5.7 5.8 15.1 0 20.8l-234.4 234.5C196.3 436.5 192.5 438 188.8 438z"/><path d="M306 612v-14.7l0 14.7c-168.7 0-306-137.3-306-306C0 137.3 137.3 0 306 0c168.7 0 306 137.3 306 306C612 474.7 474.7 612 306 612zM306 29.4c-152.5 0-276.6 124.1-276.6 276.6 0 152.5 124.1 276.6 276.6 276.6h0c152.5 0 276.5-124.1 276.5-276.6C582.6 153.5 458.5 29.4 306 29.4z"/></svg>
-												</a>
-					</header>
-									<figure class="effect-01">
-						<img class="profile-picture " src="images/profile-picture-08.jpg">
-											<figcaption>Sarah S.</figcaption>
-					</figure>
-					<figure class="effect-04">
-											<img class="profile-picture " src="images/profile-picture-01.jpg">
-						<figcaption>Nerwin B.</figcaption>
-					</figure>
-					<figure class="effect-01">
-						<img class="profile-picture " src="images/profile-picture-02.jpg">
-						<figcaption>Lighten</figcaption>
-					</figure>
-										<figure class="effect-03">
-						<img class="profile-picture " src="images/profile-picture-03.jpg">
-											<figcaption>Lighten</figcaption>
-					</figure>
-					<figure class="effect-01">
-										<img class="profile-picture " src="images/profile-picture-04.jpg">
-						<figcaption>Lighten</figcaption>
-					</figure>
-										<figure class="effect-05">
-						<img class="profile-picture " src="images/profile-picture-05.jpg">
-											<figcaption>Lighten</figcaption>
-					</figure>
-					<figure class="effect-01">
-										<img class="profile-picture " src="images/profile-picture-06.jpg">
-						<figcaption>Lighten</figcaption>
-					</figure>
-										<figure class="effect-05">
-						<img class="profile-picture " src="images/profile-picture-07.jpg">
-											<figcaption>Lighten</figcaption>
-					</figure>
-				</article>
+                <!-- <article id="find-friends">
+                	<header>
+                		<h2>Find friends</h2>
+                		<a href="#password">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="612" height="612" viewBox="0 0 612 612" xml:space="preserve"><path d="M423.2 438c-3.8 0-7.5-1.4-10.4-4.3L178.4 199.2c-5.7-5.7-5.7-15.1 0-20.8 5.8-5.8 15.1-5.8 20.8 0l234.5 234.5c5.8 5.8 5.8 15.1 0 20.8C430.8 436.5 427 438 423.2 438zM188.8 438c-3.8 0-7.5-1.4-10.4-4.3 -5.7-5.7-5.7-15.1 0-20.8l234.4-234.5c5.8-5.8 15.1-5.8 20.8 0 5.8 5.7 5.8 15.1 0 20.8l-234.4 234.5C196.3 436.5 192.5 438 188.8 438z"/><path d="M306 612v-14.7l0 14.7c-168.7 0-306-137.3-306-306C0 137.3 137.3 0 306 0c168.7 0 306 137.3 306 306C612 474.7 474.7 612 306 612zM306 29.4c-152.5 0-276.6 124.1-276.6 276.6 0 152.5 124.1 276.6 276.6 276.6h0c152.5 0 276.5-124.1 276.5-276.6C582.6 153.5 458.5 29.4 306 29.4z"/></svg>
+                        </a>
+                	</header>
+                    <figure class="effect-01">
+                        <img class="profile-picture " src="images/profile-picture-08.jpg">
+                        <figcaption>Sarah S.</figcaption>
+                    </figure>
+                    <figure class="effect-04">
+                        <img class="profile-picture " src="images/profile-picture-01.jpg">
+                        <figcaption>Nerwin B.</figcaption>
+                    </figure>
+                    <figure class="effect-01">
+                        <img class="profile-picture " src="images/profile-picture-02.jpg">
+                        <figcaption>Lighten</figcaption>
+                    </figure>
+                    <figure class="effect-03">
+                        <img class="profile-picture " src="images/profile-picture-03.jpg">
+                        <figcaption>Lighten</figcaption>
+                    </figure>
+                    <figure class="effect-01">
+                        <img class="profile-picture " src="images/profile-picture-04.jpg">
+                        <figcaption>Lighten</figcaption>
+                    </figure>
+                        <figure class="effect-05">
+                        <img class="profile-picture " src="images/profile-picture-05.jpg">
+                        <figcaption>Lighten</figcaption>
+                    </figure>
+                    <figure class="effect-01">
+                        <img class="profile-picture " src="images/profile-picture-06.jpg">
+                        <figcaption>Lighten</figcaption>
+                    </figure>
+                    <figure class="effect-05">
+                        <img class="profile-picture " src="images/profile-picture-07.jpg">
+                        <figcaption>Lighten</figcaption>
+                    </figure>
+                </article>
 				<div title="Load more articles" class="loader">Loading…</div> -->
 		</main>
 		<footer id="footer" class="flex">
