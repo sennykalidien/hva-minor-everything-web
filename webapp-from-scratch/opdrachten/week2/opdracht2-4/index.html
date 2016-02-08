@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>WebApp From Scratch: Opdracht 5</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+	</head>
+	
+    <body>
+        <div id="wrapper">	
+        	<header id="header">
+        		<h1>WebApp From Scratch: Opdracht 5</h1>	
+        	</header> 
+                
+            <main id="content">
+                <section id="home" data-route="home">
+                    <header>
+                        <h1>Startscherm</h1>
+                        <p>Welkom bij de webapp</p>
+                    </header>  
+                </section>         
+        
+                <section id="best-practices" data-route="best-practices">
+                    <header>
+                        <h1>FE: Best Practices</h1>
+                        <ul>
+                            <li>Don't use global variables/objects</li>
+                            <li>Declare variables at top of scope</li>
+                            <li>Use short clear meaningful names (English)</li>
+                            <li>Work in strict mode</li>
+                            <li>camelCase your code if(code != Constructor || CONSTANTS)</li>
+                            <li>Place external scripts at the bottom of the page</li>
+                            <li>Indent your code</li>
+                        </ul>                        
+                    </header>      	
+                </section>
+            </main>
+            
+            <footer id="footer">
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#best-practices">FE: Best Practices</a></li>
+                    </ul>
+                </nav>	
+            </footer>
+    	</div>	
+	<!-- Libraries -->
+	<!-- <script src="js/lib/routie.min.js"></script> -->
+	
+	<!-- Application -->
+	<script src="static/js/app.js"></script>
+		
+    </body>
+</html>

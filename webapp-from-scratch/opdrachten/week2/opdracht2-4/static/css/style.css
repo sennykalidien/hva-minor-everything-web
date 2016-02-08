@@ -1,0 +1,132 @@
+/*--------------------------------------------------------------
+>>> WEBSITE COLORS:
+----------------------------------------------------------------
+	Background: 	#HEX;
+	Normal text: 	#HEX;	
+	Second text: 	#HEX;	
+	Ancor text: 	#HEX;	
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Reset & Normalize
+# Typography & Text Color
+# Structure
+# Navigation
+	## Sub Navigation
+# Content	
+	## Post & Pages
+# Templates		
+# Widgets
+# Comments
+# Forms
+# Extra CSS
+	## Media Queries
+	## Browser Hacks
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Reset & Normalize
+--------------------------------------------------------------*/
+*									{ margin: 0; padding: 0; outline: 0; vertical-align: baseline; font-size: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+html								{ overflow-y: scroll; overflow-x: hidden; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body								{ color: 333; }
+ul, ol								{ list-style: none;  }
+a img								{ border: 0; }
+a:hover, a:active, a:focus 			{ outline: 0; }
+img									{ vertical-align: none; height: auto; max-width: 100%; }
+table								{ border-collapse: collapse; }
+blockquote, q 						{ quotes: "" ""; }
+
+blockquote:before,
+blockquote:after, 
+q:before, 
+q:after 							{ content: ""; }
+
+caption, th, td 					{ font-weight: normal; text-align: left; }
+input, textarea						{ }
+table 								{ border-collapse: separate; background: #f7f7f7; }
+table, th, td						{ border: 1px solid #ececec; }
+th, td								{ padding: 7px 10px; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary
+{
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+svg     { width: 10%; }
+
+/*--------------------------------------------------------------
+# Structure
+--------------------------------------------------------------*/
+#header { 
+    background: #f9f9f9;
+    padding: 1.5em;
+    text-align: center; 
+    color: #1e1e1e;
+}
+
+#content { 
+    margin-top: 2.5em;
+    padding: 1em;
+}
+
+#content ul {   
+    list-style: outside;
+    margin-left: 1.2em;
+}
+
+#footer nav { 
+    position: absolute;
+    top: 3.4em;
+    float: left;
+    width: 100%;
+    background: #ddd;
+    padding: 0.5em;
+}
+
+#footer nav ul li { 
+    float: left;
+    margin-right: 1em;
+}
+
+#footer nav ul li a {
+    display: block;
+    padding: 0.4em;
+    background: #f9f9f9;
+    color: #000;
+    text-decoration: none;
+    border-radius: 0.2em;
+}
+
+
+/* Toggle */
+/* #wrapper main > section { display: none; } */
+#wrapper main > section.inactive { display: none; }
