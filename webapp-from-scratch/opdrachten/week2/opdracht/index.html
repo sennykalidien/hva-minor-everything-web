@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>WebApp From Scratch: Week 2, Opdracht 1-5</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+	</head>
+	
+    <body>
+        <div id="wrapper">	
+        	<header id="header">
+        		<h1>Technology - your top stories!</h1>	
+        	</header> 
+                
+            <main id="content">
+                <section id="home" data-route="tweets">
+                    <header>
+                        <h1>Home</h1>
+                        <p>Welkom bij de webapp over technologie!</p>
+                    </header>  
+                </section>         
+        
+                <section id="top-stories" data-route="top-stories">
+                    <header>
+                        <h1>Top Stories in Technology</h1>					                          
+                    </header>   
+                    <article data-bind="results">
+                        <div class="post">						    
+    						<figure class="thumbnails" data-bind="multimedia">
+                                <img data-bind="url" src="" alt="Pictures" />
+    						</figure>
+    						<h3 data-bind="title"></h3>
+    						<p class="author" data-bind="byline"></p>
+    						<p data-bind="abstract"></p>
+    						<a data-bind="url" href="" target="_blank"></a>
+                        </div>	     
+                    </article>                  	
+                </section>
+            </main>
+            
+            <footer id="footer">
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#top-stories">Top stories</a></li>
+                    </ul>
+                </nav>	
+            </footer>
+    	</div>	
+	<!-- Libraries -->
+	<script src="static/js/lib/routie.min.js"></script>
+	<script src="static/js/lib/transparancy.min.js"></script>	
+	<script src="static/js/lib/nanoajax.min.js"></script>		
+	
+	<!-- Application -->
+	<script src="static/js/app.js"></script>
+		
+    </body>
+</html>

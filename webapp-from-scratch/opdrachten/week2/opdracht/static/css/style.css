@@ -103,6 +103,31 @@ svg     { width: 10%; }
     margin-left: 1.2em;
 }
 
+#content #top-stories .post {
+    background: #f9f9f9;
+    margin: 0 0 1em;
+    padding: 1.5em 1em;
+    clear: both;
+    overflow: hidden;
+}
+
+#content #top-stories .post > .author {
+    text-transform: capitalize;
+}
+
+#content #top-stories .post > .thumbnails img {
+    display: none;
+    min-width: 10em;
+    max-width: 10%;
+    float: left;
+    margin-right: 1em;
+}
+
+#content #top-stories .post > .thumbnails img:last-of-type{
+    display: block;
+}
+
+
 #footer nav { 
     position: absolute;
     top: 3.4em;
