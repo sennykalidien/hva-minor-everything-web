@@ -57,25 +57,34 @@ var APP = APP || { };
 	
 	APP.data = {
 		init: function(){
-			APP.page.top_stories.get();
+			APP.page.topStories.get();
 		}
 	}
 	
 	
 	/*************************************************** 
-		Pagina's met (JSON) data, opgehaald vanuit NY TIMES. 
+		Pagina's met (JSON) data, vanuit NY TIMES. 
 	***************************************************/
 	/* 	
 		HTTPS request: http://api.nytimes.com/svc/topstories/v1/{section}.{response-format}?api-key={your-api-key}
 		API KEY: af7f18026c501a31c7a66eea851e85f4:9:74334837
 	*/
 	APP.page = {
-		top_stories: {			    		    	
+		topStories: {			    		    	
 			get: function() {
     			var responseFormat = 'json',
     			    storySection = 'technology',
     			    apiKey = 'af7f18026c501a31c7a66eea851e85f4:9:74334837',
                     apiURL = 'http://api.nytimes.com/svc/topstories/v1/'+storySection+'.'+responseFormat+'?api-key='+apiKey+'';                   
+                
+                var xhrRequest = nanoajax.ajax({
+                        url: apiURL,
+                        method: 'GET'
+                }, function (code, responseText) {
+                        var data = JSON.parse(responseText);
+                        console.log(data);
+                        Transparency.render(document.querySelector('[data-route="top-stories"]'), data, directives);                        
+                })	 
 
                 var directives = {
                     results: {
@@ -97,18 +106,9 @@ var APP = APP || { };
     						}	
 						}	
 					}
-	            }; // Sluit directives.
-                
-                var xhrRequest = nanoajax.ajax({
-                        url: apiURL,
-                        method: 'GET'
-                }, function (code, responseText) {
-                        var data = JSON.parse(responseText);
-                        console.log(data);
-                        Transparency.render(document.querySelector('[data-route="top-stories"]'), data, directives);                        
-                })	 		    		    	
+	            }; // Sluit directives.	    		    	
 			} 				 
-		}
+		} // Sluit APP.page.topStories
 	}; // Sluit APP.page.	
 	   
     
