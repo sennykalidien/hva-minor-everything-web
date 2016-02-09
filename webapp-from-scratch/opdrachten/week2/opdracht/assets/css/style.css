@@ -117,13 +117,12 @@ svg     { width: 10%; }
 
 #content #top-stories .post > .thumbnails img {
     display: none;
-    min-width: 10em;
-    max-width: 10%;
+
     float: left;
     margin-right: 1em;
 }
 
-#content #top-stories .post > .thumbnails img:last-of-type{
+#content #top-stories .post > .thumbnails img:first-of-type{
     display: block;
 }
 
@@ -155,3 +154,17 @@ svg     { width: 10%; }
 /* Toggle */
 /* #wrapper main > section { display: none; } */
 #wrapper main > section.inactive { display: none; }
+
+@media (max-width: 50em) {
+    #content #top-stories .post > .thumbnails img {
+        min-width: 100%;
+        float: none;
+        margin: 0;
+    }    
+    #content #top-stories .post > .thumbnails img:first-of-type{
+        display: none;
+    }  
+    #content #top-stories .post > .thumbnails img:last-of-type{
+        display: block;
+    }    
+}
