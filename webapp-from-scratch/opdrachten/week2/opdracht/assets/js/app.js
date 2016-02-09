@@ -11,18 +11,18 @@ var APP = APP || { };
 
 
 	/*************************************************** 
-		GLOBALE VARIABELEN
+		GLOBAL VARIABLES
 	***************************************************/
     var sections = document.querySelectorAll("section"); 	    	 	  		
 		
 		
 	/*************************************************** 
-		START de flow van de APP.
+		START the flow of the APP.
 	***************************************************/
-	APP.launch = { 	// Literal object: Launch.
-		init: function () { // Method: functie binnen een literal object.
+	APP.launch = { 	// Literal object: Launch. Ready for launch?
+		init: function () { // Method: function inside a literal object.
 			APP.router.init();
-			APP.data.init();
+			APP.page.topStories.get();
 		}
 	};	
 
@@ -32,7 +32,7 @@ var APP = APP || { };
 	***************************************************/
 	APP.router = { 	// Literal object: 'router'.  
 		init: function () { 				
-	  		routie({ //Routie kijkt naar wat achter de # komt van de link en selecteert dat.
+	  		routie({ // Routie checks what come behind the hashtag (#) of the link and selects it. 
 			    sections: function() {
 					APP.router.toggle(window.location.hash);
 			    },	    
@@ -55,15 +55,8 @@ var APP = APP || { };
 	};
 	
 	
-	APP.data = {
-		init: function(){
-			APP.page.topStories.get();
-		}
-	}
-	
-	
 	/*************************************************** 
-		Pagina's met (JSON) data, vanuit NY TIMES. 
+		PAGES with (JSON) data, from the NY TIMES. 
 	***************************************************/
 	/* 	
 		HTTPS request: http://api.nytimes.com/svc/topstories/v1/{section}.{response-format}?api-key={your-api-key}
@@ -109,11 +102,10 @@ var APP = APP || { };
 						}	
 					}
 	            };
-			}  // Sluit APP.page.topStories.get				 
-		} // Sluit APP.page.topStories
-	}; // Sluit APP.page.	
-	   
+			}  // Close APP.page.topStories.get				 
+		} // Close APP.page.topStories
+	}; // Close APP.page.	
     
-    APP.launch.init();
+    APP.launch.init(); // Launch the app!
 	
 })();	

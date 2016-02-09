@@ -118,7 +118,7 @@ svg {
     margin: 0 0.2em 0 0; 
 }
 
-.flex { 
+.flexbox { 
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
