@@ -117,12 +117,20 @@ svg     { width: 10%; }
 
 #content #top-stories .post > .thumbnails img {
     display: none;
-
     float: left;
     margin-right: 1em;
 }
 
 #content #top-stories .post > .thumbnails img:first-of-type{
+    display: block;
+}
+
+#content #top-stories-detail .post > .thumbnails img {
+    display: none;
+    margin-right: 1em;
+}
+
+#content #top-stories-detail .post > .thumbnails img:last-of-type{
     display: block;
 }
 
