@@ -1,3 +1,5 @@
+<!doctype html>
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -30,13 +32,27 @@
     						<figure class="thumbnails" data-bind="multimedia">
                                 <img data-bind="url" src="" alt="" />
     						</figure>
-    						<h3 data-bind="title"></h3>
+    						<h3><a data-bind="title" rel="detail"></a></h3>
     						<span class="author" data-bind="byline"></span>
     						<p data-bind="abstract"></p>
-    						<a data-bind="url" href="" target="_blank"></a>
                         </div>	     
                     </article>                  	
                 </section>
+                <section id="top-stories-detail" data-route="top-stories-detail">
+                    <header>
+                        <h1>Detail pagina</h1>					                          
+                    </header>   
+                    <article data-bind="results">
+                        <div class="post">						    
+    						<figure class="thumbnails" data-bind="multimedia">
+                                <img data-bind="url" src="" alt="" />
+    						</figure>
+    						<h3><a data-bind="title" rel="detail"></a></h3>
+    						<span class="author" data-bind="byline"></span>
+    						<p data-bind="abstract"></p>
+                        </div>	                        
+                    </article>                  	
+                </section>                
             </main>
             
             <footer id="footer">

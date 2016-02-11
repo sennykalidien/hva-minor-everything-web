@@ -22,7 +22,6 @@ var APP = APP || { };
 	APP.launch = { 	// Literal object: Launch. Ready for launch?
 		init: function () { // Method: function inside a literal object.
 			APP.router.init();
-			APP.page.topStories.get();
 		}
 	};	
 
@@ -33,11 +32,16 @@ var APP = APP || { };
 	APP.router = { 	// Literal object: 'router'.  
 		init: function () { 				
 	  		routie({ // Routie checks what come behind the hashtag (#) of the link and selects it. 
-			    sections: function() {
+			    'top-stories': function() {
 					APP.router.toggle(window.location.hash);
-			    },	    
+					APP.data.get();					
+			    },	
+                'top-stories-detail/:title': function(title) {
+					APP.router.toggle(window.location.hash.slice(0,19));
+					APP.data.get();	
+			    },				        
 			    '*': function() {
-					APP.router.toggle(window.location.hash);
+					APP.router.toggle(window.location.hash.slice(0,19));					
 			    }
 			});
 		},	
@@ -62,50 +66,79 @@ var APP = APP || { };
 		HTTPS request: http://api.nytimes.com/svc/topstories/v1/{section}.{response-format}?api-key={your-api-key}
 		API KEY: af7f18026c501a31c7a66eea851e85f4:9:74334837
 	*/
+	APP.data = { 
+    	get: function () {
+			var responseFormat = 'json',
+			    storySection = 'technology',
+			    apiKey = 'af7f18026c501a31c7a66eea851e85f4:9:74334837',
+                apiURL = 'http://api.nytimes.com/svc/topstories/v1/'+storySection+'.'+responseFormat+'?api-key='+apiKey+'';                                                         
+            
+            /* The Ajax Request (GET) with NanoAjax library */
+            var xhrRequest = nanoajax.ajax({
+                    url: apiURL,
+                    method: 'GET'
+            }, function (code, responseText) {
+                    var data = JSON.parse(responseText);
+                    APP.page.topStories.init(data); 
+                    APP.page.topStoriesDetail.init(data);                                                         
+            });        	 	
+    	}
+	}
+
 	APP.page = {
 		topStories: {			    		    	
-			get: function() {
+			init: function (data) {
+    			/*
     			var responseFormat = 'json',
     			    storySection = 'technology',
     			    apiKey = 'af7f18026c501a31c7a66eea851e85f4:9:74334837',
-                    apiURL = 'http://api.nytimes.com/svc/topstories/v1/'+storySection+'.'+responseFormat+'?api-key='+apiKey+'';                   
+                    apiURL = 'http://api.nytimes.com/svc/topstories/v1/'+storySection+'.'+responseFormat+'?api-key='+apiKey+'';                                                         
                 
-                /* The Ajax Request (GET) with NanoAjax library */
+                /* The Ajax Request (GET) with NanoAjax library */ /*
                 var xhrRequest = nanoajax.ajax({
                         url: apiURL,
                         method: 'GET'
                 }, function (code, responseText) {
-                        var data = JSON.parse(responseText);
-                        console.log(data);
+                        APP.data.input = JSON.parse(responseText);
+                        return data;
+                        console.log(data);                        
                         Transparency.render(document.querySelector('[data-route="top-stories"]'), data, directives);                        
-                })	 
-                
+                });
+                */
+
                 /* Directives needed for Transparency to manipulate data-bind */
                 var directives = {
                     results: {
-                        /* 
-                    	url: {
+                    	title: {
                     		href: function () {
-                                return this.url;
-                            },
-							html: function(){
-                            	return "Read more";
-                            }                    	     
+                                return "#top-stories-detail/" + this.title.replace(/\s+/g, '-').replace(/,/g, '').toLowerCase();;
+                            }          	     
 						},
-						*/
 						multimedia: {
     						url: {
         						src: function () {
             						return this.url
         						}
     						}	
-						}	
+						}							
 					}
 	            };
-			}  // Close APP.page.topStories.get				 
-		} // Close APP.page.topStories
+	            
+                Transparency.render(document.querySelector('[data-route="top-stories"]'), data, directives);        	               	                     
+                
+			}  // Close APP.page.topStories.get			 
+		}, // Close APP.page.topStories
+		topStoriesDetail: {			    		    	
+            init: function () { 
+                
+            }
+        }			
 	}; // Close APP.page.	
     
     APP.launch.init(); // Launch the app!
 	
 })();	
+
+
+
+
