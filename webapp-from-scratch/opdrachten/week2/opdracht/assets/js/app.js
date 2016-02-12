@@ -56,7 +56,7 @@ var APP = APP || { };
                     });                    
                     //console.log(data);                                                         
                     APP.router.init(data);	                                                                        
-            });       	 	      
+            });         	 	      
     	}  
 	};	
 	
@@ -80,7 +80,7 @@ var APP = APP || { };
 			});
 		},	
 		toggle: function (route) { 
-            var sections = document.querySelectorAll("section");     		           
+            var sections = document.querySelectorAll("section"); // Be consistent in use of quotes - Tijs Luitse  		           
             for (var i = 0; i < sections.length; i++) { // For loop to check all sections.
                 sections[i].classList.add('inactive'); // add inactive to ALL sections first.                                
                 
@@ -114,6 +114,17 @@ var APP = APP || { };
                 });
                 */
 
+                // NewData - Tijs Luitse
+                var newData = _.map(data, function(obj){
+                    return _.pick(obj, 'id', 'multimedia', 'abstract', 'title', 'url');
+                });
+
+                console.log(newData);  
+
+                data = newData; // Data now has only needed items - Tijs Luitse
+
+                console.log(data);
+
                 /* Directives needed for Transparency to manipulate data-bind */
                 var directives = {
                 	id: {
@@ -121,7 +132,7 @@ var APP = APP || { };
                             return "#top-stories-detail/" + this.id;
                         },   
                 		html: function () {
-                            return "";
+                            return ""; // Does nothing - Tijs Luitse                            
                         }                                 	     
 					},
 					multimedia: {
@@ -132,9 +143,7 @@ var APP = APP || { };
 						}	
 					}							
 	            };
-	            
-	            console.log(data);
-	            
+	            	            
                 Transparency.render(document.querySelector('[data-route="top-stories"]'), data, directives); 
                 
 			}		 
@@ -150,13 +159,14 @@ var APP = APP || { };
 
                 var newID = id;
                             
-                /* Filter */
-                var detailData = _.filter(data, {id: newID});
+                // /* Filter */  // Does not work - Tijs Luitse
+                // var detailData = _.filter(data, {id: newID});
+                // console.log(detailData);
 
-                /* Map */                
-                var newData = _.map(data.results, function(obj) {
-                    return obj.title;
-                });                                                  
+                // /* Map */                // Does not work - Tijs Luitse
+                // var newData = _.map(data.results, function(obj) {
+                //     return obj.title;
+                // });                              
 
                 /* Directives needed for Transparency to manipulate data-bind */
                 var directives = {
@@ -174,7 +184,7 @@ var APP = APP || { };
 					}							
 	            };
 	            
-                Transparency.render(document.querySelector('[data-route="top-stories-detail"]'), detailData, directives);    
+                Transparency.render(document.querySelector('[data-route="top-stories-detail"]'), data, directives);   
             }
         }			
 	}; // Close APP.page.	
