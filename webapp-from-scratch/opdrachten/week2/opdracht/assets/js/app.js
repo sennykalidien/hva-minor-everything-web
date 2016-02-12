@@ -80,7 +80,7 @@ var APP = APP || { };
 			});
 		},	
 		toggle: function (route) { 
-            var sections = document.querySelectorAll("section");     		           
+            var sections = document.querySelectorAll('section');     		           
             for (var i = 0; i < sections.length; i++) { // For loop to check all sections.
                 sections[i].classList.add('inactive'); // add inactive to ALL sections first.                                
                 
@@ -129,11 +129,7 @@ var APP = APP || { };
                             
                 /* Filter */
                 var detailData = _.filter(data, {id: newID});
-
-                /* Map */                
-                var newData = _.map(data.results, function(obj) {
-                    return obj.title;
-                });                                                  
+                                                               
 
                 /* Directives needed for Transparency to manipulate data-bind */
                 var directives = {
