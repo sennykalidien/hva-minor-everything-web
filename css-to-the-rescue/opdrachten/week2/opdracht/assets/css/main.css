@@ -23,6 +23,7 @@
 	## HEADER
 	## CONTENT
     	### SPECIFIC ARTICLES
+    	### DIALOG    	
 	## FOOTER
 # EXTRA CSS
 	## MEDIA QEARIES
@@ -183,24 +184,24 @@ body {
     border-bottom: solid 0.2em #ececec;
 }
 
-#header nav > ul li ul li a:hover {
+#header nav > ul li > ul li a:hover {
     background: #1e1e1e;
     color: #f9f9f9;    
 }
 
-#header nav > ul li ul li a svg {
+#header nav > ul li > ul li a svg {
     fill: #000;
 }
 
-#header nav > ul li ul li a:hover svg {
+#header nav > ul li > ul li a:hover svg {
     fill: #fff;
 }
 
-#header nav > ul li ul li:last-of-type a {
+#header nav > ul li > ul li:last-of-type a {
     border: 0;
 }
 
-#header nav > ul li:hover ul { 
+#header nav > ul li:hover > ul { 
     display: block; 
 }     
 
@@ -279,24 +280,24 @@ body {
 }
 #content article#password { 
     width: 60%;  
-    -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-        -ms-flex-order: 2;
-            order: 2;     
-}
-
-#content article#photo-albums {
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
         -ms-flex-order: 3;
-            order: 3;      
+            order: 3;     
 }
 
-#content article#profile-picture { 
+#content article#photo-albums {
     -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
         -ms-flex-order: 4;
-            order: 4;       
+            order: 4;      
+}
+
+#content article#profile-picture { 
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;       
 }
 
 #content article#password form fieldset {
@@ -386,6 +387,11 @@ body {
             flex: 0 1 33.33%; 
 }  
 
+
+/*--------------------------------------------------------------
+### DIALOG
+--------------------------------------------------------------*/  
+
 /* MODAL (POP-UP) */
 
 /*
@@ -414,7 +420,7 @@ main {
 }
 */
 
-#content > #overlay  {
+dialog  {
     display: none;
     width: 100%;
     height: 100%;
@@ -422,44 +428,44 @@ main {
     background-color: rgba(0, 0, 0, 0.4);    
 }
 
-#content > #overlay:target {
+dialog:target {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;    
     display: flex;  
     position: fixed;   
-    top: 0;
+    top: -1em;
     left: 0; 
     margin: 0;
 }
 
-#content > #overlay .modal {
+dialog .modal {
     margin: auto;
     width: 60%;
-}
-
-#content > #overlay .modal .modal-content {
     background-color: #f9f9f9;
     border: 0.1em #ddd solid;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    padding: 2em;    
 }
 
-#content > #overlay .modal-content { 
-    padding: 3em;
-}
-
-#content > #overlay .modal-content > figure {
-	max-width: 18em;
+dialog .modal > figure {
+    max-width: 18em;
     max-width: -webkit-min-content;
     max-width: -moz-min-content;
     max-width: min-content;
 	margin: auto;
 	border: solid 0.1em #ddd;    
+	padding: 1em;
 }
 
-#content>  #overlay .modal-content > figure > img { 
+dialog .modal > figure > img { 
     max-width: inherit;
+}
+
+dialog:target main {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
 }
 
 
@@ -537,5 +543,16 @@ main {
     #header nav > ul li ul {     
         width: 100%;
         top: 7.5em;
-    }            
+    }    
+    
+    #content > #overlay .modal > figure {
+        max-width: 18em;
+    	margin: auto;
+    	border: solid 0.1em #ddd;    
+    	padding: 1em;
+    }
+    
+    #content>  #overlay .modal > figure > img { 
+        max-width: 100%;
+    }      
 }       

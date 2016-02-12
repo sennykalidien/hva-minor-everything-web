@@ -48,8 +48,13 @@ var APP = APP || { };
                     url: apiURL,
                     method: 'GET'
             }, function (code, responseText) {
-                    var data = JSON.parse(responseText);                       
-                    //console.log(data);                                        
+                    var apiData = JSON.parse(responseText);                       
+                    /* Map + Unique ID*/  
+                    var data = _.map(apiData.results, function (apiData, iteratee) {
+                        apiData.id = _.uniqueId('article_');
+                        return apiData;
+                    });                    
+                    //console.log(data);                                                         
                     APP.router.init(data);	                                                                        
             });       	 	      
     	}  
@@ -65,9 +70,9 @@ var APP = APP || { };
 					APP.router.toggle(window.location.hash); // Toggle sections
                     APP.page.topStories.init(data); // Page templating
 			    },	
-                'top-stories-detail/:title': function(title) {
+                'top-stories-detail/:id': function(id) {
 					APP.router.toggle(window.location.hash.slice(0,19));
-                    APP.page.topStoriesDetail.init(data, title);	
+                    APP.page.topStoriesDetail.init(data, id);	
 			    },				        
 			    '*': function() {
 					APP.router.toggle(window.location.hash.slice(0,19));					
@@ -111,48 +116,55 @@ var APP = APP || { };
 
                 /* Directives needed for Transparency to manipulate data-bind */
                 var directives = {
-                    results: {
-                    	title: {
-                    		href: function () {
-                                return "#top-stories-detail/" + this.title.replace(/\s+/g, '-').replace(/,/g, '').toLowerCase();
-                            }          	     
-						},
-						multimedia: {
-    						url: {
-        						src: function () {
-            						return this.url
-        						}
-    						}	
-						}							
-					}
+                	id: {
+                		href: function () {
+                            return "#top-stories-detail/" + this.id;
+                        },   
+                		html: function () {
+                            return "";
+                        }                                 	     
+					},
+					multimedia: {
+						url: {
+    						src: function () {
+        						return this.url;
+    						}
+						}	
+					}							
 	            };
+	            
+	            console.log(data);
 	            
                 Transparency.render(document.querySelector('[data-route="top-stories"]'), data, directives); 
                 
 			}		 
 		}, 
 		topStoriesDetail: {			    		    	
-            init: function (data, title) {
+            init: function (data, id) {
             /*
             var detailURL = window.location.toString(),                    
                             split = detailURL.split("/"),
                             detailTitle = split[split.length - 1]; 
                             console.log(detailTitle);
             */
-                
-                               
-                var newTitle = title.replace(/-/g, ' ').replace(/\b./g, function(m){ return m.toUpperCase(); });
-                
-                /* Filter */
-                var detailData = _.filter(data.results, {title: newTitle});
 
-                /* Find Where */                
+                var newID = id;
+                            
+                /* Filter */
+                var detailData = _.filter(data, {id: newID});
+
+                /* Map */                
                 var newData = _.map(data.results, function(obj) {
                     return obj.title;
                 });                                                  
 
                 /* Directives needed for Transparency to manipulate data-bind */
                 var directives = {
+                	id: {  
+                		html: function () {
+                            return "";
+                        }                                 	     
+					},					
 					multimedia: {
 						url: {
     						src: function () {
