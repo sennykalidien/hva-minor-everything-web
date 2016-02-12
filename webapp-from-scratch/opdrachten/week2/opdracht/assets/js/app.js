@@ -49,7 +49,7 @@ var APP = APP || { };
                     method: 'GET'
             }, function (code, responseText) {
                     var apiData = JSON.parse(responseText);                       
-                    /* Map + Unique ID*/  
+                    /* Map & Iteratee + unique ID */  
                     var data = _.map(apiData.results, function (apiData, iteratee) {
                         apiData.id = _.uniqueId('article_');
                         return apiData;
@@ -96,24 +96,7 @@ var APP = APP || { };
 	APP.page = {
 		topStories: {			    		    	
 			init: function (data) {
-    			/*
-    			var responseFormat = 'json',
-    			    storySection = 'technology',
-    			    apiKey = 'af7f18026c501a31c7a66eea851e85f4:9:74334837',
-                    apiURL = 'http://api.nytimes.com/svc/topstories/v1/'+storySection+'.'+responseFormat+'?api-key='+apiKey+'';                                                         
-                
-                /* The Ajax Request (GET) with NanoAjax library */ /*
-                var xhrRequest = nanoajax.ajax({
-                        url: apiURL,
-                        method: 'GET'
-                }, function (code, responseText) {
-                        APP.data.input = JSON.parse(responseText);
-                        return data;
-                        console.log(data);                        
-                        Transparency.render(document.querySelector('[data-route="top-stories"]'), data, directives);                        
-                });
-                */
-
+    			
                 /* Directives needed for Transparency to manipulate data-bind */
                 var directives = {
                 	id: {
@@ -141,12 +124,6 @@ var APP = APP || { };
 		}, 
 		topStoriesDetail: {			    		    	
             init: function (data, id) {
-            /*
-            var detailURL = window.location.toString(),                    
-                            split = detailURL.split("/"),
-                            detailTitle = split[split.length - 1]; 
-                            console.log(detailTitle);
-            */
 
                 var newID = id;
                             
