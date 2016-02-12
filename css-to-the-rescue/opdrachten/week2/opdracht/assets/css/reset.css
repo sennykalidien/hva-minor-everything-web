@@ -110,6 +110,15 @@ button {
     box-shadow: 0;
     outline: 0;
     border: 0;
+    background: #2980b9;
+    padding: 0.7em;
+    margin: 1em 0 0.5em;
+    color: #f9f9f9;    
+}
+
+button a { 
+    display: block;   
+    color: inherit;
 }
 
 svg { 

@@ -23,7 +23,7 @@
 	## HEADER
 	## CONTENT
     	### SPECIFIC ARTICLES
-    	### DIALOG    	
+    	### .overlay    	
 	## FOOTER
 # EXTRA CSS
 	## MEDIA QEARIES
@@ -253,16 +253,7 @@ body {
 
 #content article button {
     width: 100%;
-    background: #2980b9;
-    padding: 0.7em;
-    margin: 1em 0 0.5em;
-    color: #f9f9f9;
 } 
-
-#content article button a {
-    color: inherit;
-    display: block;
-}
 
 
 /*--------------------------------------------------------------
@@ -389,67 +380,37 @@ body {
 
 
 /*--------------------------------------------------------------
-### DIALOG
+### OVERLAY
 --------------------------------------------------------------*/  
-
-/* MODAL (POP-UP) */
-
-/*
-#content > dialog {
-	display: none;
-}
-
-#content > dialog:target { 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;    
-    display: flex;  
-    position: fixed;   
-    margin: auto; 
-}
-
-#content > dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
-}
-
-main {
-	-webkit-filter: blur(3px);
-	filter: blur(3px);
-}
-*/
-
-dialog  {
+.overlay  {
     display: none;
     width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);    
+    height: 100%;    
 }
 
-dialog:target {
+.overlay:target {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;    
     display: flex;  
     position: fixed;   
-    top: -1em;
+    top: 0;
     left: 0; 
     margin: 0;
+    z-index: 99;
 }
 
-dialog .modal {
+.overlay .modal {
     margin: auto;
     width: 60%;
     background-color: #f9f9f9;
     border: 0.1em #ddd solid;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
-    padding: 2em;    
+    box-shadow: 0 0 0 50vmax rgba(0,0,0,.4);   
+    padding: 2em;   
 }
 
-dialog .modal > figure {
+.overlay .modal > figure {
     max-width: 18em;
     max-width: -webkit-min-content;
     max-width: -moz-min-content;
@@ -459,11 +420,11 @@ dialog .modal > figure {
 	padding: 1em;
 }
 
-dialog .modal > figure > img { 
+.overlay .modal > figure > img { 
     max-width: inherit;
 }
 
-dialog:target main {
+.overlay:target + main {
 	-webkit-filter: blur(3px);
 	filter: blur(3px);
 }
@@ -520,8 +481,9 @@ dialog:target main {
         margin: 2em 0 ;
         padding: 1.5em 0;
     }    
-    #content > #overlay .modal {
-        width: 100%;
+    
+    .overlay .modal {
+        width: 80%;
     }        
 }  
 
@@ -545,14 +507,14 @@ dialog:target main {
         top: 7.5em;
     }    
     
-    #content > #overlay .modal > figure {
+    .overlay .modal > figure {
         max-width: 18em;
     	margin: auto;
     	border: solid 0.1em #ddd;    
     	padding: 1em;
     }
     
-    #content>  #overlay .modal > figure > img { 
+    .overlay .modal > figure > img { 
         max-width: 100%;
     }      
 }       
