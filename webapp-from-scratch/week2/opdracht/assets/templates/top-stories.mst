@@ -1,0 +1,16 @@
+<article>
+    {{#.}}
+    <div class="post">						    
+        <figure class="thumbnails">
+            <a href="#top-story/{{id}}">
+            {{#multimedia}}
+            <img src="{{url}}" alt="" />
+            {{/multimedia}}
+            </a>
+        </figure>
+        <h3><a href="#top-story/{{id}}">{{title}}</a></h3>
+        <span class="author">{{byline}}</span>
+        <p>{{abstract}}</p>
+    </div>
+    {{/.}}
+</article> 

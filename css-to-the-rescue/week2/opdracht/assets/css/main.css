@@ -213,6 +213,7 @@ body {
     background: #f9f9f9;
     padding: 1.5em;
     margin: 1em;
+    -moz-box-flex: 1 0 17em;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1 0 17em;
 	    -ms-flex: 1 0 17em;
@@ -422,6 +423,7 @@ body {
 
 .overlay .modal > figure > img { 
     max-width: inherit;
+    width: auto;
 }
 
 .overlay:target + main {
@@ -518,3 +520,11 @@ body {
         max-width: 100%;
     }      
 }       
+
+/*--------------------------------------------------------------
+## BROWSER HACK
+--------------------------------------------------------------*/
+@-moz-document url-prefix() {
+    /* Firefox doesn't respect max-width in certain situations */
+    img { width: 100%; max-width: -moz-max-content; }
+}

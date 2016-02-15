@@ -83,6 +83,8 @@ object {
 
 svg     { width: 10%; }
 
+h1 a, h2 a, h3 a    { text-decoration: none; color: #1e1e1e; } 
+
 /*--------------------------------------------------------------
 # Structure
 --------------------------------------------------------------*/
@@ -125,19 +127,18 @@ svg     { width: 10%; }
     display: block;
 }
 
-#content #top-stories-detail .post > .thumbnails img {
+#content #top-story .post > .thumbnails img {
     display: none;
     margin-right: 1em;
 }
 
-#content #top-stories-detail .post > .thumbnails img:last-of-type{
+#content #top-story .post > .thumbnails img:last-of-type{
     display: block;
 }
 
-
 #footer nav { 
     position: absolute;
-    top: 3.4em;
+    top: 4.5em;
     float: left;
     width: 100%;
     background: #ddd;

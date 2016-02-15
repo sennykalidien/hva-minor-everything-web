@@ -12,21 +12,13 @@
     <body>
         <div id="wrapper">	
         	<header id="header">
-        		<h1>Technology - your top stories!</h1>	
+                <h1>NY Times - Technology</h1>
+                <p>Your Top Stories!</p>	
         	</header> 
                 
-            <main id="content">
-                <section id="home" data-route="tweets">
-                    <header>
-                        <h1>Home</h1>
-                        <p>Welkom bij de webapp over technologie!</p>
-                    </header>  
-                </section>         
-        
-                <section id="top-stories" >
-                    <header>
-                        <h1>Top Stories in Technology</h1>					                          
-                    </header>   
+            <main id="content">    
+                <section id="top-stories">
+                    <!--
                     <article data-route="top-stories">
                         <div class="post">						    
     						<figure class="thumbnails" data-bind="multimedia">
@@ -36,13 +28,15 @@
     						<span class="author" data-bind="byline"></span>
     						<p data-bind="abstract"></p>
                         </div>	     
-                    </article>                  	
+                    </article>  
+                    -->                	
                 </section>
-                <section id="top-stories-detail">
+                <section id="top-story">
+                    <!--
                     <header>
                         <h1>Detail pagina</h1>					                          
                     </header>   
-                    <article data-route="top-stories-detail">
+                    <article data-route="top-story">
                         <div class="post">						    
     						<figure class="thumbnails" data-bind="multimedia">
                                 <img data-bind="url" src="" alt="" />
@@ -51,15 +45,15 @@
     						<span class="author" data-bind="byline"></span>
     						<p data-bind="abstract"></p>
                         </div>
-                    </article>                  	
+                    </article> 
+                    -->                 	
                 </section>                
             </main>
             
             <footer id="footer">
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#top-stories">Top stories</a></li>
+                        <li><a href="index.html">Home</a></li>
                     </ul>
                 </nav>	
             </footer>
@@ -69,6 +63,7 @@
 	<script src="assets/js/lib/transparancy.min.js"></script>	
 	<script src="assets/js/lib/nanoajax.min.js"></script>		
 	<script src="assets/js/lib/underscore.min.js"></script>			
+	<script src="assets/js/lib/mustache.min.js"></script>			
 	
 	<!-- Application -->
 	<script src="assets/js/app.js"></script>
