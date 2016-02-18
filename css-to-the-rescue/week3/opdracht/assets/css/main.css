@@ -1,0 +1,690 @@
+/*--------------------------------------------------------------
+>>> ABOUT:
+----------------------------------------------------------------
+    Author:         Senny Kalidien
+    Project:        CSS TO THE RESCUE
+    Version:        0.3
+    External CSS:   reset.css, fonts.css
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> COLORS:
+----------------------------------------------------------------
+    Background:     #ffffff;
+    Normal text:    #1e1e1e;	
+    Anchor:         #2980b9;
+    Buttons:        #2980b9;
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENT:
+----------------------------------------------------------------
+# STRUCTURE
+	## HEADER
+	## CONTENT
+    	### SPECIFIC ARTICLES
+    	### OVERLAY
+        ### LOADER        
+        ### FORMS
+	## FOOTER
+# EXTRA CSS
+	## MEDIA QUERIES
+    ## BROWSER HACKS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# STRUCTURE
+--------------------------------------------------------------*/
+body {    
+    -webkit-box-orient: vertical;    
+    -webkit-box-direction: normal;    
+    -webkit-flex-direction: column;    
+        -ms-flex-direction: column;    
+            flex-direction: column; 
+    background: #fff;
+    background-image: 
+        linear-gradient(90deg, #ececec 11px, transparent 0),
+        linear-gradient(90deg, #f9f9f9 23px, transparent 0),
+        linear-gradient(90deg, #2980b9 23px, transparent 0);
+    background-size: 83px 100%, 61px 100%, 41px 100%;    
+}
+
+#header { 
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;                
+    -webkit-box-align: center;                
+    -webkit-align-items: center;                
+        -ms-flex-align: center;                
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center; 
+    -webkit-box-pack: justify; 
+    -webkit-justify-content: space-between; 
+        -ms-flex-pack: justify; 
+            justify-content: space-between;   
+    text-align: center;  
+    background: #1e1e1e;    
+    color: #fff;       
+}
+
+#content {    
+    -webkit-flex-flow: row wrap;  
+        -ms-flex-flow: row wrap;  
+            flex-flow: row wrap;        
+}
+
+#footer {  
+    -webkit-box-orient: horizontal;  
+    -webkit-box-direction: normal;  
+    -webkit-flex-direction: row;  
+        -ms-flex-direction: row;  
+            flex-direction: row;
+    -webkit-flex-wrap: wrap-reverse;
+        -ms-flex-wrap: wrap-reverse;
+            flex-wrap: wrap-reverse;            
+    -webkit-align-content: space-between;            
+        -ms-flex-line-pack: justify;            
+            align-content: space-between;    
+    -webkit-box-pack: center;    
+    -webkit-justify-content: center;    
+        -ms-flex-pack: center;    
+            justify-content: center;   
+    background: #1e1e1e; 
+    padding: 1em 0;
+}
+
+
+/*--------------------------------------------------------------
+## HEADER
+--------------------------------------------------------------*/
+#header > h1 { 
+    background: #1e1e1e;
+    text-align: left;   
+    color: #f9f9f9; 
+    padding: 0.3em 1em;
+}
+
+#header > section {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center;     
+}
+
+#header > section > figure {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center;
+    padding: 0.3em 2em;
+}
+
+#header > section > figure > img { 
+    border-radius: 8em; 
+    width: 2.3em;
+    margin-right: 1em;
+}
+
+#header > section > figure > figcaption { 
+    font-size: 0.9em;
+    margin: 0.1em;
+}
+
+#header > section > figure > figcaption em { 
+    font-weight: bold;
+}
+
+#header nav { 
+    -webkit-box-pack: end; 
+    -webkit-justify-content: flex-end; 
+        -ms-flex-pack: end; 
+            justify-content: flex-end;
+}
+
+#header nav .pull { 
+    display: block; 
+    padding: 1.3em 2em; 
+    color: #fff;
+    margin: 0.2em 0 0;
+    border-left: solid 0.1rem #fff;        
+}
+
+#header nav .pull svg { 
+    fill: #fff;
+}    
+
+#header nav > ul li ul {
+    display: none;
+    background: #f1f1f1;
+    position: absolute;
+    right: 0; 
+    top: 4.2em;    
+    border-top: solid 0.2em #ececec;                  
+    border-bottom: solid 0.2em #ececec;            
+}       
+
+#header nav > ul li > ul li a {
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;                
+    -webkit-box-align: center;                
+    -webkit-align-items: center;                
+        -ms-flex-align: center;                
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center; 
+    -webkit-box-pack: justify; 
+    -webkit-justify-content: space-between; 
+        -ms-flex-pack: justify; 
+            justify-content: space-between;
+    display: block;
+    padding: 1em 1em;                
+    text-align: left;   
+    color: #1e1e1e; 
+    border-bottom: solid 0.2em #ececec;
+}
+
+#header nav > ul li > ul li a:hover {
+    background: #1e1e1e;
+    color: #f9f9f9;    
+}
+
+#header nav > ul li > ul li a svg {
+    fill: #000;
+}
+
+#header nav > ul li > ul li a:hover svg {
+    fill: #fff;
+}
+
+#header nav > ul li > ul li:last-of-type a {
+    border: 0;
+}
+
+#header nav > ul li:hover > ul { 
+    display: block; 
+}     
+
+
+/*--------------------------------------------------------------
+## CONTENT
+--------------------------------------------------------------*/   
+#content > article { 
+    background: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s ease-in-out;    
+    border-radius: 0.3em;
+    padding: 1.5em;
+    margin: 1em;
+    -moz-box-flex: 1 0 17em;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 17em;
+	    -ms-flex: 1 0 17em;
+	        flex: 1 0 17em;    
+}
+
+#content > article:hover { 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);   
+}
+
+#content > article header { 
+    text-align: center;
+    border-bottom: solid 0.1em #ddd;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#content > article header h1, 
+#content > article header h2 {
+    font-size: 1.2rem;
+}     
+
+#content article header h1 + h2 { 
+    font-size: 1em;
+    font-style: italic;
+}
+
+#content article figure {
+    border: solid 0.1em #ddd;
+    margin: 0 0 1em;
+}
+
+#content article figure img { 
+    display: block;
+    margin: 0 auto;
+}
+
+#content article figure figcaption { 
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+#content article button {
+    width: 100%;
+} 
+
+
+/*--------------------------------------------------------------
+### SPECIFIC ARTICLES
+--------------------------------------------------------------*/  
+#content article#about {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;    
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;   
+}
+
+#content article#profile-picture { 
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;       
+}
+
+#content article#password { 
+    width: 60%;  
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;     
+}
+
+#content article#photo-albums {
+    -webkit-box-ordinal-group: 5;
+    -webkit-order: 4;
+        -ms-flex-order: 4;
+            order: 4;      
+}
+
+#content article#find-friends {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;    
+    -webkit-box-ordinal-group: 6;
+    -webkit-order: 5;
+        -ms-flex-order: 5;
+            order: 5;      
+}
+
+#content article#newsletter {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;    
+    -webkit-box-ordinal-group: 7;
+    -webkit-order: 6;
+        -ms-flex-order: 6;
+            order: 6;      
+}
+
+#content article#password form fieldset label {
+    -webkit-flex-flow: column wrap;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;                
+    -webkit-box-align: center;                
+    -webkit-align-items: center;                
+        -ms-flex-align: center;                
+            align-items: center;   
+    -webkit-align-content: center;   
+        -ms-flex-line-pack: center;   
+            align-content: center; 
+    -webkit-box-pack: justify; 
+    -webkit-justify-content: space-between; 
+        -ms-flex-pack: justify; 
+            justify-content: space-between;  
+    padding: 0.5em;
+}    
+
+#content #profile-picture > figure:first-of-type { 
+    width: 45%;
+    margin: auto;
+    border-radius: 15em;
+} 
+
+#content #profile-picture > figure:first-of-type img{ 
+    border-radius: inherit;
+}
+
+#content #profile-picture > .filter-effects { 
+    display: -webkit-box; 
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;                 
+}
+
+#content #profile-picture > .filter-effects > header {
+    width: 100%;
+}
+
+#content #profile-picture > .filter-effects > figure {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 33.33%;
+        -ms-flex: 0 1 33.33%;
+            flex: 0 1 33.33%; 
+}  
+
+#content article#find-friends section figure { 
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 33.33%;
+        -ms-flex: 0 1 33.33%;
+            flex: 0 1 33.33%;     
+}
+
+
+/*--------------------------------------------------------------
+### OVERLAY
+--------------------------------------------------------------*/  
+@-webkit-keyframes animatetop {
+    from {
+      top: -6.25em;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+    to {
+      top: 0em;
+      opacity: 1;
+      filter: alpha(opacity=100);
+    }
+}
+
+@keyframes animatetop {
+    from {
+      top: -6.25em;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+    to {
+      top: 0em;
+      opacity: 1;
+      filter: alpha(opacity=100);
+    }
+}
+
+@keyframes bounce {
+	10% {
+		transform: translateY(1.5em);
+		animation-timing-function: ease;
+	}
+}
+
+.overlay  {
+    display: none;
+    width: 100%;
+    height: 100%;    
+}
+
+.overlay:target {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;    
+    display: flex;  
+    position: fixed;   
+    top: 0;
+    left: 0; 
+    margin: 0;
+    z-index: 99;
+    /* Add animation */
+    -webkit-animation-name: animatetop; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+    -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+    -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;  
+}
+
+.overlay .modal {
+    margin: auto;
+    width: 60%;
+    background-color: #f9f9f9;
+    border: 0.1em #ddd solid;
+    box-shadow: 0 0 0 50vmax rgba(0,0,0,.4);   
+    padding: 2em; 
+    animation: bounce 1s;    
+}
+
+.overlay .modal > figure {
+    max-width: 18em;
+    max-width: -webkit-min-content;
+    max-width: -moz-min-content;
+    max-width: min-content;
+	margin: auto;
+	border: solid 0.1em #ddd;    
+	padding: 1em;
+}
+
+.overlay .modal > figure > img { 
+    max-width: inherit;
+    width: auto;
+}
+
+.overlay:target + main {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
+/*--------------------------------------------------------------
+### LOADER
+--------------------------------------------------------------*/  
+@keyframes loader {
+	to { background-position: -800px 0; }
+}
+
+.loader {
+    margin: 0 auto 3em;
+	width: 100px; height: 100px;
+	text-indent: 999px; overflow: hidden; /* Hide text */
+	background: url(http://dabblet.com/img/loader.png) 0 0;
+	animation: loader 1s infinite steps(8);
+    -webkit-box-ordinal-group: 8;
+    -webkit-order: 7;
+        -ms-flex-order: 7;
+            order: 7;       
+}
+
+
+/*--------------------------------------------------------------
+### FORM
+--------------------------------------------------------------*/  
+form fieldset legend {
+    padding: 0 0.5em;
+}        
+
+form fieldset label input:not(:focus) + .callout:not(:hover) {
+	transform: scale(0);
+	transition: .25s transform;
+}
+
+form fieldset label .callout {
+	transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
+	transform-origin: 1.4em -.4em;
+}
+
+form fieldset label input {
+	display: block;
+	padding: 0.4em;
+	font: inherit;
+    width: 100%;
+}
+
+form fieldset label .callout {	
+	position: absolute;
+	max-width: 14em;
+	padding: .6em .8em;
+	border-radius: .3em;
+	margin: .3em 0 0 -.2em;
+	background: #fed;
+	border: 1px solid rgba(0,0,0,.3);
+	box-shadow: .05em .2em .6em rgba(0,0,0,.2);
+	font-size: 75%;
+}
+
+form fieldset label .callout:before {
+	content: "";
+	position: absolute;
+	top: -.4em;
+	left: 1em;
+	padding: .35em;
+	background: inherit;
+	border: inherit;
+	border-right: 0;
+	border-bottom: 0;
+	transform: rotate(45deg);
+}
+
+
+form input[type="checkbox"] {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+form input[type="checkbox"] + label::before {
+	content: '\a0';
+	display: inline-block;
+	vertical-align: .2em;
+	width: 1em;
+	height: 1em;
+	margin-right: .5em;
+	border-radius: .2em;
+	background: silver;
+	text-indent: .15em;
+	line-height: .65;
+}
+
+form input[type="checkbox"]:checked + label::before {
+	content: '\2713';
+	background: yellowgreen;
+}
+
+form input[type="checkbox"]:focus + label::before {
+	box-shadow: 0 0 .1em .1em #58a;
+}
+
+form input[type="checkbox"]:disabled + label::before {
+	background: gray;
+	box-shadow: none;
+	color: #555;
+	cursor: not-allowed;
+}
+
+
+/*--------------------------------------------------------------
+## FOOTER
+--------------------------------------------------------------*/   
+#footer nav { 
+    width: 40%; 
+}
+
+#footer nav ul li a { 
+    color: #fff; 
+}
+
+#footer address { 
+    -webkit-box-ordinal-group: 4; 
+    -webkit-order: 3; 
+        -ms-flex-order: 3; 
+            order: 3; 
+}
+
+#footer address pre  { 
+    white-space: pre-line;  
+    color: #fff; 
+}
+
+
+/*--------------------------------------------------------------
+# EXTRA CSS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## MEDIA QUERIES
+--------------------------------------------------------------*/
+@media (max-width: 55em) {
+    body {
+        font-size: 98%;
+    }   
+    #footer { 
+        -webkit-flex-flow: column wrap; 
+            -ms-flex-flow: column wrap; 
+                flex-flow: column wrap;            
+    }      
+    
+    #footer nav, #footer address pre { 
+        width: 100%;
+        text-align: center;
+    } 
+    
+    #footer address pre {
+        border-top: dashed 0.3em #fff;            
+        margin: 2em 0 ;
+        padding: 1.5em 0;
+    }   
+    
+    .overlay .modal {
+        width: 80%;
+    }        
+}  
+
+@media (max-width: 41em) {
+    body {
+        font-size: 96%;
+    }
+    #header h1 {
+        border-bottom: solid 0.1em #fff;  
+        width: 100%;    
+        text-align: center;                       
+    }
+    #header {
+        -webkit-flex-flow: column wrap;
+            -ms-flex-flow: column wrap;
+                flex-flow: column wrap;                            
+    }    
+    
+    #header nav > ul li ul {     
+        width: 100%;
+        top: 7.5em;
+    }  
+
+    #content article#find-friends section { 
+    -webkit-flex-flow: column wrap;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;           
+    } 
+    
+    .overlay .modal > figure {
+        max-width: 18em;
+    	margin: auto;
+    	border: solid 0.1em #ddd;    
+    	padding: 1em;
+    }
+    
+    .overlay .modal > figure > img { 
+        max-width: 100%;
+    }      
+}   
+
+
+/*--------------------------------------------------------------
+## BROWSER HACK
+--------------------------------------------------------------*/
+@-moz-document url-prefix() {
+    /* Firefox doesn't respect max-width in certain situations */
+    img { width: 100%; max-width: -moz-max-content; }
+}

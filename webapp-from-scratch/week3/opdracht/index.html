@@ -1,72 +1,73 @@
 <!doctype html>
 
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>WebApp From Scratch: Week 2, Opdracht 1-5</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-	</head>
-	
-    <body>
-        <div id="wrapper">	
-        	<header id="header">
-                <h1>NY Times - Technology</h1>
-                <p>Your Top Stories!</p>	
-        	</header> 
-                
-            <main id="content">    
-                <section id="top-stories">
-                    <!--
-                    <article data-route="top-stories">
-                        <div class="post">						    
-    						<figure class="thumbnails" data-bind="multimedia">
-                                <img data-bind="url" src="" alt="" />
-    						</figure>
-    						<h3><a data-bind="id" href=""><span data-bind="title"></span></a></h3>
-    						<span class="author" data-bind="byline"></span>
-    						<p data-bind="abstract"></p>
-                        </div>	     
-                    </article>  
-                    -->                	
-                </section>
-                <section id="top-story">
-                    <!--
-                    <header>
-                        <h1>Detail pagina</h1>					                          
-                    </header>   
-                    <article data-route="top-story">
-                        <div class="post">						    
-    						<figure class="thumbnails" data-bind="multimedia">
-                                <img data-bind="url" src="" alt="" />
-    						</figure>
-    						<h3><a data-bind="title" href=""></a></h3>
-    						<span class="author" data-bind="byline"></span>
-    						<p data-bind="abstract"></p>
-                        </div>
-                    </article> 
-                    -->                 	
-                </section>                
-            </main>
-            
-            <footer id="footer">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebApp From Scratch: Week 2, Opdracht 1-5</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/fonts.css" />    
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+</head>
+
+<body>
+    <div id="ptr">
+        <span class="genericon genericon-next"></span>
+
+        <div class="loading">
+            <span id="l1"></span>
+            <span id="l2"></span>
+            <span id="l3"></span>
+        </div>
+    </div>   
+   
+    <div id="wrapper">
+        <header id="header">
+            <a href="index.html"><img class="logo" src="assets/images/nyt_logo.png" /></a>
+            <p>Technology</p>
+                <!--
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                     </ul>
-                </nav>	
-            </footer>
-    	</div>	
-	<!-- Libraries -->
-	<script src="assets/js/lib/routie.min.js"></script>
-	<script src="assets/js/lib/transparancy.min.js"></script>	
-	<script src="assets/js/lib/nanoajax.min.js"></script>		
-	<script src="assets/js/lib/underscore.min.js"></script>			
-	<script src="assets/js/lib/mustache.min.js"></script>			
-	
-	<!-- Application -->
-	<script src="assets/js/app.js"></script>
-		
-    </body>
+                </nav>                
+                -->
+        </header>
+
+        <main id="content">
+            <section id="top-stories">
+            </section>
+            <section id="top-story">
+            </section>
+        </main>
+        <footer id="footer">
+        </footer>
+        <div id="loader" class="active">
+            <div>
+                <img src="assets/images/nyt_logo-alt.png" />
+                <img src="assets/images/ajax-loader.gif" />
+            </div>
+        </div>
+    </div>
+    <!-- Libraries -->
+    <script src="assets/js/lib/routie.min.js"></script>
+    <script src="assets/js/lib/nanoajax.min.js"></script>
+    <script src="assets/js/lib/underscore.min.js"></script>
+    <script src="assets/js/lib/mustache.min.js"></script>
+    <script src="assets/js/lib/hammer.min.js"></script>
+    <script src="assets/js/lib/wptr.js"></script>   
+    
+    <!-- Modules -->
+    <script src="assets/js/modules/behaviour-module.js"></script>    
+    <script src="assets/js/modules/router-module.js"></script>    
+    <script src="assets/js/modules/pages-module.js"></script>
+    <script src="assets/js/modules/data-module.js"></script>
+   
+    <!-- Main Application -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

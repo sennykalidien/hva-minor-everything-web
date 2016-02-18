@@ -25,13 +25,12 @@ self.addEventListener('message', function (event) { // window.self
             apiData.id = _.uniqueId('articleID=');
             return apiData;
         });        
-        
         if ( status == 200 ) { 
             postMessage(data);
+            //console.table(apiData);
         } else { 
             alert("Data could not be loaded from API");
-        }
-        
+        } 
     });
 
 }, false);
