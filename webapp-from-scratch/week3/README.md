@@ -8,4 +8,4 @@
 [Pull Request 1: Fons Hettema ](https://github.com/strexx/WebAppFromScratch/pull/6)
 [Pull Request 2: Lisa Klein](https://github.com/sayLISA/saylisa.github.io/pull/7)
 
-![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/webapp-from-scratch/week3/flow.png)
