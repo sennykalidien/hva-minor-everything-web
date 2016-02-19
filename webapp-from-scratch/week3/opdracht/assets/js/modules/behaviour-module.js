@@ -1,5 +1,5 @@
 /********************************************************* 
-	BEHAVIOUR [with Gestures lib: Hammer.js ] 
+	BEHAVIOUR [with gestures lib: Hammer.js ] 
 *********************************************************/
 APP.behaviour = (function () {
     var gestures = function () {
