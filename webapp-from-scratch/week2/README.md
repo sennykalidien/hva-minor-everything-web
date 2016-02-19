@@ -5,5 +5,5 @@
 [Demo](http://sennykalidien.github.io/webapp-from-scratch/)
 
 #Opdrachten 5 (review)
-[Pull Request 1: Emiel Zuurbier] (https://github.com/EmielZuurbier/Everything-Web-Minor/pull/1)
-[Pull Request 2: Martijn Nieuwenhuizen](https://github.com/strexx/WebAppFromScratch/pull/2)
+[Pull Request 1: Emiel Zuurbier](https://github.com/EmielZuurbier/Everything-Web-Minor/pull/1)
+[Pull Request 2: Fons Hettema](https://github.com/strexx/WebAppFromScratch/pull/2)

@@ -70,6 +70,7 @@ body {
     padding: 0.5em;
     overflow: hidden;
     margin-top: 1em;
+    display: none;
 }
 
 #header nav ul li { 
@@ -164,7 +165,7 @@ body {
         margin: 0 auto;
     	overflow-y: auto;
     	overflow-x: hidden;
-    	right: -200%;
+    	right: -100%;
     	position: fixed;
         top: 0;
     	z-index: 2;           

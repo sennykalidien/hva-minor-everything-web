@@ -1,3 +1,7 @@
+/*
+    Source: http://codepen.io/berkin/full/jyfHq/
+    Demo: http://apeatling.com/demos/web-ptr/
+*/
 var WebPullToRefresh = (function () {
 	'use strict';
 
@@ -13,7 +17,7 @@ var WebPullToRefresh = (function () {
 		ptrEl: 'ptr', 
 
 		// Number of pixels of panning until refresh 
-		distanceToRefresh: 70, 
+		distanceToRefresh: 50, 
 
 		// Pointer to function that does the loading and returns a promise
 		loadingFunction: false,
@@ -64,7 +68,7 @@ var WebPullToRefresh = (function () {
 
 		var h = new Hammer( options.contentEl );
 
-		h.get( 'pan' ).set( { direction: Hammer.DIRECTION_VERTICAL } );
+		h.get( 'pan' ).set( { direction: Hammer.DIRECTION_DOWN } );
 
 		h.on( 'panstart', _panStart );
 		h.on( 'pandown', _panDown );
