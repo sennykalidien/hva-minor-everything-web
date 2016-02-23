@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>WebApp From Scratch: Week 2, Opdracht 1-5</title>
+    <title>Funda - CMD</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
@@ -12,29 +12,20 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
 </head>
 
-<body>
-    <div id="ptr">
-        <!-- Pull down arrow indicator -->
-        <span class="genericon genericon-next"></span>
-
-        <!-- CSS-based loading indicator -->
-        <div class="loading">
-            <span id="l1"></span>
-            <span id="l2"></span>
-            <span id="l3"></span>
-        </div>
-    </div>    
+<body>   
     <div id="wrapper">
         <header id="header">
-            <a href="index.html"><img class="logo" src="assets/images/nyt_logo.png" /></a>
-            <p>Technology</p>
+            <a href="index.html"><img class="logo" src="assets/images/logo.png" /></a>
+            <p>HOI</p>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                 </ul>
             </nav>
         </header>
+
         <main id="content">
+            <div id="map_canvas" style="width:100%; height:90%;"></div>
             <section id="top-stories">
             </section>
             <section id="top-story">
@@ -42,12 +33,14 @@
         </main>
         <footer id="footer">
         </footer>
+        <!--
         <div id="loader" class="active">
             <div>
-                <img src="assets/images/nyt_logo-alt.png" />
+                <img src="assets/images/logo.png" />
                 <img src="assets/images/ajax-loader.gif" />
             </div>
         </div>
+        -->
     </div>
     <!-- Libraries -->
     <script src="assets/js/lib/routie.min.js"></script>
@@ -55,16 +48,19 @@
     <script src="assets/js/lib/underscore.min.js"></script>
     <script src="assets/js/lib/mustache.min.js"></script>
     <script src="assets/js/lib/hammer.min.js"></script>
-    <script src="assets/js/lib/wptr.js"></script>
+    <script src="assets/js/lib/geo.min.js"></script>
+    <script src="assets/js/lib/cmdgeo-0.2.js"></script>    
 
     <!-- Main Application -->
     <script src="assets/js/main.js"></script>
 
     <!-- Modules -->
+    <!--
     <script src="assets/js/modules/behaviour-module.js"></script>
     <script src="assets/js/modules/router-module.js"></script>
     <script src="assets/js/modules/pages-module.js"></script>
     <script src="assets/js/modules/data-module.js"></script>
+    -->
 </body>
 
 </html>

@@ -1,0 +1,14 @@
+{{#.}}
+    <article>   
+        <a href="#top-story/{{id}}">   
+            <div class="post">      
+                <figure class="thumbnails">
+                    {{#multimedia}}
+                    <img src="{{url}}" alt="" />
+                    {{/multimedia}}
+                </figure>
+                <h3>{{title}}</h3>
+            </div>
+        </a>
+    </article>
+{{/.}}

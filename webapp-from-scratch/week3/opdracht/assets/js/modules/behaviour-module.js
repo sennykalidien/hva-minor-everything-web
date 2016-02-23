@@ -3,7 +3,6 @@
 *********************************************************/
 APP.behaviour = (function () {
     var gestures = function () {
-        document.addEventListener("touchstart", function () {}, true);
         var myElement = document.querySelector("#top-story");
         /* Swipe right: go back */
         var mc = new Hammer(myElement);

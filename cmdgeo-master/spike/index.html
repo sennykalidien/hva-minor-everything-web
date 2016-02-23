@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>cmdgeo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="/style/style.css" rel="stylesheet" type="text/css" />
+
+	<script src="/lib/underscore-min.js" type="text/javascript"></script>
+	<script src="/lib/geo-min.js" type="text/javascript"></script>
+	<script src="/spike/cmdgeo_fun.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		cmdgeo.loadSettings('settings.json');
+		cmdgeo.track();
+		window.onload = cmdgeo.loadmap;
+	</script>
+</head>
+<body>
+
+	<div id="wrapper">
+		<header>
+			<h1>cmdgeo</h1>
+			<p>Functioneel programmeren Spike</p>
+		</header>
+
+		<div id="map_canvas" style="width:320px; height:350px"></div>
+
+		<article>
+			<h1>Current position</h1>
+			<p id="lat">latitude: ?</p>
+			<p id="lon">longitude: ?</p>
+			<input type="text" id="poiName" name="poiName" value="Geef een naam op." />
+			<input type="button" id="storePoi" name="storePoi" value="Vasthouden" />
+
+			<table id="poiList">
+				<tr><th>Naam</th><th>Locatie</th></tr>
+			</table>
+		</article>
+
+		<footer><p>Copyleft 2012, all wrongs reversed.</p></footer>
+	</div>
+
+</body>
+</html>

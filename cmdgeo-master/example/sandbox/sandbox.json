@@ -1,0 +1,57 @@
+{
+    "googleMapsKey": "AIzaSyBnyib0uElbs0LNFobHjWhQMyTq-hiStEg",
+    "tourType": "SANDBOX",
+    "mapOptions": {
+        "center": [52.35955620231157, 4.908019635968003],
+        "zoom": 15,
+        "disableDefaultUI": true,
+        "draggable": false,
+        "scrollwheel": false,
+        "mapTypeControl": false,
+        "navigationControl": false,
+        "mapTypeId": "ROADMAP",
+        "styles":[]
+    },
+    "poiMarker": {
+        "path": "CIRCLE",
+        "fillColor": "GhostWhite",
+        "fillOpacity": 0.4,
+        "strokeColor": "FireBrick",
+        "strokeOpacity": 1,
+        "strokeWeight": 1,
+        "scale": 10
+    },
+    "posMarker": {
+        "path": "BACKWARD_CLOSED_ARROW",
+        "fillColor": "FireBrick",
+        "fillOpacity": 0.4,
+        "strokeColor": "Black",
+        "strokeOpacity": 1,
+        "strokeWeight": 1,
+        "scale": 3
+    },
+    "poiList":[
+        {
+            "name": "Koninklijk Instituut voor de Tropen",
+            "description": "",
+            "coordinate": {
+                "latitude": 52.36228181098596,
+                "longitude": 4.920969341091904
+            },
+            "radius": 10,
+            "onEnter":"kit.html",
+            "onExit":"index.html"
+        },
+        {
+            "name": "Crea",
+            "description": "",
+            "coordinate": {
+                "latitude": 52.36322525173981,
+                "longitude": 4.912826154522691
+            },
+            "radius": 10,
+            "onEnter":"crea.html",
+            "onExit":"index.html"
+        }
+    ]
+}
