@@ -13,5 +13,5 @@ APP.router = { // Literal object: 'router'.
                 APP.page.topStories(data); // Page templating
             }           
         });
-    };
+    }
 };

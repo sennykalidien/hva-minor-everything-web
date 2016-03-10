@@ -43,6 +43,10 @@ body {
             flex-direction: column; 
     background: #fff;
     background-image: 
+        -webkit-linear-gradient(left, #ececec 11px, transparent 0),
+        -webkit-linear-gradient(left, #f9f9f9 23px, transparent 0),
+        -webkit-linear-gradient(left, #2980b9 23px, transparent 0);
+    background-image: 
         linear-gradient(90deg, #ececec 11px, transparent 0),
         linear-gradient(90deg, #f9f9f9 23px, transparent 0),
         linear-gradient(90deg, #2980b9 23px, transparent 0);
@@ -56,6 +60,7 @@ body {
     -webkit-box-align: center;                
     -webkit-align-items: center;                
         -ms-flex-align: center;                
+            -ms-grid-row-align: center;                
             align-items: center;   
     -webkit-align-content: center;   
         -ms-flex-line-pack: center;   
@@ -110,6 +115,7 @@ body {
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
+            -ms-grid-row-align: center;
             align-items: center;   
     -webkit-align-content: center;   
         -ms-flex-line-pack: center;   
@@ -120,6 +126,7 @@ body {
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
+            -ms-grid-row-align: center;
             align-items: center;   
     -webkit-align-content: center;   
         -ms-flex-line-pack: center;   
@@ -178,6 +185,7 @@ body {
     -webkit-box-align: center;                
     -webkit-align-items: center;                
         -ms-flex-align: center;                
+            -ms-grid-row-align: center;                
             align-items: center;   
     -webkit-align-content: center;   
         -ms-flex-line-pack: center;   
@@ -221,15 +229,15 @@ body {
 #content > article { 
     background: #f9f9f9;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;    
     border-radius: 0.3em;
     padding: 1.5em;
     margin: 1em;
-    -moz-box-flex: 1 0 17em;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1 0 17em;
-	    -ms-flex: 1 0 17em;
-	        flex: 1 0 17em;    
+	   -ms-flex: 1 0 17em;
+	       flex: 1 0 17em;    
 }
 
 #content > article:hover { 
@@ -338,6 +346,7 @@ body {
     -webkit-box-align: center;                
     -webkit-align-items: center;                
         -ms-flex-align: center;                
+            -ms-grid-row-align: center;                
             align-items: center;   
     -webkit-align-content: center;   
         -ms-flex-line-pack: center;   
@@ -417,9 +426,20 @@ body {
     }
 }
 
+@-webkit-keyframes bounce {
+	10% {
+		-webkit-transform: translateY(1.5em);
+		transform: translateY(1.5em);
+		-webkit-animation-timing-function: ease;
+		animation-timing-function: ease;
+	}
+}
+
 @keyframes bounce {
 	10% {
+		-webkit-transform: translateY(1.5em);
 		transform: translateY(1.5em);
+		-webkit-animation-timing-function: ease;
 		animation-timing-function: ease;
 	}
 }
@@ -432,7 +452,6 @@ body {
 
 .overlay:target {
     display: -webkit-box;
-    display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;    
     display: flex;  
@@ -457,6 +476,7 @@ body {
     border: 0.1em #ddd solid;
     box-shadow: 0 0 0 50vmax rgba(0,0,0,.4);   
     padding: 2em; 
+    -webkit-animation: bounce 1s; 
     animation: bounce 1s;    
 }
 
@@ -483,6 +503,9 @@ body {
 /*--------------------------------------------------------------
 ### LOADER
 --------------------------------------------------------------*/  
+@-webkit-keyframes loader {
+	to { background-position: -800px 0; }
+}  
 @keyframes loader {
 	to { background-position: -800px 0; }
 }
@@ -492,6 +515,7 @@ body {
 	width: 100px; height: 100px;
 	text-indent: 999px; overflow: hidden; /* Hide text */
 	background: url(http://dabblet.com/img/loader.png) 0 0;
+	-webkit-animation: loader 1s infinite steps(8);
 	animation: loader 1s infinite steps(8);
     -webkit-box-ordinal-group: 8;
     -webkit-order: 7;
@@ -508,12 +532,16 @@ form fieldset legend {
 }        
 
 form fieldset label input:not(:focus) + .callout:not(:hover) {
+	-webkit-transform: scale(0);
 	transform: scale(0);
+	-webkit-transition: .25s transform;
 	transition: .25s transform;
 }
 
 form fieldset label .callout {
+	-webkit-transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
 	transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
+	-webkit-transform-origin: 1.4em -.4em;
 	transform-origin: 1.4em -.4em;
 }
 
@@ -546,6 +574,7 @@ form fieldset label .callout:before {
 	border: inherit;
 	border-right: 0;
 	border-bottom: 0;
+	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 
