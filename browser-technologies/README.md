@@ -13,7 +13,9 @@ Breek het internet.
 **Beschrijving werkzaamheden**
 Het is belangrijk om verder te denken. Placeholders (met bijvoorbeeld een css background) en alt-tags kunnen toegepast worden op image-tags afbeeldingen die (deels) geblokt worden. Zelfs als de URL van de afbeelding niet klopt, is het belangrijk dat men dan niet een lege vlak tezien krijgen, maar een indicatie wat daar zou moeten komen te staan.
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/alt-tag_thimbnail.png)
+
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/alt-tag_loader.png)
+
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/image-placeholder.png)
 
 ### 2 - Custom Fonts
@@ -45,6 +47,7 @@ Als tijdelijke oplossing zou je Localstorage kunenn toepassen mocht JavaScript t
 Als langer termijn optie kan er een noscript geplaatst worden met een bericht dat de APP niet zijn werk kan doen indien JavaScript uitstaat. Je kan dan vriendelijk verzoeken om JavaScript weer aan te doen.
 
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/noscript.png)
+
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/no-javascript.png)
 
 ### 4 - Kleuren
