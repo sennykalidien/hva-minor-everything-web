@@ -28,7 +28,7 @@ Het is belangrijk dat je altijd goede fallbacks in CSS maakt als de custom font 
 - De src link kan niet (meer) kloppen, waardoor de jusite font niet ingeladen kan worden.
 - De browser heeft moeite met de font inladen (verkeerde bestand: TTF, WOF en etc.).
 
-Mocht de juiste font niet beschikbaar zijn, moet er een Een juiste keuze maken in serif of sans-serif font, die het beste aansluit bij de ontbrekende font. 
+Mocht de juiste font niet beschikbaar zijn, moet er een juiste keuze gemaakt worden in serif of sans-serif font. Een font die het beste de ontbrekende font kan vervangen. 
 
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/custom-fonts_fallback.png)
 
