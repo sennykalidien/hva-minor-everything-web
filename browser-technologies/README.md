@@ -12,6 +12,7 @@ Breek het internet.
 
 **Beschrijving werkzaamheden**
 Het is belangrijk om verder te denken. Placeholders (met bijvoorbeeld een css background) en alt-tags kunnen toegepast worden op image-tags afbeeldingen die (deels) geblokt worden. Zelfs als de URL van de afbeelding niet klopt, is het belangrijk dat men dan niet een lege vlak tezien krijgen, maar een indicatie wat daar zou moeten komen te staan.
+
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/alt-tag_thimbnail.png)
 
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/alt-tag_loader.png)
@@ -64,6 +65,7 @@ De contrast van de website is prima en zou niet teveel problemen moeten oplevere
 
 **Beschrijving werkzaamheden**
 De website is getest met een 2G verbinding simulatie. 
+
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/network-tab.png)
 
 Zoals je kunt zien hebben de afbeeldingen al een prima bestandgrote, echter is er wel winst in tijd te pakken. Van elke artikel wordt er namelijk 5 soorten afbeeldingen geladen van verschillende formaten. Er staan per artikel 4 afbeeldingen op display: hidden; en 1 op display: block; Om dit te optimaliseren moeten de andere afbeeldingen eruit gefilterd worden door middel van JavaScript (filter functie), en alleen de jusite afbeelding in de array laten opnemen (JavaScript mapping). Het zelfde zou moeten gebeuren op de detailpagina van een artikel.
