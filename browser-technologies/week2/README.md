@@ -7,9 +7,10 @@ Feature Detection
 ### HTML
 
 #### srcset
-De *srcset* attribute breidt de *img* en *src* elementen uit, zodat je een lijst van beschikbare afbeeldingen kan tonen. Dit kan heel handig zijn voor responsive afbeeldingen, je kan namelijk van dezelfde afbeelding meerdere formaten als source definieren in een img tag. Deze worden dan getoond in de juiste viewport afmeting (in combinatie met *sizes* artibute).
+De *srcset* attribute breidt de *img* en *src* elementen uit, zodat je een lijst van beschikbare afbeeldingen kan tonen. Dit kan heel handig zijn voor responsive afbeeldingen, je kan namelijk van dezelfde afbeelding meerdere formaten als source definieren in een img tag. Deze worden getoond in de juiste viewport afmeting (in combinatie met *sizes* artibute).
 
 **Browser support**
+
 ![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/images/srcset_browser.png)
 
 
@@ -21,6 +22,7 @@ De *srcset* attribute breidt de *img* en *src* elementen uit, zodat je een lijst
 ```
 
 **Fallback**
+
 1 - Als fallback kan je een orginele src attribute meegeven. Voorbeeld:
 
 ```
@@ -33,10 +35,12 @@ De *srcset* attribute breidt de *img* en *src* elementen uit, zodat je een lijst
 2 - Je gebruikt in plaats van een img tag een css attribute: background-image. Je kan met media queries dan de verschillende afbeeldingen inladen.
 
 **Demo**
-[Demo](http://css3test.com/)
+
+[Demo]()
 
 
-**Source**
+**Bronnen**
+
 [responsiveimages.org](http://responsiveimages.org/)
 
 
@@ -58,6 +62,7 @@ De placeholder attribute werkt op de volgende input types: text, search, url, te
 
 
 **Fallback**
+
 1 - De old-school JavaScript manier:
 ```
 <input type="text" value="Search" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}">
@@ -99,9 +104,11 @@ if(!Modernizr.input.placeholder){
 ```
 
 **Demo**
+
 [Demo]()
 
-**Source**
+**Bronnen**
+
 [webdesignerwall.com](http://webdesignerwall.com/tutorials/cross-browser-html5-placeholder-text)
 [caniuse.com](http://caniuse.com/#search=placeholder)
 
@@ -120,14 +127,15 @@ Besides the prefix, there were box sizing issues in Gecko/Firefox, see notes at 
 Wordt ondersteund in alle grote browsers. 
 
 
-
 **Fallback**
 Een berekening maken van width met padding. 
 
 **Demo**
-[Demo](http://caniuse.com/#search=box-sizing)
 
-**Sources**
+[Demo]()
+
+**Bronnen**
+
 [caniuse.com](http://caniuse.com/#search=box-sizing)
 
 
@@ -159,7 +167,7 @@ rgba(red, green, blue, alpha)
 #p3 {background-color: #ff0000; background-color: rgba(0, 0, 255, 0.3);}   /* blue with opacity */
 ```
 
-2 - Omdat IE7 of minder rgba niet goed ondersteund kunnen we een specifieke fallback bouwen voor deze browsers. Voorbeeld: 
+2 - Omdat IE7 of minder rgba niet ondersteunt kunnen we een specifieke fallback bouwen voor deze browsers. Voorbeeld: 
 
 ```
 <!--[if lt IE 8]>
@@ -171,11 +179,14 @@ rgba(red, green, blue, alpha)
     } 
     </style>
 <![endif]-->
+```
 
 **Demo**
+
 [Demo](http://css3test.com/)
 
 **Source**
+
 [w3schools](http://www.w3schools.com/cssref/css_colors_legal.asp)
 [css-tricks](https://css-tricks.com/rgba-browser-support/)
 
@@ -193,9 +204,15 @@ if(typeof Promise !== "undefined" && Promise.toString().indexOf("[native code]")
 }
 ```
 
-De rest van de code in vanilla JavaScript schrijven. 
+De rest van de code (de fallback) in vanilla JavaScript schrijven. Het verschilt per doeleinde van een promises wat je wil bereiken. In mijn demo zal ik een ajax call doen. 
+
+**Demo**
+
+[Demo]()
+
 
 **Sources**
+
 [Stackoverflow](http://stackoverflow.com/questions/22516959/how-to-determine-if-a-promise-is-supported-by-the-browser)
 
 
