@@ -15,11 +15,11 @@ Placeholders (met bijvoorbeeld een css background) en alt-tags kunnen worden toe
 
 Zie hieronder de aanpassingen:
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/alt-tag_thimbnail.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/alt-tag_thimbnail.png)
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/alt-tag_loader.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/alt-tag_loader.png)
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/image-placeholder.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/image-placeholder.png)
 
 ### 2 - Custom Fonts
 **Actiepunten**
@@ -33,7 +33,7 @@ Het is belangrijk dat je altijd goede fallbacks in CSS maakt als de custom font 
 
 Mocht de juiste font niet beschikbaar zijn, moet er een juiste keuze gemaakt worden in serif of sans-serif font. Een font die het beste de ontbrekende font kan vervangen. 
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/custom-fonts_fallback.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/custom-fonts_fallback.png)
 
 
 ### 3 - JavaScript volledig
@@ -51,9 +51,9 @@ Als langere termijn optie kan er een noscript geplaatst worden met een bericht d
 
 Zie hieronder een voorbeeld:
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/noscript.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/noscript.png)
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/no-javascript.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/no-javascript.png)
 
 ### 4 - Kleuren
 **Actiepunten**
@@ -70,7 +70,7 @@ De contrast van de website is prima en zou niet teveel problemen moeten oplevere
 **Beschrijving werkzaamheden**
 De website is getest met een 2G verbinding simulatie. Zie hieronder het resultaat: 
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/images/network-tab.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/network-tab.png)
 
 Zoals je kunt zien hebben de afbeeldingen al een prima bestandsgrote, echter is er wel winst in laadtijd te pakken. Van elke artikel wordt er 5 afbeeldingen geladen, dezelfde afbeelding maar in verschillende (thumbnail)formaten. Er staan per artikel 4 afbeeldingen op display: hidden; en 1 op display: block;. Om dit te optimaliseren moeten de andere afbeeldingen eruit gefilterd worden door middel van JavaScript (filter functie), en alleen de jusite afbeelding in de array plaatsen (JavaScript mapping). Het zelfde zou moeten gebeuren op de detailpagina van een artikel.
 
