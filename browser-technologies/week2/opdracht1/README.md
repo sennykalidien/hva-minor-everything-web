@@ -276,7 +276,7 @@ if (navigator && navigator.geolocation) {
 ```
 
 **Demo**
-
+[Demo](http://sennykalidien.github.io/browser-technologies/week2/opdracht1/js/feature-2/)
 
 
 **Bronnen**
