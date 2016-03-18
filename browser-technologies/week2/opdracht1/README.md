@@ -237,7 +237,7 @@ if(typeof Promise !== "undefined" && Promise.toString().indexOf("[native code]")
 }
 ```
 
-De rest van de code (de fallback) in vanilla JavaScript schrijven. Het verschilt per doeleinde van een promises wat je wil bereiken. In mijn demo zal ik een ajax call doen. 
+De rest van de code (de fallback) in vanilla JavaScript schrijven. Het verschilt per doeleinde van een promises wat je wilt bereiken ermee. In mijn demo zal ik een ajax call doen. 
 
 **Demo**
 

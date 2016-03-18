@@ -1,0 +1,72 @@
+<html> 
+<head>
+<script>
+(function () { 
+    function request(method, url) { // src: http://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.onload = function () {
+                if (this.status >= 200 && this.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject({
+                        status: this.status,
+                        statusText: xhr.statusText
+                    });
+                }
+            };
+            xhr.onerror = function () {
+                reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                });
+            };
+            xhr.send();
+        });
+    };
+
+    function feed() {
+    var responseFormat = 'json',
+        storySection = 'technology',
+        apiKey = 'af7f18026c501a31c7a66eea851e85f4:9:74334837',
+        apiURL = 'http://api.nytimes.com/svc/topstories/v1/' + storySection + '.' + responseFormat + '?api-key=' + apiKey + '';
+        
+        request('GET', apiURL)
+            .then(function (data) {
+                console.log(data);
+            })
+            .catch(function (err) {
+                console.error('Augh, there was an error!', err.statusText);
+            });
+    };
+    
+    feed(); 
+    
+    if(typeof Promise !== "undefined" && Promise.toString().indexOf("[native code]") !== -1){	// FALLBACK	
+        // API URL
+        var responseFormat = 'json',
+            storySection = 'technology',
+            apiKey = 'af7f18026c501a31c7a66eea851e85f4:9:74334837',
+            apiURL = 'http://api.nytimes.com/svc/topstories/v1/' + storySection + '.' + responseFormat + '?api-key=' + apiKey + '';   
+        
+        // Create GET request
+        var http = new XMLHttpRequest();
+        http.open('GET',apiURL,true);
+        http.setRequestHeader('Content-type','application/json');
+        http.send();							
+
+        http.onreadystatechange = function() {
+            if (http.readyState==4 && http.status==200) {			
+                var data = JSON.parse(http.responseText);	
+                console.log(data);		
+            }
+        }
+    }      
+})();    
+</script>
+</head>
+<body> 
+       
+</body>
+</html>
