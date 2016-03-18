@@ -36,7 +36,7 @@ De *srcset* attribute breidt de *img* en *src* elementen uit, zodat je een lijst
 
 **Demo**
 
-[Demo]()
+[Demo](http://sennykalidien.github.io/browser-technologies/week2/opdracht1/html/feature-1/)
 
 
 **Bronnen**
@@ -110,7 +110,7 @@ if(!Modernizr.input.placeholder){
 
 **Demo**
 
-[Demo]()
+[Demo](http://sennykalidien.github.io/browser-technologies/week2/opdracht1/html/feature-2/)
 
 **Bronnen**
 
@@ -164,7 +164,7 @@ Voorbeeld: Als de width van een div element 500px moet zijn, met een padding van
 
 **Demo**
 
-[Demo]()
+[Demo]((http://sennykalidien.github.io/browser-technologies/week2/opdracht1/css/feature-1/)
 
 **Bronnen**
 
@@ -216,7 +216,7 @@ rgba(red, green, blue, alpha)
 
 **Demo**
 
-[Demo](http://css3test.com/)
+[Demo]((http://sennykalidien.github.io/browser-technologies/week2/opdracht1/css/feature-2/)
 
 **Source**
 
@@ -241,7 +241,7 @@ De rest van de code (de fallback) in vanilla JavaScript schrijven. Het verschilt
 
 **Demo**
 
-[Demo]()
+[Demo]((http://sennykalidien.github.io/browser-technologies/week2/opdracht1/js/feature-1/)
 
 
 **Sources**
@@ -249,3 +249,35 @@ De rest van de code (de fallback) in vanilla JavaScript schrijven. Het verschilt
 [Stackoverflow](http://stackoverflow.com/questions/22516959/how-to-determine-if-a-promise-is-supported-by-the-browser)
 
 
+
+#### GEOLOCATION
+Geolocatie wordt sinds HTML5 ondersteund, maar wat nou als een browser geen HMTL5 ondersteund (kuch kuch IE8-). Hier een simpele fallback, in samenwerking met de Google AJAX API:
+
+```
+var myLocation; // global variable to store lat/lng
+if (navigator && navigator.geolocation) {
+  // HTML5 GeoLocation
+  function getLocation(position) {
+    myLocation = {
+      "lat": position.coords.latitude, 
+      "lng": position.coords.longitude
+    }
+  }
+  navigator.geolocation.getCurrentPosition(getLocation);
+} else {
+  // Google AJAX API fallback GeoLocation
+  if ((typeof google == 'object') && google.loader && google.loader.ClientLocation) {
+    myLocation = {
+      "lat": google.loader.ClientLocation.latitude, 
+      "lng": google.loader.ClientLocation.longitude
+    }
+  }
+}
+```
+
+**Demo**
+
+
+
+**Bronnen**
+[Marc Grabanski](http://marcgrabanski.com/html5-geolocation-fallback-google-ajax-api/)

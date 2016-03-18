@@ -112,11 +112,12 @@ Door de oude manier te verwijderen is de fallback ook verdwenen. IE in het algem
 
 De aanpak: We gooien de oude code weer terug voor browsers IE8 en minder, zonder de transition. 
 
+01 - Oude aanpak terug
 ```
 <!--[if lt IE 8]>
 <style type="text/css">
 #content #top-story { 
-    right: -100%;         
+    right: -100%      
 }
 
 #content #top-story.active { 
@@ -126,4 +127,32 @@ De aanpak: We gooien de oude code weer terug voor browsers IE8 en minder, zonder
 -->
 ```
 
-Done!
+02 - Position relative: artikel boven tonen bij klikken van een artikel
+```
+<!--[if lt IE 8]>
+<style type="text/css">
+#content #top-story { 
+    position: relative;     
+}
+
+#content #top-story.active { 
+}
+</script>
+-->
+```
+
+**Cutting the mustard etc.**
+```
+function getSupportedTransform() {
+    var prefixes = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' ');
+    var div = document.createElement('div');
+    for(var i = 0; i < prefixes.length; i++) {
+        if(div && div.style[prefixes[i]] !== undefined) {
+            return prefixes[i];
+        }
+    }
+    return false;
+}
+
+```
+[Source](http://stackoverflow.com/questions/7212102/detect-with-javascript-or-jquery-if-css-transform-2d-is-available)

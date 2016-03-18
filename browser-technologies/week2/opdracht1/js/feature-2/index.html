@@ -2,17 +2,29 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script src="http://www.google.com/jsapi?key=AIzaSyDcXgyNFQGy6RU4junSLDmAPGVgFK6955g"></script>   
 <script>
 $(function(){
-    if( !($('html').hasClass('box-sizing')) ){
-        $('.boxSized, .boxSized *').each(function(){
-            var fullW = $(this).outerWidth(),
-                actualW = $(this).width(),
-                wDiff = fullW - actualW,
-                newW = actualW - wDiff;
- 
-            $(this).css('width',newW);
-        });
+    var myLocation; // global variable to store lat/lng
+    if (navigator && navigator.geolocation) {
+      // HTML5 GeoLocation
+      function getLocation(position) {
+        myLocation = {
+          "lat": position.coords.latitude,
+          "lng": position.coords.longitude
+        }
+        console.log("HTML5" + myLocation);
+      }
+      navigator.geolocation.getCurrentPosition(getLocation);
+    } else {
+      // Google AJAX API fallback GeoLocation
+      if ((typeof google == 'object') && google.loader && google.loader.ClientLocation) {
+        myLocation = {
+          "lat": google.loader.ClientLocation.latitude,
+          "lng": google.loader.ClientLocation.longitude
+        }
+        console.log("Google API" + myLocation);
+      }
     }
 });    
 </script>
@@ -26,10 +38,6 @@ $(function(){
 </style>
 </head>
 <body>
-    <h1>CSS: Boz-sizing</h1>
-    <div class="block block1 box-sizing"><h2>Met box-sizing</h2><p>Deze box is 250px hoog + breed</p><p>CSS: width: 250px; padding: 10px;</p></div>
-    <div class="block block2"><h2>Zonder box-sizing</h2><p>Deze box is 270px hoog + breed</p><p>CSS: width: 270px; height: 270px; padding: 10px;</p></div>   
-    <div class="block block3"><h2>Zonder box-sizing</h2><p>Deze box is 230px hoog + breed</p><p>CSS: width: 230px; height: 230px; padding: 10px;</p></div>    
-       
+    <h1>Geolocation</h1>
 </body>
 </html>
