@@ -24,7 +24,7 @@ Een bruikbare fallback inbouwen wordt dus lastig, behalve het tonen van een beri
 
 Dit is al gedaan in week 1 van dit vak, door een *noscript* element te plaatsen in de loader. Screenshot:
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/ajax-loader.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week1/images/no-javascript.png)
 
 
 **Geen internet**
