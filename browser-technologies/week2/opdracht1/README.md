@@ -11,7 +11,7 @@ De *srcset* attribute breidt de *img* en *src* elementen uit, zodat je een lijst
 
 **Browser support**
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/images/srcset_browser.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/opdracht1/images/srcset_browser.png)
 
 
 **Voorbeeld code**
@@ -59,6 +59,11 @@ De placeholder attribute werkt op de volgende input types: text, search, url, te
 ```
 
 [Resultaat](http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_placeholder)
+
+
+**Browser support**
+
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/opdracht1/images/placeholder_browser.png)
 
 
 **Fallback**
@@ -116,19 +121,46 @@ if(!Modernizr.input.placeholder){
 ### CSS
 
 #### box-sizing
+De box-sizing eigenschap wordt gebruikt om de browser te vertellen welke 'sizing' eigenschappen (width en heught) het zou moeten hebben. Zouden ze de border-box moeten hebben, of alleen de content-box (standaard).
 
-Supported in all major browsers. You can apply it to all (*) elements if you like.
-
-IE8 does not support box-sizing: border-box; with min-width/max-width and min-height/max-height. For IE6/7 you can optionally use the box-sizing polyfill to provide this feature in IE 6/7 (you could scope the adjustments using IE conditionals or Modernizr's no-box-sizing).
-
-Besides the prefix, there were box sizing issues in Gecko/Firefox, see notes at MDN. For versions of Firefox before 17, min-height and max-height does not work.
+Je kan het toepassen op alle elementen (*).
 
 **Browser support**
-Wordt ondersteund in alle grote browsers. 
+
+Wordt ondersteund in alle grote browsers, behalve in IE7 of minder. 
+
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/opdracht1/images/box-sizing_browser.png)
 
 
 **Fallback**
-Een berekening maken van width met padding. 
+0 - Allereerst detecteren van box-sizing support, dit kan heel goed met modernizr.
+
+```
+Modernizr.addTest("boxsizing", function() {
+    return Modernizr.testAllProps("boxSizing") && (document.documentMode === undefined || document.documentMode > 7);
+});
+- See more at: http://www.matrixgroup.net/snackoclock/2012/08/simple-box-sizing-border-box-fallback-for-ie/#sthash.GbLJS0N2.dpuf
+```
+
+Vervolgens kunnen wij dit oplossen met JavaScript + jQuery
+```
+$(function(){
+    if( !($('html').hasClass('boxsizing')) ){
+        $('.boxSized, .boxSized *').each(function(){
+            var fullW = $(this).outerWidth(),
+                actualW = $(this).width(),
+                wDiff = fullW - actualW,
+                newW = actualW - wDiff;
+ 
+            $(this).css('width',newW);
+        });
+    }
+});
+```
+
+1 - Een berekening maken van width met padding.
+Voorbeeld: Als de width van een div element 500px moet zijn, met een padding van 10px per kant (link + rechts), dan wordt de width van het element: 500 - 10 - 10 = 480px.
+
 
 **Demo**
 
@@ -137,6 +169,7 @@ Een berekening maken van width met padding.
 **Bronnen**
 
 [caniuse.com](http://caniuse.com/#search=box-sizing)
+[matrixgroup.com](http://www.matrixgroup.net/snackoclock/2012/08/simple-box-sizing-border-box-fallback-for-ie/)
 
 
 #### rgba
@@ -154,7 +187,7 @@ rgba(red, green, blue, alpha)
 **Browser support**
 Wordt ondersteund in IE9+, Firefox 3+, Chrome, Safari, and in Opera 10+.
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/images/rgba_browser.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/opdracht1/images/rgba_browser.png)
 
 **Fallback**
 1 - Als fallback zou je een *rgb* kunnen gebruiken en zelfs nog een #hex kunnen aangeven, waar de browser op kan terugvallen als de rgba niet wordt herkent.

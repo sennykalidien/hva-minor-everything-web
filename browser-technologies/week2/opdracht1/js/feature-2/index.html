@@ -1,0 +1,35 @@
+<html> 
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script>
+$(function(){
+    if( !($('html').hasClass('box-sizing')) ){
+        $('.boxSized, .boxSized *').each(function(){
+            var fullW = $(this).outerWidth(),
+                actualW = $(this).width(),
+                wDiff = fullW - actualW,
+                newW = actualW - wDiff;
+ 
+            $(this).css('width',newW);
+        });
+    }
+});    
+</script>
+<style>
+    * { margin: 0; padding: 0;  }
+    .block { float: left; margin-right: 15px; }
+    .block p { margin-bottom: 10px; }
+    .block1 { width: 250px; height: 250px; padding: 10px; background: #ececec; box-sizing: border-box;  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; float: left; }
+    .block2 { width: 250px; height: 250px; padding: 10px; background: #ececec; float: left; }    
+    .block3 { width: 230px; height: 230px; padding: 10px; background: #ececec; float: left; }    
+</style>
+</head>
+<body>
+    <h1>CSS: Boz-sizing</h1>
+    <div class="block block1 box-sizing"><h2>Met box-sizing</h2><p>Deze box is 250px hoog + breed</p><p>CSS: width: 250px; padding: 10px;</p></div>
+    <div class="block block2"><h2>Zonder box-sizing</h2><p>Deze box is 270px hoog + breed</p><p>CSS: width: 270px; height: 270px; padding: 10px;</p></div>   
+    <div class="block block3"><h2>Zonder box-sizing</h2><p>Deze box is 230px hoog + breed</p><p>CSS: width: 230px; height: 230px; padding: 10px;</p></div>    
+       
+</body>
+</html>

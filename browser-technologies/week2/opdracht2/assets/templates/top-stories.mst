@@ -1,0 +1,14 @@
+{{#.}}
+    <a role="button" title="read more" href="#top-story/{{id}}">   
+        <article>   
+            <div class="post">      
+                <figure class="thumbnails">
+                    {{#multimedia}}
+                    <img src="{{url}}" alt="thumbail article" />
+                    {{/multimedia}}
+                </figure>
+                <h3>{{title}}</h3>
+            </div>
+        </article>
+    </a>
+{{/.}}

@@ -1,0 +1,14 @@
+<article data-route="top-story" role="article">
+    {{#.}}
+    <div class="post">						    
+        <figure class="thumbnails">
+            {{#multimedia}}
+            <img src="{{url}}" alt="thumbnail detailed article" />
+            {{/multimedia}}
+        </figure>
+        <h3>{{title}}</h3>
+        <span class="author">{{byline}}</span>
+        <p>{{abstract}}</p>
+    </div>
+    {{/.}}
+</article>

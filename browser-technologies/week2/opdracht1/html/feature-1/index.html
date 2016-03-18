@@ -1,0 +1,25 @@
+<html> 
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+* { margin: 0; padding: 0; }
+.img { background: url(img-small.jpg) no-repeat; height: 100%;  }
+    
+@media (min-width: 480px) {
+.img { background: url(img-medium.jpg) no-repeat; }
+}
+    
+@media (min-width: 960px) {
+.img { background: url(img-large.jpg) no-repeat; }
+}
+
+</style>
+</head>
+<body>
+
+<img src="img-large.jpg" srcset="img-small.jpg 480w, img-medium.jpg 960w, img-large.jpg 1920w" alt="House of Cards">
+   
+<div class="img"></div>
+    
+</body>
+</html>
