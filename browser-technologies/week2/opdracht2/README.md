@@ -102,7 +102,7 @@ De oplossing? *Transform: translate*. Een 2D animatie binnen CSS waarmee je hetz
 
 Top! Zijn we nu klaar met de opdracht? tl;dr enzo... Nope! Want hoe zit het met de browser support van deze translate? Well.. here we go:
 
-![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/opdracht1/images/translate_browser.png)
+![alt tag](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week2/opdracht2/images/translate_browser.png)
 
 IE8 en alle versies daarvoor ondersteunen deze CSS3 eigenschap helaas niet. Hoe kunnen we dit tegengaan?
 
