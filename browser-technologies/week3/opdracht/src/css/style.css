@@ -1,0 +1,197 @@
+/*--------------------------------------------------------------
+>>> ABOUT:
+----------------------------------------------------------------
+    Author:         Senny Kalidien
+    Project:        PERFORMANCE MATTERS
+    Version:        0.1
+    External CSS:   -
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> COLORS:
+----------------------------------------------------------------
+    Background:     #ffffff;
+    Normal text:    #1e1e1e;	
+    Anchor:         #2980b9;
+    Buttons:        #2980b9;
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENT:
+----------------------------------------------------------------
+,
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# STRUCTURE
+--------------------------------------------------------------*/
+body {
+    font: Raleway, Helvetica, Arial, sans-serif;
+    margin: 0;
+    max-width: 1920px;
+}
+
+#header { 
+    width: 100%;
+    overflow: hidden;
+    background-color: #252525;
+    flex-flow: column wrap;                                                
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-between; 
+    margin: 0 0 1em;
+}
+
+#main { 
+    flex-flow: column wrap;                                                
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-between;  
+}
+
+#footer { 
+
+}
+
+
+/*--------------------------------------------------------------
+## HEADER
+--------------------------------------------------------------*/
+.header__title {
+    color: #fff;
+    text-align: center;
+    padding: 0.5em;      
+}
+
+.header__menu {
+    background: #555;
+    overflow: hidden;
+    flex: 0 1 100%;
+}
+
+.header__menu__row { 
+    flex-flow: row wrap;                                                
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-between;      
+}
+
+.header__menu__list {
+    flex: 0 1 50%;   
+}
+
+.header__menu__list:first-of-type { 
+    border-right: solid 1px #f9f9f9;
+}
+
+.header__menu__list:last-of-type { 
+    border-left: solid 1px #f9f9f9;
+}
+
+.header__menu__link { 
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 0.5em;    
+}
+
+.header__menu__link:hover {
+    background: #666;
+}
+
+
+/*--------------------------------------------------------------
+## CONTENT
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+### HOME: SHIRTS
+--------------------------------------------------------------*/
+#shirts { 
+    flex-flow: row wrap; 
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-around;    
+}
+
+.shirts__container { 
+    flex: 0 1 250px;
+    padding: 1em;
+    border: solid 1px #000;
+    margin: 1em 0;
+}
+
+.shirts__title { 
+    text-align: center;
+}
+
+.shirts__container button { 
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+### DETAIL PAGE
+--------------------------------------------------------------*/
+#shirt { 
+    flex-flow: row wrap; 
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-around;    
+}
+
+.shirt__container { 
+    flex-flow: row wrap; 
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-around;     
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.shirts__thumbnail { 
+    flex: 0 1 495px;
+}
+
+.shirt__title { 
+    text-align: center;
+}
+
+.shirt__container button { 
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+### FAVOURITES PAGE
+--------------------------------------------------------------*/
+#favourites { 
+    flex-flow: row wrap; 
+    align-items: center;     
+    align-content: center; 
+    justify-content: space-around;    
+}
+
+/*--------------------------------------------------------------
+# EXTRA CSS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## MEDIA QUERIES
+--------------------------------------------------------------*/
+@media (min-width: 52em) {
+    .feed__item { 
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 1 33.33%;
+        -ms-flex: 0 1  33.33%;
+        flex: 0 1 33.33%;
+    } 
+}
+
+@media (min-width: 70em) {   
+}
+
+@media (min-width: 100em) {
+    
+}

@@ -23,6 +23,8 @@ APP.page = (function () {
             id: articleID
         });
         
+        console.log(data);
+        
 
         /* Templating with Mustache */
         nanoajax.ajax({

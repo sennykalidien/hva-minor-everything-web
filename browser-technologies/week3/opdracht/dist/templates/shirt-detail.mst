@@ -1,0 +1,18 @@
+<section id="shirt-detail">
+{{#.}}
+    <article class="shirt__container flexbox">           
+        <figure class="shirt__thumbnail">
+            <img class="shirt__image" src="{{photo}}" alt="" />
+        </figure>
+        <div>
+            <h3 class="shirt__title">{{title}}</h3>
+            <form action="#shirt-{{id}}" method="get">
+                <button>See options</button>
+            </form>        
+            <form>
+                <button data-id="{{id}}" class="favourite__btn">Add to favourites</button>
+            </form>
+        </div>
+    </article>
+{{/.}}
+</section>

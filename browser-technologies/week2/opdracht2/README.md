@@ -2,7 +2,7 @@
 Feature Detection
 
 ## Opdracht 2.2 
-*Je hebt deze week voor een aantal (kleine) features de ondersteuning onderzocht en de fallback bedacht en gemaakt. De volgende opdracht is een core funcionaliteit van je Funda Web App tot in de detial utiwerken, ook als browser de gebruikte feature niet ondersteunen.*
+*Je hebt deze week voor een aantal (kleine) features de ondersteuning onderzocht en de fallback bedacht en gemaakt. De volgende opdracht is een core funcionaliteit van je Funda Web App tot in de detial uitwerken, ook als browser de gebruikte feature niet ondersteunen.*
 
 - Bepaal de 'core functionaliteit' van je Funda app
 - Gebruik progressive enhancement & feature detection om je app gelaagd op te bouwen.

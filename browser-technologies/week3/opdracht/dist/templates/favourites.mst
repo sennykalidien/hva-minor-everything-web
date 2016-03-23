@@ -1,0 +1,16 @@
+<section id="favourites" class="flexbox">
+{{#.}}
+    <article class="shirts__container">           
+        <figure class="shirts__thumbnail">
+            <img class="shirts__image" src="{{photo}}" alt="" />
+        </figure>
+        <h3 class="shirts__title">{{title}}</h3>
+        <form action="#shirt-{{id}}" method="get">
+            <button>See options</button>
+        </form>        
+        <form>
+            <button data-id="{{id}}" class="favourite__btn favourite__btn--remove">Remove from favourites</button>
+        </form>
+    </article>
+{{/.}}
+</section>
