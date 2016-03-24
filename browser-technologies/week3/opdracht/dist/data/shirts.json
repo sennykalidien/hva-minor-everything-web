@@ -2,6 +2,7 @@
     {
         "id": "1",
         "title": "Best Hacker Alive!",
+        "description": "Best Hacker Alive!",
         "price": "10 euro",
         "photo": "../opdracht/dist/images/shirt1.jpg",       
         "color": [
@@ -11,7 +12,8 @@
     },
     {
         "id": "2",
-        "title": "TL;DR",
+        "title": "Too long; didn't read.",
+        "description": "TL;DR",
         "price": "10 euro",
         "photo": "../opdracht/dist/images/shirt2.jpg", 
         "color": [
@@ -22,6 +24,7 @@
     {
         "id": "3",
         "title": "Private life",
+        "description": "Google me & find nothing!",
         "price": "10 euro",
         "photo": "../opdracht/dist/images/shirt3.jpg", 
         "color": [
@@ -32,6 +35,7 @@
     {
         "id": "4",
         "title": "Vanilla JS",
+        "description": "I like my code vanilla. Vanilla JavaScript.",
         "price": "10 euro",
         "photo": "../opdracht/dist/images/shirt4.jpg", 
         "color": [
@@ -41,7 +45,8 @@
     },
     {
         "id": "5",
-        "title": "Polyfills are sexy",
+        "title": "Sexy Polyfills",
+        "description": "Polyfills are SEXY!",
         "price": "10 euro",
         "photo": "../opdracht/dist/images/shirt5.jpg", 
         "color": [
@@ -52,6 +57,7 @@
     {
         "id": "6",
         "title": "My girlfriend",
+        "description": "My Girlfriend? Roxy behind a Proxy.",
         "price": "10 euro",
         "photo": "../opdracht/dist/images/shirt6.jpg", 
         "color": [

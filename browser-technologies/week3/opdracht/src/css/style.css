@@ -2,7 +2,7 @@
 >>> ABOUT:
 ----------------------------------------------------------------
     Author:         Senny Kalidien
-    Project:        PERFORMANCE MATTERS
+    Project:        PERFORMANCE MATTERS - W3
     Version:        0.1
     External CSS:   -
 --------------------------------------------------------------*/
@@ -19,7 +19,7 @@
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENT:
 ----------------------------------------------------------------
-,
+
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -119,12 +119,17 @@ body {
     flex: 0 1 250px;
     padding: 1em;
     border: solid 1px #000;
-    margin: 1em 0;
+    margin: 1em 2.1em;
 }
 
 .shirts__title { 
     text-align: center;
 }
+
+.shirts__price { 
+    text-align: center;
+}
+
 
 .shirts__container button { 
     width: 100%;
@@ -150,11 +155,15 @@ body {
     margin: 1em 0;
 }
 
-.shirts__thumbnail { 
+.shirt__thumbnail { 
     flex: 0 1 495px;
 }
 
 .shirt__title { 
+    text-align: center;
+}
+
+.shirt__price { 
     text-align: center;
 }
 
@@ -171,6 +180,18 @@ body {
     align-items: center;     
     align-content: center; 
     justify-content: space-around;    
+}
+
+
+/*--------------------------------------------------------------
+### HOME PAGE
+--------------------------------------------------------------*/
+#home {  
+    text-align: center;
+    padding: 1em;
+}
+
+.error__header {
 }
 
 /*--------------------------------------------------------------

@@ -104,13 +104,25 @@ object {
 
 button { 
     border: 0;
-    background: #2980b9;
+    background: rgba(41, 128, 185, 1);
     padding: 0.7em;
     margin: 1em 0 0.5em;
     color: #f9f9f9;   
     cursor: pointer;
-    background-clip: padding-box;    
-    box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;    
+    background-clip: padding-box;      
+}
+
+
+button:hover { 
+    background: rgba(41, 128, 185, 0.9);   
+}
+
+button.active { 
+    background: rgba(231, 76, 60, 1.0)
+}
+
+button.active:hover { 
+    background: rgba(231, 76, 60, 0.9)
 }
 
 svg { 

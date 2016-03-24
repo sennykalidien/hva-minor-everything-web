@@ -2,11 +2,14 @@
 {{#.}}
     <article class="shirts__container">           
         <figure class="shirts__thumbnail">
-            <img class="shirts__image" src="{{photo}}" alt="" />
+            <img class="shirts__image" src="{{photo}}" alt="T-shirt: {{description}}" />
         </figure>
-        <h3 class="shirts__title">{{title}}</h3>
+        <header>
+            <h3 class="shirts__title">{{title}}</h3>
+        </header>
+        <p class="shirts__price">{{price}}</p>
         <form action="#shirt-{{id}}" method="get">
-            <button>See options</button>
+            <button>More details</button>
         </form>        
         <form>
             <button data-id="{{id}}" class="favourite__btn">Add to favourites</button>
