@@ -96,8 +96,10 @@ Als CSS uitstaat, ziet de HTML structuur er nog goed uit.
 ### Test 3: Local Storage Fallback
 De fallback is getest in Safari private mode. In deze mode slaat ondersteunt safari geen Local Storage. Perfect dus om te testen en IE (enigzins) te bootsen!
 
+**Voor herhalen pagina**
 ![Cookie before refresh](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week3/opdracht/readme/cookie_before-refresh.png)
 
+**Na herhalen pagina**
 ![Cookie after refresh](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week3/opdracht/readme/cookie_after-refresh.png)
 
 De cookie wordt dus succesvol aangemaakt, en de IDs worden als array opgeslagen.
