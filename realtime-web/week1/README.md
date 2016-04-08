@@ -1,17 +1,20 @@
 # Opdrachten week 1
-Real Time Web - Set up Meteor
+Real Time Web - Set up Meteor & and choose a dataset and concept
 
 ## Opdracht 3
 **Zoek een databron op en beschrijf de beperkingen hiervan**
 
-### Gekozen databron: Arts Holland - Dataset cultuur en toerisme
-*Het platform biedt in eerste instantie toegang tot de dataset van het NUB (Nederlands Uitbureau) met zo’n 100.000 culturele evenementen in 45 genres op 1400 locaties. Deze set is aangevuld met een uitgebreid overzicht van POIs en horeca gelegenheden van het NBTC (Nederlands Bureau voor Toerisme en Congressen).*
+### Amsterdam Museum Collectie
+*De dataset van het Amsterdam Museum bestaat uit de metadata en de afbeeldingen van de collectie van de stad Amsterdam. De collectie omvat ruim 70.000 objecten vanaf de middeleeuwen tot nu en varieert van kunstvoorwerpen tot alledaagse objecten.*
 
 [Databron](https://opendatanederland.org/nl/dataset/arts-holland-dataset-cultuur-en-toerisme)
 
 ### Mogelijkheden
-- API formaat: REST/JSON
-- Inhoud: Geografie (plaats) + Gebeurtenissen (datum)
+- API formaat: REST/XML
+- Inhoud: Tekst (beschrijving) + Beeld (afbeeldingen)
+
+### Beperkingen
+- Eigen filter opties inbouwen
 
 ### Betrouwbaarheid
 De databron komt van [Open Data Nederland](https://opendatanederland.org/). Zij zijn liefhebbers van de open data. Met de website proberen zij alle open data die te vinden zijn in Nederland beschikbaar te maken door dit in één catalogus te bundelen en doorzoekbaar te maken. Op dit moment worden er *617* open datasets aangeboden.
@@ -19,33 +22,32 @@ De databron komt van [Open Data Nederland](https://opendatanederland.org/). Zij 
 ## Opdracht 4
 **Beschrijf wat jouw app moet gaan doen en welke aspecten reactive zullen worden**
 
-### Het idee: laat weten welke evenement je gaat bijwonen
-Cultuursnuivers kunnen met elkaar interacteren op basis van de evenementen die zij gekozen hebben bij te wonen. Als een persoon een evenement heeft toegevoegd aan zijn interesselijst, komt dit in beeld in de rechterkolom van de pagina. De bezoekers op de website worden dus op de hoogte gesteld welke persoon een evenement gaan bijwonen.
+### Het idee: Licht jouw favoriete kunstvoorwerp uit
+De bezoekers kunnen via de Web App op zoek gaan naar kunstvoorwerpen uit de collectie van het Amsterdam Museum. Als zij kunstvoorwerp(en) zien die hen aanspreekt kunnen zij dit uitlichten en een verhaal vertellen waarom dit voorwerp hen zo aanspreekt. Het voorwerp + verhaal zal realtime gepubliceerd worden op een moodboard, die continue in beweging zal moeten zijn.
 
 ### De doelgroep
-De doelgroep zal cultuursnuivers zijn. Mensen die regelmatig een een cultuur bijwonen en dus ook regelmatig op zoek gaan naar nieuwe evenementen die zij kunnen bijwonen. Deze mensen kunnen tussen de 18 - 65 jaar zijn. Mijn Web App richt ik op mensen tussen de 18 - 35 jaar.
+De doelgroep zal cultuursnuivers zijn. Mensen die gefacineerd zijn over kunst & voorwerpen: kunstvoorwerpen tot alledaagse objecten. 
 
 ### MVP versie
-- Een homepagina met een grote bord laatste updates van mensen die een evenement gaan bijwonen
-- Een evenementenpagina waar mensen kunnen zoeken en filteren naar een evenement. Deze evenement kunnen zij vervolgens toevoegen aan hun interesselijst.
-- Een mogelijkheid om een account aan te maken, zodat deze mensen evenementen kunnen toevoegen aan hun interesselijst.
-
-### Wishlist
-- Uitgebreide profiel mogelijkheden voor accounts
-- Evenementen bespreken met elkaar via chatfunctionaiteit (realtime)
-
-### Structuur Web App
-**Client**
-- Views
-⋅⋅* Home
-⋅⋅* Evenementen
-⋅⋅* Profiel / accounts
-
-**Server**
-- Accounts
-⋅⋅* Database (koppeling)
+- Een homepagina, wat een grote 'moodbord' zal worden met de laatste uitgelichte voorwerp.
+- Een pagina voor de collectie (kunst)voorwerpen.
 
 ## Reactieve componenten
-- Wanneer er op een 'voeg toe aan interesselijst' (oid) wordt gedrukt, wordt dit toegevoegd aan de homepagina / of rechterkolom van de website.
-- Gelijk reageren op een notificatie die verschijnt. 
+- Wanneer de gebruiker een kunstvoorwerp wil uitlichten zal deze realtime worden toegevoegd aan de moodbord op de homepagina.
+- Men kan met elkaar interacteren en zelfs in discussie gaan over het voorwerp.
+
+### Wishlist
+- Uitgebreide profielen
+- Mogelijkheid om te interacteren tussen gebruikers via chat oid. 
+
+### Structuur Web App
+**Client: views**
+- Home
+- Collectie kunstvoorwerpen
+- Profiel / accounts
+
+**Server: views**
+- Accounts
+- Database (koppeling)
+ 
 
