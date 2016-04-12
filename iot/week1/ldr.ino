@@ -11,8 +11,8 @@ int exposure = 0;
 
 
 //WiFi Client
-const char* ssid = "SennyK";
-const char* password = "27031990!";
+const char* ssid = "";
+const char* password = "";
 WiFiClient client;
 
 // IOT Cloud credentials
