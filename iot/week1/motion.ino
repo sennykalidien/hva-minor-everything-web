@@ -11,8 +11,8 @@ int val = 0;
 
 
 // WiFi client
-const char* ssid = "SennyK";
-const char* password = "27031990!";
+const char* ssid = "";
+const char* password = "!";
 WiFiClient client;
 
 // IOT Cloud credentials
@@ -20,8 +20,8 @@ EIoTCloudRestApi eiotcloud;
 #define PIR_ID "570635c7c943a0661cf314d1/CBZYpoESPvAxvNM5"
 
 // ThingSpeak credentials
-const int CHANNEL_ID = 107779;
-const char * API_KEY = "KZM2XQWT7V13VIPF";
+const int CHANNEL_ID = ;
+const char * API_KEY = "";
 
 
 void setup() {
