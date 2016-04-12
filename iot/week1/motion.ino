@@ -36,7 +36,7 @@ void loop() {
 
 //Send pir sensor's values to cloud.
  val = digitalRead(pinPir);
- //ThingSpeak.writeField(CHANNEL_ID, 1, val, API_KEY);
+ ThingSpeak.writeField(CHANNEL_ID, 1, val, API_KEY);
      //If the returned value is high and pirState is low, motion has been detected, this will be sent to the cloud
      //and state will be set to high
     if (val == HIGH) {
