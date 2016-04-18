@@ -1,4 +1,4 @@
-# Opdrachten week 1
+# Opdrachten week 3
 Real Time Web - Finish the Meteor App
 
 ## Opdracht 1
@@ -6,16 +6,16 @@ Real Time Web - Finish the Meteor App
 
 **Publish**
 
-Zie (server.js)[]
+Zie (server.js)[https://github.com/sennykalidien/EW/blob/master/realtime-web/week3/museumapp/server/server.js]
 
 **Subscription**
 
-Zie (router.js)[]
+Zie (router.js)[https://github.com/sennykalidien/EW/blob/master/realtime-web/week3/museumapp/lib/router.js]
 
 ## Opdracht 2
 *Zet insecure uit en implementeer methods*
 
-Zie (methods.js)[]
+Zie (methods.js)[https://github.com/sennykalidien/EW/blob/master/realtime-web/week3/museumapp/lib/methods.js]
 
 
 ## Opdracht 3

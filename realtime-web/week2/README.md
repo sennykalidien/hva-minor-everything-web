@@ -1,4 +1,4 @@
-# Opdrachten week 1
+# Opdrachten week 2
 Real Time Web - Build the app in Meteor
 
 ## Opdracht 1
@@ -50,19 +50,19 @@ museumapp
 ### Opdracht 2
 *Maak een mongo collection met daarin de belangrijkste data die je gaat bijhouden*
 
-Zie (MongoCollection)[]
+Zie (MongoCollection)[https://github.com/sennykalidien/EW/blob/master/realtime-web/week2/museumapp/lib/model.js]
 
 ### Opdracht 3
 *Bouw één view die reactive onderdelen bevat op basis van jouw collection*
 
-Zie (ArtObjects)[]
+Zie (ArtObjects)[https://github.com/sennykalidien/EW/tree/master/realtime-web/week2/museumapp/client/app/art-objects]
 
 ### Opdracht 4
 *Zorg dat een gebruiker een view kan manipuleren en als nodig de collection daarmee update*
 
-Zie (ArtObjects)[]
+Zie (ArtObjects)[https://github.com/sennykalidien/EW/tree/master/realtime-web/week2/museumapp/client/app/art-objects]
 
-Zie (MyCollection)[]
+Zie (MyCollection)[https://github.com/sennykalidien/EW/tree/master/realtime-web/week2/museumapp/client/app/my%20collection]
 
 ### Opdracht 5
 *Zet je polling op een logische manier op. Denk na over welke informatie de client pollt en welke info de server pollt.*
