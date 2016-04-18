@@ -1,0 +1,1 @@
+ArtObjects = new Mongo.Collection('art-objects');

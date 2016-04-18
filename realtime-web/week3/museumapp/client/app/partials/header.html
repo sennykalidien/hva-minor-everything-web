@@ -1,0 +1,15 @@
+<template name="headerTemplate">
+    <header id="header">
+        <div class="logo">
+            <a href="/" title="Amsterdam Musuem"><img src="images/logo.png" alt="Amsterdam Museum" /></a>
+        </div>
+        <h1>Kunstinspiratie</h1>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                {{#if currentUser}}<li><a href="/art-objects">Kunstvoorwerpen</a></li>{{/if}}                {{#if currentUser}}<li><a href="/my-collection">Mijn collectie</a></li>{{/if}}
+            </ul>
+            {{> loginButtons}}
+        </nav>
+    </header>
+</template>

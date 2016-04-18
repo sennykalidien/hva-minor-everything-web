@@ -1,0 +1,24 @@
+<template name="myCollectionLayout">
+    {{> Template.dynamic template=header}}
+    {{> Template.dynamic template=main}}
+    {{> Template.dynamic template=footer}}
+</template>
+
+<template name="myCollectionTemplate">
+    <main id="main">
+        {{#if myCollection.count}}
+        <div class="art-objects">
+            {{#each myCollection}}
+            <div class="object">
+                <img src="http://ahm.adlibsoft.com/ahmimages/{{image}}" alt="image" />
+                <h3>{{title}}</h3>
+                <span>Categorie: {{category}}</span>
+                <form>
+                    <button class="remove-art">Verwijder collectie</button>
+                </form>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </main>
+</template>
