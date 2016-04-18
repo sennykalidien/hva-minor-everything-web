@@ -1,28 +1,24 @@
-<head>
-    <title>MuseumApp</title>
-</head>
+<template name="homeLayout">
+    {{> Template.dynamic template=header}} 
+    {{> Template.dynamic template=main}} 
+    {{> Template.dynamic template=footer}}
+</template>
 
-<body>
-    {{> tasks}}
-</body>
+<template name="homeTemplate">
+    <main id="main">
+        <div class="welcome block">
+            <h1>Licht jouw object van de dag uit!</h1>
+            <p>Doorzoek de collectie aan kunstvoorwerpen en licht jouw voorwerp van de dag uit. Vertel waarom dit object volgens jou het voorwerp van de dag is. Wat spreek jou zo aan dit voorwerp? Voel je een soort connectie? Inspireer en motiveer anderen met jouw verhaal!</p>
+        </div>
 
-<template name="tasks">
-    {{> loginButtons}}
-    <h1>Add Task!</h1>
-    {{#if currentUser}}
-    <form class="add-task">
-        <label>Task Name</label>
-        <input type="text" name="name" placeholder="Add Task" />
-        <input type="submit" value="Sumbit" />
-    </form>
-    {{else}}
-        <p>Please login to add tasks.</p>
-    {{/if}}
-    <hr />
-    <h3>Tasks</h3>   
-    <ul>
-        {{#each tasks}}
-        <li>{{name}} {{#if currentUser}}<a href="#" class="delete-task">X</a>{{/if}}</li>
-        {{/each}}
-    </ul>
+         {{#if featured.count}}
+           <div class="moodboard">
+            {{#each featured}}
+                <div class="object">
+                    <img src="http://ahm.adlibsoft.com/ahmimages/{{image}}" alt="image" />
+                </div>
+            {{/each}}
+            </div>
+        {{/if}}
+    </main>
 </template>

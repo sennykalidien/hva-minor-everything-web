@@ -1,0 +1,212 @@
+/*--------------------------------------------------------------
+>>> ABOUT:
+----------------------------------------------------------------
+    Author:         Senny Kalidien
+    Project:        PERFORMANCE MATTERS
+    Version:        0.1
+    External CSS:   -
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> COLORS:
+----------------------------------------------------------------
+    Background:     #ffffff;
+    Normal text:    #1e1e1e;	
+    Anchor:         #2980b9;
+    Buttons:        #2980b9;
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENT:
+----------------------------------------------------------------
+# TYPOGRAPHY & COLORS
+# TOOLS
+# STRUCTURE
+	## HEADER
+	## CONTENT
+        ### FEED
+        ### DETAIL PAGE
+	## FOOTER
+# EXTRA CSS
+	## MEDIA QUERIES
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# STRUCTURE
+--------------------------------------------------------------*/
+body {
+    font: Helvetica, Arial, sans-serif;
+    margin: 0;
+    max-width: 1920px;
+}
+
+#__blaze-root {
+    width: 100%;
+    height: 100%;
+}
+
+#header { 
+    width: 100%;
+    padding: 1em;
+    background-color: #ddd;
+    display: flex;
+    flex-flow: row wrap;                               
+    align-items: center;    
+    align-content: center; 
+    justify-content: space-between;   
+}
+
+#main { 
+    padding: 1em;
+    flex-flow: column wrap;                             
+    align-items: center;    
+    align-content: center;
+    justify-content: space-between;  
+}
+
+#footer { 
+    background-color: #f1f1f1;
+    padding: 1em 1em 0.3em 1em;
+}
+
+
+/*--------------------------------------------------------------
+## HEADER
+--------------------------------------------------------------*/
+#header .logo {
+    max-width: 3em;
+}
+
+#header nav { 
+    display: flex;
+    flex-flow: row wrap;                             
+    align-items: center;    
+    align-content: center; 
+    justify-content: flex-end;
+}
+
+#header nav ul { 
+    display: flex;
+    flex-flow: row wrap;                             
+    align-items: center;    
+    align-content: center;
+    justify-content: space-between;     
+}
+
+#header nav ul li { 
+    margin: 0 1em 0 0;  
+}
+
+#header nav #login-dropdown-list { 
+    left: auto;
+    right: 0; 
+    top: 3em;
+}
+
+
+/*--------------------------------------------------------------
+## CONTENT
+--------------------------------------------------------------*/
+.welcome { 
+    padding: 1em;
+    margin: 0 0 2em;
+    border: solid 1px #ddd;    
+}
+
+input[type="search"] { 
+    width: 100%;
+    padding: .5em .2em;
+    border: solid 1px #ececec;
+   -moz-appearance:none;
+   -webkit-appearance:none;    
+}
+
+.moodboard { 
+    display: flex;
+    flex-flow: row wrap;                             
+    align-content: center;
+    align-items: center;
+    justify-content: center;   
+    margin: 1em 0 0;
+}
+
+.moodboard .object {
+}
+
+.moodboard .object img { 
+    max-height: 18em;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.art-objects { 
+    display: flex;
+    flex-flow: row wrap;                             
+    align-content: center;
+    justify-content: space-around;   
+    margin: 1em 0 0;
+}
+
+.art-objects .object { 
+    flex: 0 1 18em;
+    padding: 1em;
+    margin: 0 0 2em;
+    border: solid 1px #ddd;
+}
+
+.art-objects .object img {
+    display: block;
+    margin: 0 auto;    
+    height: 15em;
+    background: #ececec;
+    
+}
+
+.art-objects .object button {
+    width: 100%;
+}
+
+.art-objects .object h3 { 
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+.art-objects .object span { 
+    font-size: 0.9em;
+}
+
+/*--------------------------------------------------------------
+### FEED
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+### DETAIL PAGE
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## FOOTER
+--------------------------------------------------------------*/
+#footer p { 
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+# EXTRA CSS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## MEDIA QUERIES [Mobile First]
+--------------------------------------------------------------*/
+@media (min-width: 52em) {
+    
+}
+
+@media (min-width: 70em) {
+
+}
+
+@media (min-width: 100em) {
+    
+}

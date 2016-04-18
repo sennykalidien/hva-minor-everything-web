@@ -1,22 +1,46 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import './art-objects.html';
 
-import './main.html';
+SearchArtObjects = new Mongo.Collection('search_art-objects');
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+Session.setDefault('searching', false);
+
+Tracker.autorun(function () {
+    if (Session.get('query')) {
+        var searchHandle = Meteor.subscribe('artSearch', Session.get('query'));
+        Session.set('searching', !searchHandle.ready());
+    }
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+
+Template.artObjectsTemplate.events({
+    'submit .search-art': function (event) {
+        event.preventDefault();
+        var query = event.target.search.value;
+        console.log(query);
+        if (query) {
+            Session.set('query', query);
+            event.target.search.value = '';
+        }
+    },
+    "click .add-art" : function(event, template){  
+        // Prevent form from refeshing page by removing default behaviour
+        event.preventDefault();
+        var object = this;
+        if(confirm('Dit voorwerp uitlichten?')){
+            Meteor.call('addArt', object); // this._id = passed to the methods as parameter
+        }
+        return false;
+    }
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+
+Template.artObjectsTemplate.helpers({
+    artObjects: function () {
+        return SearchArtObjects.find();
+    },
+    searching: function () {
+        return Session.get('searching');
+    }
 });

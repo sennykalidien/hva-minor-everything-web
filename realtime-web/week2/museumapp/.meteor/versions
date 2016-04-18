@@ -35,15 +35,9 @@ html-tools@1.0.8
 htmljs@1.0.8
 http@1.1.4
 id-map@1.0.6
-iron:controller@1.0.12
-iron:core@1.0.11
-iron:dynamic-template@1.0.12
-iron:layout@1.0.12
-iron:location@1.0.11
-iron:middleware-stack@1.0.11
-iron:router@1.0.12
-iron:url@1.0.11
 jquery@1.11.7
+kadira:blaze-layout@2.3.0
+kadira:flow-router@2.11.0
 launch-screen@1.0.10
 less@2.5.7
 livedata@1.0.17
@@ -51,6 +45,8 @@ localstorage@1.0.8
 logging@1.0.11
 meteor@1.1.13
 meteor-base@1.0.3
+meteorhacks:kadira@2.28.5
+meteorhacks:meteorx@1.4.1
 minifier-css@1.1.10
 minifier-js@1.1.10
 minimongo@1.0.13
@@ -60,6 +56,7 @@ modules@0.5.2
 modules-runtime@0.6.2
 mongo@1.1.6
 mongo-id@1.0.3
+mongo-livedata@1.0.11
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.42
 observe-sequence@1.0.10

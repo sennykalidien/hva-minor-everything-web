@@ -1,25 +1,32 @@
-<head>
-  <title>simple</title>
-</head>
-
-<body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="artObjectsLayout">
+    {{> Template.dynamic template=header}} 
+    {{> Template.dynamic template=main}} 
+    {{> Template.dynamic template=footer}}
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com">Discussions</a></li>
-  </ul>
+<template name="artObjectsTemplate">
+    <main id="main">
+        <form class="search-art">
+            <input type="search" name="search" placeholder="Zoeken">
+        </form>
+
+        {{#if searching}}
+            <p>Searching...</p>
+        {{else}} 
+        {{#if artObjects.count}}
+           <div class="art-objects">
+            {{#each artObjects}}
+                <div class="object">
+                    <img src="http://ahm.adlibsoft.com/ahmimages/{{image}}" alt="image" />
+                    <h3>{{title}}</h3>
+                    <span>Categorie: {{category}}</span>
+                    <form>
+                        <button class="add-art">Uitlichten</button>
+                    </form>
+                </div>
+            {{/each}}
+            </div>
+        {{/if}}
+        {{/if}}
+    </main>
 </template>

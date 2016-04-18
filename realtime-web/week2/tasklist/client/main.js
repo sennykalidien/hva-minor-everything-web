@@ -13,7 +13,7 @@ Template.tasks.helpers({
 
 
 Template.tasks.events({
-    "submit .add-task": function (events) {
+    "submit .add-task": function (event) {
         var name = event.target.name.value;
         //console.log(name);
 
