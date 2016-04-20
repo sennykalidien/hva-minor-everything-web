@@ -24,7 +24,7 @@ Template.artObjectsTemplate.events({
             event.target.search.value = '';
         }
     },
-    "click .add-art" : function(event, template){  
+    "click .add-art" : function(event, template){
         // Prevent form from refeshing page by removing default behaviour
         event.preventDefault();
         var object = this;
@@ -33,6 +33,15 @@ Template.artObjectsTemplate.events({
         }
         return false;
     }
+});
+
+
+Template.artObjectsTemplate.onCreated(function() {
+    // Subscribe only the relevant subscription to this page
+    var self = this;
+    self.autorun(function() { // Stops all current subscriptions
+        self.subscribe('myArtObjects'); // Subscribe to the single entry in the collection with the route params id
+    });
 });
 
 

@@ -19,6 +19,16 @@ Template.myCollectionTemplate.events({
 });
 
 
+// Template onCreated
+Template.myCollectionTemplate.onCreated(function() {
+    // Subscribe only the relevant subscription to this page
+    var self = this;
+    self.autorun(function() { // Stops all current subscriptions
+        self.subscribe('myArtObjects'); // Subscribe to the single entry in the collection with the route params id
+    });
+});
+
+
 Template.myCollectionTemplate.helpers({
     myCollection: function () {
         return ArtObjects.find({}, {sort: {createdAt: -1}});

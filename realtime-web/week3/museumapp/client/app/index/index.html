@@ -1,6 +1,6 @@
 <template name="homeLayout">
-    {{> Template.dynamic template=header}} 
-    {{> Template.dynamic template=main}} 
+    {{> Template.dynamic template=header}}
+    {{> Template.dynamic template=main}}
     {{> Template.dynamic template=footer}}
 </template>
 
@@ -15,7 +15,7 @@
            <div class="moodboard">
             {{#each featured}}
                 <div class="object">
-                    <img src="http://ahm.adlibsoft.com/ahmimages/{{image}}" alt="image" />
+                    <a href="/art-object/{{_id}}"><img src="http://ahm.adlibsoft.com/ahmimages/{{image}}" alt="image" /></a>
                 </div>
             {{/each}}
             </div>

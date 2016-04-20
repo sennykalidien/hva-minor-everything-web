@@ -1,21 +1,14 @@
-<template name="artObjectsLayout">
+<template name="artObjectLayout">
     {{> Template.dynamic template=header}}
     {{> Template.dynamic template=main}}
     {{> Template.dynamic template=footer}}
 </template>
 
-<template name="artObjectsTemplate">
+<template name="artObjectTemplate">
     <main id="main">
-        <form class="search-art">
-            <input type="search" name="search" placeholder="Zoeken">
-        </form>
-
-        {{#if searching}}
-            <p>Searching...</p>
-        {{else}} 
-        {{#if artObjects.count}}
+        {{#if artObject._id}}
            <div class="art-objects">
-            {{#each artObjects}}
+            {{#with artObject}}
                 <div class="object">
                     <img src="http://ahm.adlibsoft.com/ahmimages/{{image}}" alt="image" />
                     <h3>{{title}}</h3>
@@ -24,9 +17,8 @@
                         <button class="add-art">Uitlichten</button>
                     </form>
                 </div>
-            {{/each}}
+            {{/with}}
             </div>
-        {{/if}}
         {{/if}}
     </main>
 </template>
