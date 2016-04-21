@@ -1,20 +1,20 @@
 {
   "servers": [
     {
-      "host": "146.185.132.235",
+      "host": "82.196.10.191",
       "username": "root",
       "pem": "~/.ssh/id_rsa",
       "env": {}
     }
   ],
-  "setupMongo": false,
+  "setupMongo": true,
   "appName": "museumapp",
-  "app": "~/Projects/front-end-development/EW/realtime-web/week3/museumapp",
+  "app": ".",
   "env": {
-    "PORT": 8080,
-    "ROOT_URL": "http://146.185.132.235",
+    "PORT": 80,
+    "ROOT_URL": "http://82.196.10.191",
     "MONGO_URL": ""
   },
-  "deployCheckWaitTime": 30,
+  "deployCheckWaitTime": 60,
   "enableUploadProgressBar": true
 }

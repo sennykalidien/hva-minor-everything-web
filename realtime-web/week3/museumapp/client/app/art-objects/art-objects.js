@@ -13,7 +13,7 @@ Tracker.autorun(function () {
     }
 });
 
-
+// Events
 Template.artObjectsTemplate.events({
     'submit .search-art': function (event) {
         event.preventDefault();
@@ -35,7 +35,8 @@ Template.artObjectsTemplate.events({
     }
 });
 
-
+// When Template is created.
+// src: https://stackoverflow.com/questions/34583383/meteor-flow-router-setting-up-site-com-singlepostpage
 Template.artObjectsTemplate.onCreated(function() {
     // Subscribe only the relevant subscription to this page
     var self = this;
@@ -44,7 +45,7 @@ Template.artObjectsTemplate.onCreated(function() {
     });
 });
 
-
+// Helpers
 Template.artObjectsTemplate.helpers({
     artObjects: function () {
         return SearchArtObjects.find();
