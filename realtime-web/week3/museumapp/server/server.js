@@ -20,23 +20,21 @@ Meteor.publish('artSearch', function (query) {
         //console.log(data);
 
         [].forEach.call(data, function (item) {
-          if(item.reproduction != null || item.reproduction != undefined) {
+
+          if(item.hasOwnProperty('reproduction') != false) {
             var object = {
                 title: item.title[0],
                 image: item.reproduction[0]['reproduction.reference'][0] ,
                 category: item.object_category[0],
                 creator: item.maker.creator
             };
-          } else {
-            // var object = {
-            //     title: item.title[0],
-            //     category: item.object_category[0],
-            //     creator: item.maker.creator
-            // };
-          }
+
             console.log(object);
 
             self.added('search_art-objects', Random.id(), object);
+
+          }
+
         });
 
         self.ready();
