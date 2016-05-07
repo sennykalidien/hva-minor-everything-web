@@ -1,0 +1,195 @@
+/*--------------------------------------------------------------
+>>> ABOUT:
+----------------------------------------------------------------
+    Author:         Senny Kalidien
+    Project:        BROWSER TECH
+    Version:        0.1
+    External CSS:   -
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> COLORS:
+----------------------------------------------------------------
+    Background:     #ffffff;
+    Normal text:    #1e1e1e;
+    Anchor:         #2980b9;
+    Buttons:        #2980b9;
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENT:
+----------------------------------------------------------------
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# STRUCTURE
+--------------------------------------------------------------*/
+body {
+    font: Raleway, Helvetica, sans-serif;
+    margin: 0;
+    max-width: 1920px;
+}
+
+#header {
+    width: 100%;
+    overflow: hidden;
+    background-color: #252525;
+}
+
+#content {
+	padding: 1em;
+}
+
+#footer {
+
+}
+
+
+/*--------------------------------------------------------------
+## HEADER
+--------------------------------------------------------------*/
+.header__title {
+    color: #fff;
+    text-align: center;
+    padding: 0.5em;
+}
+
+
+/*--------------------------------------------------------------
+## CONTENT
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+### HOME
+--------------------------------------------------------------*/
+#welcome {
+    text-align: center;
+    padding: 1em;
+}
+
+#shirts {
+	overflow: hidden;
+}
+
+.shirts__container {
+    width: 250px;
+	float: left;
+    padding: 1em;
+    border: solid 1px #000;
+    margin: 0 2.5em 1em 0;
+}
+
+.shirts__title {
+    text-align: center;
+}
+
+.shirts__price {
+    text-align: center;
+}
+
+
+.shirts__container button {
+    width: 100%;
+}
+
+#favourites {
+	border: solid 1px #000;
+	padding: 1em;
+}
+
+.favourites__container {
+	clear: both;
+	overflow: hidden;
+	margin: 1em 0;
+	padding: 0 0 1em;
+	border-bottom: solid 1px #000;
+	display: none;
+}
+
+.favourites__container--active {
+	display: block;
+}
+
+.favourites__thumbnail {
+	border: solid 1px #000;
+	float: left;
+	margin: 0em 1em 0 0;
+}
+
+.favourites__thumbnail img {
+	height: 100px;
+}
+
+.favourites__title {
+	display: inline;
+}
+
+.favourites__price {
+	margin: .2em;
+}
+
+.favourites__favourite__btn {
+	margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+### DETAIL PAGE
+--------------------------------------------------------------*/
+#shirt {
+
+}
+
+.shirt__container {
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.shirt__thumbnail {
+    flex: 0 1 495px;
+}
+
+.shirt__title {
+    text-align: center;
+}
+
+.shirt__price {
+    text-align: center;
+}
+
+.shirt__container button {
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# EXTRA CSS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## MEDIA QUERIES
+--------------------------------------------------------------*/
+@media (min-width: 52em) {
+    #shirts {
+		width: 60%;
+		float: left;
+	}
+	#favourites {
+		float: right;
+		width: 40%;
+	}
+}
+
+@media (min-width: 70em) {
+	#shirts {
+		width: 70%;
+	}
+	#favourites {
+		width: 30%;
+	}
+}
+
+@media (min-width: 100em) {
+
+}

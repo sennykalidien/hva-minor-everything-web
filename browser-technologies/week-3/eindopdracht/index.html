@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Your Nerdy T-shirt!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="header" role="banner">
+            <h1 class="header__title">Your Nerdy T-shirt!</h1>
+        </header>
+        <main id="content" role="main">
+            <section id="welcome">
+                <header class="home__header">
+                    <h1>Got a favourite one?</h1>
+                </header>
+                <p>We provide cool shirts with some funny or very serious messages on them. Get inspired, add them to your favourites and buy them if you really like them!</p>
+            </section>
+
+            <section id="shirts">
+                <article class="shirts__container">
+                    <figure class="shirts__thumbnail">
+                        <img class="shirts__image" src="./assets/images/shirt-1.jpg" alt="T-shirt: Best Hacker Alive!" />
+                    </figure>
+                    <header>
+                        <h3 class="shirts__title">Best Hacker Alive!</h3>
+                    </header>
+                    <p class="shirts__price">10 euro</p>
+                    <button data-id="1" class="shirts__favourite__btn">Add to favourites</button>
+                </article>
+                <article class="shirts__container">
+                    <figure class="shirts__thumbnail">
+                        <img class="shirts__image" src="./assets/images/shirt-2.jpg" alt="T-shirt: Too long; didn't read." />
+                    </figure>
+                    <header>
+                        <h3 class="shirts__title">TL;DR</h3>
+                    </header>
+                    <p class="shirts__price">10 euro</p>
+                    <button data-id="2" class="shirts__favourite__btn">Add to favourites</button>
+                </article>
+                <article class="shirts__container">
+                    <figure class="shirts__thumbnail">
+                        <img class="shirts__image" src="./assets/images/shirt-3.jpg" alt="T-shirt: Google me &amp; find nothing!" />
+                    </figure>
+                    <header>
+                        <h3 class="shirts__title">Mr. Anonymous</h3>
+                    </header>
+                    <p class="shirts__price">10 euro</p>
+                    <button data-id="3" class="shirts__favourite__btn">Add to favourites</button>
+                </article>
+                <article class="shirts__container">
+                    <figure class="shirts__thumbnail">
+                        <img class="shirts__image" src="./assets/images/shirt-4.jpg" alt="T-shirt: I like my code vanilla. Vanilla JavaScript." />
+                    </figure>
+                    <header>
+                        <h3 class="shirts__title">Vanilla JS <3</h3>
+                    </header>
+                    <p class="shirts__price">10 euro</p>
+                    <button data-id="4" class="shirts__favourite__btn">Add to favourites</button>
+                </article>
+                <article class="shirts__container">
+                    <figure class="shirts__thumbnail">
+                        <img class="shirts__image" src="./assets/images/shirt-5.jpg" alt="T-shirt: Polyfills are SEXY!" />
+                    </figure>
+                    <header>
+                        <h3 class="shirts__title">Sexy Polyfills</h3>
+                    </header>
+                    <p class="shirts__price">10 euro</p>
+                    <button data-id="5" class="shirts__favourite__btn">Add to favourites</button>
+                </article>
+                <article class="shirts__container">
+                    <figure class="shirts__thumbnail">
+                        <img class="shirts__image" src="./assets/images/shirt-6.jpg" alt="T-shirt: My Girlfriend? Roxy behind a Proxy." />
+                    </figure>
+                    <header>
+                        <h3 class="shirts__title">My girlfriend</h3>
+                    </header>
+                    <p class="shirts__price">10 euro</p>
+                    <button data-id="6" class="shirts__favourite__btn">Add to favourites</button>
+                </article>
+            </section>
+
+            <aside id="favourites">
+                <header>
+                    <h2>My favourites</h2>
+                </header>
+            	<article class="favourites__container" data-id="1">
+            		<figure class="favourites__thumbnail">
+            			<img class="favourites__image" src="./assets/images/shirt-1.jpg" alt="T-shirt: Best Hacker Alive!" />
+            		</figure>
+            		<header>
+            			<h3 class="favourites__title">Best Hacker Alive!</h3>
+            		</header>
+            		<p class="favourites__price">10 euro</p>
+            		<form>
+                        <button data-id="1" class="shirts__favourite__btn active">Remove from favourites</button>
+                    </form>
+            	</article>
+            	<article class="favourites__container" data-id="2">
+            		<figure class="favourites__thumbnail">
+            			<img class="favourites__image" src="./assets/images/shirt-2.jpg" alt="T-shirt: Too long; didn't read." />
+            		</figure>
+            		<header>
+            			<h3 class="favourites__title">TL;DR</h3>
+            		</header>
+            		<p class="favourites__price">10 euro</p>
+                    <form>
+                        <button data-id="2" class="shirts__favourite__btn active">Remove from favourites</button>
+                    </form>
+            	</article>
+            	<article class="favourites__container" data-id="3">
+            		<figure class="favourites__thumbnail">
+            			<img class="favourites__image" src="./assets/images/shirt-3.jpg" alt="T-shirt: Google me &amp; find nothing!" />
+            		</figure>
+            		<header>
+            			<h3 class="favourites__title">Mr. Anonymous</h3>
+            		</header>
+            		<p class="favourites__price">10 euro</p>
+                    <form>
+            		    <button data-id="3" class="shirts__favourite__btn active">Remove from favourites</button>
+                    </form>
+            	</article>
+            	<article class="favourites__container" data-id="4">
+            		<figure class="favourites__thumbnail">
+            			<img class="favourites__image" src="./assets/images/shirt-4.jpg" alt="T-shirt: I like my code vanilla. Vanilla JavaScript." />
+            		</figure>
+            		<header>
+            			<h3 class="favourites__title">Vanilla JS <3</h3>
+            		</header>
+            		<p class="favourites__price">10 euro</p>
+                    <form>
+                        <button data-id="4" class="shirts__favourite__btn active">Remove from favourites</button>
+                    </form>
+            	</article>
+            	<article class="favourites__container" data-id="5">
+            		<figure class="favourites__thumbnail">
+            			<img class="favourites__image" src="./assets/images/shirt-5.jpg" alt="T-shirt: Polyfills are SEXY!" />
+            		</figure>
+            		<header>
+            			<h3 class="favourites__title">Sexy Polyfills</h3>
+            		</header>
+            		<p class="favourites__price">10 euro</p>
+                    <form>
+                        <button data-id="5" class="shirts__favourite__btn active">Remove from favourites</button>
+                    </form>
+            	</article>
+            	<article class="favourites__container" data-id="6">
+            		<figure class="favourites__thumbnail">
+            			<img class="favourites__image" src="./assets/images/shirt-6.jpg" alt="T-shirt: My Girlfriend? Roxy behind a Proxy." />
+            		</figure>
+            		<header>
+            			<h3 class="favourites__title">My girlfriend</h3>
+            		</header>
+            		<p class="favourites__price">10 euro</p>
+                    <form>
+                        <button data-id="6" class="shirts__favourite__btn active">Remove from favourites</button>
+                    </form>
+            	</article>
+            </aside>
+        </main>
+        <footer id="footer" role="footer">
+        </footer>
+    </div>
+
+    <!-- Main JS -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
