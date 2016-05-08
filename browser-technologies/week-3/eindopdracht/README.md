@@ -101,7 +101,7 @@ Minpunten:
 Het probleem dat ik tegenkwam is de afbeeldingen van de t-shirts die een andere tekst als ALT moeten hebben dan de titel. Voor een visueel beperkte persoon heeft het geen nut om de titel 2xx voorgelezen te krijgen. Bovendien is de titel van een t-shirt niet altijd de tekst wat op een t-sirt staat, meer de benaming van de t-shirt. Als oplossing heb zelf een description toegevoegd per t-shirt dat beschrijft wat er op de t-shirts staan.
 
 ### Test 2: CSS uit
-Als CSS uitstaat, ziet de HTML structuur er nog goed uit.
+Als CSS uitstaat, ziet de HTML-structuur er nog goed uit.
 
 ![CSS off](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/browser-support.png)
 
@@ -110,12 +110,12 @@ Als JavaScript uit staat kan de gebruiker alsnog de content (de t-shirts) zien. 
 
 
 ### Test 3: Local Storage Fallback
-De fallback is getest in Safari private mode. In deze mode slaat ondersteunt safari geen Local Storage. Perfect dus om te testen en IE (enigzins) te bootsen!
+De fallback is getest in Safari private modus. In deze modus ondersteunt Safari geen Local Storage. Perfect dus om te testen en IE 7 en minder (enigzins) na te bootsen!
 
-**Voor herhalen pagina**
+**Voor herladen pagina**
 ![Cookie before refresh](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/cookie_before-refresh.png)
 
-**Na herhalen pagina**
+**Na herladen pagina**
 ![Cookie after refresh](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/cookie_after-refresh.png)
 
 De cookie wordt dus succesvol aangemaakt, en de IDs worden als array opgeslagen.
