@@ -118,7 +118,7 @@ button:hover {
 }
 
 button.active {
-    background: rgba(231, 76, 60, 1.0)
+    background: rgba(231, 76, 60, 1)
 }
 
 button.active:hover {

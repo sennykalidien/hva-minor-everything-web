@@ -1,63 +1,61 @@
-# eindopdrachten week 3
+# Opdrachten week 3
 Feature Detection
 
-## Eindeindopdracht
+## Eindopdracht
 *Maak een demo op basis van een use case. Zorg dat alle gebruikers, met alle browsers, in iedere context minimaal de core functionaliteit te zien/horen/voelen krijgen. Bouw je demo in 3 lagen, volgens het principe van Progressive Enhancement. Gebruik als enhanced feature een (hippe, innovatieve, vooruitstrevende) Browser Technologie die je gaat onderzoeken op functionaliteit, toegankelijkheid en (browser) ondersteuning.*
 
-- Browser Technologies onderzoeken en implementeren als enhancement
-- Core functionaliteit van een use case doorgronden
+- Browser Technologies onderzoeken en implementeren als *enhancement*
+- Core functionaliteit van een *use case* doorgronden
 
 **Let's go!**
 
-### Use Case
+## Use Case
 *Ik wil favoriete t-shirts-met-nerdy-teksten kunnen opslaan, en een volgende keer dat ik de site bezoek kunnen gebruiken - Web storage*
 
 ![Website](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/site.png)
 
-**De 3 lagen**
-De website wordt een mobiele webapplicatie, opgebouwd in de 3 lagen:
-- HTMl
-- CSS
-- JavaScript.
+### De 3 lagen
+De website is opgebouwd in de 3 lagen volgens de principes van *progressive enhancement*:
+1. HTMl
+2. CSS
+3. JavaScript.
 
-**HTML**
-- De HTML is opgebouwd met HTML5 elementen. Elke 'pagina' heeft een aparte section, en elke t-shirt zit in een article element.
-
-**CSS**
-- De CSS classes zijn opgebouwd volgend de BEM-methode.
-
-**JavaScript**
-Met JavaScript:
-- doen we de routing van de pagina's
-- halen we data (JSON objecten) binnen met een GET request
-- renderen wij deze objecten in HTML templates.
-
-De applicatie kan geen data (de artikelen) inladen als de gebruiker:
-- JavaScript heeft uitstaan
-- geen internet heeft.
+In deze volgorde is er gewerkt om de website neer te zetten voor deze use case. Het is van belang dat de website (grotendeels) functioneel is als JavaScript uitgeschakeld wordt en ook als CSS uitgeschakeld wordt.
 
 
-**JavaScript uit**
+#### HTML
+- De HTML is opgebouwd in HTML5 elementen. De website bestaat uit 1 pagina: De homepagina. Elk t-shirt zit in een <article> element omringt in een <section> container. De favorietenlijst is een <aside> met een <article> als elk favoriet t-shirt. Voor screenreaders is het een absolute must om HTML5 elementen te gebruiken. Er is overigens geen gebruik gemaakt van ARIA, omdat dit onnodig is gebleken voor de doeleinde van deze site.
 
-JavaScript is een vereiste voor deze Web App, omdat de applicatie een *AJAX GET request* moet doen om JSON objecten binnen te halen van alle shirts.
+#### CSS
+De CSS houdt rekening met de ondersteuning van zoveel mogelijk browsers. Er wordt niet gebruik gemaakt van de moderne technieken zoals FlexBox. Oudere versies van Internet Explorer ondersteunen dat niet. Daarnaast wordt er fallback gebruikt voor CSS die mogelijk niet ondersteund worden door oudere browsers. Een voorbeeld is voor EM's, door dit eerder te definieren als pixels:
 
-Een bruikbare fallback inbouwen wordt dus lastig, behalve het tonen van een bericht waarmee je de gebruiker mededeelt dat JavaScript vereist is om de Web App te gebruiken.
 
-![CSS off](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/javascript-off.png)
+```
+/*--------------------------------------------------------------
+# TYPOGRAPHY, ICONS & COLORS
+--------------------------------------------------------------*/
+body, button, input, select, textarea   {
+    font-size: 16px; font: 1em/1.4 'Raleway', 'Helvetica neue', sans-serif;
+}
+```
+
+- De CSS-classes zijn opgebouwd volgens de BEM-methode. Dit houdt in dat elk HTML-element een unieke CSS-class heeft. Voor *Progressive Enhancement* zal dit geen meerwaarde zijn. Voor overzicht en performance kan dit een (klein) verschil maken.
+
+#### JavaScript
+De JavaScript zorgt ervoor dat de shirts die toegevoegd worden als 'favoriet' worden opgeslagen in de WebStorage. WebStorage zal de *feature* zijn van deze eindopdracht.
+
 
 ### De feature
-WebStorage doormiddel van Local Storage is de feature die erin is gebouwd om t-shirts toe te voegen aan de favorieten. Als de gebruiker een t-shirt toevoegt aan zijn favorieten, wordt de ID van het t-shirt direct als een array opgeslagen in de Local Storage. Bij het drukken van de knop zie je dus de ID toegevoegd worden aan de Local Storage.
+Webstorage kan LocalStorage of cookies zijn. Bij het toevoegen van een shirt aan de favorieten wordt de unieke ID van dat shirt opgeslagen in een 'array' (lijst) in de LocalStorage. Mocht LocalStorage niet beschikbaar zijn wordt er een Browser Cookie aangemaakt die hetzelfde functioneert als de LocalStorage. Cookies worden beter ondersteund door oudere browsers (zie borwser support WebStorage).
 
 **Browser Support**
 ![Browser Support](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/browser-supprt.png)
 
-
 **Een array in Local Storage**
 ![Array in a Local Storage](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/localstorage-array.png)
 
-**De fallback**
-
-Als Local Storage niet wordt ondersteund, valt het terug op cookies. hierbij heb ik gebruik gemaakt van dit voorbeeld (no polyfills):
+#### De fallback
+Als Local Storage niet wordt ondersteund, valt het terug op cookies. Hiervoor heb ik gebruik gemaakt van dit voorbeeld (wat geen polyfill is):
 [Fluid Byte @ github](https://gist.github.com/Fluidbyte/4718380)
 
 
@@ -72,26 +70,43 @@ try {
     lsSupport = false;
 }
 ```
-Met de variabele lsSupport kunnen we dus een Local Storage item aanmaken of een Cookie!
+
+Door middel van een try kan er uitgeprobeerd worden of iets succesvol uitgevoerd kan worden. Zo niet, dan kan er iets uitgevoerd worden. In dit geval wordt er gekeken of het lukt om een Key + Value toe te voegen aan de LocalStorage. Als dit lukt moet de variabel lsSupport op true staan, zo niet dan moet het op false komen te staan.
+
+Met de variabel lsSupport kunnen we dus vaststellen of er een Local Storage item aangemaakt moet worden of een Cookie!
+
+```
+if (lsSupport) { // Use LocalStorage
+    localStorage.setItem(key, value);
+} else { // Use cookie
+    createCookie(key, '', -1);
+}
+
+```
+
 
 ## Test
 
 ### Test 1: Screen Reader
 **Pluspunten**
-- De screenreader leest alle links en buttons goed voor.
-- Pagina structuur lijkt in orde
+- De screenreader leest alle links en buttons goed voor aan de gebruiker.
+- De volgorde die de screenreader volgt klopt, dus de paginastructuur lijkt in orde.
 
 Minpunten:
 - Elk t-shirt blok noemt de screen reader een 'article', dit kan verwarrend zijn voor een gebruiker.
 - De afbeeldingen van de t-shirts bevatten geen goede alt text.
 
 **Alt text op afbeeldingen**
-Het probleem waar ik op stuitte is dat de afbeeldingen van de t-shirts een andere tekst als ALT moeten hebben dan de titel. Dus ik heb zelf een description moeten toevoegen per t-shirt in het JSON bestand dat uitlegt wat er op de t-shirts staan. Deze kunnen namelijk uitwijken van de titel. Vanzelfsprekend kunnen blinden niet zien wat er op een t-shirt staat. Dus het is fijn dat het voorgelezen kan worden!
+Het probleem dat ik tegenkwam is de afbeeldingen van de t-shirts die een andere tekst als ALT moeten hebben dan de titel. Voor een visueel beperkte persoon heeft het geen nut om de titel 2xx voorgelezen te krijgen. Bovendien is de titel van een t-shirt niet altijd de tekst wat op een t-sirt staat, meer de benaming van de t-shirt. Als oplossing heb zelf een description toegevoegd per t-shirt dat beschrijft wat er op de t-shirts staan.
 
 ### Test 2: CSS uit
 Als CSS uitstaat, ziet de HTML structuur er nog goed uit.
 
-![CSS off](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/css-off.png)
+![CSS off](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/browser-supprt.png)
+
+### Test 3: JavaScript uit
+Als JavaScript uit staat kan de gebruiker alsnog de content (de t-shirts) zien. Voor het toevoegen van een een shirt als favoriet is echter wel JavaScript vereist. Zonder JavaScript kan er geen gebruik gemaakt worden van LocalStorage of Cookies.
+
 
 ### Test 3: Local Storage Fallback
 De fallback is getest in Safari private mode. In deze mode slaat ondersteunt safari geen Local Storage. Perfect dus om te testen en IE (enigzins) te bootsen!
