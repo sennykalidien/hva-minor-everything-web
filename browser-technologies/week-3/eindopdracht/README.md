@@ -46,7 +46,7 @@ De JavaScript zorgt ervoor dat de shirts die toegevoegd worden als 'favoriet' wo
 
 
 ### De feature
-Webstorage kan LocalStorage of cookies zijn. Bij het toevoegen van een shirt aan de favorieten wordt de unieke ID van dat shirt opgeslagen in een 'array' (lijst) in de LocalStorage. Mocht LocalStorage niet beschikbaar zijn wordt er een Browser Cookie aangemaakt die hetzelfde functioneert als de LocalStorage. Cookies worden beter ondersteund door oudere browsers (zie borwser support WebStorage).
+Webstorage kan LocalStorage of cookies zijn. Bij het toevoegen van een shirt aan de favorieten wordt de unieke ID van dat shirt opgeslagen in een 'array' (lijst) in de LocalStorage. Mocht LocalStorage niet beschikbaar zijn wordt er een Browser Cookie aangemaakt die hetzelfde functioneert als de LocalStorage. Cookies worden beter ondersteund door oudere browsers (Internet Explorer 7 of lager).
 
 **Browser Support**
 ![Browser Support](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/browser-support.png)
