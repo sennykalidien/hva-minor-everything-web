@@ -16,6 +16,7 @@ Feature Detection
 
 ### De 3 lagen
 De website is opgebouwd in de 3 lagen volgens de principes van *progressive enhancement*:
+
 1. HTMl
 2. CSS
 3. JavaScript.
@@ -27,7 +28,7 @@ In deze volgorde is er gewerkt om de website neer te zetten voor deze use case. 
 - De HTML is opgebouwd in HTML5 elementen. De website bestaat uit 1 pagina: De homepagina. Elk t-shirt zit in een <article> element omringt in een <section> container. De favorietenlijst is een <aside> met een <article> als elk favoriet t-shirt. Voor screenreaders is het een absolute must om HTML5 elementen te gebruiken. Er is overigens geen gebruik gemaakt van ARIA, omdat dit onnodig is gebleken voor de doeleinde van deze site.
 
 #### CSS
-De CSS houdt rekening met de ondersteuning van zoveel mogelijk browsers. Er wordt niet gebruik gemaakt van de moderne technieken zoals FlexBox. Oudere versies van Internet Explorer ondersteunen dat niet. Daarnaast wordt er fallback gebruikt voor CSS die mogelijk niet ondersteund worden door oudere browsers. Een voorbeeld is voor EM's, door dit eerder te definieren als pixels:
+- De CSS houdt rekening met de ondersteuning van zoveel mogelijk browsers. Er wordt niet gebruik gemaakt van de moderne technieken zoals FlexBox. Oudere versies van Internet Explorer ondersteunen dat niet. Daarnaast wordt er fallback gebruikt voor CSS die mogelijk niet ondersteund worden door oudere browsers. Een voorbeeld is voor EM's, door dit eerder te definieren als pixels:
 
 
 ```
