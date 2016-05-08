@@ -129,6 +129,10 @@ body {
 	margin: 0;
 }
 
+.favourites__container:target {
+    display: block;
+}
+
 
 /*--------------------------------------------------------------
 # EXTRA CSS
@@ -139,12 +143,12 @@ body {
 --------------------------------------------------------------*/
 @media (min-width: 52em) {
     #shirts {
-		width: 60%;
+		width: 65%;
 		float: left;
 	}
 	#favourites {
 		float: right;
-		width: 40%;
+		width: 35%;
 	}
 }
 

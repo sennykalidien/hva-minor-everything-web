@@ -106,7 +106,10 @@ Als CSS uitstaat, ziet de HTML-structuur er nog goed uit.
 ![CSS off](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/browser-support.png)
 
 ### Test 3: JavaScript uit
-Als JavaScript uit staat kan de gebruiker alsnog de content (de t-shirts) zien. Voor het toevoegen van een een shirt als favoriet is echter wel JavaScript vereist. Zonder JavaScript kan er geen gebruik gemaakt worden van LocalStorage of Cookies.
+Als JavaScript uit staat kan de gebruiker alsnog de content (de t-shirts) zien. Voor het toevoegen van een shirt als favoriet is echter wel JavaScript vereist. Zonder JavaScript kan er geen gebruik gemaakt worden van LocalStorage of Cookies.
+
+**Toch een soort van fallback**
+Met de CSS *:target* selector is er gezorgd dat er 1 shirt toegevoegd kan worden als favoriet.
 
 
 ### Test 3: Local Storage Fallback
