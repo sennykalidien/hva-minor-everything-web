@@ -114,7 +114,7 @@ Als JavaScript uit staat kan de gebruiker alsnog de content (de t-shirts) zien. 
 Met de CSS *:target* selector is er gezorgd dat er 1 shirt toegevoegd kan worden als favoriet.
 
 
-### Test 3: Local Storage Fallback
+### Test 4: Local Storage Fallback
 De fallback is getest in Safari private modus. In deze modus ondersteunt Safari geen Local Storage. Perfect dus om te testen en IE 7 en minder (enigzins) na te bootsen!
 
 **Voor herladen pagina**
@@ -123,7 +123,7 @@ De fallback is getest in Safari private modus. In deze modus ondersteunt Safari 
 **Na herladen pagina**
 ![Cookie after refresh](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/cookie_after-refresh.png)
 
-### Demo
-![Demo](https://sennykalidien.github.io/browser-technologies/)
-
 De cookie wordt dus succesvol aangemaakt, en de IDs worden als array opgeslagen.
+
+### Demo
+[Demo](https://sennykalidien.github.io/browser-technologies/)
