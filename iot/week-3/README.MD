@@ -1,6 +1,6 @@
 # Internet of Things: The Manual
 
-## NodeMCU EPS8266 Distance sensor with Node server.
+## NodeMCU EPS8266 + distance sensor that communicates with a Node server.
 With this setup you can track how much centimeters (CM) an object is placed from the sensor and send that data to your own server. With this data you can for example:
 1. Track if somebody or something is still on it's place
 1. Track if somebody or something is to close or to far from an object.
@@ -14,9 +14,9 @@ For this tutorial I expect you have at least a little understanding of:
 ## Table of content
 1. [Overview](#1-overview)
 2. [What do we need?](#2-what-do-we-need)
-3. [Set up the hardware](#3-hardware-setup)
-4. [Set up the software](#step-4---connect-the-distance-sensor)
-5. [Set up the server](#5-server-setup)
+3. [Set up the hardware](#3-set-up-the-hardware)
+4. [Set up the software](#4-ser-up-the-software)
+5. [Set up the server](#5-set-up-the-server)
 6. [Add the code to do the magic](#6-6-add-the-code-to-do-the-magic)
 7. [Magic!](#7-magic)
 8. [Demo](#8-demo)
@@ -38,7 +38,7 @@ This IoT project allows you to set up a simple distance sensor that is connected
 - 8-10 boardboard wires.
 - Optional: resistors
 
-## 3. Hardware setup
+## 3. Set up the hardware
 You should have this ready to go:
 
 ![Requirements]()
@@ -90,7 +90,7 @@ That should do the trick! If your done, it will look like this:
 ![Complete setup]()
 
 
-## 4. Software setup
+## 4. Set up the software
 You will need the Arduino software and the drivers for the NodeMCU ESP8266 for this part.
 
 ### Step 1 - Install the Arduino software
@@ -124,7 +124,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ![Arduino Tools settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-tools-settings.png)
 
 
-## 5. Server setup
+## 5. Set up the server
 
 ### Clone GitHub
 Clone this git to the folder where you want the store this project on your computer.
@@ -387,7 +387,7 @@ void sendNetworkData() {
 **The full code can be found here:** [Arduino Code](https://github.com/sennykalidien/EW/blob/master/iot/week-3/arduino/communicate_iot/communicate_iot.ino)
 
 ## 7. Magic!
-This should do the trick! Give it a try, upload the code to your NodeMCU board and check if it connects succesfully with your server.
+That should do the trick! Give it a try, upload the code to your NodeMCU board and check if it connects succesfully with your server.
 
 Let me know if you have any issues. :-)
 
