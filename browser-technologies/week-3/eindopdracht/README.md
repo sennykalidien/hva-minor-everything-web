@@ -12,7 +12,7 @@ Feature Detection
 ## Use Case
 *Ik wil favoriete t-shirts-met-nerdy-teksten kunnen opslaan, en een volgende keer dat ik de site bezoek kunnen gebruiken - Web storage*
 
-![Demo](https://sennykalidien.github.io/browser-technologies/)
+[Demo](https://sennykalidien.github.io/browser-technologies/)
 
 ![Website](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/site.png)
 

@@ -59,10 +59,15 @@ APP.data = (function() {
     // Global variables
     var _shirtContainers = document.querySelectorAll('.shirts__container');
     var _shirtContainersForm = document.querySelectorAll('.shirts__form');
+    var _favouritesContainersForm = document.querySelectorAll('.favourites__form');
     var _favouriteContainers = document.querySelectorAll('.favourites__container');
     var _favouriteButtons = document.querySelectorAll('.shirts__favourite__btn');
 
     [].forEach.call(_shirtContainersForm, function(form) {
+        form.setAttribute("action","");
+    });
+
+    [].forEach.call(_favouritesContainersForm, function(form) {
         form.setAttribute("action","");
     });
 
