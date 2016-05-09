@@ -78,6 +78,8 @@ On the other side of the leds we'll need 3 more wires to connect them to the out
 ### Step 4 - Connect the distance sensor
 The distance meter has 4 connectors we need to connect with the breadboard wires.
 
+
+![Distance wires](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-sensor-connections.jpg)
 ![Distance wires](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-distance-wires.jpg)
 
 1. Connect the 5v to our own created + on the breadboard
