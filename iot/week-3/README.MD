@@ -15,7 +15,7 @@ For this tutorial I expect you have at least a little understanding of:
 1. [Overview](#1-overview)
 2. [What do we need?](#2-what-do-we-need)
 3. [Set up the hardware](#3-set-up-the-hardware)
-4. [Set up the software](#4-ser-up-the-software)
+4. [Set up the software](#4-set-up-the-software)
 5. [Set up the server](#5-set-up-the-server)
 6. [Add the code to do the magic](#6-6-add-the-code-to-do-the-magic)
 7. [Magic!](#7-magic)
@@ -49,17 +49,17 @@ Here's how schematic overview of how to connect the sensor and the leds.
 
 ![Schematic overview]()
 
-If you want a step by step instruction of how to connect everything, you can keep reading the steps below. If this schematic overview is enough for you to set up the hardware, skip to chapter 2: [set up the software](#step-4---connect-the-distance-sensor).
+If you want a step by step instruction of how to connect everything, you can keep reading the steps below. If this schematic overview is enough for you to set up the hardware, skip to chapter 4: [set up the software](#4-set-up-the-software).
 
 ### Step 1 - The NodeMCU Board
 We'll start putting the NodeMCU board at the right place on your breadboard. I would suggest you do it in the center bottom so you have plenty of space for your distance sensor and the LEDS.
 
-![NodeMCU placement]()
+![NodeMCU placement](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-complete-setup-2.jpg)
 
 ### Step 2 - Create a power (5 volt) + row and ground (-) row
 Take two wires (preferable a red and blue one) connect the 5v (red) to the + and the ground (blue) to the - on your breadboard.
 
-![Wires]()
+![Wires](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-volt-ground.jpg)
 
 Now we have the ingredients to make our sensors and leds work.
 
@@ -68,7 +68,7 @@ Now we have the ingredients to make our sensors and leds work.
 
 There are different ways to connect your led. I prefer to connect the ground side of the led into our ground row.
 
-![Wires]()
+![Connecting LEDS](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-leds.jpg)
 
 On the other side of the leds we'll need 3 more wires to connect them to the output of the NodeMCU board. For the sake of this tutorial, connect them at the following ports:
 - Green: D5
@@ -78,16 +78,18 @@ On the other side of the leds we'll need 3 more wires to connect them to the out
 ### Step 4 - Connect the distance sensor
 The distance meter has 4 connectors we need to connect with the breadboard wires.
 
-![Wires]()
+![Distance wires](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-distance-wires.jpg)
 
 1. Connect the 5v to our own created + on the breadboard
 2. Connect the ground on our own created - on the breadboard.
 3. Connect the echo on the **D0** port
 4. Connect the trigger on the **D1** port
 
-That should do the trick! If your done, it will look like this:
+That should do the trick! If your done, it will look hopefully look like this:
 
-![Complete setup]()
+![Complete setup 1](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-complete-setup-1.jpg)
+
+![Complete setup 2](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-complete-setup-2.jpg)
 
 
 ## 4. Set up the software
