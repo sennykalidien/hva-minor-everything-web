@@ -100,7 +100,7 @@ Install the software by following the standard procedure and launch the program 
 ![Arduino window]()
 
 ### Step 2 - Add the NodeMCU ESP8266 driver
-1. Go to Arduino > Preferences (in the menubar)
+1 - Go to Arduino > Preferences (in the menubar)
 
 ![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-navigate-settings.png)
 
@@ -111,14 +111,14 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 ![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-settings.png)
 
-2. Go to Tools > Board > Boardmanager (in the menubar)
-3. Search for 'esp'
-4. Select the block and click 'install'
+2 - Go to Tools > Board > Boardmanager (in the menubar)
+3 - Search for 'esp'
+4 - Select the block and click 'install'
 
 ![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-tools-search.png)
 
-5. The drivers should be installed now
-6. Go to tools and make sure your settings look like this:
+5 - The drivers should be installed now
+6 - Go to tools and make sure your settings look like this:
 
 ![Arduino Tools settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-tools-settings.png)
 
@@ -132,21 +132,18 @@ Clone this git to the folder where you want the store this project on your compu
 git clone https://github.com/sennykalidien/IoT-NodeMCU.git
 cd IoT-NodeMCU
 git checkout iot-senny
-
 ```
 
 After the git repository is cloned with the right branche, install all node modules with:
 
 ```
 npm install
-
 ```
 
 After this you can start your server locally with:
 
 ```
 npm start
-
 ```
 
 You can see the UI at localhost:8080
