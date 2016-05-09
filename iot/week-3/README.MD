@@ -98,11 +98,10 @@ That should do the trick! If your done, it will look hopefully look like this:
 You will need the Arduino software and the drivers for the NodeMCU ESP8266 for this part.
 
 ### Step 1 - Install the Arduino software
-You can download the Arduino software at the official site of [Arduino]()
+You can download the Arduino software at the official site of [Arduino](https://www.arduino.cc/en/Main/Software)
 
-Install the software by following the standard procedure and launch the program if it's finished. We should see a empty editor window.
+Install the software by following the standard procedure and launch the program if it's finished. You should see a empty editor window.
 
-![Arduino window]()
 
 ### Step 2 - Add the NodeMCU ESP8266 driver
 1 - Go to Arduino > Preferences (in the menubar)
