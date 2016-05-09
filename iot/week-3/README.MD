@@ -6,9 +6,10 @@ With this setup you can track how much centimeters (CM) an object is placed from
 1. Track if somebody or something is to close or to far from an object.
 2. Track if there is any activity in the environment
 
-For this tutorial I expect you at least know:
+For this tutorial I expect you have at least a little understanding of:
 - The programming language C++ (or JavaScript)
 - How to work with your command prompt (Windows) or Terminal (Mac).
+- How to set up a own live node server (if you want to communicate with a live environment server)
 
 ## Table of content
 1. [Overview](#1-overview)
@@ -48,10 +49,10 @@ Here's how schematic overview of how to connect the sensor and the leds.
 
 ![Schematic overview]()
 
-If you want a step by step instruction of how to connect everything, you can keep reading the steps below. If this schematic overview is enough for you to set up the hardware, skip to chapter 2: [set up the software]().
+If you want a step by step instruction of how to connect everything, you can keep reading the steps below. If this schematic overview is enough for you to set up the hardware, skip to chapter 2: [set up the software](#step-4---connect-the-distance-sensor).
 
 ### Step 1 - The NodeMCU Board
-We'll start putting the NodeMCU board at the right place on your breadboard. I would suggest you do it in the center bottom so you have plenty of space for your sensors and leds.
+We'll start putting the NodeMCU board at the right place on your breadboard. I would suggest you do it in the center bottom so you have plenty of space for your distance sensor and the LEDS.
 
 ![NodeMCU placement]()
 
