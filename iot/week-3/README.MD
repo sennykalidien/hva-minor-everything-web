@@ -92,36 +92,35 @@ That should do the trick! If your done, it will look like this:
 ## 4. Software setup
 You will need the Arduino software and the drivers for the NodeMCU ESP8266 for this part.
 
-## Step 1 - Install the Arduino software
+### Step 1 - Install the Arduino software
 You can download the Arduino software at the official site of [Arduino]()
 
 Install the software by following the standard procedure and launch the program if it's finished. We should see a empty editor window.
 
 ![Arduino window]()
 
-## Step 2 - Add the NodeMCU ESP8266 driver
+### Step 2 - Add the NodeMCU ESP8266 driver
 1. Go to Arduino > Preferences (in the menubar)
-![Arduino settings](/arduino-navigate-settings.png)
+
+![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-navigate-settings.png)
 
 Add the following link at the "Additional Boards Manager URLs"
 ```
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ```
-![Arduino settings](/arduino-settings.png)
+
+![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-settings.png)
 
 2. Go to Tools > Board > Boardmanager (in the menubar)
 3. Search for 'esp'
 4. Select the block and click 'install'
-![Arduino settings](/arduino-tools-search.png)
-5. The drivers should be installed!
 
+![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-tools-search.png)
 
+5. The drivers should be installed now
+6. Go to tools and make sure your settings look like this:
 
-
-**Select the right settings for your board**
-Go to tools and make sure your settings look like this:
-
-![Arduino Tools settings](/arduino-tools-settings.png)
+![Arduino Tools settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-tools-settings.png)
 
 
 ## 5. Server setup
@@ -387,11 +386,12 @@ void sendNetworkData() {
 
 ```
 
-**The full code can be found here:** [Arduino Code]()
+**The full code can be found here:** [Arduino Code](https://github.com/sennykalidien/EW/blob/master/iot/week-3/arduino/communicate_iot/communicate_iot.ino)
 
 ## 7. Done!
-This should do the trick! Try it out and let me know if you have any issues. :-)
+This should do the trick! Give it a try, upload the code to your NodeMCU board and check if it connects succesfully with your server.
 
+Let me know if you have any issues. :-)
 
 ## 8. Demo
 A demo of this can be found at: http://iot.directzichtbaar.nl
