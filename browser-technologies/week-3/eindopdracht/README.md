@@ -25,7 +25,6 @@ De website is opgebouwd in de 3 lagen volgens de principes van *progressive enha
 
 In deze volgorde is er gewerkt om de website neer te zetten voor deze use case. Het is van belang dat de website (grotendeels) functioneel is als JavaScript uitgeschakeld wordt en ook als CSS uitgeschakeld wordt.
 
-
 #### HTML
 - De HTML is opgebouwd in HTML5 elementen. De website bestaat uit 1 pagina: De homepagina. Elk t-shirt zit in een <article> element omringt in een <section> container. De favorietenlijst is een <aside> met een <article> als elk favoriet t-shirt. Voor screenreaders is het een absolute must om HTML5 elementen te gebruiken. Er is overigens geen gebruik gemaakt van ARIA, omdat dit onnodig is gebleken voor de doeleinde van deze site.
 
@@ -88,15 +87,15 @@ if (lsSupport) { // Use LocalStorage
 ```
 
 
-## Test
+## Testen
 
 ### Test 1: Screen Reader
 **Pluspunten**
 - De screenreader leest alle links en buttons goed voor aan de gebruiker.
 - De volgorde die de screenreader volgt klopt, dus de paginastructuur lijkt in orde.
 
-Minpunten:
-- Elk t-shirt blok noemt de screen reader een 'article', dit kan verwarrend zijn voor een gebruiker.
+**Minpunten:**
+- Elk t-shirt containerblok noemt de screen reader een 'article', dit kan verwarrend zijn voor een gebruiker.
 - De afbeeldingen van de t-shirts bevatten geen goede alt text.
 
 **Alt text op afbeeldingen**
