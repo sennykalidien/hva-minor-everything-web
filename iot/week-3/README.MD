@@ -11,14 +11,14 @@ For this tutorial I expect you at least know:
 - How to work with your command prompt (Windows) or Terminal (Mac).
 
 ## Table of content
-1. Overview
-2. What do we need?
-3. Set up the hardware
-4. Set up the software
-5. Set up the server
-6. Add the code to do the magic
-7. Magic!
-8. Demo
+1. [Overview](#1-overview)
+2. [What do we need?](#2-what-do-we-need)
+3. [Set up the hardware](#3-hardware-setup)
+4. [Set up the software](#step-4---connect-the-distance-sensor)
+5. [Set up the server](#5-server-setup)
+6. [Add the code to do the magic](#6-6-add-the-code-to-do-the-magic)
+7. [Magic!](#7-magic)
+8. [Demo](#8-demo)
 
 ## 1. Overview
 This IoT project allows you to set up a simple distance sensor that is connected with a NodeMCU EPS8266 board and pushes it's data to a Node Server environment. The Node server allows you to:
@@ -151,7 +151,7 @@ You can see the UI at localhost:8080
 *This tutorial won't explain how to set up this server on a live environment with a own domain. My advice: check out Digital Ocean how to set up a node server on an live environment.*
 
 
-## 6. Code
+## 6. Add the code to do the magic
 
 ### Step 1 - The Libraries
 Open a new file in Arduino by navigating to **Sketch > Include libraries** and add these libraries to your project:
@@ -385,7 +385,7 @@ void sendNetworkData() {
 
 **The full code can be found here:** [Arduino Code](https://github.com/sennykalidien/EW/blob/master/iot/week-3/arduino/communicate_iot/communicate_iot.ino)
 
-## 7. Done!
+## 7. Magic!
 This should do the trick! Give it a try, upload the code to your NodeMCU board and check if it connects succesfully with your server.
 
 Let me know if you have any issues. :-)
