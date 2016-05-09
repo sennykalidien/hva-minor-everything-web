@@ -1,0 +1,1 @@
+"use strict";d3.json("/api/data",function(t,a){var e=[],n=["Distance from laptop to me"];a.forEach(function(t,a){e.push(t.time),n.push(t.input.distance)});var o=30,i=n.slice(Math.max(n.length-o,1)),c="Distance from laptop in centimeter";i.unshift(c),console.log(i);c3.generate({data:{columns:[i],xFormat:"%H:%M:%S"},axis:{x:{type:"category",categories:e}}})});
