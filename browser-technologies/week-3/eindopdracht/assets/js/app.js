@@ -10,8 +10,11 @@ APP.launcher = (function() {
 
     function init() {
         document.addEventListener("DOMContentLoaded", function() {
-            APP.data.querySelectorFallback();
-            APP.data.storage();
+
+            /* Feature Detection */
+            if ((document.querySelectorAll || document.querySelector) && ('forEach' in Array.prototype)) {
+                APP.data.storage();
+            } else {}
         });
     };
 
@@ -22,7 +25,7 @@ APP.launcher = (function() {
 }());
 
 /*********************************************************
-	DATA: LOCAL STORAGE + COOKIES
+	DATA: SET LOCAL STORAGE (or COOKIE)
 *********************************************************/
 APP.data = (function() {
 
@@ -57,27 +60,16 @@ APP.data = (function() {
     var newArrayID = arrayID;
 
     // Global variables
-    var _shirtContainers = document.querySelectorAll('.shirts__container');
-    var _shirtContainersForm = document.querySelectorAll('.shirts__form');
-    var _favouritesContainersForm = document.querySelectorAll('.favourites__form');
     var _favouriteContainers = document.querySelectorAll('.favourites__container');
     var _favouriteButtons = document.querySelectorAll('.shirts__favourite__btn');
 
-    [].forEach.call(_shirtContainersForm, function(form) {
-        form.setAttribute("action","");
-    });
-
-    [].forEach.call(_favouritesContainersForm, function(form) {
-        form.setAttribute("action","");
-    });
-
     // Add favourites to list according to newArrayID
     [].forEach.call(newArrayID, function(ID) {
-        var _favouriteContainers = document.querySelector('.favourites__container[data-id="' + ID + '"');
+        var _favouriteContainers = document.querySelector('#favourite-' + ID + '');
         _favouriteContainers.classList.add('favourites__container--active');
 
 
-        var _shirtFavouriteButtons = document.querySelector('.shirts__favourite__btn[data-id="' + ID + '"]');
+        var _shirtFavouriteButtons = document.querySelector('.shirts__favourite__btn[value="' + ID + '"]');
         _shirtFavouriteButtons.classList.add('active');
         _shirtFavouriteButtons.innerHTML = 'Remove from favourites';
     });
@@ -85,12 +77,12 @@ APP.data = (function() {
     // Storage function for dynamically adding new IDs to newArrayID based on click on add button.
     function storage() {
         [].forEach.call(_favouriteButtons, function(button) {
-            //var buttonID = button.getAttribute('data-id');
             button.addEventListener('click', storeID, false);
         });
 
-        function storeID() {
-            var clickedID = this.getAttribute('data-id');
+        function storeID(event) {
+            event.preventDefault()
+            var clickedID = this.getAttribute('value');
             arrayID.push(clickedID);
 
             this.classList.add('active');
@@ -124,11 +116,11 @@ APP.data = (function() {
             };
 
             [].forEach.call(newArrayID, function(ID) {
-                var _favouriteContainers = document.querySelector('.favourites__container[data-id="' + ID + '"');
+                var _favouriteContainers = document.querySelector('#favourite-' + ID + '');
                 _favouriteContainers.classList.add('favourites__container--active');
 
 
-                var _shirtFavouriteButtons = document.querySelector('.shirts__favourite__btn[data-id="' + ID + '"]');
+                var _shirtFavouriteButtons = document.querySelector('.shirts__favourite__btn[value="' + ID + '"]');
                 _shirtFavouriteButtons.classList.add('active');
                 _shirtFavouriteButtons.innerHTML = 'Remove from favourites';
             });
@@ -219,40 +211,9 @@ APP.data = (function() {
         }
     };
 
-    function querySelectorFallback() { // src: https://gist.github.com/chrisjlee/8960575
-        if (!document.querySelectorAll) {
-            document.querySelectorAll = function(selectors) {
-                var style = document.createElement('style'),
-                    elements = [],
-                    element;
-                document.documentElement.firstChild.appendChild(style);
-                document._qsa = [];
-
-                style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
-                window.scrollBy(0, 0);
-                style.parentNode.removeChild(style);
-
-                while (document._qsa.length) {
-                    element = document._qsa.shift();
-                    element.style.removeAttribute('x-qsa');
-                    elements.push(element);
-                }
-                document._qsa = null;
-                return elements;
-            };
-        }
-        if (!document.querySelector) {
-            document.querySelector = function(selectors) {
-                var elements = document.querySelectorAll(selectors);
-                return (elements.length) ? elements[0] : null;
-            };
-        };
-    }
-
     return {
         storage: storage,
-        addStorage: addStorage,
-        querySelectorFallback: querySelectorFallback
+        addStorage: addStorage
     };
 
 })();

@@ -25,7 +25,7 @@
             </section>
 
             <section id="shirts">
-                <article class="shirts__container">
+                <article id="shirt-1" class="shirts__container" >
                     <figure class="shirts__thumbnail">
                         <img class="shirts__image" src="./assets/images/shirt-1.jpg" alt="T-shirt: Best Hacker Alive!" />
                     </figure>
@@ -33,11 +33,11 @@
                         <h3 class="shirts__title">Best Hacker Alive!</h3>
                     </header>
                     <p class="shirts__price">10 euro</p>
-                    <form class="shirts__form" action="#favourite-1">
-                        <button data-id="1" class="shirts__favourite__btn">Add to favourites</button>
+                    <form class="shirts__form">
+                        <button name="shirt" value="1" class="shirts__favourite__btn">Add to favourites</button>
                     </form>
                 </article>
-                <article class="shirts__container">
+                <article id="shirt-2" class="shirts__container">
                     <figure class="shirts__thumbnail">
                         <img class="shirts__image" src="./assets/images/shirt-2.jpg" alt="T-shirt: Too long; didn't read." />
                     </figure>
@@ -45,11 +45,11 @@
                         <h3 class="shirts__title">TL;DR</h3>
                     </header>
                     <p class="shirts__price">10 euro</p>
-                    <form class="shirts__form" action="#favourite-2">
-                        <button data-id="2" class="shirts__favourite__btn">Add to favourites</button>
+                    <form class="shirts__form">
+                        <button name="shirt" value="2" class="shirts__favourite__btn">Add to favourites</button>
                     </form>
                 </article>
-                <article class="shirts__container">
+                <article id="shirt-3" class="shirts__container">
                     <figure class="shirts__thumbnail">
                         <img class="shirts__image" src="./assets/images/shirt-3.jpg" alt="T-shirt: Google me &amp; find nothing!" />
                     </figure>
@@ -57,11 +57,11 @@
                         <h3 class="shirts__title">Mr. Anonymous</h3>
                     </header>
                     <p class="shirts__price">10 euro</p>
-                    <form class="shirts__form" action="#favourite-3">
-                        <button data-id="3" class="shirts__favourite__btn">Add to favourites</button>
+                    <form class="shirts__form">
+                        <button name="shirt" value="3" class="shirts__favourite__btn">Add to favourites</button>
                     </form>
                 </article>
-                <article class="shirts__container">
+                <article id="shirt-4" class="shirts__container">
                     <figure class="shirts__thumbnail">
                         <img class="shirts__image" src="./assets/images/shirt-4.jpg" alt="T-shirt: I like my code vanilla. Vanilla JavaScript." />
                     </figure>
@@ -69,11 +69,11 @@
                         <h3 class="shirts__title">Vanilla JS <3</h3>
                     </header>
                     <p class="shirts__price">10 euro</p>
-                    <form class="shirts__form" action="#favourite-4">
-                        <button data-id="4" class="shirts__favourite__btn">Add to favourites</button>
+                    <form class="shirts__form">
+                        <button name="shirt" value="4" class="shirts__favourite__btn">Add to favourites</button>
                     </form>
                 </article>
-                <article class="shirts__container">
+                <article id="shirt-5" class="shirts__container">
                     <figure class="shirts__thumbnail">
                         <img class="shirts__image" src="./assets/images/shirt-5.jpg" alt="T-shirt: Polyfills are SEXY!" />
                     </figure>
@@ -81,8 +81,8 @@
                         <h3 class="shirts__title">Sexy Polyfills</h3>
                     </header>
                     <p class="shirts__price">10 euro</p>
-                    <form class="shirts__form" action="#favourite-5">
-                        <button data-id="5" class="shirts__favourite__btn">Add to favourites</button>
+                    <form class="shirts__form">
+                        <button name="shirt" value="5" class="shirts__favourite__btn">Add to favourites</button>
                     </form>
                 </article>
                 <article class="shirts__container">
@@ -93,8 +93,8 @@
                         <h3 class="shirts__title">My girlfriend</h3>
                     </header>
                     <p class="shirts__price">10 euro</p>
-                    <form class="shirts__form" action="#favourite-6">
-                        <button data-id="6" class="shirts__favourite__btn">Add to favourites</button>
+                    <form class="shirts__form">
+                        <button name="shirt" value="6" class="shirts__favourite__btn">Add to favourites</button>
                     </form>
                 </article>
             </section>
@@ -103,7 +103,7 @@
                 <header>
                     <h2>My favourites</h2>
                 </header>
-            	<article class="favourites__container" id="favourite-1" data-id="1">
+            	<article id="favourite-1" class="favourites__container">
             		<figure class="favourites__thumbnail">
             			<img class="favourites__image" src="./assets/images/shirt-1.jpg" alt="T-shirt: Best Hacker Alive!" />
             		</figure>
@@ -111,11 +111,11 @@
             			<h3 class="favourites__title">Best Hacker Alive!</h3>
             		</header>
             		<p class="favourites__price">10 euro</p>
-            		<form class="favourites__form" action="#">
-                        <button data-id="1" class="shirts__favourite__btn active">Remove from favourites</button>
+            		<form class="favourites__form">
+                        <button name="shirt" value="1" class="shirts__favourite__btn active">Remove from favourites</button>
                     </form>
             	</article>
-            	<article class="favourites__container" id="favourite-2" data-id="2">
+            	<article id="favourite-2" class="favourites__container">
             		<figure class="favourites__thumbnail">
             			<img class="favourites__image" src="./assets/images/shirt-2.jpg" alt="T-shirt: Too long; didn't read." />
             		</figure>
@@ -123,11 +123,11 @@
             			<h3 class="favourites__title">TL;DR</h3>
             		</header>
             		<p class="favourites__price">10 euro</p>
-                    <form class="favourites__form" action="#">
-                        <button data-id="2" class="shirts__favourite__btn active">Remove from favourites</button>
+                    <form class="favourites__form">
+                        <button name="shirt" value="2" class="shirts__favourite__btn active">Remove from favourites</button>
                     </form>
             	</article>
-            	<article class="favourites__container" id="favourite-3" data-id="3">
+            	<article id="favourite-3" class="favourites__container">
             		<figure class="favourites__thumbnail">
             			<img class="favourites__image" src="./assets/images/shirt-3.jpg" alt="T-shirt: Google me &amp; find nothing!" />
             		</figure>
@@ -135,11 +135,11 @@
             			<h3 class="favourites__title">Mr. Anonymous</h3>
             		</header>
             		<p class="favourites__price">10 euro</p>
-                    <form class="favourites__form" action="#">
-            		    <button data-id="3" class="shirts__favourite__btn active">Remove from favourites</button>
+                    <form class="favourites__form">
+            		    <button name="shirt" value="3" class="shirts__favourite__btn active">Remove from favourites</button>
                     </form>
             	</article>
-            	<article class="favourites__container" id="favourite-4" data-id="4">
+            	<article id="favourite-4" class="favourites__container">
             		<figure class="favourites__thumbnail">
             			<img class="favourites__image" src="./assets/images/shirt-4.jpg" alt="T-shirt: I like my code vanilla. Vanilla JavaScript." />
             		</figure>
@@ -147,11 +147,11 @@
             			<h3 class="favourites__title">Vanilla JS <3</h3>
             		</header>
             		<p class="favourites__price">10 euro</p>
-                    <form class="favourites__form" action="#">
-                        <button data-id="4" class="shirts__favourite__btn active">Remove from favourites</button>
+                    <form class="favourites__form">
+                        <button name="shirt" value="4" class="shirts__favourite__btn active">Remove from favourites</button>
                     </form>
             	</article>
-            	<article class="favourites__container" id="favourite-5" data-id="5">
+            	<article id="favourite-5" class="favourites__container">
             		<figure class="favourites__thumbnail">
             			<img class="favourites__image" src="./assets/images/shirt-5.jpg" alt="T-shirt: Polyfills are SEXY!" />
             		</figure>
@@ -159,11 +159,11 @@
             			<h3 class="favourites__title">Sexy Polyfills</h3>
             		</header>
             		<p class="favourites__price">10 euro</p>
-                    <form class="favourites__form" action="#">
-                        <button data-id="5" class="shirts__favourite__btn active">Remove from favourites</button>
+                    <form class="favourites__form">
+                        <button name="shirt" value="5" class="shirts__favourite__btn active">Remove from favourites</button>
                     </form>
             	</article>
-            	<article class="favourites__container" id="favourite-6" data-id="6">
+            	<article id="favourite-6" class="favourites__container">
             		<figure class="favourites__thumbnail">
             			<img class="favourites__image" src="./assets/images/shirt-6.jpg" alt="T-shirt: My Girlfriend? Roxy behind a Proxy." />
             		</figure>
@@ -171,8 +171,8 @@
             			<h3 class="favourites__title">My girlfriend</h3>
             		</header>
             		<p class="favourites__price">10 euro</p>
-                    <form class="favourites__form" action="#">
-                        <button data-id="6" class="shirts__favourite__btn active">Remove from favourites</button>
+                    <form class="favourites__form">
+                        <button name="shirt" value="6" class="shirts__favourite__btn active">Remove from favourites</button>
                     </form>
             	</article>
             </aside>
