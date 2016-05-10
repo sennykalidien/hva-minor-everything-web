@@ -12,9 +12,9 @@ APP.launcher = (function() {
         document.addEventListener("DOMContentLoaded", function() {
 
             /* Feature Detection */
-            if ((document.querySelectorAll || document.querySelector) && ('forEach' in Array.prototype)) {
+            if ((document.querySelectorAll && document.querySelector) && ('forEach' in Array.prototype)) {
                 APP.data.storage();
-            } else {}
+            }
         });
     };
 
