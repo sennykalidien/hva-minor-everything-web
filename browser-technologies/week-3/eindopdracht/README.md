@@ -57,7 +57,7 @@ Webstorage kan LocalStorage of cookies zijn. Bij het toevoegen van een shirt aan
 ![Array in a Local Storage](https://raw.githubusercontent.com/sennykalidien/EW/master/browser-technologies/week-3/eindopdracht/readme/localstorage-array.png)
 
 #### De fallback
-Als Local Storage niet wordt ondersteund, valt het terug op cookies. Hiervoor heb ik gebruik gemaakt van dit voorbeeld (wat geen polyfill is):
+Als Local Storage niet wordt ondersteund, valt het terug op cookies. Hiervoor heb ik gebruik gemaakt van dit voorbeeld (wat geen polyfill is maar een feature detection):
 [Fluid Byte @ github](https://gist.github.com/Fluidbyte/4718380)
 
 
