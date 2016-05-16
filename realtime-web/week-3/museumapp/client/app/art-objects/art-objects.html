@@ -12,12 +12,12 @@
 
         {{#if searching}}
             <p>Searching...</p>
-        {{else}} 
+        {{else}}
         {{#if artObjects.count}}
            <div class="art-objects">
             {{#each artObjects}}
                 <div class="object">
-                    <img src="http://ahm.adlibsoft.com/ahmimages/{{image}}" alt="image" />
+                    <img src="http://amasp.adlibhosting.com/wwwopacx_images/wwwopac.ashx?command=getcontent&server=images&imageformat=jpg&value={{image}}" alt="image" />
                     <h3>{{title}}</h3>
                     <span>Categorie: {{category}}</span>
                     <form>
