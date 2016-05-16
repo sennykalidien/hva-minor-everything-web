@@ -2,6 +2,7 @@
 
 ## NodeMCU EPS8266 + distance sensor that communicates with a Node server.
 With this setup you can track how much centimeters (CM) an object is placed from the sensor and send that data to your own server. With this data you can for example:
+
 1. Track if somebody or something is still on it's place
 2. Track if somebody or something is to close or to far from an object.
 3. Track if there is any activity in the environment
@@ -9,6 +10,7 @@ With this setup you can track how much centimeters (CM) an object is placed from
 And when the scenario occurs, you can configure what alert you want to give. In this tutorial a LED will light up.
 
 For this tutorial I expect you have at least a little understanding of:
+
 - The programming language C++ (or JavaScript)
 - How to work with your command prompt (Windows) or Terminal (Mac).
 - How to set up a own live node server (if you want to communicate with a live environment server)
