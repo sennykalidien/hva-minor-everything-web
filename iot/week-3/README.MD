@@ -6,6 +6,8 @@ With this setup you can track how much centimeters (CM) an object is placed from
 1. Track if somebody or something is to close or to far from an object.
 2. Track if there is any activity in the environment
 
+And when the scenario occurs, you can configure what alert you want to give. In this tutorial a LED will light up.
+
 For this tutorial I expect you have at least a little understanding of:
 - The programming language C++ (or JavaScript)
 - How to work with your command prompt (Windows) or Terminal (Mac).
@@ -25,8 +27,9 @@ For this tutorial I expect you have at least a little understanding of:
 This IoT project allows you to set up a simple distance sensor that is connected with a NodeMCU EPS8266 board and pushes it's data to a Node Server environment. The Node server allows you to:
 1. display the distance between a distance sensor and an object (or person).
 2. manipulate a output source on your NodeMCU board (in our case a led).
+3. Configure *when* and *how* a output source should behave.
 
-## 2. What do we need?
+## 2. What do you need?
 - NodeMCU ESP8266 + WiFi board
 - HC-SR04 Distance Sensor
 - NodeMCU EPS8266 drivers
@@ -45,26 +48,26 @@ You should have this ready to go:
 
 
 ### Schematic overview
-Here's how schematic overview of how to connect the sensor and the leds.
+Here's how schematic overview of how to connect the *sensor* and the *LEDs*.
 
 ![Schematic overview]()
 
 If you want a step by step instruction of how to connect everything, you can keep reading the steps below. If this schematic overview is enough for you to set up the hardware, skip to chapter 4: [set up the software](#4-set-up-the-software).
 
 ### Step 1 - The NodeMCU Board
-We'll start putting the NodeMCU board at the right place on your breadboard. I would suggest you do it in the center bottom so you have plenty of space for your distance sensor and the LEDS.
+We'll start putting the NodeMCU board at the right place on your breadboard. I would suggest you do it in the center bottom so you have plenty of space left to insert your distance sensor and the LEDS.
 
 ![NodeMCU placement](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-complete-setup-2.jpg)
 
 ### Step 2 - Create a power (5 volt) + row and ground (-) row
-Take two wires (preferable a red and blue one) connect the 5v (red) to the + and the ground (blue) to the - on your breadboard.
+Take two wires (preferable a red and blue one) connect the 5v (red wire) to the **+ (plus)** and the ground (blue wire) to the **- (min)** part of your breadboard.
 
 ![Wires](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-volt-ground.jpg)
 
-Now we have the ingredients to make our sensors and leds work.
+Now we have the ingredients to make our sensors and LEDs work.
 
 ### Step 3 - Connect the leds
-*The leds will indicate how far away you your object is from your distance sensor. On the Node Server, which we will set up in just a bit, we can configure which led needs to light up manually.*
+*The LEDs will indicate how far away you your object is from your distance sensor. On the Node Server, which we will set up in just a bit, we can configure which led needs to light up manually.*
 
 There are different ways to connect your led. I prefer to connect the ground side of the led into our ground row.
 
@@ -78,7 +81,6 @@ On the other side of the leds we'll need 3 more wires to connect them to the out
 ### Step 4 - Connect the distance sensor
 The distance meter has 4 connectors we need to connect with the breadboard wires.
 
-
 ![Distance wires](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-sensor-connections.jpg)
 ![Distance wires](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-distance-wires.jpg)
 
@@ -87,7 +89,7 @@ The distance meter has 4 connectors we need to connect with the breadboard wires
 3. Connect the echo on the **D0** port
 4. Connect the trigger on the **D1** port
 
-That should do the trick! If your done, it will look hopefully look like this:
+That should do the trick! If your done, it will look like this:
 
 ![Complete setup 1](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-complete-setup-1.jpg)
 
@@ -100,12 +102,13 @@ You will need the Arduino software and the drivers for the NodeMCU ESP8266 for t
 ### Step 1 - Install the Arduino software
 You can download the Arduino software at the official site of [Arduino](https://www.arduino.cc/en/Main/Software)
 
-Install the software by following the standard procedure and launch the program if it's finished. You should see a empty editor window.
+Install the software by following the standard installation procedure and launch the program after it's finished. You should see an empty editor window.
 
 
 ### Step 2 - Add the NodeMCU ESP8266 driver
-1 - Go to Arduino > Preferences (in the menubar)
+Next we need to install the necessary driver so the Arduino software can work with out NodeMCU board.
 
+1 - Go to Arduino > Preferences (in the menubar)
 ![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-navigate-settings.png)
 
 Add the following link at the "Additional Boards Manager URLs"
@@ -128,9 +131,10 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 
 ## 5. Set up the server
+*It's finally time to set up our server. This tutorial will show you how to set it up locally. This tutorial won't explain how to set up this server on a live environment with a own domain. My advice: check out Digital Ocean how to set up a node server on an live environment.*
 
 ### Clone GitHub
-Clone this git to the folder where you want the store this project on your computer.
+Clone this git repository to the folder where you want the store this project local on your computer. You need to open your Command Prompt (Windows) or Terminal (Mac) to execute this.
 
 ```
 git clone https://github.com/sennykalidien/IoT-NodeMCU.git
@@ -144,29 +148,49 @@ After the git repository is cloned with the right branche, install all node modu
 npm install
 ```
 
-After this you can start your server locally with:
+After the installation you can start your server locally with the following command:
 
 ```
 npm start
 ```
 
-You can see the UI at localhost:8080
+You can view the UI by going to [localhost:3010](http://localhost:3010)
 
-*This tutorial won't explain how to set up this server on a live environment with a own domain. My advice: check out Digital Ocean how to set up a node server on an live environment.*
+### The UI
+The UI consist of two pages:
+**1 - Homes page - An overview of the data**
+![UI home](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/ui-server-home.png)
+
+**2 - Settings page - configure the in- and output of our board**
+![UI home](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/ui-server-settings.png)
 
 
-## 6. Add the code to do the magic
+## 6. Add the code for our NodeMCU to do the magic
+Good news: you're almost done! We only need to add the code to make our NodeMCU behave properly. It will need to do two thing:
+1. A GET request - Get the status of our output (LED) **from** the server.
+2. A POST request - Post the data of our distance sensor **to** the server.
+
 
 ### Step 1 - The Libraries
 Open a new file in Arduino by navigating to **Sketch > Include libraries** and add these libraries to your project:
-- ESP8266WIFI
-- ArduinoJson
+- ESP8266WIFI (should already be available when we installed the drivers for our NodeMCU board)
+- ArduinoJson [download here](https://github.com/bblanchon/ArduinoJson)
 
-This will add the following on top of your editor window
+```
+How to add a external library:
+If you don't have the necessary libraries available on your computer you need to download the library and manually add it so you can use it in the Arduino software.
+
+The libraries can be added in your documents folder > arudino > library
+
+MAKE SURE YOU PUT THE WHOLE FOLDER IN THERE AND NOT JUST THE FILES.
+```
+If you've selected the libraries it  will add the following on top of your editor window:
+
 ```
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>
 ```
+
 ### Step 2 - Wifi Connection
 Next we'll set up your WiFi connection.
 ```
@@ -241,7 +265,6 @@ void setup() {
   //Serial.println("IP address: " + WiFi.localIP());
 }
 ```
-
 
 ### Step 6 - The GET request to get the status of our LEDS
 This is the loop our code needs to repeat. We want out board to do a GET request to retrieve the status of our LEDS frequently, so we set up a delay so it won't do it every send. The same we'll configure for our POST request.
@@ -329,7 +352,6 @@ void getNetworkData() {
 
 ```
 
-
 ### Step 8 - The POST request function to send the data of our distance sensor
 ```
 // Send data
@@ -390,9 +412,9 @@ void sendNetworkData() {
 **The full code can be found here:** [Arduino Code](https://github.com/sennykalidien/EW/blob/master/iot/week-3/arduino/communicate_iot/communicate_iot.ino)
 
 ## 7. Magic!
-That should do the trick! Give it a try, upload the code to your NodeMCU board and check if it connects succesfully with your server.
+That should do the trick! Give it a try, upload the code to your NodeMCU board and check if it connects successfully with your server.
 
 Let me know if you have any issues. :-)
 
 ## 8. Demo
-A demo of this can be found at: http://iot.directzichtbaar.nl
+A demo of this can be found at: [http://iot.directzichtbaar.nl](http://iot.directzichtbaar.nl)
