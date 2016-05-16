@@ -121,12 +121,15 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-settings.png)
 
 2 - Go to Tools > Board > Boardmanager (in the menubar)
+
 3 - Search for 'esp'
+
 4 - Select the block and click 'install'
 
 ![Arduino settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-tools-search.png)
 
 5 - The drivers should be installed now
+
 6 - Go to tools and make sure your settings look like this:
 
 ![Arduino Tools settings](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/arduino-tools-settings.png)
