@@ -163,7 +163,7 @@ The UI consist of two pages:
 **1 - Homes page - An overview of the data**
 ![UI home](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/ui-server-home.png)
 
-**2 - Settings page - configure the in- and output of our board**
+**2 - Settings page - configure the input and output of your board**
 ![UI home](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/ui-server-settings.png)
 
 
