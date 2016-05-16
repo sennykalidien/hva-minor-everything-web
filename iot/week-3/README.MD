@@ -7,7 +7,7 @@ With this setup you can track how much centimeters (CM) an object is placed from
 2. Track if somebody or something is to close or to far from an object.
 3. Track if there is any activity in the environment
 
-And when the scenario occurs, you can configure what alert you want to give. In this tutorial a LED will light up.
+At the server you can configure what alert you want to give. In this tutorial a LED will light up.
 
 For this tutorial I expect you have at least a little understanding of:
 
