@@ -1,10 +1,10 @@
-# Internet of Things: The Manual
+# Internet of Things: the manual
 
 ## NodeMCU EPS8266 + distance sensor that communicates with a Node server.
 With this setup you can track how much centimeters (CM) an object is placed from the sensor and send that data to your own server. With this data you can for example:
 1. Track if somebody or something is still on it's place
-1. Track if somebody or something is to close or to far from an object.
-2. Track if there is any activity in the environment
+2. Track if somebody or something is to close or to far from an object.
+3. Track if there is any activity in the environment
 
 And when the scenario occurs, you can configure what alert you want to give. In this tutorial a LED will light up.
 
