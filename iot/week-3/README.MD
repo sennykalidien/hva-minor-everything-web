@@ -46,15 +46,14 @@ This IoT project allows you to set up a simple distance sensor that is connected
 ## 3. Set up the hardware
 You should have this ready to go:
 
-![Requirements]()
-
+![Requirements](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-requirements.jpg)
 
 ### Schematic overview
 Here's how schematic overview of how to connect the *sensor* and the *LEDs*.
 
-![Schematic overview]()
+![Schematic overview](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/hardware-schematic-overview.png)
 
-If you want a step by step instruction of how to connect everything, you can keep reading the steps below. If this schematic overview is enough for you to set up the hardware, skip to chapter 4: [set up the software](#4-set-up-the-software).
+If you want a step by step instruction of how to connect everything, you can keep reading the steps below. If this schematic overview is enough for you to set up the hardware, skip to [chapter 4: set up the software](#4-set-up-the-software).
 
 ### Step 1 - The NodeMCU Board
 We'll start putting the NodeMCU board at the right place on your breadboard. I would suggest you do it in the center bottom so you have plenty of space left to insert your distance sensor and the LEDS.

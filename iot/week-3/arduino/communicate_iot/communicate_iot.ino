@@ -1,32 +1,41 @@
-#include <ESP8266WiFi.h>
-#include <ArduinoJson.h>
+#include <ESP8266WiFi.h> // Allows you to make a connection with WiFi
+#include <ArduinoJson.h> // Allows you to parse and read Json objects
+#include <TimedAction.h> // Allows you to configure when to execute a function
 
-// Hotspot
-//const char* ssid     = "SennyK";
-//const char* password = "27031990!";
+/* Hotspot */
+const char* ssid     = "SennyK";
+const char* password = "27031990!";
 
-// WiFi
-const char* ssid     = "SJMK_gast";
-const char* password = "directzichtbaar";
+/* WiFi */
+//const char* ssid     = "SJMK_gast";
+//const char* password = "directzichtbaar";
 
-// Hosts
+/* Hosts */
 const char* host     = "iot.directzichtbaar.nl"; // Your domain
 String path          = "/api/status/output";
 const int httpPort   = 80;
 
-// LED Pins
+/* LED Pins */
 const int ledPinGreen   = D5;
 const int ledPinYellow  = D6;
 const int ledPinRed     = D7;
 
-// Range Pins
+/* Range Pins */
 const int echoPin       = D0;
 const int trigPin       = D1;
 
-// Distance
+/* Distance Settings */
 int maximumRange = 250; // Maximum range needed
 int minimumRange = 0; // Minimum range needed
 long duration, distance; // Duration used to calculate distance
+
+/* Declare Voids */
+void getNetworkData();
+void sendNetworkData();
+
+/* Timed Action */
+TimedAction getNetworkDataAction = TimedAction(1000,getNetworkData);
+TimedAction sendNetworkDataAction = TimedAction(60000,sendNetworkData);
 
 WiFiClient client;
 
@@ -39,7 +48,6 @@ void setup() {
   pinMode(ledPinGreen, OUTPUT);
   pinMode(ledPinYellow, OUTPUT);
   pinMode(ledPinRed, OUTPUT);
-
 
   //set serial
   Serial.begin(9600);
@@ -65,11 +73,9 @@ void loop() {
     Serial.println("connection failed");
     return;
   }
-
-  getNetworkData();
-  delay(2000);
-  sendNetworkData();
-  delay(30000);
+  
+  getNetworkDataAction.check();
+  sendNetworkDataAction.check();
 }
 
 // GET DATA
