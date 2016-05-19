@@ -175,6 +175,7 @@ The UI consist of two pages:
 
 ## 6. Add the code for our NodeMCU to do the magic
 Good news: you're almost done! We only need to add the code to make our NodeMCU behave properly. It will need to do two thing:
+
 1. A GET request - Get the status of our output (LED) **from** the server.
 2. A POST request - Post the data of our distance sensor **to** the server.
 
