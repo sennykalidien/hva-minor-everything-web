@@ -1,4 +1,5 @@
 # Internet of Things: the manual
+![UI home](https://raw.githubusercontent.com/sennykalidien/EW/master/iot/week-3/readme/ui-server-home.png)
 
 ## NodeMCU EPS8266 + distance sensor that communicates with a Node server.
 With this setup you can track how much centimeters (CM) an object is placed from the sensor and send that data to your own server. With this data you can for example:
