@@ -148,7 +148,7 @@ git checkout iot-senny
 ```
 
 ### Alternative method
-Download the files from the Github resporitory: [Server repository](https://github.com/sennykalidien/IoT-NodeMCU)
+Download the files from the Github resporitory: [Server repository](https://github.com/sennykalidien/IoT-NodeMCU/tree/iot-senny)
 
 After the git repository is cloned with the right branch, install all node modules with:
 
