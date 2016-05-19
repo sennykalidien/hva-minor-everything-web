@@ -147,7 +147,10 @@ cd IoT-NodeMCU
 git checkout iot-senny
 ```
 
-After the git repository is cloned with the right branche, install all node modules with:
+### Alternative method
+Download the files from the Github resporitory: [Server repository](https://github.com/sennykalidien/IoT-NodeMCU)
+
+After the git repository is cloned with the right branch, install all node modules with:
 
 ```
 npm install
