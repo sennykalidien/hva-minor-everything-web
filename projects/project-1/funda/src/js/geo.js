@@ -1,12 +1,12 @@
 /*********************************************************
 	GEO LOCATION
 *********************************************************/
-APP.geo = (function () {
+APP.geo = ( () => {
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-                displayPosition,
-                displayError, {
+                _displayPosition,
+                _displayError, {
                     enableHighAccuracy: true,
                     maximumAge: 0
                 }
@@ -14,7 +14,7 @@ APP.geo = (function () {
         }
     }
 
-    function displayPosition(position) {
+    function _displayPosition(position) {
         var gpsToCity = ['https://nominatim.openstreetmap.org/reverse?format=json&lat=', '&lon='],
             lat = position.coords.latitude,
             lon = position.coords.longitude,
@@ -22,7 +22,7 @@ APP.geo = (function () {
             CityUrl = gpsToCity[0] + lat + gpsToCity[1] + lon + zoom;
 
         APP.data.request(CityUrl)
-            .then(function (response) {
+            .then( (response) => {
                 var cityData = JSON.parse(response);
                 var city = cityData.address.city || cityData.address.town;
                 localStorage.setItem('Location', city)
@@ -33,13 +33,12 @@ APP.geo = (function () {
             })
     }
 
-    function displayError() {
+    function _displayError() {
         console.log('an error has occured');
     }
 
     return {
-        getLocation: getLocation,
-        displayPosition: displayPosition
+        getLocation: getLocation
     };
 
 })();

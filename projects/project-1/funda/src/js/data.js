@@ -1,12 +1,12 @@
 /*********************************************************
 	DATA REQUEST
 *********************************************************/
-APP.data = (function (city) {
+APP.data = ( (city) => {
     function request(url) { // src: http://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr
-        return new Promise(function (resolve, reject) {
+        return new Promise((resolve, reject) => {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
-            xhr.onload = function () {
+            xhr.onload =  () => {
                 if (this.status >= 200 && this.status < 300) {
                     resolve(xhr.response);
                 } else {
@@ -16,7 +16,7 @@ APP.data = (function (city) {
                     });
                 }
             };
-            xhr.onerror = function () {
+            xhr.onerror =  () => {
                 reject({
                     status: this.status,
                     statusText: xhr.statusText
@@ -35,12 +35,21 @@ APP.data = (function (city) {
             pageSize = '25',
             apiURL = 'http://funda.kyrandia.nl/feeds/Aanbod.svc/'+ objectType + '/'+ apiKey + '/?type=' + type + '&zo=/' + city + '&page=' + pageNumber + '&pagesize=' + pageSize + '';
 
-        APP.data.request(apiURL)
-            .then(function (response) {
+        this.request(apiURL)
+            .then( (response) => {
                 var houseData = JSON.parse(response);
                 var houseIDs = [];
 
-                [].forEach.call(houseData.Objects, function (house) {
+                // [].forEach.call(houseData.Objects,(house) => {
+                //     if(house.HeeftVideo == true) {
+                //         var IDs = {
+                //             id: house.Id
+                //         };
+                //         houseIDs.push(IDs);
+                //     }
+                // });
+
+                houseData.Objects.forEach((house) => {
                     if(house.HeeftVideo == true) {
                         var IDs = {
                             id: house.Id
@@ -49,7 +58,6 @@ APP.data = (function (city) {
                     }
                 });
 
-                console.log(houseIDs);
                 APP.router.init(houseIDs, city);
             })
     };
@@ -63,11 +71,9 @@ APP.data = (function (city) {
             pageSize = '25',
             apiURL = 'http://funda.kyrandia.nl/feeds/Aanbod.svc/'+ objectType + '/'+ apiKey + '/?type=' + type + '&zo=/' + city + '&page=' + pageNumber + '&pagesize=' + pageSize + '';
 
-        APP.data.request(apiURL)
-            .then(function (response) {
+        this.request(apiURL)
+            .then( (response) => {
                 var houseData = JSON.parse(response);
-
-                console.log(houseData);
 
                 var data = [];
 
@@ -83,8 +89,6 @@ APP.data = (function (city) {
                     data.push(objects);
                 });
 
-                console.log(data);
-
                 APP.page.houseFavourites(data);
             })
     };
@@ -97,11 +101,9 @@ APP.data = (function (city) {
             apiURL = 'http://funda.kyrandia.nl/feeds/Aanbod.svc/' + objectType + '/detail/' + apiKey + '/' + type + '/' + ID + '/';
 
 
-        APP.data.request(apiURL)
-            .then(function (response) {
+        this.request(apiURL)
+            .then( (response) => {
                 var houseData = JSON.parse(response);
-
-                console.log(houseData);
 
                 var i, media, j, mediaItems, largePhotosUrl;
                 var photos = [];
@@ -110,13 +112,10 @@ APP.data = (function (city) {
                   if(media.MediaItems[3] != undefined) {
                       largePhotosUrl = media.MediaItems[3].Url;
                   }
-                  console.log(largePhotosUrl);
                   photos.push({photo: largePhotosUrl});
                 }
 
-                console.log(photos);
                 var data = [];
-
                 var objects = {
                     id: houseData.InternalId,
                     title: houseData.Titels[0].Omschrijving,
@@ -126,8 +125,6 @@ APP.data = (function (city) {
                     url: houseData.URL
                 };
                 data.push(objects);
-
-                console.log(data);
 
                 APP.page.houseDetail(data);
             })
@@ -142,12 +139,12 @@ APP.data = (function (city) {
             apiURL = 'http://funda.kyrandia.nl/feeds/Aanbod.svc/' + objectType + '/detail/' + apiKey + '/' + type + '/' + ID + '/';
 
 
-        APP.data.request(apiURL)
-            .then(function (response) {
+        this.request(apiURL)
+            .then( (response) => {
                 var houseDetailData = JSON.parse(response);
 
                 // Get next ID in array
-                var nextItem = function (id) {
+                var nextItem = (id) => {
                     var i = 0,
                     max = houseIDs.length;
 
@@ -160,7 +157,7 @@ APP.data = (function (city) {
                 };
 
                 // Get prev ID in array
-                var prevItem = function (id) {
+                var prevItem = (id) => {
                     var i = 0,
                     max = houseIDs.length;
 
@@ -202,7 +199,6 @@ APP.data = (function (city) {
                     };
                 }
 
-                console.log(data);
                 APP.page.houseVideo(data);
             })
     };

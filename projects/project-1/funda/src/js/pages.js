@@ -1,7 +1,7 @@
 /*********************************************************
 	PAGES [with templating lib: Mustache]
 *********************************************************/
-APP.page = (function () {
+APP.page = ( () => {
     var _mainSelector = document.querySelector('main');
     var _loader = document.getElementById('loader');
 
@@ -17,7 +17,7 @@ APP.page = (function () {
 
     function houseDetail(data) {
         APP.data.request('./dist/templates/house-detail.mst')
-            .then(function (template) {
+            .then( (template) => {
                 _mainSelector.innerHTML = Mustache.render(template, data);
                 _loader.classList.remove('active');
             })
@@ -32,15 +32,14 @@ APP.page = (function () {
         }
 
         /* Filter ID */
-        var data = data.filter(function(c) {
+        var data = data.filter( (c) => {
             return IDs.indexOf(c.id) != -1
         });
 
         console.log(data);
 
-
         APP.data.request('./dist/templates/house-favourites.mst')
-            .then(function (template) {
+            .then( (template) => {
                 _mainSelector.innerHTML = Mustache.render(template, data);
                 _loader.classList.remove('active');
 

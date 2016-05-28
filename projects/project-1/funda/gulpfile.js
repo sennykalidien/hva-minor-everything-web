@@ -5,7 +5,6 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	concat = require('gulp-concat'),
 	cssnano = require('gulp-cssnano'),
-    svgSprite = require('gulp-svg-sprite'),
     critical = require('critical'),
 	imageop = require('gulp-image-optimization'),
     babel = require('gulp-babel'),
@@ -14,34 +13,6 @@ var gulp = require('gulp'),
     copy = require('gulp-copy'),
     filesize = require('gulp-filesize');
 
-
-var svgConfig = {
-    dest: '.',
-    shape: {
-        dimension: {
-            maxWidth: 15,
-            maxHeight: 15
-        },
-        spacing: {
-            padding: 5,
-        },
-    },
-    mode: {
-        css: {
-            dest: '.',
-            sprite: 'icns',
-            render: {
-                css: true
-            },
-            example: true,
-            prefix: '.icn-'
-        }
-    }
-};
-
-var onError = function (err) {
-    console.log(err);
-};
 
 var inputPath = {
     'css': './src/css/*.css',
@@ -59,14 +30,6 @@ var outputPath = {
 	'templates': './dist/templates/',
     'icons': './dist/img/icons/'
 };
-
-
-gulp.task('icons', function () {
-    gulp.src(inputPath.svg)
-        .pipe(svgSprite(svgConfig))
-        .pipe(gulp.dest(outputPath.icons));
-});
-
 
 gulp.task('critical', function (cb) { //src: http://fourkitchens.com/blog/article/use-gulp-automate-your-critical-path-css
     critical.generate({

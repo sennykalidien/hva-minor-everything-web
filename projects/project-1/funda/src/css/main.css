@@ -7,6 +7,7 @@
     EXTERNAL CSS:   reset.css, fonts.css
 --------------------------------------------------------------*/
 
+
 /*--------------------------------------------------------------
 >>> COLORS:
 ----------------------------------------------------------------
@@ -15,6 +16,7 @@
     ANCHORS:        #2980b9;
     BUTTONS:        #2980b9;
 --------------------------------------------------------------*/
+
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENT:
@@ -28,19 +30,18 @@
 # EXTRA CSS: MEDIA QUERIES
 --------------------------------------------------------------*/
 
+
 /*--------------------------------------------------------------
 # STRUCTURE
 --------------------------------------------------------------*/
+
 body {
     background: #fff;
-
 }
-
 #wrapper {
     position: relative;
     overflow: hidden;
 }
-
 #header {
     padding: .5em 2em .2em;
     text-align: center;
@@ -52,51 +53,43 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
 #content {
     position: relative;
 }
 
-
 /*--------------------------------------------------------------
 ## Header (+ NAV)
 --------------------------------------------------------------*/
+
 #header .logo {
     display: block;
     float: left;
 }
-
 #header .logo img {
     min-width: 2em;
     max-width: 8em;
 }
-
 #header h1 {
     color: #f9f9f9;
 }
-
 #header nav ul li a svg {
     fill: #fff;
 }
-
 #header nav ul li a svg:hover {
     fill: red;
 }
 
-
 /*--------------------------------------------------------------
 ## CONTENT
 --------------------------------------------------------------*/
+
 #content > ul {
     list-style: outside;
     margin-left: 1.2em;
 }
-
 #content > section {
     position: relative;
 }
-
-
 #content > section h2 {
     padding: .3em;
     text-align: center;
@@ -105,13 +98,13 @@ body {
     width: 100%;
 }
 
-
 /*--------------------------------------------------------------
 ## CONTENT: VIDEO
 --------------------------------------------------------------*/
+
 #houseVideo video {
     width: 100%;
-    max-height: 80vh;
+    max-height: 73vh;
     background: #1e1e1e;
     z-index: 1;
     position: relative;
@@ -126,32 +119,26 @@ body {
     align-items: center;
     margin-top: -5px;
 }
-
 #houseVideo .info button {
     height: 4em;
     margin: 0;
     display: flex;
     align-items: center;
 }
-
 #houseVideo .info button:first-child {
     border-right: solid 2px #fff;
     margin: 0 0 0 -2em;
 }
-
 #houseVideo .info button svg {
     fill: #fff;
     display: inline;
 }
-
 #houseVideo .info button.more svg {
     margin-right: 1em;
 }
-
 #houseVideo .info .direction-nav ul {
     list-style: none;
 }
-
 #houseVideo .info .direction-nav a {
     margin: -25px 0 0;
     display: block;
@@ -162,106 +149,89 @@ body {
     opacity: 1;
     -webkit-transition: all .3s ease;
 }
-
 #houseVideo .info .direction-nav a.prev {
     left: 0;
 }
-
 #houseVideo .info .direction-nav a.next {
     right: 0;
 }
 
-
 /*--------------------------------------------------------------
 ## CONTENT: FAVOURITES
 --------------------------------------------------------------*/
+
 #houseFavourites {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
-
 #houseFavourites article {
     flex: 0 1 100%;
     margin: 2em 0 0;
     padding: 0 1em;
 }
-
 #houseFavourites article p {
     margin: 0;
 }
-
 #houseFavourites article .buttons {
     float: right;
 }
-
 #houseFavourites article .buttons button {
     height: 4em;
     margin: 0;
     float: left;
 }
-
 #houseFavourites article .buttons button:first-of-type {
     display: none;
 }
-
 #houseFavourites article .buttons button a {
     display: flex;
     align-items: center;
 }
-
 #houseFavourites article .buttons button:first-child {
     border-right: solid 2px #fff;
 }
-
 #houseFavourites article .buttons button svg {
     fill: #fff;
     display: inline;
 }
-
 #houseFavourites article .buttons button.more svg {
     margin-right: 1em;
 }
 
-
 /*--------------------------------------------------------------
 ## CONTENT: DETAIL
 --------------------------------------------------------------*/
+
 #houseDetail article {
     padding: 2em;
     display: flex;
     flex-flow: row wrap;
-
 }
-
 #houseDetail article .photos {
     display: flex;
     flex-flow: row wrap;
     flex: 0 1 100%;
     justify-content: center;
 }
-
 #houseDetail article .photos figure {
     flex: 0 1 100%;
     /*max-height: 375px;
     overflow: hidden;*/
 }
-
 #houseDetail article .photos figure:first-of-type {
     flex: 0 1 100%;
     max-height: none;
     overflow: none;
 }
-
-
 #houseDetail article .description {
     flex: 1 0 100%;
 }
 
-
 /*--------------------------------------------------------------
 ## LOADER
 --------------------------------------------------------------*/
+
 #loader {
     display: none;
     position: fixed;
@@ -273,17 +243,14 @@ body {
     z-index: 999;
     padding: 0 1em;
 }
-
 #loader div {
     margin: auto;
 }
-
 #loader h1 {
     text-align: center;
     font-size: 3em;
     color: #fff;
 }
-
 #loader p {
     text-align: center;
     font-size: 2em;
@@ -291,7 +258,6 @@ body {
     font-style: italic;
     font-weight: 300;
 }
-
 #loader img {
     display: block;
     margin: 1.5em auto;
@@ -299,40 +265,34 @@ body {
 #loader img {
     min-width: 10em;
 }
-
 #loader.active {
     display: flex;
 }
 
-
 /*--------------------------------------------------------------
 # EXTRA CSS: MEDIA QUERIES
 --------------------------------------------------------------*/
+
 @media (min-width: 32em) {
     #content section#houseFavourites article .buttons button:first-of-type {
         display: block;
     }
 }
-
 @media (min-width: 55em) {
     #content section#houseVideo .info .direction-nav a {
         top: 50%;
         margin-top: -2.5em;
     }
-
     #content section#houseVideo .info .direction-nav a.prev {
         left: 1.5em;
     }
-
     #content section#houseVideo .info .direction-nav a.next {
         right: 1.5em;
     }
-
     #content section#houseFavourites article {
         flex: 0 1 40em;
     }
 }
-
 @media (min-width: 78em) {
     #houseDetail article .photos {
         display: flex;
@@ -340,16 +300,12 @@ body {
         flex: 0 1 70%;
         max-width: 55em;
     }
-
     #houseDetail article .photos figure {
         flex: 0 1 50%;
     }
-
     #houseDetail article .photos figure:first-of-type {
         flex: 0 1 100%;
     }
-
-
     #houseDetail article .description {
         flex: 1 0 30%;
         padding: 0 1em;
