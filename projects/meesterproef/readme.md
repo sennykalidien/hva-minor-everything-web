@@ -246,7 +246,6 @@ The application was tested on a multitude of devices and browsers on our own mac
 ----
 
 ## The contributions
-![Contributions](/readme/contributions.png)
 "A lot of the application's functionality and structure was created as a result of a collaborative effort. The three of us communicated through appear.in and tackled most of the major functionalities as a team. We feel that our workflow and personal growth has had a lot of benefits from this way of working. Our personal development and motivation to work got a boost and in the end helped us to create an even better application."
 
 ## Contributors
@@ -343,7 +342,7 @@ Most important things I've done outside the commits are:
 
 ### 0 - Main contributions in GitHub
 See my total commits below:
-![]()
+![Contributions](readme/contributions.png)
 
 Throughout this project I continuously tried to keep the app clean, fixed the flow in a logical order when it went messy, and added some important functionalities. I also was responsible for the Tournaments overview page and the single Tournament page.
 
