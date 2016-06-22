@@ -2,7 +2,7 @@
 This readme file is divided into two parts:
 
 1. [The main explanation of this repository (the app)](#the-app)
-2. [The contribution to this repository, and my own contributions](#the-contribution)
+2. [The contribution to this repository, and my own contributions](#the-contributions)
 
 ## The app
 ![Live page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live.png)
