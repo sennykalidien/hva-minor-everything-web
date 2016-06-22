@@ -246,6 +246,7 @@ The application was tested on a multitude of devices and browsers on our own mac
 ----
 
 ## The contributions
+![Contributions](/readme/contributions.png)
 "A lot of the application's functionality and structure was created as a result of a collaborative effort. The three of us communicated through appear.in and tackled most of the major functionalities as a team. We feel that our workflow and personal growth has had a lot of benefits from this way of working. Our personal development and motivation to work got a boost and in the end helped us to create an even better application."
 
 ## Contributors
