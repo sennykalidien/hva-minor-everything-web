@@ -1,7 +1,7 @@
 # Ultimate Frisbee App (UFA)
 This readme file is divided into two parts:
 
-1. [The main explaination of this repository (the app)](#the-app)
+1. [The main explanation of this repository (the app)](#the-app)
 2. [The contribution to this repository, and my own contributions](#contribution)
 
 ## The app
