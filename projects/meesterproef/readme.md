@@ -5,9 +5,13 @@ This readme file is divided into two parts:
 2. [The contribution to this repository, and my own contributions](#contribution)
 
 ## The app
-[!Live page](readme/screenshots/matches_live.png)
-[!Tournaments page](readme/screenshots/tournaments.png)
-[!Match detail page](readme/screenshots/match_detail.png)
+![Live page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live.png)
+![Match detail page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/match_detail_score.png)
+![Tournaments](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournaments.png)
+![Tournament matches](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournament_matches.png)
+![Matches live responive](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live_responsive.png)
+![Tournaments responive](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournaments_responsive.png)
+
 The Ultimate Frisbee App started as a school assignment for the Amsterdam University of Applied Sciences, at the study of Communication and Multimedia Design. This app is a web app, built in the popular platform Node.js. It's currently designed to show the latest matches for the Windmill Tournaments, which is a yearly event. The app uses the Leaguevine API for getting the scores and updating the score.
 
 When using the app it will allow you to post scores to the app in real-time, which other users are able to see live without ever refreshing the page. That is just one of the many strenghts of this web app...
@@ -154,8 +158,8 @@ body-parser          | 1.15.0  | Body parsing middleware for node.js
 dateformat        	 | 1.0.12  | Date formatting for node.js
 express              | 4.13.4  | Fast, unopinionated, minimalist web framework
 express-session      | 1.13.0  | Session middleware for Express
-gsap 					 | 4.0.0   | Animation library
-hbs      				 | 2.2.3   | Express.js template engine plugin for Handlebars
+gsap 				 | 4.0.0   | Animation library
+hbs      			 | 2.2.3   | Express.js template engine plugin for Handlebars
 jsonfile             | 1.1.2   | Easily read/write JSON files.
 mongodb              | 2.1.21  | The official MongoDB driver for node.js
 password-hash        | 1.2.2   | Password hashing and verification for node.js
@@ -220,16 +224,42 @@ socket.io            | 1.4.6   | Node.js realtime framework server
 - Overview of games per field
 - Current ranking on live results tab
 
+
+### Used functionalities:
+![Socket.IO](readme/logos/socket-io.png)
+![MongoDB](readme/logos/mongodb.png)
+
+
+### Testing
+![Device Lab](readme/device-lab.png)
+
+#### Browser and device compatibility
+The application was tested on a multitude of devices and browsers on our own machines and in the device lab at the university. Including an old version of Chrome for Android and the foreign UC Browser. The application looked fine and worked good on these browsers and most devices.
+
+## Changes made based on user testing and feedback:
+
+- Changed design pattern, brought menu back on-canvas and fixed to the bottom.
+- Changed position of "+" and "-" buttons, to make them easier to tap for the user.
+- Created a visual difference between divisions by using material design cards.
+- Added visual feedback when a score has been submitted.
+- Added visual feedback when a game has finished.
+- Added some information directly to the scorepage, instead of just under the info tab.
+- Scrolling on the tournaments page was slow, so we changed the design, which made it easier to scroll.
+- Added feedback to login.
+- Added a final score checkbox, so the scorekeeper won't accidentally submit the score as final.
+- Added round and tournament to info page.
+
 ----
 
 ## The contributions
+"A lot of the application's functionality and structure was created as a result of a collaborative effort. The three of us communicated through appear.in and tackled most of the major functionalities as a team. We feel that our workflow and personal growth has had a lot of benefits from this way of working. Our personal development and motivation to work got a boost and in the end helped us to create an even better application."
 
 ## Contributors
 - [Fons Hettema](https://github.com/strexx)
 - [Melvin Reijnoudt](https://github.com/melvinr)
 - [Senny Kalidien](https://github.com/sennykalidien)
 
-## Communication and planning tools
+## Used PM tools (communication and planning)
 - [Trello](http://www.trello.com)
 - [Google Drive](http://www.drive.google.com)
 - [Telegram](http://www.telegram.com)
@@ -238,12 +268,13 @@ socket.io            | 1.4.6   | Node.js realtime framework server
 - [Harvest](http://www.harvest.com)
 
 ## Testing
-[!Device Lab](readme/device-lab.png)
+[!Device Lab](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/device-lab.png)
 
 ## As a team
+![Trello-board](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/trello.png)
 
 ### Tasks per week
-Main tasks that were done during this project
+Main tasks that were done during this project as a team
 
 #### Week 1
 - Briefing meeting with client (Christian Schaffner)
@@ -313,19 +344,16 @@ Main tasks that were done during this project
 
 
 ## As an individual
-
-
-### 0 - Main contributions
-See my total commits below:
-![]()
-
-Throughout this project I continuously tried to keep the app clean, fixed the flow in a logical order when it went messy, and added some important functionalities. I also was responsible for the Tournaments overview page and the single Tournament page.
-
 Most important things I've done outside the commits are:
 - Set up a Digital Ocean server for our Node App: http://meesterproef.directzichtbaar.nl
 - Set up a Digital Ocean server for our MongoDB database.
 - Set up a Digital Ocean server for the Jenkins: http://95.85.1.96:8080
 
+### 0 - Main contributions in GitHub
+See my total commits below:
+![]()
+
+Throughout this project I continuously tried to keep the app clean, fixed the flow in a logical order when it went messy, and added some important functionalities. I also was responsible for the Tournaments overview page and the single Tournament page.
 
 A list of all my commits I've done to contribute to this project:
 
@@ -360,7 +388,8 @@ See a list of the important commits below:
 3. [Template for each division](https://github.com/strexx/Ultimate-Frisbee-App/commit/76649895f1f3a2a3cc9d479e42d466d708dfaf61)
 
 ### 4 - Set up MongoDB in Node
-I've set up MongoDB on a Digital Ocean droplet and fixed the connection with the Database
+I've set up MongoDB on a Digital Ocean droplet and fixed the connection with the Database.
+
 1. [MongoDB connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/a0ff43c71448ad9f2a0a8de8510b8bf6717b515d)
 2. [Fixed Connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/2c027d0813c23a301a110fb2494012933285fb3e)
 
