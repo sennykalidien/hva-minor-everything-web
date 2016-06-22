@@ -2,7 +2,7 @@
 This readme file is divided into two parts:
 
 1. [The main explanation of this repository (the app)](#the-app)
-2. [The contribution to this repository, and my own contributions](#contribution)
+2. [The contribution to this repository, and my own contributions](#the-contribution)
 
 ## The app
 ![Live page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live.png)
@@ -224,14 +224,8 @@ socket.io            | 1.4.6   | Node.js realtime framework server
 - Overview of games per field
 - Current ranking on live results tab
 
-
-### Used functionalities:
-![Socket.IO](readme/logos/socket-io.png)
-![MongoDB](readme/logos/mongodb.png)
-
-
 ### Testing
-![Device Lab](readme/device-lab.png)
+![Device Lab](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/device-lab.png)
 
 #### Browser and device compatibility
 The application was tested on a multitude of devices and browsers on our own machines and in the device lab at the university. Including an old version of Chrome for Android and the foreign UC Browser. The application looked fine and worked good on these browsers and most devices.
@@ -266,9 +260,6 @@ The application was tested on a multitude of devices and browsers on our own mac
 - [Appear](http://www.appear.in)
 - [Slack](http://www.slack.com)
 - [Harvest](http://www.harvest.com)
-
-## Testing
-[!Device Lab](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/device-lab.png)
 
 ## As a team
 ![Trello-board](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/trello.png)
