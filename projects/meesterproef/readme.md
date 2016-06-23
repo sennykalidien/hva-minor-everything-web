@@ -361,11 +361,11 @@ Other big contributions:
 
 Branches I was mainly responsible for or mostly active in:
 
-[feature/bem](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
-[feature/performance](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/performance)
-[feature/modules](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/modules)
-[page/tournaments](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/mongodb)
-[production](https://github.com/strexx/Ultimate-Frisbee-App/commits/production)
+- [feature/bem](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
+- [feature/performance](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/performance)
+- [feature/modules](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/modules)
+- [page/tournaments](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/mongodb)
+- [production](https://github.com/strexx/Ultimate-Frisbee-App/commits/production)
 
 See a list of the most important commits below:
 
