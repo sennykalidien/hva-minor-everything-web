@@ -7,10 +7,6 @@ This readme file is divided into two parts:
 ## The app
 ![Live page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live.png)
 ![Match detail page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/match_detail_score.png)
-![Tournaments](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournaments.png)
-![Tournament matches](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournament_matches.png)
-![Matches live responive](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live_responsive.png)
-![Tournaments responive](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournaments_responsive.png)
 
 The Ultimate Frisbee App started as a school assignment for the Amsterdam University of Applied Sciences, at the study of Communication and Multimedia Design. This app is a web app, built in the popular platform Node.js. It's currently designed to show the latest matches for the Windmill Tournaments, which is a yearly event. The app uses the Leaguevine API for getting the scores and updating the score.
 
@@ -224,6 +220,14 @@ socket.io            | 1.4.6   | Node.js realtime framework server
 - Overview of games per field
 - Current ranking on live results tab
 
+### Screenshots
+![Live page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live.png)
+![Match detail page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/match_detail_score.png)
+![Tournaments](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournaments.png)
+![Tournament matches](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournament_matches.png)
+![Matches live responive](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live_responsive.png)
+![Tournaments responive](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/tournaments_responsive.png)
+
 ### Testing
 ![Device Lab](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/device-lab.png)
 
@@ -231,7 +235,6 @@ socket.io            | 1.4.6   | Node.js realtime framework server
 The application was tested on a multitude of devices and browsers on our own machines and in the device lab at the university. Including an old version of Chrome for Android and the foreign UC Browser. The application looked fine and worked good on these browsers and most devices.
 
 ## Changes made based on user testing and feedback:
-
 - Changed design pattern, brought menu back on-canvas and fixed to the bottom.
 - Changed position of "+" and "-" buttons, to make them easier to tap for the user.
 - Created a visual difference between divisions by using material design cards.
@@ -338,19 +341,24 @@ Main tasks that were done during this project as a team
 Most important things I've done outside the commits are:
 - Set up a Digital Ocean server for our Node App: http://meesterproef.directzichtbaar.nl
 - Set up a Digital Ocean server for our MongoDB database.
-- Set up a Digital Ocean server for the Jenkins: http://95.85.1.96:8080
+- Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95.85.1.96:8080
 
 ### 0 - Main contributions in GitHub
 See my total commits below:
 ![Contributions](readme/contributions.png)
 
-Throughout this project I continuously tried to keep the app clean, fixed the flow in a logical order when it went messy, and added some important functionalities. I also was responsible for the Tournaments overview page and the single Tournament page.
-
 A list of all my commits I've done to contribute to this project:
 
 [List with all my commits](https://github.com/strexx/Ultimate-Frisbee-App/commits?author=sennykalidien)
 
-Branches I was mainly responsible for or active in:
+*I've started this project by setting up Node.JS, created and constantly updated the GULP file and brainstormed about the flow of the app (server side & client side). Throughout the project I continuously tried to keep the app clean, fixed the flow in a logical order when it became messy, and added some important functionalities.*
+
+Other big contributions:
+- Fixed modules (see modules folder) for Node.js.
+- I was mainly responsible responsible for the Tournaments overview page and the single Tournament page.
+- I also implemented BEM in the last week of the project.
+
+Branches I was mainly responsible for or mostly active in:
 
 [feature/bem](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
 [feature/performance](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/performance)
@@ -358,47 +366,65 @@ Branches I was mainly responsible for or active in:
 [page/tournaments](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/mongodb)
 [production](https://github.com/strexx/Ultimate-Frisbee-App/commits/production)
 
-See a list of the important commits below:
+See a list of the most important commits below:
 
 ### 1 - Setting up Node.JS
-1. [Node server setup](https://github.com/strexx/Ultimate-Frisbee-App/commit/97978137f6913c64d3a61bdcd715a0572e2be575)
+1. [Node server setup + GULP](https://github.com/strexx/Ultimate-Frisbee-App/commit/97978137f6913c64d3a61bdcd715a0572e2be575)
 2. [Created routes + layout](https://github.com/strexx/Ultimate-Frisbee-App/commit/16e77d5a88eea6e2596f21cb4d5cee45a2854597)
-3. [Add public folder](https://github.com/strexx/Ultimate-Frisbee-App/commit/4bf5a4fd2512a24cee9e6f59e374b473f79a0c80)
-4. [Templates and first CSS](https://github.com/strexx/Ultimate-Frisbee-App/commit/d114bbbb3f4bfaff7ffacfb77067219e42d87f44)
-5. [Get requests to API](https://github.com/strexx/Ultimate-Frisbee-App/commit/34f14b1b9b821362b00925a3fa37f0abec73b15f)
+3. [First GET requests to API](https://github.com/strexx/Ultimate-Frisbee-App/commit/34f14b1b9b821362b00925a3fa37f0abec73b15f)
 
-### 2 - Single Page App
+### 2 - Set up public folder (client) [CSS To The Rescue / WebApp From Scratch]
+3. [Add public folder](https://github.com/strexx/Ultimate-Frisbee-App/commit/4bf5a4fd2512a24cee9e6f59e374b473f79a0c80)
+4. [Templates and CSS reset + main folder](https://github.com/strexx/Ultimate-Frisbee-App/commit/d114bbbb3f4bfaff7ffacfb77067219e42d87f44)
+
+### 3 - Single Page App [WebApp From Scratch]
 1. [Transformed into SPA](https://github.com/strexx/Ultimate-Frisbee-App/commit/2919307a2bc26b3adc7bbc8a05d9266dad35d5f1)
 2. [Created files](https://github.com/strexx/Ultimate-Frisbee-App/commit/3db192a49261e6bc5b4ec8be5e369d2145b9b41e)
 3. [Arrow functions](https://github.com/strexx/Ultimate-Frisbee-App/commit/e7b7201cc9a309bab0262d98a6b4dd749fe96789)
 4. [Added loader + loadscreen](https://github.com/strexx/Ultimate-Frisbee-App/commit/971ced4553f7d9f0ae93134ed4a39dbb31d90349)
 
-### 3 - Matches page
+### 4 - Matches page
 1. [Insert dynamic data](https://github.com/strexx/Ultimate-Frisbee-App/commit/b27d33e181d4c64640d54f62c70823fe3a8cc6bb)
 2. [Filters for each division](https://github.com/strexx/Ultimate-Frisbee-App/commit/9e07db2c27e92f6d13b119e6b40d2bf6aa3c49cc)
 3. [Template for each division](https://github.com/strexx/Ultimate-Frisbee-App/commit/76649895f1f3a2a3cc9d479e42d466d708dfaf61)
 
-### 4 - Set up MongoDB in Node
-I've set up MongoDB on a Digital Ocean droplet and fixed the connection with the Database.
+### 5 - Set up MongoDB in Node
+I've set up MongoDB on a Digital Ocean droplet and created the connection with the database.
 
 1. [MongoDB connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/a0ff43c71448ad9f2a0a8de8510b8bf6717b515d)
 2. [Fixed Connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/2c027d0813c23a301a110fb2494012933285fb3e)
+3. [Set up accounts](https://github.com/strexx/Ultimate-Frisbee-App/commit/ab944ecfc1e7ffeaf9e79f060f203c34a79bb9a2)
 
-### 5 - More advances Node.js features
+### 6 - More advances Node.js features
 1. [Created global variables](https://github.com/strexx/Ultimate-Frisbee-App/commit/bda18386ce7933f9b4dddc1d557af0c34a6607fd)
 2. [Relocated global variables](https://github.com/strexx/Ultimate-Frisbee-App/commit/58796638e8cea111166eab1c7d03464cab21772a)
 3. [Created module for unique keys](https://github.com/strexx/Ultimate-Frisbee-App/commit/00c39928f448ea7aef8f67c9707325772fda1a90)
 4. [Created footer partials](https://github.com/strexx/Ultimate-Frisbee-App/commit/9c124e1590596c686cc3ca65451f49709fd466fe)
 
-### 6 - More advanced functions for MongoDB
+### 7 - More advanced functions for MongoDB
+I also contributed with creating the Requests to the API and store it in de database with Fons Hettema.
 1. [Added all matches in db](https://github.com/strexx/Ultimate-Frisbee-App/commit/bdca7b4aedb0e832fbdea5e1d14c5cc02557a433)
 
-### 7 - Tournaments + Single Tournament
+### 8 - Tournaments + Single Tournament [Browser Technologies / Css To The Rescue]
 1. [Routes for Tournaments](https://github.com/strexx/Ultimate-Frisbee-App/commit/bf4361f88ef37415994158698c18109c4f12f3fe)
 2. [Templates for tournament](https://github.com/strexx/Ultimate-Frisbee-App/commit/4d10110607ea15b2134e4c4fe717d5f41c1c93f3)
+3. [Tournaments Css](https://github.com/strexx/Ultimate-Frisbee-App/commit/c2821cb3175b10e4d0f6388ebde86a0847a767dd)
 
-### 8 - Continuous fixed errors, bugs and cleaned up the flow of the app
+### 9 - Performance [Performance Matters]
+2. [Service Worker](https://github.com/strexx/Ultimate-Frisbee-App/commit/af530976f8820d27206cbf82de2e96d21952c6e1)
+3. [BEM](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
+
+### 10 - PE [Browser Technologies]
+1. [HTML ARIA (not finished)](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
+2. [BEM](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem?page=2)
+
+### 11 - Deploy to production (Digital Ocean + Jenkins) [Performance Matters]
+1. [Deploy script for Jenkins](https://github.com/strexx/Ultimate-Frisbee-App/commit/6b41f007a59a1667a8ae90f0eb2d91e6557798bd)
+
+### 12 - Continuous fixed errors, bugs and cleaned up the flow of the app [All courses]
 1. [Cleaned up flow client APP](https://github.com/strexx/Ultimate-Frisbee-App/commit/b1de7588d56fc28d7b05af5667e740204586a903)
 2. [Removed unnecessary routes](https://github.com/strexx/Ultimate-Frisbee-App/commit/25230dd5fea7517ee302d509a5e6d5118956179f)
+3. [Removed unneeded API calls](https://github.com/strexx/Ultimate-Frisbee-App/commit/8185343143fb05a8465cf24fb6598f801659357f)
 3. [Removed console logs](https://github.com/strexx/Ultimate-Frisbee-App/commit/6eb687c86a5bf9cb37bcccd38b4b2c1668c3ad35)
 4. [Cleaned up dependencies](https://github.com/strexx/Ultimate-Frisbee-App/commit/e34c536702055d21c0dd573ff515e002e48ae23e)
+5. [Fixed client side flow app](https://github.com/strexx/Ultimate-Frisbee-App/commit/adfe1851ca84408e0d8b24dec2b17d60ba83d79b)
