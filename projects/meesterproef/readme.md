@@ -2,7 +2,8 @@
 This readme file is divided into two parts:
 
 1. [The main explanation of this repository (the app)](#the-app)
-2. [The contribution to this repository, and my own contributions](#the-contributions)
+2. [The contribution to this repository](#the-contributions)
+3. [My contributions](#contributions-as-an-individual)
 
 ## The app
 ![Live page](https://raw.githubusercontent.com/strexx/Ultimate-Frisbee-App/master/readme/screenshots/matches_live.png)
@@ -337,7 +338,7 @@ Main tasks that were done during this project as a team
 - Update Trello board with tasks (in MoSCow)
 
 
-## As an individual
+## Contributions as an individual
 Most important things I've done outside the commits are:
 - Set up a Digital Ocean server for our Node App: http://meesterproef.directzichtbaar.nl
 - Set up a Digital Ocean server for our MongoDB database.
