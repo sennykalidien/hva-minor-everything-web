@@ -14,7 +14,6 @@ In this README you can see read about my experience with this project, my activi
   1. [The experience](my-experience-during-this-project)
   2. [Tasks per week](#tasks-per-week)
   4. [Contributions to the repository](#contributions-to-the-repository)
-  5. [Code highlights](#code-highlights)
 2. [How the app works](#how-the-app-works)
   1. [Main functionalities](#main-functionalities)
   2. [The structure](#the-structure)
@@ -135,7 +134,12 @@ Branches I was mainly active in:
 - [feature/responsive](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/responsive)
 - [feature/serviceworker](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/responsive)
 
-See a list of the most important commits below:
+See a list of the most important commits below per course:
+
+1. [WebApp From Scratch](#1---webapp-from-scratch--performance-matters)
+2. [CSS To The Rescue](#2---css-to-the-rescue)
+3. [Performance Matters](#3---performance-matters)
+4. [Browser Technologies](#4---browser-technologies)
 
 ### 1 - WebApp From Scratch / Performance Matters
 In the course WebApp From Scratch I've learned how to write (better) vanilla JavaScript code, and how to use some JS standards for creating a Single Page Application from stratch for this project. Things like using a Namespace, IFFE, Modules is implemented.
@@ -145,7 +149,7 @@ In Performance Matters I've learned the basics of working with a Node.js server.
 I've also learned how to set up the task manager Gulp for automated development. And finally how to set up a Digital Ocean droplet server.
 
 ##### Code highlight during this course
-Thinking out the flow of the apps
+During this project I was continously trying to keep the flow of the app logical and clean, so it would always work fast and secure.
 
 **Node.js**
 
@@ -154,7 +158,7 @@ Thinking out the flow of the apps
 3. Define the views
 4. Set up user sessions
 5. Set up the routes
-6. connect with MongoDB
+6. Connect with MongoDB
 7. Create a global database variable for global use
 8. Connect with socket.io
 9. Launch the app and listen to port 3010
@@ -236,7 +240,7 @@ Setting up the tournaments page and the tournament detail page.
 - [Templates for tournament](https://github.com/strexx/Ultimate-Frisbee-App/commit/4d10110607ea15b2134e4c4fe717d5f41c1c93f3)
 
 ### 2 - CSS to the rescue
-In the course CSS to the rescue I've learned how to use FlexBox and also made sure I develop mobile first by creating media queries with a min-width instead of max-width.
+In the course **CSS To The Rescue** I've learned how to use FlexBox and also made sure I develop mobile first by creating media queries with a min-width instead of max-width. These are thing that I've used to create the pages I was mainly responsible for: the Tournaments overview page and the Tournament detail page. Besides that, I've also created the desktop view for the app by using media queries.
 
 ##### Code highlight during this course
 Working with a mobile-first approach and using different font sizes wth 'em's' and '%'.
@@ -311,26 +315,143 @@ This will give us a different font-size on different screen width's.
 ### 3 - Performance Matters
 
 ##### Code highlights during this course
-Working with a mobile-first approach and using different font sizes wth 'em's' and '%'.
+The Service Worker was a real tough one to configure, when the app is not exactly a Single Page WebApp. We've used multiple pages, so we could really built the app progressive enhanced. That means that we could create fallbacks for if Javascript was turned of for example. With a SPA this was not possible to do.
 
-We'll start with declaring a font-size of 100% on the html, which will stand for a font-size of 16px. So this will mean that 1em = 16px.
+The problem was in the fetch of the Service Worker.
+
+0 - The start
+```
+this.addEventListener('fetch', function(event) {
+
+});
+
+```
+
+1 - Check what kind of request is being made
+```
+var request = event.request;
+var acceptHeader = request.headers.get('Accept');
+var resourceType = 'static';
+
+//console.log(acceptHeader);
+
+if (acceptHeader.indexOf('text/html') !== -1) {
+	resourceType = 'content';
+}
+```
+
+2 - If request is HTM, do a fetch and cache the response, else: fetch it from the cache and serve it (when we are offline)
+```
+if (resourceType === 'content') {
+	event.respondWith(
+		fetch(request)
+		.then(response => fetchAndCache(request, response))
+		.catch(() => fetchFromCache(event))
+	);
+}
+```
+3 - Else: we want to ignore every polling been made by the socket.io, and fetch from cache.
+```
+else {
+	if (request.url.indexOf("transport=polling") == -1) { // ignore socket polling
+		event.respondWith(
+			fetchFromCache(event)
+			.catch(() => fetch(request))
+			.then(response => fetchAndCache(request, response))
+		);
+	}
+}
+
+```
+
+The full code:
+
+```
+this.addEventListener('fetch', function(event) {
+    var request = event.request;
+    var acceptHeader = request.headers.get('Accept');
+    var resourceType = 'static';
+
+    //console.log(acceptHeader);
+
+    if (acceptHeader.indexOf('text/html') !== -1) {
+        resourceType = 'content';
+    }
+
+    if (resourceType === 'content') {
+        event.respondWith(
+            fetch(request)
+            .then(response => fetchAndCache(request, response))
+            .catch(() => fetchFromCache(event))
+        );
+    }
+	else {
+		if (request.url.indexOf("transport=polling") == -1) { // ignore socket polling
+	        event.respondWith(
+	            fetchFromCache(event)
+	            .catch(() => fetch(request))
+	            .then(response => fetchAndCache(request, response))
+	        );
+		}
+    }
+});
+
+```
 
 ##### Service Worker
 - [First attempt at setting up a Service Worker](https://github.com/strexx/Ultimate-Frisbee-App/commit/af530976f8820d27206cbf82de2e96d21952c6e1)
+- [The big fix for the Service Worker in order to get the App working offline]
 
 ##### BEM
 - [Implemented the BEM method, which also allowed me the rewrite en restructure some messy HTML and CSS code](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
 
 ### 4 - Progressive enhancement
 
+##### Code highlight during this course
+Built the input field on the match detail page Progressive Enhanced.
 
+If JavaScript is not available, we want to show input fields of the type 'number' in order to update the score. This is an input field with a ticker besides it so you can easy toggle between scores. But if JavaScript is turned on we want to disable the editing ability of the input fields and show a + and - button beneath it for a better UI.
 
-1. [HTML ARIA (not finished)](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
-2. [BEM](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem?page=2)
-3. [Working with input fields and add progressive enhancement to hide and disable the input ability]()
+These are the input fields
+```
+<input type="number" id="team1-input" class="team__home__info__score match__item__team__info__score" name="score_team_1" min="0" max="99" value="{{items.team_1_score}}"/>
+
+<input type="number" id="team2-input" class="team__away__info__score match__item__team__info__score" name="score_team_2" min="0" max="99" value="{{items.team_2_score}}" />
+```
+
+This is already been configured correctly. But if JavaScript is turned on, we want to add the attribute 'readonly' to the input fields, in order to make them non-editable. We also need some CSS style to make the numbers align centered and hide the standard white background + black border.
+
+The JavaScript
+
+```
+function hideInputs() {
+	[].forEach.call(team1_score, function(input) {
+		input.setAttribute("readonly", "");
+	});
+
+	[].forEach.call(team2_score, function(input) {
+		input.setAttribute("readonly", "");
+	});
+}
+```
+
+The CSS
+
+```
+.match__item__team__info__score[readonly] {
+    border: 0;
+    background: #f9f9f9;
+    -moz-appearance: textfield;
+    margin: auto;
+}
+```
+
+##### The commits
+1. [HTML ARIA for screenreader](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
+2. [Working with input fields and add progressive enhancement to hide and disable the input ability]()
 
 ### 5 - Extra
-##### Continuous fixed errors, bugs and cleaned up the flow of the app
+##### Continuously fixing errors, bugs and cleaned up the flow of the app
 - [Cleaned up the JS flow for the client APP](https://github.com/strexx/Ultimate-Frisbee-App/commit/b1de7588d56fc28d7b05af5667e740204586a903)
 - [Removed unnecessary routes](https://github.com/strexx/Ultimate-Frisbee-App/commit/25230dd5fea7517ee302d509a5e6d5118956179f)
 - [Removed unneeded API calls](https://github.com/strexx/Ultimate-Frisbee-App/commit/8185343143fb05a8465cf24fb6598f801659357f)
