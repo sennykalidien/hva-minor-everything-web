@@ -319,7 +319,7 @@ The Service Worker was a real tough one to configure, when the app is not exactl
 
 The problem was the pages that are being cached by the Service Worker, they would not be updated when a user would refresh the page. This resulted in always serving the old html file. Because we're working with real-time score updates, t was necessary to always have he latest scores displayed when the user would refresh the page. There was also a problem with the offline view of the page. If a user would be offline, the browser would give an error that the HTML could not be found.
 
-For this problem we would need to check in the fetch of the Service Worker. In the old code, it would always check if the request was was already in the cache first. If it was in the cache it would not do a new fetch again and replace our old cached HTML file. This needs to act differently. 
+For this problem we would need to check in the fetch of the Service Worker. In the old code, it would always check if the request was was already in the cache first. If it was in the cache it would not do a new fetch again and replace our old cached HTML file. This needs to act differently.
 
 0 - The start
 ```
