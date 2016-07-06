@@ -178,7 +178,7 @@ Setting up the tournaments page and the tournament detail page.
 2. [Templates for tournament](https://github.com/strexx/Ultimate-Frisbee-App/commit/4d10110607ea15b2134e4c4fe717d5f41c1c93f3)
 
 ##### Set up Digital Ocean for project
-- Set up a Digital Ocean server for the web app: http://meesterproef.directzichtbaar.nl, and for the MongoDB database.
+1. Set up a Digital Ocean server for the web app: http://meesterproef.directzichtbaar.nl, and for the MongoDB database.
 
 ### 2 - CSS to the rescue
 In the course CSS to the rescue I've learned how to use FlexBox and make sure I develop mobile first.
@@ -198,7 +198,7 @@ In the course CSS to the rescue I've learned how to use FlexBox and make sure I 
 1. [First attempt at setting up a Service Worker](https://github.com/strexx/Ultimate-Frisbee-App/commit/af530976f8820d27206cbf82de2e96d21952c6e1)
 
 ##### BEM
-[Implemented the BEM method, which also allowed me the rewrite en restructure some messy HTML and CSS code](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
+1. [Implemented the BEM method, which also allowed me the rewrite en restructure some messy HTML and CSS code](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
 
 ### 4 - Progressive enhancement
 1. [HTML ARIA (not finished)](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
@@ -216,7 +216,7 @@ In the course CSS to the rescue I've learned how to use FlexBox and make sure I 
 
 ##### Deploy to production
 Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95.85.1.96:8080
-- [Deploy script for Jenkins](https://github.com/strexx/Ultimate-Frisbee-App/commit/6b41f007a59a1667a8ae90f0eb2d91e6557798bd)
+1. [Deploy script for Jenkins](https://github.com/strexx/Ultimate-Frisbee-App/commit/6b41f007a59a1667a8ae90f0eb2d91e6557798bd)
 
 
 ### Code highlights
