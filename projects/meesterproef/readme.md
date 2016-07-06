@@ -10,17 +10,21 @@ In this README you can see read about my experience with this project, my activi
 - [Go to the individual README of contributor Melvin Reijnoudt](https://github.com/melvinr/Ultimate-Frisbee-App)
 
 ## Table of content
-1. [The contribution](The contribution)
-  1. [My experience](my-experience-during-this-project)
+1. [My contribution](The contribution)
+  1. [The experience](my-experience-during-this-project)
   2. [Tasks per week](#tasks-per-week)
   4. [Contributions to the repository](#contributions-to-the-repository)
   5. [Code highlights](#code-highlights)
 2. [How the app works](#how-the-app-works)
+  1. [Main functionalities](#main-functionalities)
+  2. [The structure](#the-structure)
+  3. [Features and Packages](#features-and-packages)
+  4. [How to install](#how-to-install)
+  5. [How to develop](#how-to-develop)
 
+## My contribution
 
-## The contribution
-
-## My experience
+## The experience
 This project was a great way to measure my current skills as a front-end developer. After following some very intensive courses during this study, I wasn't sure how I would stand as a front-end developer now. Was I ready to finally be a worthy developer and be part or even contribute to this big community? Can I develop good and user friendly products? These were questions that needed to be answered before I finished my study.
 
 I've collaborated daily with the other two contributors of the respository: Melvin Reijnoudt & Fons Hettema. It was a interesting journey and fun experience to collaborate with a big project like this one with a life span of 7 weeks. The most interesting thing was finding out how to collaborate effectively when we would create this app together. Github is obviously a great tool for this purpose. But with Github alone you won't make it. In the beginning we would always meet and sit together to work on the app. Because we are all three very easy distracted, we needed a lot of silence and a good atmosphere in order to be productive. So we would regularly sit in an empty room at our school. After our meeting we would continue online with the collaborative communication tool appear.in. After a while, we discovered that we weren't as productive as we could be and noticed that we would do more if we were home, in our own space when we were on appear.in. Halfway this project we decided to work home more often and collaborate online. it worked like a charm.
@@ -45,6 +49,7 @@ A complete overview of our tasks per week can be viewed below:
 ### Week 2
 - Progress meeting with the teachers at our school.
 - Do research in the Leaguevine API, used to manage teams and scores
+- Do research in socket.io
 - Created the flow for our app according to the Leaguevine API
 - Set up Node.js
   - Create the structure of Node.js
@@ -59,6 +64,7 @@ A complete overview of our tasks per week can be viewed below:
   - Created the HTML files
   - Created the JS files
   - Created the CSS files (reset.css + styles.css)
+- Set up socket.io within Node.js
 - Presented the first prototype to the client
 
 ### Week 3
@@ -68,7 +74,7 @@ A complete overview of our tasks per week can be viewed below:
 - Set up the connection in our Node.JS with MongoDB
 - Insert the Windmill Ultimate Frisbee Tournament matches of 2016
 - Insert the Windmill Ultimate Frisbee Tournament divisions of 2016
-- Help the other contributors with coding Socket.io for real-time score updates
+- Help the other contributors with getting Socket.io to work for real-time score updates
 - Add JS filters in the route for the home page (matches overview) for each tab [](code-example)
 - Created the Tournaments overview page
 - Created the Tournament detail page
@@ -112,7 +118,7 @@ A list of all my commits I've done to contribute to this project:
 
 [List with all my commits](https://github.com/strexx/Ultimate-Frisbee-App/commits?author=sennykalidien)
 
-*I've started this project by setting up Node.JS, created and constantly updated the GULP file and brainstormed about the flow of the app (server side & client side). Throughout the project I continuously tried to keep the app clean, fixed the flow in a logical order when it became messy, and added some important functionalities.*
+*I've started this project by setting up Node.JS, created and constantly updated the Gulp task manager file and brainstormed about the flow of the app (server side & client side). Throughout the project I continuously tried to keep the app clean, fixed the flow in a logical order when it became messy, and added some important functionalities.*
 
 Other main contributions:
 - Fixed modules (see modules folder) for Node.js.
@@ -134,95 +140,13 @@ See a list of the most important commits below:
 ### 1 - WebApp From Scratch / Performance Matters
 In the course WebApp From Scratch I've learned how to write (better) vanilla JavaScript code, and how to use some JS standards for creating a Single Page Application from stratch for this project. Things like using a Namespace, IFFE, Modules is implemented.
 
-In Performance Matters I've learned the basics of working with a Node.js server. I've also learned how to set up the task manager Gulp for automated development. And finally how to set up a Digital Ocean droplet server.
+In Performance Matters I've learned the basics of working with a Node.js server. Why Node.js? Because setting up a server in vanilla Javascript is the sweetest thing ever for a front-end develope!
 
-##### Setting up Node.JS
-- [Node server setup + GULP](https://github.com/strexx/Ultimate-Frisbee-App/commit/97978137f6913c64d3a61bdcd715a0572e2be575)
-- [Created routes + layout](https://github.com/strexx/Ultimate-Frisbee-App/commit/16e77d5a88eea6e2596f21cb4d5cee45a2854597)
-- [First GET requests to API](https://github.com/strexx/Ultimate-Frisbee-App/commit/34f14b1b9b821362b00925a3fa37f0abec73b15f)
+I've also learned how to set up the task manager Gulp for automated development. And finally how to set up a Digital Ocean droplet server.
 
-##### Set up public folder (client)
-- [Add public folder for client side development](https://github.com/strexx/Ultimate-Frisbee-App/commit/4bf5a4fd2512a24cee9e6f59e374b473f79a0c80)
-- [First templates and adding CSS reset + main folder](https://github.com/strexx/Ultimate-Frisbee-App/commit/d114bbbb3f4bfaff7ffacfb77067219e42d87f44)
+##### Code highlight during this course
+Thinking out the flow of the apps
 
-##### Single Page App
-- [Transformed into SPA so we can add WebApp functionalities](https://github.com/strexx/Ultimate-Frisbee-App/commit/2919307a2bc26b3adc7bbc8a05d9266dad35d5f1)
-- [Created files](https://github.com/strexx/Ultimate-Frisbee-App/commit/3db192a49261e6bc5b4ec8be5e369d2145b9b41e)
-- [Implemented arrow functions (ES6)](https://github.com/strexx/Ultimate-Frisbee-App/commit/e7b7201cc9a309bab0262d98a6b4dd749fe96789)
-
-##### Set up MongoDB in Node
-I've set up MongoDB on a Digital Ocean droplet and created the connection with the database. I also contributed with creating the Requests to the API and store it in de database with Fons Hettema.
-
-- [MongoDB connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/a0ff43c71448ad9f2a0a8de8510b8bf6717b515d)
-- [Fixed Connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/2c027d0813c23a301a110fb2494012933285fb3e)
-- [Set up accounts](https://github.com/strexx/Ultimate-Frisbee-App/commit/ab944ecfc1e7ffeaf9e79f060f203c34a79bb9a2)
-- [Added all matches in db](https://github.com/strexx/Ultimate-Frisbee-App/commit/bdca7b4aedb0e832fbdea5e1d14c5cc02557a433)
-
-##### More advances Node.js features
-- [Created global variables](https://github.com/strexx/Ultimate-Frisbee-App/commit/bda18386ce7933f9b4dddc1d557af0c34a6607fd)
-- [Relocated global variables](https://github.com/strexx/Ultimate-Frisbee-App/commit/58796638e8cea111166eab1c7d03464cab21772a)
-- [Created module for unique keys](https://github.com/strexx/Ultimate-Frisbee-App/commit/00c39928f448ea7aef8f67c9707325772fda1a90)
-- [Created footer partials](https://github.com/strexx/Ultimate-Frisbee-App/commit/9c124e1590596c686cc3ca65451f49709fd466fe)
-
-##### Matches page
-A first attempt at setting up the home page which will display the current matches of the day
-
-- [Insert dynamic data for layout rendering](https://github.com/strexx/Ultimate-Frisbee-App/commit/b27d33e181d4c64640d54f62c70823fe3a8cc6bb)
-- [Filters for each division](https://github.com/strexx/Ultimate-Frisbee-App/commit/9e07db2c27e92f6d13b119e6b40d2bf6aa3c49cc)
-- [Template for each division](https://github.com/strexx/Ultimate-Frisbee-App/commit/76649895f1f3a2a3cc9d479e42d466d708dfaf61)
-
-##### Tournaments + Tournament detail page
-Setting up the tournaments page and the tournament detail page.
-
-- [Routes for Tournaments](https://github.com/strexx/Ultimate-Frisbee-App/commit/bf4361f88ef37415994158698c18109c4f12f3fe)
-- [Templates for tournament](https://github.com/strexx/Ultimate-Frisbee-App/commit/4d10110607ea15b2134e4c4fe717d5f41c1c93f3)
-
-##### Set up Digital Ocean for project
-1. Set up a Digital Ocean server for the web app: http://meesterproef.directzichtbaar.nl, and for the MongoDB database.
-
-### 2 - CSS to the rescue
-In the course CSS to the rescue I've learned how to use FlexBox and make sure I develop mobile first.
-
-##### Tournaments + Single Tournament
-- [Tournaments CSS and more](https://github.com/strexx/Ultimate-Frisbee-App/commit/c2821cb3175b10e4d0f6388ebde86a0847a767dd)
-
-##### Loader + loadscreen
-- [Added loader + loadscreen](https://github.com/strexx/Ultimate-Frisbee-App/commit/971ced4553f7d9f0ae93134ed4a39dbb31d90349)
-
-#### Desktop view
-- [Made a desktop view for the app and created more media queries for a better responsive view on each device](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/responsive)
-
-### 3 - Performance Matters
-
-##### Service Worker
-- [First attempt at setting up a Service Worker](https://github.com/strexx/Ultimate-Frisbee-App/commit/af530976f8820d27206cbf82de2e96d21952c6e1)
-
-##### BEM
-- [Implemented the BEM method, which also allowed me the rewrite en restructure some messy HTML and CSS code](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
-
-### 4 - Progressive enhancement
-1. [HTML ARIA (not finished)](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
-2. [BEM](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem?page=2)
-3. [Working with input fields and add progressive enhancement to hide and disable the input ability]()
-
-### 5 - Extra
-##### Continuous fixed errors, bugs and cleaned up the flow of the app
-- [Cleaned up the JS flow for the client APP](https://github.com/strexx/Ultimate-Frisbee-App/commit/b1de7588d56fc28d7b05af5667e740204586a903)
-- [Removed unnecessary routes](https://github.com/strexx/Ultimate-Frisbee-App/commit/25230dd5fea7517ee302d509a5e6d5118956179f)
-- [Removed unneeded API calls](https://github.com/strexx/Ultimate-Frisbee-App/commit/8185343143fb05a8465cf24fb6598f801659357f)
-- [Removed console logs](https://github.com/strexx/Ultimate-Frisbee-App/commit/6eb687c86a5bf9cb37bcccd38b4b2c1668c3ad35)
-- [Cleaned up dependencies](https://github.com/strexx/Ultimate-Frisbee-App/commit/e34c536702055d21c0dd573ff515e002e48ae23e)
-- [Fixed client side flow app](https://github.com/strexx/Ultimate-Frisbee-App/commit/adfe1851ca84408e0d8b24dec2b17d60ba83d79b)
-
-##### Deploy to production
-Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95.85.1.96:8080
-
-- [Deploy script for Jenkins](https://github.com/strexx/Ultimate-Frisbee-App/commit/6b41f007a59a1667a8ae90f0eb2d91e6557798bd)
-
-
-### Code highlights
-
-##### 1 - Thinking out the flow of the apps
 **Node.js**
 
 1. Set up the app via Express
@@ -234,7 +158,6 @@ Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95
 7. Create a global database variable for global use
 8. Connect with socket.io
 9. Launch the app and listen to port 3010
-
 
 ```
 ├── Express
@@ -249,131 +172,179 @@ Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95
 ```
 
 **SPA**
+
 ```
 ├── launcher     
 |    ├── fontFaceObserver                            
 |    ├── router
 |    |    ├── sw (only on home)
-|    |    ├── addFavorites.init
-|    |    |    ├── favStorage.init
-|    |    ├── pages.init
-|    |    |    ├── ux.init
-|    |    |    ├── scores.init
+|    |    ├── addFavorites
+|    |    |    ├── favStorage
+|    |    ├── pages
+|    |    |    ├── ux
+|    |    |    ├── scores
 
 ```
 
+##### Setting up Node.JS
+The platform we'll be using to create the server for our App.
 
-##### 2 - Create custom filters and push them to a new array
+- [Node server setup + Gulp for automated tasks](https://github.com/strexx/Ultimate-Frisbee-App/commit/97978137f6913c64d3a61bdcd715a0572e2be575)
+- [Created routes + layout](https://github.com/strexx/Ultimate-Frisbee-App/commit/16e77d5a88eea6e2596f21cb4d5cee45a2854597)
+- [Created our own API to do a GET requests to the Leaguevine API, so we can use it for our SPA](https://github.com/strexx/Ultimate-Frisbee-App/commit/34f14b1b9b821362b00925a3fa37f0abec73b15f)
+
+##### Set up public folder (client)
+A Public folder within the node.js structure for all the necessary client-side files.
+
+- [Add public folder for client side development](https://github.com/strexx/Ultimate-Frisbee-App/commit/4bf5a4fd2512a24cee9e6f59e374b473f79a0c80)
+- [Created the first views templates and added CSS reset + main folder](https://github.com/strexx/Ultimate-Frisbee-App/commit/d114bbbb3f4bfaff7ffacfb77067219e42d87f44)
+
+##### Single Page App
+The client side JS code and structure.
+
+- [Transformed into a SPA so we can add WebApp functionalities](https://github.com/strexx/Ultimate-Frisbee-App/commit/2919307a2bc26b3adc7bbc8a05d9266dad35d5f1)
+- [Created the necessary files](https://github.com/strexx/Ultimate-Frisbee-App/commit/3db192a49261e6bc5b4ec8be5e369d2145b9b41e)
+- [Implemented or transformed functions into arrow functions (ES6)](https://github.com/strexx/Ultimate-Frisbee-App/commit/e7b7201cc9a309bab0262d98a6b4dd749fe96789)
+
+##### Set up MongoDB in Node
+I've set up MongoDB on a Digital Ocean droplet and created the connection with the database. I also contributed with creating the Requests to the API and store it in de database with Fons Hettema.
+
+- [Set up the MongoDB connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/a0ff43c71448ad9f2a0a8de8510b8bf6717b515d)
+- [Fix a major issue with the connection](https://github.com/strexx/Ultimate-Frisbee-App/commit/2c027d0813c23a301a110fb2494012933285fb3e)
+- [Set up some test accounts in order to create a login page](https://github.com/strexx/Ultimate-Frisbee-App/commit/ab944ecfc1e7ffeaf9e79f060f203c34a79bb9a2)
+- [Added all the Winmill 2016 matches in db](https://github.com/strexx/Ultimate-Frisbee-App/commit/bdca7b4aedb0e832fbdea5e1d14c5cc02557a433)
+
+##### More advances Node.js features
+After setting up Node.js, these are the most crucial and interesting contributions within this platform.
+
+- [Created global variables so we only have to connect to MongoDB database once and use the database in other files](https://github.com/strexx/Ultimate-Frisbee-App/commit/bda18386ce7933f9b4dddc1d557af0c34a6607fd)
+- [Relocated the global variables in seperate files for a better overview of the files structure](https://github.com/strexx/Ultimate-Frisbee-App/commit/58796638e8cea111166eab1c7d03464cab21772a)
+- [Created a module to filter the unique keys in a array and return those keys](https://github.com/strexx/Ultimate-Frisbee-App/commit/00c39928f448ea7aef8f67c9707325772fda1a90)
+- [Created footer partials for a more modulair structure of files](https://github.com/strexx/Ultimate-Frisbee-App/commit/9c124e1590596c686cc3ca65451f49709fd466fe)
+
+##### Matches page
+A first attempt at setting up the home page which will display the current matches of the day
+
+- [Insert dynamic data for layout rendering](https://github.com/strexx/Ultimate-Frisbee-App/commit/b27d33e181d4c64640d54f62c70823fe3a8cc6bb)
+- [Filters for each division](https://github.com/strexx/Ultimate-Frisbee-App/commit/9e07db2c27e92f6d13b119e6b40d2bf6aa3c49cc)
+- [Template for each division](https://github.com/strexx/Ultimate-Frisbee-App/commit/76649895f1f3a2a3cc9d479e42d466d708dfaf61)
+
+##### Tournaments + Tournament detail page
+Setting up the tournaments page and the tournament detail page.
+
+- [Routes for Tournaments](https://github.com/strexx/Ultimate-Frisbee-App/commit/bf4361f88ef37415994158698c18109c4f12f3fe)
+- [Templates for tournament](https://github.com/strexx/Ultimate-Frisbee-App/commit/4d10110607ea15b2134e4c4fe717d5f41c1c93f3)
+
+### 2 - CSS to the rescue
+In the course CSS to the rescue I've learned how to use FlexBox and also made sure I develop mobile first by creating media queries with a min-width instead of max-width.
+
+##### Code highlight during this course
+Working with a mobile-first approach and using different font sizes wth 'em's' and '%'.
+
+We'll start with declaring a font-size of 100% on the html, which will stand for a font-size of 16px. So this will mean that 1em = 16px.
+
 ```
-var liveTime = "12:30",
-	todayDate = "03-06-2016",
-	session = req.session.user_id;
+html {
+	font-size: 100%;
+}
+```
 
-//Filter on today's date
-var matchesToday = matches.filter(function(obj) {
-	var currentDate = obj.start_time.split(" ")[0];
-	return currentDate == todayDate;
-});
+Then we'll add the font-size we want to show on a mobile screen. Because we are working mobile-first, this one doesn't need to be in a media query.
 
-for (var key in matchesToday) {
-	if (matchesToday[key].start_time !== undefined) {
-		matchesToday[key].start_time = matchesToday[key].start_time.split(" ")[1];
+
+```
+body {
+	font-size: 85%;
+	font-family: sans-serif;
+}
+
+.fonts-loaded body {
+    font-family: 'Lato', 'Helvetica neue', sans-serif;
+}
+```
+
+Now we are going to add some font-size to some CSS selectors, but instead of using px as font-size we'll be using em's. The difference? Pixels are always fixed and can't be dynamically changed but em's can.
+
+```
+.match__item__team__info__score {
+	font-size: 15em !important;
+}
+
+.header__title {
+    font-size: 2em;
+}
+
+.footer__menu__link {
+    font-size: 0.9em;
+}
+```
+
+Now we can declare different font-sizes using the media queries and set a percent on the body
+
+```
+@media (min-width: 47em) {
+    body {
+        font-size: 90%;
+    }
+}
+
+@media (min-width: 60em) {
+	body {
+		font-size: 100%;
 	}
 }
 
-// Filter on time
-var recentMatches = matchesToday.filter(function(obj) {
-	return obj.start_time < liveTime;
-});
-var liveMatches = matchesToday.filter(function(obj) {
-	return obj.start_time == liveTime;
-});
-var upcomingMatches = matchesToday.filter(function(obj) {
-	return obj.start_time > liveTime;
-});
-
-// Filter on recent matches
-var recentWomen = recentMatches.filter(function(obj) {
-	return obj.tournament_id == "20058";
-});
-
-var recentMixed = recentMatches.filter(function(obj) {
-	return obj.tournament_id == "20059";
-});
-
-var recentOpen = recentMatches.filter(function(obj) {
-	return obj.tournament_id == "20060";
-});
-
-var recentCMD = recentMatches.filter(function(obj) {
-	return obj.tournament_id == "20297";
-});
-
-
-// Filter on live matches
-var liveWomen = liveMatches.filter(function(obj) {
-	return obj.tournament_id == "20058";
-});
-
-var liveMixed = liveMatches.filter(function(obj) {
-	return obj.tournament_id == "20059";
-});
-
-var liveOpen = liveMatches.filter(function(obj) {
-	return obj.tournament_id == "20060";
-});
-
-var liveCMD = liveMatches.filter(function(obj) {
-	return obj.tournament_id == "20297";
-});
-
-
-// Filter on upcoming matches
-var upcomingWomen = upcomingMatches.filter(function(obj) {
-	return obj.tournament_id == "20058";
-});
-
-var upcomingMixed = upcomingMatches.filter(function(obj) {
-	return obj.tournament_id == "20059";
-});
-
-var upcomingOpen = upcomingMatches.filter(function(obj) {
-	return obj.tournament_id == "20060";
-});
-
-var upcomingCMD = upcomingMatches.filter(function(obj) {
-	return obj.tournament_id == "20297";
-});
-
-
-// push objects in new array
-matchesfinal.push({
-	"liveCMD": liveCMD
-}, {
-	"liveWomen": liveWomen
-}, {
-	"liveMixed": liveMixed
-}, {
-	"liveOpen": liveOpen
-}, {
-	"recentCMD": recentCMD
-}, {
-	"recentWomen": recentWomen
-}, {
-	"recentMixed": recentMixed
-}, {
-	"recentOpen": recentOpen
-}, {
-	"upcomingCMD": upcomingCMD
-}, {
-	"upcomingWomen": upcomingWomen
-}, {
-	"upcomingMixed": upcomingMixed
-}, {
-	"upcomingOpen": upcomingOpen
-});
-
 ```
+
+This will give us a different font-size on different screen width's.
+
+##### Tournaments + Single Tournament
+- [Added the CSS for the Tournaments overview page and some other random CSS](https://github.com/strexx/Ultimate-Frisbee-App/commit/c2821cb3175b10e4d0f6388ebde86a0847a767dd)
+
+##### Loader + loadscreen
+- [Added or recreated the CSS for the loader + loadscreen](https://github.com/strexx/Ultimate-Frisbee-App/commit/971ced4553f7d9f0ae93134ed4a39dbb31d90349)
+
+#### Desktop view
+- [Made a desktop view for the app and created more media queries for a better responsive view on each device](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/responsive)
+
+
+### 3 - Performance Matters
+
+##### Code highlights during this course
+Working with a mobile-first approach and using different font sizes wth 'em's' and '%'.
+
+We'll start with declaring a font-size of 100% on the html, which will stand for a font-size of 16px. So this will mean that 1em = 16px.
+
+##### Service Worker
+- [First attempt at setting up a Service Worker](https://github.com/strexx/Ultimate-Frisbee-App/commit/af530976f8820d27206cbf82de2e96d21952c6e1)
+
+##### BEM
+- [Implemented the BEM method, which also allowed me the rewrite en restructure some messy HTML and CSS code](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
+
+### 4 - Progressive enhancement
+
+
+
+1. [HTML ARIA (not finished)](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
+2. [BEM](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem?page=2)
+3. [Working with input fields and add progressive enhancement to hide and disable the input ability]()
+
+### 5 - Extra
+##### Continuous fixed errors, bugs and cleaned up the flow of the app
+- [Cleaned up the JS flow for the client APP](https://github.com/strexx/Ultimate-Frisbee-App/commit/b1de7588d56fc28d7b05af5667e740204586a903)
+- [Removed unnecessary routes](https://github.com/strexx/Ultimate-Frisbee-App/commit/25230dd5fea7517ee302d509a5e6d5118956179f)
+- [Removed unneeded API calls](https://github.com/strexx/Ultimate-Frisbee-App/commit/8185343143fb05a8465cf24fb6598f801659357f)
+- [Removed console logs](https://github.com/strexx/Ultimate-Frisbee-App/commit/6eb687c86a5bf9cb37bcccd38b4b2c1668c3ad35)
+- [Cleaned up dependencies](https://github.com/strexx/Ultimate-Frisbee-App/commit/e34c536702055d21c0dd573ff515e002e48ae23e)
+- [Fixed client side flow app](https://github.com/strexx/Ultimate-Frisbee-App/commit/adfe1851ca84408e0d8b24dec2b17d60ba83d79b)
+
+##### Set up Digital Ocean for project
+- Set up a Digital Ocean server for the web app: http://meesterproef.directzichtbaar.nl, and for the MongoDB database.
+
+##### Deploy to production
+Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95.85.1.96:8080
+
+- [Deploy script for Jenkins](https://github.com/strexx/Ultimate-Frisbee-App/commit/6b41f007a59a1667a8ae90f0eb2d91e6557798bd)
 
 
 ## How the app works
