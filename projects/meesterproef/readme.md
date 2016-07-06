@@ -317,7 +317,9 @@ This will give us a different font-size on different screen width's.
 ##### Code highlights during this course
 The Service Worker was a real tough one to configure, when the app is not exactly a Single Page WebApp. We've used multiple pages, so we could really built the app progressive enhanced. That means that we could create fallbacks for if Javascript was turned of for example. With a SPA this was not possible to do.
 
-The problem was in the fetch of the Service Worker.
+The problem was the pages that are being cached by the Service Worker, they would not be updated when a user would refresh the page. This resulted in always serving the old html file. Because we're working with real-time score updates, t was necessary to always have he latest scores displayed when the user would refresh the page. There was also a problem with the offline view of the page. If a user would be offline, the browser would give an error that the HTML could not be found.
+
+For this problem we would need to check in the fetch of the Service Worker. In the old code, it would always check if the request was was already in the cache first. If it was in the cache it would not do a new fetch again and replace our old cached HTML file. This needs to act differently. 
 
 0 - The start
 ```
@@ -340,7 +342,7 @@ if (acceptHeader.indexOf('text/html') !== -1) {
 }
 ```
 
-2 - If request is HTM, do a fetch and cache the response, else: fetch it from the cache and serve it (when we are offline)
+2 - If request is HTM, do a fetch and cache the response, else (if there is an error) fetch it from the cache and serve it. This would be the scenario if the user is offline.
 ```
 if (resourceType === 'content') {
 	event.respondWith(
@@ -350,7 +352,7 @@ if (resourceType === 'content') {
 	);
 }
 ```
-3 - Else: we want to ignore every polling been made by the socket.io, and fetch from cache.
+3 - Else: we want to ignore every polling that's been made by the socket.io and first fetch from cache. If the request is not in the cache, fetch the request and add it to our cache.
 ```
 else {
 	if (request.url.indexOf("transport=polling") == -1) { // ignore socket polling
@@ -405,7 +407,7 @@ this.addEventListener('fetch', function(event) {
 ##### BEM
 - [Implemented the BEM method, which also allowed me the rewrite en restructure some messy HTML and CSS code](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/bem)
 
-### 4 - Progressive enhancement
+### 4 - Browser Technologies
 
 ##### Code highlight during this course
 Built the input field on the match detail page Progressive Enhanced.
@@ -445,6 +447,8 @@ The CSS
     margin: auto;
 }
 ```
+
+The ultimate progressive enhancement!
 
 ##### The commits
 1. [HTML ARIA for screenreader](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
