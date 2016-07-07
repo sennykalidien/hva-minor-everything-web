@@ -1,7 +1,7 @@
 # Contributions to the Ultimate Frisbee App (UFA)
-This is the individual README of Senny Kalidien, made for the Amsterdam University of Applied Sciences, at the study of  Communication and Multimedia Design.
+This is the individual README of **Senny Kalidien**, made for the Amsterdam University of Applied Sciences, at the study of  Communication and Multimedia Design.
 
-In this README you can see read about my experience with this project, my activities on a weekly basis and the contributions that have been made to the [main repository](https://github.com/strexx/Ultimate-Frisbee-App).
+In this README you can see read about the app, my reflection and activities on a weekly basis and the contributions that have been made to the [main repository](https://github.com/strexx/Ultimate-Frisbee-App) and how to use the app.
 
 **The other readme's**
 
@@ -10,20 +10,91 @@ In this README you can see read about my experience with this project, my activi
 - [Go to the individual README of contributor Melvin Reijnoudt](https://github.com/melvinr/Ultimate-Frisbee-App)
 
 ## Table of content
-1. [My contribution](The contribution)
-  1. [The experience](my-experience-during-this-project)
+1. [The app](#the-app)
+  1. [About the app](#about-the-app)
+  2. [The problem](#the-problem)
+  3. [Design problem](#design-problem)
+  4. [Target audience](#target-audience)
+  5. [Use cases](#use-cases)
+  6. [Design challenges](#design-challenges)
+  7. [The solution](#design-solution)
+2. [My contribution](#my-contribution)
+  1. [Reflection](#reflection)
   2. [Tasks per week](#tasks-per-week)
   4. [Contributions to the repository](#contributions-to-the-repository)
-2. [How the app works](#how-the-app-works)
+3. [Technical documentation](#technical-documentation)
   1. [Main functionalities](#main-functionalities)
   2. [The structure](#the-structure)
   3. [Features and Packages](#features-and-packages)
   4. [How to install](#how-to-install)
   5. [How to develop](#how-to-develop)
 
+----
+
+## The app
+### About the app
+The Ultimate Frisbee App started as a school assignment for the Amsterdam University of Applied Sciences, at the study of  Communication and Multimedia Design. Christian Schaffner, a frisbee fanatic and the client for this assignment, had the wish to have a mobile app that can keep scores for the Ultimate Frisbee tournaments.
+
+### The problem
+For the public viewers of an Ultimate Frisbee tournament it's difficult to keep tab on when and where a team is playing and what the scores are. There isn't a good resource available to be updated continuously with the latest scores.
+
+For the teams that are playing multiple games a day, it's important to know when and where they are playing.
+
+For the organization of the tournaments there needs to be a fast and secure  solution to confirm and store the (final) scores in the Leaguevine system, which is used to create leagues, tournaments, teams, games and calculation of the ranking, rounds and points.
+
+### Design problem
+*How can a mobile web application allow the organization of the Ultimate Frisbee tournaments to receive the (final) scores of a finished match instantly and at the same time serve the public viewers and the teams with real-time (score) updates and other info about the matches during a tournament.*
+
+### Assignment
+Build a real-time, progressive enhanced and responsive web application, in which Ultimate Frisbee fans can check and update scores.
+
+### Target audience
+- **The public** that wants to be updated with the latest scores.
+- **The teams** that want to be updated with the latest scores and know where and when they are playing.
+- **The scorekeepers** who are present at the game and need to keep score and insert those scores into the system.
+- **The client** who wants to have the scores stored on a digital platform and updated within the Leaguevine API.
+
+### Use cases
+What are the most important cases of the users for this app?
+
+#### Must haves
+1. As a user I want to have real-time score updates about a match or multiple matches (that I'm interested in).
+2. As a user I want to have an overview of the matches that are being played during the tournament and on which field.
+3. As a user I want to update the scores of my (favorite) team(s).
+4. As a user I want to follow my favorite teams.
+5. As a user I want to be able to visit the app, even if I have a bad internet connection.
+6. As a scorekeeper of a game I want to confirm the final score, so the score can be updated in the system (Leaguevine API).
+7. As a scorekeeper I want to see the matches that are relevant to me.
+
+#### Could haves
+1. As a user I want to be notified if a (favorite) team scores.
+2. As a user I want to view the scores on a public screen.
+3. As a scorekeeper I want to have a personal overview of all the teams that I need to keep the scores for during the tournament.
+4. As a team I want to fill in my sprit scores.
+5. As a client I want to receive the spirit scores into the Leaguevine API.
+
+### Design challenges
+During this project there were the following design challenges:
+- The user can experience *bad* to *no* mobile internet connection at some locations of the Ultimate Frisbee tournaments.
+- The user isn't always aware of where the matches are being played.
+- The Leaguevine API, which is very slow, can be overloaded if there are many requests to the server.
+
+### Design solution
+A mobile-first, responsive, real-time, **progressive web application** made in **Node.js**, with the use of **socket.io** and **MongoDB**. *To make the web app a minimum viable product, the app will only display the games of the WindMill tournaments, an event that's being held every year.*
+
+- Node.js is used to keep the application lightweight, fast, and highly customizable. It also allows us to make the application progressive enhanced, so   it's viewable for all kinds of users. Some examples of cases would be to have no JavaScript enabled, slow to no internet connection or using a screenreader. It also allows us to make the app real-time, by using a websocket library that can communicate between the client and the server with only the use of JavaScript.
+
+- Socket.io is the websocket JavaScript library used to make the app update the scores real-time to all the users without the need of constantly refreshing the page.
+
+- MongoDB is used to create a database to reduce the API calls to the highly vulnerable and slow serving Leaguevine API. The app will do a daily API request to store the matches from the Windmill tournaments and divisions of the current day in the database. Each time a score is updated, the database will be updated. If a scorekeeper confirms the final score of a match, an API post request will be done to the API to update and synchronize the API with the database.
+
+- Progressive web app is used to make the application work offline, this is done with a Service Worker. If the user has a bad internet connection, he will still be able to visit the webapp and see the most recent scores.
+
+----
+
 ## My contribution
 
-## The experience
+## Reflection
 This project was a great way to measure my current skills as a front-end developer. After following some very intensive courses during this study, I wasn't sure how I would stand as a front-end developer now. Was I ready to finally be a worthy developer and be part or even contribute to this big community? Can I develop good and user friendly products? These were questions that needed to be answered before I finished my study.
 
 I've collaborated daily with the other two contributors of the respository: Melvin Reijnoudt & Fons Hettema. It was a interesting journey and fun experience to collaborate with a big project like this one with a life span of 7 weeks. The most interesting thing was finding out how to collaborate effectively when we would create this app together. Github is obviously a great tool for this purpose. But with Github alone you won't make it. In the beginning we would always meet and sit together to work on the app. Because we are all three very easy distracted, we needed a lot of silence and a good atmosphere in order to be productive. So we would regularly sit in an empty room at our school. After our meeting we would continue online with the collaborative communication tool appear.in. After a while, we discovered that we weren't as productive as we could be and noticed that we would do more if we were home, in our own space when we were on appear.in. Halfway this project we decided to work home more often and collaborate online. it worked like a charm.
@@ -140,6 +211,8 @@ See a list of the most important commits below per course:
 2. [CSS To The Rescue](#2---css-to-the-rescue)
 3. [Performance Matters](#3---performance-matters)
 4. [Browser Technologies](#4---browser-technologies)
+
+----
 
 ### 1 - WebApp From Scratch / Performance Matters
 In the course WebApp From Scratch I've learned how to write (better) vanilla JavaScript code, and how to use some JS standards for creating a Single Page Application from stratch for this project. Things like using a Namespace, IFFE, Modules is implemented.
@@ -471,8 +544,9 @@ Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95
 
 - [Deploy script for Jenkins](https://github.com/strexx/Ultimate-Frisbee-App/commit/6b41f007a59a1667a8ae90f0eb2d91e6557798bd)
 
+----
 
-## How the app works
+## Technical documentation
 
 ### Main functionalities
 - Node.js
