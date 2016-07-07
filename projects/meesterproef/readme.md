@@ -1,7 +1,7 @@
 # Contributions to the Ultimate Frisbee App (UFA)
 This is the individual README of **Senny Kalidien**, made for the Amsterdam University of Applied Sciences, at the study of  Communication and Multimedia Design.
 
-In this README you can see read about the app, my reflection and activities on a weekly basis and the contributions that have been made to the [main repository](https://github.com/strexx/Ultimate-Frisbee-App) and how to use the app.
+In this README you can see read about the Ultimate Frisbee App, my reflection and activities on a weekly basis and the contributions that have been made to the [main repository](https://github.com/strexx/Ultimate-Frisbee-App). Last but not least there is technical how-to for the app.
 
 **The other readme's**
 
@@ -88,7 +88,7 @@ A mobile-first, responsive, real-time, **progressive web application** made in *
 
 - MongoDB is used to create a database to reduce the API calls to the highly vulnerable and slow serving Leaguevine API. The app will do a daily API request to store the matches from the Windmill tournaments and divisions of the current day in the database. Each time a score is updated, the database will be updated. If a scorekeeper confirms the final score of a match, an API post request will be done to the API to update and synchronize the API with the database.
 
-- Progressive web app is used to make the application work offline, this is done with a Service Worker. If the user has a bad internet connection, he will still be able to visit the webapp and see the most recent scores.
+- Progressive web app is used to make the application work offline, this is done with a Service Worker. If the user has a bad internet connection, he will still be able to visit the webapp and see the most recent scores. This also means it is built progressive enhanced and there are many performance optimizations, like Critical CSS with async loading of stylesheets, fonts and more.
 
 ----
 
@@ -142,8 +142,8 @@ A complete overview of our tasks per week can be viewed below:
 - Gather all the feedback and create a MoSCoW-based feature list
 - Set up a MongoDB database on Digital Ocean
 - Set up the connection in our Node.JS with MongoDB
-- Insert the Windmill Ultimate Frisbee Tournament matches of 2016
-- Insert the Windmill Ultimate Frisbee Tournament divisions of 2016
+- Insert the Windmill Ultimate Frisbee Tournament matches of 2016 in the database
+- Insert the Windmill Ultimate Frisbee Tournament divisions of 2016 in the database
 - Help the other contributors with getting Socket.io to work for real-time score updates
 - Add JS filters in the route for the home page (matches overview) for each tab [](code-example)
 - Created the Tournaments overview page
@@ -156,10 +156,11 @@ A complete overview of our tasks per week can be viewed below:
 - Helped with setup Service Worker
 - Set up continuous integration (automatic deployment) with Jenkins
 - User testing
+- Critical CSS fix
 
 ### Week 5
 - Help with writing the main readme
-- Write my own readme
+- Write my own individual readme
 - Help with design of the poster for the presentation
 
 ### Week 6
@@ -194,6 +195,9 @@ Other main contributions:
 - Fixed modules (see modules folder) for Node.js.
 - Responsible for the Tournaments overview page and the single Tournament page.
 - Implemented BEM in the last week of the project.
+- Made the service worker work optimal with this progressive enhanced WebApp, which is not a Single Page App, but a Multi Page App.
+- Wrote most of the readme explaining the app, and gave it a logical structure.
+- Made the full desktop view and the app more responsive in different screen sizes.
 
 Branches I was mainly active in:
 
@@ -204,6 +208,7 @@ Branches I was mainly active in:
 - [production](https://github.com/strexx/Ultimate-Frisbee-App/commits/production)
 - [feature/responsive](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/responsive)
 - [feature/serviceworker](https://github.com/strexx/Ultimate-Frisbee-App/commits/feature/responsive)
+- [documentation/readme](https://github.com/strexx/Ultimate-Frisbee-App/commits/documentation/readme)
 
 See a list of the most important commits below per course:
 
@@ -521,11 +526,13 @@ The CSS
 }
 ```
 
-The ultimate progressive enhancement!
+The Ultimate Progressive Enhancement!
 
-##### The commits
+##### ARIA (Screenreaders)
 1. [HTML ARIA for screenreader](https://github.com/strexx/Ultimate-Frisbee-App/commit/ef4f0e10cb42f8bf5a902a441e0ce72ea28a433a)
-2. [Working with input fields and add progressive enhancement to hide and disable the input ability]()
+
+##### Progressive Enhancement
+2. [Working with input fields and add progressive enhancement to hide and disable the input ability](https://github.com/strexx/Ultimate-Frisbee-App/commit/d5adf2bdcf94e6095ac6fab1d2f65818f85415f8)
 
 ### 5 - Extra
 ##### Continuously fixing errors, bugs and cleaned up the flow of the app
@@ -543,6 +550,11 @@ The ultimate progressive enhancement!
 Set up a Digital Ocean server for Continuous Integration with Jenkins: http://95.85.1.96:8080
 
 - [Deploy script for Jenkins](https://github.com/strexx/Ultimate-Frisbee-App/commit/6b41f007a59a1667a8ae90f0eb2d91e6557798bd)
+
+##### Documentation
+Wrote the part about explaining the app, also made a logical structure with a table of content.
+- [documentation/readme](https://github.com/strexx/Ultimate-Frisbee-App/commit/1b145fe9c41b54b26f956a6bcb0eb6dfd996c5b0)
+
 
 ----
 
