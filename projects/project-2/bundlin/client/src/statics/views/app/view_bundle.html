@@ -1,0 +1,211 @@
+<article class="bln-bundle">
+
+    <!-- Cover -->
+    <state-animation class="bln-stateanimation metacover" leave-delay="650">
+
+        <!-- Meta data cover (left side of bundle) -->
+        <header class="bln-metacover" set-window="height">
+
+            <!-- Shadows -->
+            <div class="shadows">
+                <div class="layer layer-top"></div>
+                <div class="layer layer-bottom"></div>
+            </div>
+
+            <!-- Background image -->
+            <div class="background" ng-style="{'background-image': 'url(' + (bundle.picture.h1024 || bundle.picture.original || (loading.page ? '' : '/images/bundle-placeholder.jpg')) + ')'}" focuspicture focuspicture-x="{{ bundle.picture.focus_x }}" focuspicture-y="{{ bundle.picture.focus_y }}"></div>
+
+            <!-- Content -->
+            <div class="content" ng-click="disableSidebar()" ng-click-preventclass="prevent-sidebar-close">
+
+                <state-animation class="bln-stateanimation fade" enter-delay="250" leave-delay="400">
+
+                    <!-- Author and date -->
+                    <p class="smalldata">
+                        By <a ui-sref="app.view_profile.bundles({ profileScreenName: bundle.author.username })" rel="author">{{ bundle.author.name }}</a>
+                        <span class="subtle">
+                            <time datetime="{{ bundle.updated_at }}" ng-show="bundle.updated_at" class="date">{{ bundle.published ? 'published' : 'updated' }} {{bundle.updated_at | bundlinDate:'date'}}</time>
+                        </span>
+                    </p>
+
+                    <!-- Title, description and tags -->
+                    <h1 class="title">{{ bundle.title }}</h1>
+                    <p class="description">{{ bundle.description }}</p>
+                    <ul class="tags bln-tags">
+                        <li ng-repeat="tag in bundle.tags">{{ tag }}</li>
+                    </ul>
+
+                </state-animation>
+
+                <state-animation class="bln-stateanimation fade" enter-delay="450" leave-delay="200">
+
+                    <!-- Author and numbers -->
+                    <div class="footer">
+                        <div class="author">
+                            <a ui-sref="app.view_profile.bundles({ profileScreenName: bundle.author.username })" rel="author" class="link" tooltiptoggle="!user.hasRole('beta', 'admin')" tooltiptoggle-template="beta" tooltiptoggle-angle="top" tooltiptoggle-scope="{login: login, user: user}" tooltiptoggle-style="bottom: 138px;">
+                                <img class="avatar" ng-src="{{ bundle.author.picture.h128 || bundle.author.picture.original || '/images/default.png' }}" alt="{{ bundle.author.name }}">
+                                <strong class="name"><span>{{ bundle.author.name }}</span></strong>
+                            </a>
+                            <a ng-hide="!user.loggedIn || bundle.author._id === user._id || !user.hasRole('beta', 'admin')" class="followbutton bln-button bln-button-secondary bln-button-lesspadding" ng-click="switchFollow()">
+                                <span ng-show="!followsAuthor">Follow me</span>
+                                <span ng-show="followsAuthor">Following</span>
+                            </a>
+                            <p class="bio">
+                                <span twitter-bio-content="bundle.author.bio" urls="bundle.author.bio_urls" user-mentions="bundle.author.bio_user_mentions"></span>
+                            </p>
+                        </div>
+                        <ul class="statistics">
+                            <li>
+                                {{ bundle.author.published_bundle_count || 0 }}
+                                <span>bundles</span>
+                            </li>
+                            <li>
+                                {{ bundle.author.collected_bundles.length || 0 }}
+                                <span>collected</span>
+                            </li>
+                        </ul>
+
+                        <!-- Scroll button -->
+                        <a class="scrollbutton bln-icon bln-icon-white bln-icon-metacover" scroll-to="#first-content">b</a>
+
+                        <!-- Edit button -->
+                        <a ng-click="state.go('app.edit_bundle', { bundleId: bundle._sid })" class="editbutton" ng-show="user.hasRole('beta', 'admin') && user._id === bundle.author._id">
+                            <span class="bln-icon bln-icon-greenbutton bln-icon-budicon-56"></span>
+                        </a>
+                    </div>
+
+                </state-animation>
+            </div>
+        </header>
+
+    </state-animation>
+
+    <!-- Bundle content -->
+    <div class="bln-bundlecontent bln-stateanimation fade move-down" id="first-content" set-window="min-height" set-window-percentage="100" state-animation enter-delay="650">
+
+        <!-- Start discussion bar -->
+        <section class="bln-discussionbar" ng-if="bundle.published_tweet">
+            <p>
+                <a ng-href="http://twitter.com/statuses/{{bundle.published_tweet}}?ref=bundlin" target=_blank>
+                    Do you want to discuss this Bundle with me?
+                    <span>
+                        <span class="text">Start conversation <span class="bln-icon bln-icon-white bln-icon-budicon-14"></span></span>
+                        <span class="bln-icon bln-icon-white bln-icon-budicon-14"></span>
+
+                    </span>
+                </a>
+            </p>
+        </section>
+        <section class="bln-discussionbar" ng-if="!bundle.published_tweet && user._id === bundle.author._id">
+            <p>
+                <a ng-click="state.go('app.edit_bundle', { bundleId: bundle._sid })">
+                    This bundle is not published for the outside world yet
+                    <span>
+                        <span class="text">Edit bundle</span>
+                        <span class="bln-icon bln-icon-white bln-icon-budicon-56"></span>
+
+                    </span>
+                </a>
+            </p>
+        </section>
+
+
+        <!-- Bundle content items -->
+        <template-container name="default" bundle="bundle">
+        </template-container>
+
+        <!-- Bundle footer (as part of bundle content) -->
+        <footer>
+            <section class="bln-bundleitem bln-bundleitem-footer bln-bundleitem-footer-share" ng-class="{'collectButtonEnabled': user._id !== bundle.author._id}">
+                <div class="bln-bundleitemcontent">
+                    <div class="left">
+                        <button class="bln-button bln-button-secondary" ng-click="user.loggedIn && switchCollect()" ng-show="user._id !== bundle.author._id" tooltiptoggle="!user.loggedIn" tooltiptoggle-template="signin-to-use" tooltiptoggle-angle="right" tooltiptoggle-scope="{login: login, user: user}" tooltiptoggle-style="margin-left: 15px; margin-top: -32px;" tooltiptoggle-hide-if="user" tooltiptoggle-do-if="user" tooltiptoggle-do-action="collect">
+                            <span ng-show="!isCollected">
+                                <span class="bln-icon bln-icon-red bln-icon-budicon-49 bln-icon-beforeline"></span>
+                                Collect this bundle
+                            </span>
+                            <span ng-show="isCollected">
+                                <span class="bln-icon bln-icon-red bln-icon-budicon-64 bln-icon-beforeline"></span>
+                                Collected
+                            </span>
+                        </button>
+                        <p class="label" ng-show="user._id === bundle.author._id && bundle.collectors.length > 0">Collected by</p>
+                        <div class="bln-useravatarlist" ng-show="bundle.collectors.length > 0">
+                            <ul>
+                                <li ng-repeat="user in bundle.collectors | limitTo: (mobile ? 3 : 5) | reverse">
+                                    <a ui-sref="app.view_profile.bundles({ profileScreenName: user.username })" title="{{ user.name }}">
+                                        <img ng-src="{{ user.picture.h64 || user.picture.original || '/images/default.png' }}" alt="{{ user.name }}">
+                                    </a>
+                                </li>
+                                <li class="more" ng-show="bundle.collectors.length > (mobile ? 3 : 5)">
+                                    {{bundle.collectors.length - (mobile ? 3 : 5)}}+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right bln-sharebuttons">
+                        <ul>
+                            <li class="darker">
+                                <a title="Shortlink" class="bln-icon bln-icon-budicon-43" tooltiptoggle tooltiptoggle-template="shorturl" tooltiptoggle-size="small" tooltiptoggle-select=".textselect" tooltiptoggle-style="bottom:30px;" tooltiptoggle-scope="{absoluteUrl:absoluteUrl}" ng-class="{ 'active': tooltipActive }"></a>
+                            </li>
+                            <li>
+                                <a title="Share with Twitter" class="bln-icon bln-icon-budicon-14" ng-click="shareWithTwitter()"></a>
+                            </li>
+                            <li>
+                                <a title="Share with LinkedIn" class="bln-icon bln-icon-budicon-45" ng-click="shareWithLinkedin()"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section ng-show="bundle.author._id === user._id && bundle.archivedItems.length > 0">
+                <div class="bln-bundleitem bln-bundleitem-footer bln-bundleitem-title">
+                    <h2>Only you can see the links archived in this bundle</h2>
+                </div>
+                <div ng-repeat="item in bundle.archivedItems">
+                    <template-item item="item" bundle="bundle" template="'partials/bundle/archive/items/'+item.type+'.html?v=' + BLN_BUILD_TIMESTAMP"></template-item>
+                </div>
+            </section>
+
+            <section class="bln-bundleitem bln-horslider bln-horslider-bundles" scroll-buttons overflown overflown-element="> ul" scroll-status scroll-status-element="> ul" ng-show="bundle.original_bundle || bundle.rebundles.length > 0 || bundle.related_bundles.length > 0">
+                <div class="shadowbar shadowbar-left" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.left}"></div>
+                <div class="shadowbar shadowbar-right" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.right}"></div>
+                <a class="bln-scrollarrow bln-scrollarrow-right" ng-click="scrollRight()" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.right}"></a>
+                <a class="bln-scrollarrow bln-scrollarrow-left" ng-click="scrollLeft()" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.left}"></a>
+                <ul scrolling-element>
+                    <!-- original -->
+                    <li ng-if="bundle.original_bundle">
+                        <partial name="bundletile" scope="{'bundle': bundle.original_bundle, 'relation': 'original_bundle', 'editable': user.hasRole('beta', 'admin') && bundle.author._id === user._id, 'type': 'related'}"></partial>
+                    </li>
+
+                    <!-- rebundle -->
+                    <!-- <li ng-repeat="bundle in bundle.rebundles" ng-class="{'separator': $index === 0}">
+                        <partial name="bundletile" scope="{'bundle': bundle, 'relation': 'rebundle', 'editable': user.hasRole('beta', 'admin') && bundle.author._id === user._id, 'type': 'related'}"></partial>
+                    </li> -->
+
+                    <!-- related -->
+                    <li ng-repeat="bundle in bundle.related_bundles" ng-class="{'separator': $index === 0}">
+                        <partial name="bundletile" scope="{'bundle': bundle, 'editable': user.hasRole('beta', 'admin') && bundle.author._id === user._id, 'type': 'related'}"></partial>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="bln-bundleitem bln-bundleitem-footer bln-bundleitem-bigspace">
+                <div class="bln-bundleitemcontent">
+                    <p class="bln-paragraph bln-paragraph-mention">Do you know of some great content out there?
+                        <a tooltiptoggle="!user.hasRole('beta', 'admin')" tooltiptoggle-template="beta" tooltiptoggle-angle="top" tooltiptoggle-scope="{login: login, user: user}" ng-click="user.hasRole('beta', 'admin') && createBundle()">Create</a>
+                        a new bundle
+                        <!-- REBUNDLE:
+                        or <a tooltiptoggle="!user.hasRole('beta', 'admin')" tooltiptoggle-template="beta" tooltiptoggle-angle="top" tooltiptoggle-scope="{login: login, user: user}" ng-click="user.hasRole('beta', 'admin') && rebundle()">rebundle</a> this one-->
+                        and share collections of links about your favorite subjects!
+                    </p>
+                    <div class="bln-buttonset">
+                        <a class="bln-button bln-button-primary" tooltiptoggle="!user.hasRole('beta', 'admin')" tooltiptoggle-template="beta" tooltiptoggle-angle="top" tooltiptoggle-scope="{login: login, user: user}" tooltiptoggle-style="bottom: 70px;" ng-click="user.hasRole('beta', 'admin') && createBundle()">Create your bundle</a>
+                        <!-- <a class="bln-button bln-button-primary" tooltiptoggle="!user.hasRole('beta', 'admin')" tooltiptoggle-template="beta" tooltiptoggle-angle="top" tooltiptoggle-scope="{login: login, user: user}" tooltiptoggle-style="bottom: 70px;" ng-click="user.hasRole('beta', 'admin') && rebundle()">Rebundle this one</a> -->
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+</article>

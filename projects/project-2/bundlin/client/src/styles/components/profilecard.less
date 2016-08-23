@@ -1,0 +1,66 @@
+.bln-profilecard {
+  display: inline-block;
+  min-height: 80px;
+  position: relative;
+  padding-left: 95px;
+  padding-top: 18px;
+
+  a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 95px;
+    padding-top: 18px;
+    text-decoration: none;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 26px;
+      left: 26px;
+      bottom: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(/images/logo.png);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    &:hover {
+      img {
+        filter: brightness(60%);
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    opacity: .9;
+    transition: filter .2s;
+    -webkit-transition: -webkit-filter .2s;
+    border-radius: 50%;
+  }
+
+  .bln-name {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .bln-role {
+    display: block;
+  }
+}

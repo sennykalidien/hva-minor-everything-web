@@ -1,0 +1,94 @@
+<!doctype html>
+<!--[if lte IE 8]><script type="text/javascript">alert('This version of Internet Explorer is not supported by Bundlin. Please upgrade your browser to use Bundlin.');</script><![endif]-->
+<html lang="en" ng-app="bundlin" id="ng-app">
+    <head>
+        <meta charset="UTF-8">
+        <title ng-bind="SEO.title">Bundlin - the beauty of the web, bundled.</title>
+        <meta name="fragment" content="!" />  
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />       
+        <!-- CRITCAL CSS: https://www.smashingmagazine.com/2015/08/understanding-critical-css/ -->
+        <style>*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}html{background-color:#f9f9f9}body,html{height:100%}body{font-family:sans-serif;min-width:320px;max-width:100%;overflow-x:hidden;background-color:#f1f1f1}.bln-homeheader{position:relative;z-index:9;background-color:#32b38c;color:#fff;overflow:hidden;background-position:initial initial;background-repeat:initial initial}.bln-homeheader .bln-section{position:relative;background-color:transparent;z-index:1;background-position:initial initial;background-repeat:initial initial}.bln-homeheader .bln-credits{position:absolute;bottom:42px;right:30px}.bln-homeheader .title{font-size:25px;line-height:1.3em;font-weight:600;margin-top:-2px}.bln-homeheader .subtitle{color:#fff;opacity:.5;margin-top:16px;font-weight:600;line-height:1.6em}@media screen and (min-width:480px){.bln-homeheader .bln-credits{bottom:auto;top:30px}.bln-homeheader .title{font-size:35px;margin-top:-9px}.bln-homeheader .subtitle{width:80%}}@media screen and (min-width:768px){.bln-homeheader .title{width:70%;font-size:48px;margin-top:-13px}.bln-homeheader .subtitle{width:60%;font-size:18px;margin-top:6px}.bln-homeheader .bln-credits{top:40px;right:40px}}@media screen and (min-width:990px){.bln-homeheader .title{width:90%}.bln-homeheader .subtitle{width:80%}}.bln-section-intro{padding:50px 30px;background-color:#fff;background-position:initial initial;background-repeat:initial initial}.bln-section-intro-header{padding-top:40px;padding-bottom:40px}@media screen and (min-width:480px){.bln-section-intro{padding:80px 50px}.bln-section-intro-header{padding-top:60px;padding-bottom:60px}}@media screen and (min-width:990px){.bln-section-intro{padding:80px}.bln-section-intro-header{padding-top:120px;padding-bottom:60px}}@media screen and (min-width:1400px){.bln-section-intro{padding:140px}.bln-section-intro-header{padding-top:120px;padding-bottom:60px}}.bln-maxwidth{max-width:1200px;margin-left:auto;margin-right:auto}a{color:#333;transition:color .15s;-webkit-transition:color .15s;text-decoration:none;cursor:pointer}.bln-credits{display:block;text-align:right;width:80px}.bln-credits .handcraftedby{display:none}.bln-credits .logo{width:75px;display:block;float:right;opacity:.3;padding:10px;margin:-10px -10px -15px;transition:opacity .2s;-webkit-transition:opacity .2s}.bln-credits .logo img{width:100%}@media screen and (min-width:768px){.bln-credits{width:125px}.bln-credits .handcraftedby{display:block;width:103px;float:right;margin-bottom:10px}.bln-credits .logo{width:106px;opacity:1}}img{border:none}.bln-app .page{width:100%;height:100%;transition:opacity .35s;-webkit-transition:opacity .35s}@media only screen and (min-width:768px){.bln-app .page{padding-left:80px}}#bln-toastcontainer{display:block;position:fixed;top:30px;right:40px;z-index:999999}.loader{left:50%;top:50%;position:fixed;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.loader #spinner{box-sizing:border-box;stroke:#32b38c;z-index: 999;stroke-width:3px;-webkit-transform-origin:50%;transform-origin:50%;-webkit-animation:line 1.6s cubic-bezier(.4,0,.2,1) infinite,rotate 1.6s linear infinite;animation:line 1.6s cubic-bezier(.4,0,.2,1) infinite,rotate 1.6s linear infinite}@-webkit-keyframes rotate{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(450deg);transform:rotate(450deg)}}@keyframes rotate{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(450deg);transform:rotate(450deg)}}@-webkit-keyframes line{0%{stroke-dasharray:2,85.964;-webkit-transform:rotate(0);transform:rotate(0)}50%{stroke-dasharray:65.973,21.9911;stroke-dashoffset:0}100%{stroke-dasharray:2,85.964;stroke-dashoffset:-65.973;-webkit-transform:rotate(90deg);transform:rotate(90deg)}}@keyframes line{0%{stroke-dasharray:2,85.964;-webkit-transform:rotate(0);transform:rotate(0)}50%{stroke-dasharray:65.973,21.9911;stroke-dashoffset:0}100%{stroke-dasharray:2,85.964;stroke-dashoffset:-65.973;-webkit-transform:rotate(90deg);transform:rotate(90deg)}}</style>
+        <!-- Preload CSS (Async) -->
+        <link rel="preload" href="/css/app.css" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/css/app.css"></noscript>             
+        <!-- loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT -->
+        <script>
+        !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function l(){d.addEventListener&&d.removeEventListener("load",l),d.media=r||"all"}var a,i=e.document,d=i.createElement("link");if(n)a=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;a=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){a.parentNode.insertBefore(d,n?a:a.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",l),d.onloadcssdefined=f,f(l),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)})}}}(this);
+        </script> 
+        <!-- Add to homescreen -->
+        <link rel="manifest" href="/manifest.json">     
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Weather App">
+        <!-- Favicon + Smartphone icons -->
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+        <meta name="apple-mobile-web-app-title" content="Bundlin">
+        <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+        <meta name="msapplication-TileColor" content="#292929">
+        <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+        <meta name="application-name" content="Bundlin">
+        <!-- Search Engines -->
+        <meta name="description" content="{{ SEO.description }}" ng-if="SEO.description">
+        <meta name="keywords" content="{{ SEO.keywords }}" ng-if="SEO.keywords">
+        <meta name="author" content="{{ SEO.author }}" ng-if="SEO.author">
+        <meta name="robots" content="{{ SEO.robots }}" ng-if="SEO.robots">
+        <!-- Facebook -->
+        <meta property="{{ 'og:' + field }}" content="{{ value }}" ng-repeat="(field, value) in SEO.opengraph">
+        <!-- Twitter -->
+        <meta name="{{ 'twitter:' + field }}" content="{{ value }}" ng-repeat="(field, value) in SEO.twitter">
+    </head>
+    <body>
+        <div ui-view class="bln-app" id="wrapper top" sidebar-state sideextension-state ng-class="{'bln-state-sidebaractive': sidebarIsActive,'bln-state-sideextensionactive': sideextensionIsActive,'bln-state-modalactive': modalIsActive }">     
+<!--
+            <sidebar>
+                <nav class="bln-sidebar">
+                    <div class="content">
+                    </div>
+                </nav> 
+            </sidebar>    
+-->            
+            <main class="page" set-window="height">
+                <header class="bln-homeheader">
+                    <div class="bln-section bln-section-intro bln-section-intro-header">
+                        <div class="bln-maxwidth">
+                                <p class="bln-credits bln-credits-small">
+                                    <img src="/images/intro-handcrafted.png" alt="Handcrafted by" class="handcraftedby">
+                                    <a href="http://lifely.nl?ref=bundlin" target="_blank" class="logo"><img src="/images/logo_lifely.png" alt="Lifely"></a>
+                                </p>
+                            <h1 class="title">The beauty of the web, bundled.</h1>
+                            <p class="subtitle">Create, discover and share Bundles of links about your favorite subjects.</p>
+                        </div>
+                    </div>
+                </header>
+                <div class="loader">
+                    <svg viewBox="0 0 32 32" width="32" height="32">
+                        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                    </svg>
+                </div>               
+            </main>              
+        </div>          
+        <div class="bln-tooltips"></div>
+        <ul class="bln-modals"></ul>
+        <div id="bln-toastcontainer"></div>
+        <!-- LIBS -->
+        <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpZYfosiwZ62qxOaa86CvlOC8_bmUgCdg"></script>--> 
+        <script src="/lib/font-face-observer.min.js"></script>     
+        <!-- MAIN JS FILES -->
+        <script type="text/javascript" src="/js/vendor.js"></script>
+        <script type="text/javascript" src="/js/app.js" defer></script>   
+        <script type="text/javascript" src="sw.js" defer></script>                                                                                 
+    </body>
+</html>

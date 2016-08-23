@@ -1,0 +1,78 @@
+.bln-stateanimation {
+  display: block;
+
+  @media screen and (min-width: @breakpoint_desktop) {
+    @speed: .35s;
+    transition: opacity @speed, transform @speed;
+    
+    // default (leave)
+    &:not(.prevent):not(.enter) {
+
+      &.fade {
+        opacity: 0;
+      }
+
+      &.move-down {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      &.move-left {
+        transform: translate3d(10px, 0, 0);
+      }
+
+      &.move-right {
+        transform: translate3d(-10px, 0, 0);
+      }
+
+      &.move-up {
+        transform: translate3d(0, 10px, 0);
+      }
+
+      &.metacover {
+        transform: translate3d(-880px, 0, 0);
+      }
+
+      &.homeheader {
+        transform: translate3d(0, 25px, 0);
+      }
+
+    }
+
+    // enter fixes
+    &.prevent,
+    &.enter {
+      &.metacover {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // settings
+    &.slow {
+      transition-duration: 1.2s;
+    }
+
+    &.metacover {
+      width: 100%;
+      transition-duration: .8s;
+    }
+    
+    // types
+    &-fullabsolute {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-fullheight {
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: @breakpoint_desktop) {
+    // settings
+    &.metacover {
+      position: fixed;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+box: wercker/nodejs
+services:
+  - wercker/mongodb
+build:
+  steps:
+    - script:
+        name: echo versions
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+          echo "mongo version $(mongo --version) running"
+    - script:
+        name: backend | npm install
+        code: npm install
+        cwd: server
+    - script:
+        name: backend | seed fixtures
+        code: |-
+            mongoimport --db=bundlin --drop --collection users --file fixtures/users.json --jsonArray --host ${WERCKER_MONGODB_HOST}
+            mongoimport --db=bundlin --drop --collection bundles --file fixtures/bundles.json --jsonArray --host ${WERCKER_MONGODB_HOST}
+            mongoimport --db=bundlin --drop --collection tags --file fixtures/tags.json --jsonArray --host ${WERCKER_MONGODB_HOST}
+            mongoimport --db=bundlin --drop --collection autoincrements --file fixtures/autoincrements.json --jsonArray --host ${WERCKER_MONGODB_HOST}
+        cwd: server
+    - script:
+        name: backend | run unit tests
+        code: NODE_ENV=testing node_modules/mocha/bin/mocha tests/scraping/**/*.js --harmony --reporter=spec
+        cwd: server
+    - script:
+        name: backend | run acceptance tests
+        code: NODE_ENV=testing node_modules/mocha/bin/mocha tests/routes.js --harmony --reporter=spec
+        cwd: server
+#    - script:
+#        name: frontend | npm install
+#        code: sudo npm install -g phantomjs
+#        cwd: client
+#    - script:
+#        name: frontend | build assets
+#        code: npm run build
+#        cwd: client
+#    - script:
+#        name: frontend | run tests
+#        code: npm test
+#        cwd: client
+  after-steps:
+    - kobim/slack-post:
+        url: $SLACK_URL
+        channel: notifications
+
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: 80.240.129.195
+        fingerprint: d1:8a:c8:59:f6:d9:ab:68:27:3f:19:eb:cb:e2:11:fb
+    - add-to-known_hosts:
+        hostname: 178.62.143.92
+        fingerprint: be:2d:35:0d:ea:81:7b:66:2c:19:68:56:33:9a:fd:c6
+    - script:
+        name: ansible | install
+        code: |-
+            sudo apt-get install python -y
+            sudo easy_install pip
+            sudo pip install ansible
+    - script:
+        name: deploy | write deploy keys
+        code: |-
+            echo -ne $DEPLOY_KEY > keys/deploy
+            echo -ne $DEPLOY_KEY_PUB > keys/deploy.pub
+        cwd: devops/provision
+    - script:
+        name: deploy | write fake lifely server
+        code: |-
+            echo -ne $SERVER_KEY > ~/.ssh/lifely-server
+            echo -ne $SERVER_KEY_PUB > ~/.ssh/lifely-server.pub
+            chmod 400 ~/.ssh/lifely-server
+            chmod 400 ~/.ssh/lifely-server.pub
+    - script:
+        name: deploy | run deploy staging
+        code: ./devops command deploy ${WERCKER_DEPLOYTARGET_NAME} webservers -e version=${WERCKER_GIT_COMMIT}
+        cwd: devops
+  after-steps:
+    - kobim/slack-post:
+        url: $SLACK_URL
+        channel: notifications

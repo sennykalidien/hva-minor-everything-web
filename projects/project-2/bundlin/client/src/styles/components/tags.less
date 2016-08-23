@@ -1,0 +1,52 @@
+.bln-tags {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0;
+
+  li {
+    list-style: none;
+    // cursor: pointer;
+    height: 26px;
+    font-size: 13px;
+    display: inline-block;
+    padding: 4px 10px 0 10px;
+    background-color: @color_green;
+    margin-right: 24px;
+    margin-bottom: 14px;
+    border-radius: 3px 0 0 3px;
+    position: relative;
+    letter-spacing: .5px;
+    font-weight: 600;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -10px;
+      display: block;
+      width: 10px;
+      height: 100%;
+      background-image: url(/images/tag_end.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: fade(#000, 20%);
+      border-radius: 50%;
+      right: -3px;
+      top: 10px;
+      z-index: 1;
+      transform: translate3d(0, 0, 0);
+      transition: background .2s;
+    }
+  }
+}

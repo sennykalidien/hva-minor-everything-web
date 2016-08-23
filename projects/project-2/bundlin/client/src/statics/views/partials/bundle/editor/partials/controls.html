@@ -1,0 +1,28 @@
+<div class="bln-controls">
+    <div class="bln-row">
+        <div ng-class="{'hover': item.url, 'nohover': !item.url}">
+            <div class="cell bln-removeitem"><a ng-click="deleteItem(item)"><span class="bln-icon bln-icon-budicon-5"></span> Delete</a></div>
+            <div class="cell stretch"><input class="bln-input" type="text" ng-model="item.url" readonly></div>
+        </div>
+        <div class="cell bln-sub-moveicons" ng-if="publishedItems.length > 1 && item.active">
+            <a ng-click="moveItem(item, -1)" ng-class="{'hide': $index === 0}">
+                <span class="bln-icon bln-icon-budicon-2"></span>
+            </a>
+            <a ng-click="moveItem(item, 1)" ng-class="{'hide': $index === publishedItems.length - 1}">
+                <span class="bln-icon bln-icon-budicon-1"></span>
+            </a>
+        </div>
+        <div class="cell last">
+            <button class="bln-button bln-button-switch bln-button-switch-archivepublic" ng-class="{'bln-button-wannabe bln-button-switch-green bln-button-public': item.active}" ng-click="!item.active && publishItem(item)">
+                <span ng-show="item.active">Public</span>
+                <span ng-show="!item.active && item.waiting" class="bln-icon bln-icon-budicon-5"></span>
+                <span ng-show="!item.active && !item.waiting" class="bln-icon bln-icon-budicon-42"></span>
+            </button>
+            <button class="bln-button bln-button-switch bln-button-switch-archivepublic" ng-class="{'bln-button-wannabe bln-button-switch-red bln-button-archived': !item.active}" ng-click="item.active && archiveItem(item)">
+                <span ng-show="!item.active">Archived</span>
+                <span ng-show="item.active && item.waiting" class="bln-icon bln-icon-budicon-5"></span>
+                <span ng-show="item.active && !item.waiting" class="bln-icon bln-icon-budicon-41"></span>
+            </button>
+        </div>
+    </div>
+</div>

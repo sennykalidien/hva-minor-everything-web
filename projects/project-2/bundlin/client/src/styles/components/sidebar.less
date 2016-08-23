@@ -1,0 +1,67 @@
+.bln-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: #292929;
+  text-align: center;
+  border-right: 10px solid transparent;
+  z-index: 25;
+  box-sizing: content-box;
+  background-clip: padding-box;
+  -webkit-overflow-scrolling: touch;
+  transition: border .35s, transform .35s;
+  animation: fadein .35s;
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .content {
+    position: relative;
+    height: 100%;
+    background-color: #292929;
+    z-index: 10;
+
+    .bottom {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .group {
+      list-style: none;
+
+      &-topmargin {
+        padding-top: 10px;
+      }
+
+      &-bottommargin {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .group-animate {
+    animation: fadein_group 1.5s;
+
+    @keyframes fadein_group {
+      0% { opacity: 0; }
+      65% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  }
+
+  @media only screen and (min-width: @breakpoint_tablet) {
+    border-right-color: fade(#292929, 10%);
+  }
+}
+
+.bln-state-sidebaractive .bln-sidebar {
+  border-right-color: fade(#292929, 10%);
+}
+.bln-state-sideextensionactive .bln-sidebar {
+  border-right-color: transparent !important;
+}

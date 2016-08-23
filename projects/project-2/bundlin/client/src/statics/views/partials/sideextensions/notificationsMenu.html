@@ -1,0 +1,20 @@
+<div class="bln-notifications" notifications ng-if="sideextension.render">
+    <h2>Your notifications</h2>
+    <ul>
+        <li class="bln-notification" ng-repeat="notification in user.notifications" ng-class="{'bln-notification-read' : notification.read}">
+            <div class="bln-row">
+                <div class="cell"><figure class="bln-avatar bln-avatar-verysmall" ng-style="{'background-image': 'url(' + (notification.type_data.user_image.h64 || '/images/default.png') + ')'}"></figure></div>
+                <div class="cell stretch last">
+                    <p>
+                        <a ui-sref="app.view_profile.bundles({profileScreenName:notification.type_data.user_username})">{{notification.type_data.user_name}}</a>
+                        <span ng-if="notification.type === 'new_follower'">is now stalking you</span>
+                        <span ng-if="notification.type === 'new_collect'">collected your bundle</span>
+                        <span ng-if="notification.type === 'follower_published_bundle'">published</span>
+                        <span ng-if="notification.type === 'became_beta_user'">has given you beta access. Feedback? Bring it on!</span>
+                        <a ui-sref="app.view_bundle({bundleId: notification.type_data.bundle_sid})" ng-if="notification.type_data.bundle_title">{{notification.type_data.bundle_title}}</a>
+                    </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

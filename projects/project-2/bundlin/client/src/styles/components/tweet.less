@@ -1,0 +1,100 @@
+.bln-tweet {
+  text-align: center;
+
+  &author {
+    display: inline-block;
+    margin-bottom: 5px;
+
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      float: left;
+      margin-right: 12px;
+    }
+
+    span {
+      display: inline-block;
+      float: left;
+      padding-top: 3px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #383838;
+    }
+  }
+
+  &content {
+    color: @color_green;
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.63em;
+
+    p {
+      margin-bottom: 10px;
+      
+      @color_lightgreen: #92d0ba;
+
+      a.user,
+      a.url {
+        color: @color_lightgreen;
+        box-shadow: inset 0px -2px 0px 0px lighten(@color_lightgreen, 20%);
+        transition: color .2s, box-shadow .2s;
+
+        &:hover {
+          color: @color_green;
+          box-shadow: inset 0px -2px 0px 0px lighten(@color_green, 20%);
+        }
+      }
+
+      .hashtag {
+        color: @color_lightgreen;
+      }
+    }
+
+    figure {
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &meta {
+    .bln-icon {
+      color: fade(#55acee, 50%);
+      margin: 0 10px;
+      font-size: 16px;
+      transition: color .2s;
+    }
+
+    .metapart {
+      display: inline-block;
+      width: 42%;
+      color: #666;
+      font-size: 14px;
+
+      &.left {
+        text-align: right;
+      }
+
+      &.right {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+  .bln-tweet {
+    &content {
+      figure {
+        width: 85%;
+      }
+    }
+  }
+}

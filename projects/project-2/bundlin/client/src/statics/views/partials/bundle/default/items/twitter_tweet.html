@@ -1,0 +1,23 @@
+<section class="bln-bundleitem">
+    <div class="bln-bundleitemcontent">
+        <div class="bln-tweet">
+            <header class="bln-tweetauthor header">
+                <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+                    <img ng-src="{{ item.fields.author.picture.original || '/images/default.png' }}" alt="{{ item.fields.author.name }}">
+                    <span ng-bind="item.fields.author.name" class="title text"></span>
+                </a>
+            </header>
+            <div class="bln-tweetcontent">
+                <p twitter-tweet-content="item.fields.content" urls="item.fields.urls" media="item.fields.media" user-mentions="item.fields.user_mentions" hashtags="item.fields.hashtags"></p>
+                <figure ng-repeat="medium in item.fields.media" ng-if="medium.type === 'photo'">
+                    <img ng-src="{{ medium.url.original }}" alt="Tweet picture {{$index}}">
+                </figure>
+            </div>
+            <div class="bln-tweetmeta">
+                <span class="metapart left">{{ item.fields.created_at | bundlinDate }}</span>
+                <span class="bln-icon bln-icon-budicon-14 bln-icon-inline"></span>
+                <a ng-href="{{ 'http://twitter.com/' + item.fields.author.username }}" target="_blank" class="metapart right">@{{item.fields.author.username}}</a>
+            </div>
+        </div>
+    </div>
+</section>

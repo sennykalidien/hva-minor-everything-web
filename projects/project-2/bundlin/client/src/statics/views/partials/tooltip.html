@@ -1,0 +1,10 @@
+<div class="bln-tooltipcontainer" ng-class="{'active': state}" ng-style="{
+    left: position.x + 'px',
+    top: position.y + 'px',
+    width: position.width + 'px',
+    height: position.height + 'px'
+}">
+    <tooltip angle="{{angle}}" state="{{state}}" class="bln-tooltip" style="{{style}}" size="{{size}}" select-selector="{{selectSelector}}">
+        <partial name="{{template}}" scope="scope"></partial>
+    </tooltip>
+</div>

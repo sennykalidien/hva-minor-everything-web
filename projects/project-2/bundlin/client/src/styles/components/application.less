@@ -1,0 +1,138 @@
+.bln-application {
+  .header {
+    margin-bottom: 15px;
+
+    .app,
+    .info {
+      float: left;
+    }
+    
+    .button {
+      float: right;
+    }
+
+    .app {
+      margin-right: 12px;
+      padding-top: 1px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 22%;
+        float: left;
+      }
+    }
+
+    .info {
+      width: calc(~"100% - 160px");
+    }
+    
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 5px;
+      color: #333;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .type {
+      color: #ccc;
+      margin-top: -2px;
+
+      .bln-icon {
+        display: inline-block;
+        margin-right: 3px;
+      }
+
+      &-apple {
+        .bln-icon {
+          color: fade(#666666, 50%);
+        }
+      }
+
+      &-android {
+        .bln-icon {
+          color: fade(#96c230, 50%);
+        }
+      }
+
+      .creator {
+        display: inline-block;
+        vertical-align: bottom;
+        color: #666;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: calc(~"100% - 25px");
+      }
+      
+    }
+    
+    .bln-button {
+      margin-top: 1px;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+  .description {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 26px;
+
+    p {
+      max-height: 160px;
+      overflow-y: hidden;
+      transition: max-height .7s;
+    }
+
+    &.expanded {
+      p {
+        max-height: 750px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_phone) {
+  .bln-application {
+    .header {
+      .title {
+        float: left;
+        font-size: 30px;
+        margin-right: 15px;
+        max-width: 60%;
+      }
+
+      .type {
+        float: left;
+        margin-top: 16px;
+        width: 32%;
+      }
+    }
+  }
+
+  .bln-bundleitem-small {
+    .bln-application {
+      .header {
+        .title {
+          float: none;
+          font-size: 18px;
+          margin-right: 0;
+        }
+
+        .type {
+          float: none;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}

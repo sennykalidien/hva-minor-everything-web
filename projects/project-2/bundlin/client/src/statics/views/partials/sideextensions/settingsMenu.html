@@ -1,0 +1,155 @@
+<div class="bln-settings" settings ng-if="sideextension.render">
+    <section class="profile bln-state-open">
+        <a class="bln-accordion" ng-click="expand('profile')">Profile</a>
+        <form class="bln-menuform bln-sub-content">
+            <ul>
+                <li>
+                    <label>Selfie</label>
+                    <div>
+                        <figure class="bln-avatar bln-avatar-small bln-avatar-block" ng-style="{'background-image': 'url(' + (user.picture.h128 || user.picture.original || '/images/default.png') + ')'}"></figure>
+                        <a ng-click="refreshAvatar()">Reload your Twitter image</a>
+                    </div>
+                </li>
+                <li>
+                    <label>Twitter</label>
+                    <a ng-href="http://twitter.com/{{userProfile.username}}?ref=bundlin" target="_blank">@{{userProfile.username}}</a>
+                </li>
+                <li>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" ng-model="userProfile.name" ng-blur="submitProfile(userProfile.name, 'name', $event)" placeholder="John Doe">
+                    <span class="bln-inputerror">{{ inputErrors.name }}</span>
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" ng-model="userProfile.email" ng-blur="submitProfile(userProfile.email, 'email', $event)" placeholder="John.Doe@domain.com">
+                    <span class="bln-inputerror">{{ inputErrors.email }}</span>
+                </li>
+                <li>
+                    <label for="location">Location</label>
+                    <input type="text" name="location" id="location" ng-model="userProfile.location" ng-blur="submitProfile(userProfile.location, 'location', $event)" placeholder="Where do {{ userProfile.name ? (userProfile.name | bundlinPlural) : 'you' }} come from?">
+                    <span class="bln-inputerror">{{ inputErrors.location }}</span>
+                </li>
+                <li>
+                    <label for="website">Website</label>
+                    <input type="text" name="website" id="website" ng-model="userProfile.website" ng-blur="submitProfile(userProfile.website, 'website', $event)" placeholder="your personal site">
+                    <span class="bln-inputerror">{{ inputErrors.website }}</span>
+                </li>
+                <li>
+                    <label for="bio">Bio</label>
+                    <textarea name="bio" id="bio" cols="30" rows="3" ng-model="userProfile.bio" ng-blur="submitProfile(userProfile.bio, 'bio', $event)" placeholder="For instance: I'm Batman."></textarea>
+                    <span class="bln-inputerror">{{ inputErrors.bio }}</span>
+                </li>
+                <li>
+                    <label for="spiritgif">Spirit gif</label>
+                    <input type="text" name="spiritgif" id="spiritgif" ng-model="userProfile.spiritgif" ng-blur="submitProfile(userProfile.spiritgif, 'spiritgif', $event)" placeholder="Define your mindset with a spirit gif">
+                    <span class="bln-inputerror">{{ inputErrors.spiritgif }}</span>
+                </li>
+            </ul>
+        </form>
+    </section>
+    <section class="about">
+        <a class="bln-accordion" ng-click="expand('about')">About Bundlin</a>
+        <article class="bln-menucontent bln-sub-content">
+            <p>Bundlin bridges the gap between content and users, empowering influencers in the most effortless way they can imagine. Through Bundlin, users can create, share and discover bundles of content curated by people they trust. Our product is still in an early phase of development, but we have elaborate future plans to make it growing into a large content curation platform. Please stay in touch so we can show you what’s up next.</p>
+            <p><a href="https://vimeo.com/125583287?ref=bundlin" target="_blank">Check out Bundlin in 90 seconds</a></p>
+            <p class="bln-sub-intro">In its essence, content curation is a human process. As a creator, you are at the center of it all. By collecting existing web content and adding context and insight to this content, you can help your audience gain a deeper understanding of a subject you know a ton about. Only by centering our product around the curator, we are able to solve the massive problem of the ever expanding amount of content, offering an innovative way to search through it all.</p>
+            <p>Pim & Nick, founders of Bundlin.</p>
+            <ul class="bln-faces">
+                <li>
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'pimverlaan'})">
+                        <img src="/images/avatars/pim.jpg" alt="Foto Pim Verlaan">
+                        <div>
+                            <span>Pim Verlaan</span>
+                            <span>Founder & design</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'nrdebruijn'})">
+                  <img src="/images/avatars/nick.jpg" alt="Foto Nick de Bruijn">
+                  <div>
+                            <span>Nick de Bruijn</span>
+                  <span>Founder</span>
+                        </div>
+                </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'peterpeerdeman'})">
+                  <img src="/images/avatars/peter.jpg" alt="Foto Peter Peerdeman">
+                  <div>
+                            <span>Peter Peerdeman</span>
+                  <span>Lead Tech</span>
+                        </div>
+                </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'bryantebeek'})">
+                  <img src="/images/avatars/bryan.jpg" alt="Foto Bryan te Beek">
+                  <div>
+                            <span>Bryan te Beek</span>
+                  <span>Coding</span>
+                        </div>
+                </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'jessedvrs'})">
+                  <img src="/images/avatars/jesse.jpg" alt="Foto Jesse de Vries">
+                  <div>
+                            <span>Jesse de Vries</span>
+                  <span>Coding</span>
+                        </div>
+                </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'nick_koster'})">
+                  <img src="/images/avatars/nick.k.jpg" alt="Foto Nick Koster">
+                  <div>
+                            <span>Nick Koster</span>
+                  <span>Coding</span>
+                        </div>
+                </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'takeluutzen'})">
+                  <img src="/images/avatars/take.jpg" alt="Foto Take Lijzenga">
+                  <div>
+                            <span>Take Lijzenga</span>
+                  <span>Design</span>
+                        </div>
+                </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'llaleon'})">
+                  <img src="/images/avatars/leon.jpg" alt="Foto Léon Smit">
+                  <div>
+                            <span>Léon Smit</span>
+                  <span>Coding</span>
+                        </div>
+                </a>
+                </li>
+                <li>
+                <a ui-sref="app.view_profile.bundles({'profileScreenName':'jannaboekema'})">
+                    <img src="/images/avatars/janna.jpg" alt="Foto Janna Boekema">
+                    <div>
+                            <span>Janna Boekema</span>
+                    <span>Content strategy</span>
+                        </div>
+                </a>
+                </li>
+            </ul>
+            <h4>Lifely</h4>
+            <p><a href="http://www.lifely.nl/" target="_blank">Lifely</a> is the Dutch digital agency that serves as a foundation for Bundlin, founded by Pim Verlaan and Nick de Bruijn in 2013. With an amazing team of six developers, a motion graphic designer, content strategist and two founders who focus on video, ux and concepting, the agency functions as a strong creative family. From an inspiring office in Amsterdam, all family members work their hearts out developing sophisticated systems for a wide variety of clients. Systems that are often placed at the core business of successful companies. </p>
+            <p>We believe we can make a difference by combining a deep understanding of business logics with our immense passion for building great products. Lifely reinvests a large part of its revenues in Bundlin and is currently looking for outside investors.</p>
+        </article>
+    </section>
+    <section class="signout">
+        <a class="bln-accordion" ng-click="expand('signout')">Sign out</a>
+        <article class="bln-menucontent bln-sub-content">
+            <p>Are you sure you want to sign out?</p>
+            <a ng-click="logout()" class="bln-button bln-button-primary bln-button-primary-signout">
+                Yes, but i'll be back
+                <figure class="bln-buttongif"></figure>
+            </a>
+        </article>
+    </section>
+</div>

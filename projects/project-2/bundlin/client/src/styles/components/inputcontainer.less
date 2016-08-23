@@ -1,0 +1,51 @@
+.bln-inputcontainer {
+    position: relative;
+
+    &-quotetext {
+        border-bottom: 1px solid #ccc;
+        padding: 7px 2px;
+        padding-right: 64px;
+        min-height: 50px;
+
+        &:before {
+            content: '“';
+            display: block;
+            color: @color_green;
+            font-style: normal;
+            font-size: 66px;
+            position: absolute;
+            top: 0;
+            right: 13px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .bln-input {
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+    &-quoteauthor {
+        padding-left: 25px;
+
+        &:before {
+            content: '-';
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .bln-input {
+            font-size: 14px;
+            color: #999;
+            padding: 10px 0;
+        }
+    }
+}

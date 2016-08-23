@@ -1,0 +1,19 @@
+<section class="bln-bundleitem">
+    <div class="bln-bundleitemcontent">
+        <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+            <header class="header">
+                <h2 class="title">
+                    <span ng-bind="item.fields.title" class="text"></span>
+                </h2>
+            </header>
+        </a>
+
+        <div class="bln-iframewrapper bln-iframewrapper-video">
+            <figure ng-style="{'padding-bottom': (1 / (item.fields.aspect_ratio || 16/9) * 100) + '%' }">
+                <iframe ng-src="{{ '//www.youtube.com/embed/' + item.fields.video_id + '?start=' + item.fields.starts_at + '&rel=0;3&autohide=1&showinfo=0'}}" frameborder="0" class="bln-video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </figure>
+        </div>
+
+        <div ng-include="'/views/partials/bundle/default/partials/comment.html?v=' + BLN_BUILD_TIMESTAMP"></div>
+    </div>
+</section>

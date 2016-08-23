@@ -1,0 +1,31 @@
+# Bundlin
+VERSION
+
+# Bundlin - Client
+client/.bower-*
+client/.grunt-tmp
+client/build
+
+# Bundlin - Devops
+devops/backups
+devops/provision/certs
+devops/provision/keys
+
+# Docs
+docs/api
+docs/jsdoc
+
+# Vagrant
+.vagrant
+
+# Editors
+*.sublime-workspace
+.idea
+
+# Logs
+logs
+npm-debug.log
+newrelic_agent.log
+
+# Miscellaneous
+.DS_Store

@@ -1,0 +1,135 @@
+.bln-sideitems {
+  list-style: none;
+
+  > li {
+    border-top: 1px solid #333;
+    position: relative;
+    transition: opacity .2s;
+
+    // h2 {
+    //   font-size: 16px;
+    //   margin-bottom: 8px;
+    //   transition: color .2s;
+    //   line-height: 1.4em;
+
+    //   a {
+    //     color: #fff;
+
+    //     &:hover {
+    //       color: @color_green;
+    //     }
+    //   }
+
+    //   .bln-icon {
+    //     margin-left: 5px;
+    //     transform: translate3d(0, -3px, 0);
+    //   }
+    // }
+
+    // p {
+    //   font-size: 14px;
+    //   line-height: 1.4em;
+
+    //   a {
+    //     color: @color_green;
+    //     font-weight: 600;
+
+    //     &:hover {
+    //       border-bottom: 1px solid fade(@color_green, 50%);
+    //     }
+    //   }
+
+    //   &.url {
+    //     display: none;
+    //     font-size: 12px;
+    //     font-weight: 500;
+    //     margin-top: 8px;
+    //     opacity: .8;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+
+    //     a {
+    //       color: #fff;
+
+    //       &:hover {
+    //         border-bottom: 1px solid fade(#fff, 50%);
+    //       }
+    //     }
+    //   }
+
+    //   &.comment {
+    //     min-height: 30px;
+    //   }
+    // }
+
+    // .bln-paragraphbuttons {
+    //   float: left;
+    //   width: 30px;
+    //   margin-right: 10px;
+    //   margin-top: 4px;
+
+    //   + p {
+    //     padding-left: 40px;
+    //   }
+    // }
+    
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: @color_green;
+      transition: width .2s;
+    }
+
+    &.read {
+      opacity: .6;
+    }
+
+    &.active {
+      &:after {
+        width: 4px;
+      }
+    }
+
+    &.active,
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_tablet) {
+  .bln-sideitems {
+    > li {
+      // h2 {
+      //   .bln-icon {
+      //     display: none;
+      //   }
+      // }
+
+      // p {
+      //   font-size: 16px;
+
+      //   &.url {
+      //     display: block;
+      //   }
+      // }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_hugedesktop) {
+  .bln-sideitems {
+    > li {
+      // .bln-paragraphbuttons {
+      //   + p {
+      //     padding-left: 50px;
+      //   }
+      // }
+    }
+  }
+}

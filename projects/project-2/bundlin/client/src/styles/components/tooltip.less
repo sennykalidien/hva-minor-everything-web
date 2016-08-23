@@ -1,0 +1,231 @@
+.bln-tooltip {
+  position: absolute;
+  display: block;
+  width: 275px;
+  margin-left: -138px;
+  text-align: center;
+  padding: 20px;
+  bottom: 38px;
+  right: 0;
+  left: 50%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-backface-visibility: visible;
+  z-index: 1;
+  border-radius: 4px;
+  transition: opacity .2s cubic-bezier(.21,.01,.42,1), transform .2s cubic-bezier(.21,.01,.42,1);
+  box-shadow: 0px 2px 2px 0px fade(#000, 8%);
+
+  span.title {
+    display: block;
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-top: -9px;
+  }
+
+  span.text {
+    display: block;
+    color: #666;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 22px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .url {
+      word-wrap: break-all;
+    }
+  }
+
+  hr {
+    width: inherit;
+    margin: 20px -20px 20px -21px;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+
+  ul {
+    list-style: none;
+    text-align: left;
+    font-weight: 600;
+
+    li {
+      margin-bottom: 10px;
+
+      &.valid {
+        color: @color_green;
+      }
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  input.textselect {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2px;
+    background-color: transparent;
+    font-size: 14px;
+  }
+
+  input.disabled {
+    pointer-events: none;
+  }
+
+  .bln-button {
+    margin-top: 14px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 0 1px 1px 0;
+    bottom: -7px;
+    left: 50%;
+    margin-left: -6px;
+    background-color: #fff;
+    transform: rotate(45deg);
+  }
+
+  &.active {
+    transform: translateZ(0);
+    // render trigger fix
+    &.bln-tooltip-top, &.bln-tooltip-bottom {
+      margin-left: -138px - 1px;
+    }
+
+    &.bln-tooltip-left {
+      margin-right: 21px;
+    }
+
+    &.bln-tooltip-right {
+      margin-left: 21px;
+    }
+  }
+
+  &-small {
+    width: 150px;
+    margin-left: -75px;
+
+    // render trigger fix
+    &.active.bln-tooltip-top, &.active.bln-tooltip-bottom { margin-left: -75px - 1px; }
+  }
+
+  &-large {
+    width: 350px;
+    margin-left: -175px;
+
+    // render trigger fix
+    &.active.bln-tooltip-top, &.active.bln-tooltip-bottom { margin-left: -175px - 1px; }
+  }
+
+  &-bottom {
+    bottom: auto;
+    top: 35px;
+
+    &:after {
+      bottom: auto;
+      top: -7px;
+      transform: rotate(225deg);
+    }
+  }
+
+  &-right {
+    left: 100%;
+    margin-left: 20px;
+    top: 50%;
+    bottom: auto;
+    margin-top: -30px;
+
+    &:after {
+      bottom: auto;
+      left: -7px;
+      top: 25px;
+      margin-left: 0;
+      transform: rotate(135deg);
+    }
+  }
+
+  &-right-bottom {
+    left: 100%;
+    margin-left: 20px;
+    bottom: 0;
+    margin-top: -30px;
+
+    &:after {
+      bottom: 33px;
+      left: -7px;
+      margin-left: 0;
+      transform: rotate(135deg);
+    }
+  }
+
+  &-bottom-left {
+    bottom: auto;
+    top: 35px;
+    left: 0;
+
+    &:after {
+      bottom: auto;
+      top: -7px;
+      left: auto;
+      right: 23px;
+      transform: rotate(225deg);
+    }
+  }
+
+  &-left {
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    top: 50%;
+    bottom: auto;
+    margin-top: -30px;
+
+    &:after {
+      left: auto;
+      bottom: auto;
+      right: -7px;
+      top: 25px;
+      margin-left: 0;
+      transform: rotate(315deg);
+    }
+  }
+}
+
+.bln-tooltipcontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .2s cubic-bezier(.21,.01,.42,1);
+  pointer-events: none;
+  z-index: 50;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

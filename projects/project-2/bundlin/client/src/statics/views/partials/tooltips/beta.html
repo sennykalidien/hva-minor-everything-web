@@ -1,0 +1,11 @@
+<span class="title">Beta access required</span>
+<span class="text">You can use this functionality when you're allowed to Bundlin's beta.</span>
+
+<!-- User -->
+<span class="text strong" ng-show="tooltiptoggleScope.user.loggedIn"><strong>Awesome, you've signed up!</strong></span>
+
+<!-- No user -->
+<button class="bln-button bln-button-primary" ng-click="tooltiptoggleScope.login()" ng-hide="tooltiptoggleScope.user.loggedIn">
+    <span class="bln-icon bln-icon-twitter-logo bln-icon-beforeline"></span>
+    Sign up for the beta
+</button>

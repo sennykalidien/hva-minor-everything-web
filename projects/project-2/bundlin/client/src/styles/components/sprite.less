@@ -1,0 +1,82 @@
+.no-cssanimations {
+    .bln-sprite {
+        background-position: top right;
+    }
+}
+
+.bln-sprite {
+    position: relative;
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    &-logo {
+        width: 24px;
+        height: 48px;
+        background-image: url(/images/logo-sprite.png);
+        @sprite_logo: sprite_logo 2s steps(49) .5s forwards;
+        animation: @sprite_logo;
+
+        .sprite_logo_keyframes {
+            from { background-position: top left; }
+            to { background-position: top left (49 * -24px); }
+        }
+        @keyframes sprite_logo { .sprite_logo_keyframes; }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url(/images/logo-bookmarkonly.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0;
+        }
+
+        &-loaded {
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &-loading {
+            &:after {
+                opacity: 1;
+
+                @sprite_logo_bookmark_loading: sprite_logo_bookmark_loading .35s ease-out infinite alternate;
+                animation: @sprite_logo_bookmark_loading;
+                
+                .sprite_logo_bookmark_loading_keyframes {
+                    from { transform: translate3d(0, 0, 0); }
+                    to { transform: translate3d(0, -3px, 0); }
+                }
+
+                @keyframes sprite_logo_bookmark_loading { .sprite_logo_bookmark_loading_keyframes; }
+                
+            }
+        }
+
+        &-intro {
+            &:after {
+
+                opacity: 0;
+                transform: translate3d(0, -5px, 0);
+
+                @sprite_logo_bookmark: sprite_logo_bookmark .75s ease-in 1.5s forwards;
+                animation: @sprite_logo_bookmark;
+
+                .sprite_logo_bookmark_keyframes {
+                    from { opacity: 0; transform: translate3d(0, -5px, 0); }
+                    to { opacity: 1; transform: translate3d(0, 0, 0); }
+                }
+
+                @keyframes sprite_logo_bookmark { .sprite_logo_bookmark_keyframes; }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div class="bln-bundleitemnote">
+
+    <!-- Comment only -->
+    <ul class="bln-paragraphbuttons">
+        <li class="active">
+            <img ng-src="{{ bundle.author.picture.h64 || bundle.author.picture.original || '/images/default.png' }}" alt="{{ bundle.author.name }}">
+        </li>
+    </ul>
+    <p class="bln-bundleitemdescription switch-paragraph">
+        <textarea name="itemDescription" class="bln-input bln-input-spooky bln-input-area bln-input-area-bundleitem bln-input-full" ng-model="item.fields.comment" placeholder="What do you want tell your audience about this item?" bundle-item-property bundle="bundle" item="item" ng-maxlength="250" property="comment"></textarea>
+    </p>
+
+</div>

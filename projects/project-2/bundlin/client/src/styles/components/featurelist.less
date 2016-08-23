@@ -1,0 +1,121 @@
+.bln-featurelist {
+  list-style: none;
+  font-size: 0;
+
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+    font-size: @font_defaultsize;
+
+    &:first-of-type {
+      margin-top: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .bln-heading {
+    margin-top: 20px;
+  }
+
+  .bln-paragraph {
+    margin-top: 10px;
+  }
+}
+
+// This mixin is supposed to be applied to the li's of .bln-featurelist
+.bln-featurelist-spacing(@space: 50px) {
+  &:before {
+    display: block;
+    width: 7px;
+    content: 'd';
+    margin-top: 120px;
+    margin-left: -@space / 2 - 10px;
+    float: left;
+  }
+
+  &:nth-of-type(4n-3) {
+    padding-left: 0;
+    padding-right: @space * .75;
+  }
+
+  &:nth-of-type(4n-2) {
+    padding-left: @space * .25;
+    padding-right: @space * .5;
+  }
+
+  &:nth-of-type(4n-1) {
+    padding-left: @space * .5;
+    padding-right: @space * .25;
+  }
+
+  &:nth-of-type(4n) {
+    padding-left: @space * .75;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: @breakpoint_tablet) {
+  .bln-featurelist {
+    li {
+      width: 50%;
+
+      &:before {
+        display: none;
+      }
+
+      &:nth-of-type(even) {
+        padding-left: 40px;
+      }
+
+      &:nth-of-type(odd) {
+        padding-right: 40px;
+      }
+
+      &:nth-of-type(-n+2) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+  .bln-featurelist {
+    li {
+      &:nth-of-type(even) {
+        padding-left: 50px;
+      }
+
+      &:nth-of-type(odd) {
+        padding-right: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_largedesktop) {
+  .bln-featurelist {
+    li {
+      width: 25%;
+      margin-top: 0;
+      .bln-featurelist-spacing(80px);
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_verylargedesktop) {
+  .bln-featurelist {
+    li {
+      .bln-featurelist-spacing(120px);
+    }
+  }
+}

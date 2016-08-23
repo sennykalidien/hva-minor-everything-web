@@ -1,0 +1,14 @@
+{
+    "folders":
+    [
+        {
+            "path": "./",
+            "name": "Bundlin",
+            "folder_exclude_patterns": ["build", ".bower-*", "node_modules", "vendor"]
+        }
+    ],
+    "settings":
+    {
+        "tab_size": 4
+    }
+}

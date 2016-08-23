@@ -1,0 +1,256 @@
+.bln-bundletile {
+	position: relative;
+	width: 285px;
+	height: 594px;
+	font-size: 16px;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.0470588) 0px 0px 20px 0px;
+
+	.cover {
+		display: block;
+		position: relative;
+		height: 85%;
+		z-index: 0;
+		padding: 30px;
+
+		.title {
+			font-size: 28px;
+			margin-top: -9px;
+			margin-left: -2px;
+			color: white;
+			font-weight: 600;
+			line-height: 1.3em;
+		}
+
+		.background {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-size: cover;
+			z-index: -1;
+		}
+
+		.shadows {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			opacity: 1;
+			transition: opacity .2s;
+
+			.layer {
+			  &-top {
+			    width: 100%;
+			    height: 339px;
+			    position: absolute;
+			    top: 0;
+			    background-image: url(/images/metacover_topshadow.png);
+			    background-repeat: repeat-x;
+			    background-position: top;
+			    opacity: .4;
+			  }
+
+			  &-bottom {
+			    width: 100%;
+			    height: 408px;
+			    position: absolute;
+			    bottom: -20%;
+			    background-image: url(/images/metacover_bottomshadow.png);
+			    background-repeat: repeat-x;
+			    background-position: bottom;
+			    opacity: .8;
+			  }
+			}
+		}
+
+		&:hover {
+			.shadows {
+				opacity: .65;
+			}
+		}
+	}
+
+	.footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+
+		.relation {
+			background-color: @color_green;
+			padding: 13px 20px;
+			color: white;
+		}
+
+		.bln-tags {
+			  padding: 20px 20px 7px 20px;
+		}
+	}
+
+	.comment {
+		max-height: 170px;
+		background-color: #fff;
+		border-width: 0px 1px 1px 1px;
+		border-style: solid;
+		border-color: #eee;
+		padding: 20px;
+		overflow: hidden;
+		transition: max-height .5s;
+
+		.commentheader {
+			display: block;
+			margin-bottom: 20px - 5px; // 20px with correction
+
+			.author {
+				float: left;
+				display: block;
+				font-weight: 600;
+				font-size: 16px;
+					opacity: 1;
+				transition: opacity .2s, color .2s;
+
+				img {
+					width: 30px;
+					height: 30px;
+					background-color: #eee;
+					border: 0;
+					border-radius: 4px;
+					vertical-align: top;
+					margin-right: 10px - 3px; // 10px with correction
+				}
+
+				.name {
+					display: inline-block;
+					margin-top: 4px;
+				}
+
+				&:hover {
+
+					opacity: 0.8;
+					.name {
+						color: #494949;
+					}
+				}
+			}
+
+			.bln-editbutton {
+				display: block;
+				float: right;
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+		}
+
+		.description {
+			display: block;
+			height: 100px;
+			color: #666;
+			line-height: 23px;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 1px;
+			right: 1px;
+			bottom: -1px;
+			height: 1px;
+			border-bottom: 1px solid #ddd;
+		}
+	}
+
+	&.expanded {
+		.comment {
+			max-height: 400px;
+
+			.description {
+				height: auto;
+			}
+		}
+	}
+
+	&-home {
+		width: 374px;
+		height: 822px;
+
+		.comment {
+			max-height: 150px;
+			border-width: 0;
+			box-shadow: 0 0 20px fade(#000, 5%);
+
+			.description {
+				height: 70px;
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+
+		&.expanded {
+			.comment {
+				.description {
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&-related {
+		height: 454px;
+
+		.cover {
+			.title {
+				font-size: 30px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: @breakpoint_phone) {
+	.bln-bundletile {
+		.cover {
+			.title {
+				font-size: 34px;
+			}
+		}
+
+		&-related {
+			.cover {
+				.title {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: @breakpoint_tablet) {
+	.bln-bundletile {
+		&-home {
+			.cover {
+				.title {
+					font-size: 40px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+	.bln-bundletile {
+		&-related {
+			height: 594px;
+		}
+	}
+}

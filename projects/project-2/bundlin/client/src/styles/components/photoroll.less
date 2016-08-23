@@ -1,0 +1,50 @@
+.bln-photoroll {
+  overflow: hidden;
+
+  ul {
+    display: block;
+    list-style: none;
+    padding-left: 0;
+    font-size: 0;
+    white-space: nowrap;
+    transform: translate3d(0, 0, 0);
+
+    li {
+      display: inline-block;
+      font-size: 16px;
+      height: 150px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  &-green {
+    background-color: @color_green;
+    
+    li {
+      opacity: .3;
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_tablet) {
+  .bln-photoroll {
+    ul {
+      li {
+        height: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+  .bln-photoroll {
+    ul {
+      li {
+        height: 300px;
+      }
+    }
+  }
+}

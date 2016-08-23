@@ -1,0 +1,14 @@
+<section class="bln-bundleitem bln-bundleitem-archivedlink bln-bundleitem-figureleft">
+    <div class="bln-bundleitemcontent">
+        <a href="{{bundle._sid | bundleItemLink:item._sid}}" target="_blank">
+            <h2 truncate>
+              {{ item.fields.title }}
+            </h2>
+            <p><span class="bln-icon bln-icon-youtube bln-icon-youtube-logo"></span> {{ item.fields.creator_name }}</p>
+        </a>
+        
+        <figure ng-class="{ 'empty': !item.fields.icon.original }">
+            <div class="image" ng-style="{'background-image': 'url(' + (item.fields.picture.h500 || item.fields.picture.original) + ')'}"></div>
+        </figure>
+  </div>
+</section>

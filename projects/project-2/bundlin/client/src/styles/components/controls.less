@@ -1,0 +1,126 @@
+.bln-controls {
+  .bln-row {
+    .bln-button {
+      &-switch {
+        margin-right: 5px - 3px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  
+  .bln-removeitem,
+  .bln-input {
+    width: auto;
+    margin: 0;
+  }
+
+  .bln-input {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .bln-removeitem {
+    padding-right: 0;
+    transition: padding .25s;
+
+    a {
+      display: inline-block;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      padding: 8px 0;
+      margin-right: 0;
+      font-size: 14px;
+      color: transparent;
+      overflow: hidden;
+      max-width: 0;
+      vertical-align: bottom;
+      font-weight: 400;
+      transition: max-width .25s, margin .25s, color .25s;
+
+      .bln-icon {
+        color: #666;
+        font-size: 16px;
+        margin-right: 5px;
+        transition: color .25s, transform .25s;
+        transform: rotate(-110deg);
+      }
+    }
+  }
+
+  .bln-sub-moveicons {
+    a {
+      display: block;
+      border-radius: 3px;
+      padding: 0;
+      width: 32px;
+      height: 15px;
+      text-align: center;
+
+      .bln-icon {
+        display: block;
+        color: #999;
+      }
+
+      &.hide {
+        visibility: hidden;
+      }
+
+      &:hover {
+        background-color: #eee;
+      }
+
+      &:first-child {
+        margin-bottom: 5px;
+      }
+    }
+  }  
+
+  .nohover,
+  .hover:hover {
+    .bln-removeitem a {
+      max-width: 15px;
+      margin-right: 10px;
+
+      .bln-icon {
+        transform: rotate(0);
+      }
+
+      &:hover {
+        border: 0;
+        margin-right: 15px;
+        max-width: 110px;
+        color: #666;
+
+        .bln-icon {
+          color: #252525;
+        }
+      }
+    }
+  }
+
+  &-addlink {
+    .bln-button,
+    .bln-input {
+      background-color: #f1f1f1;
+      color: #333;
+      font-size: 14px;
+      height: 36px;
+    }
+
+    .bln-input {
+      margin-right: 10px;
+    }
+
+    .bln-button {
+      &:hover {
+        background-color: #e5e5e5;
+      }
+    }
+  }
+}

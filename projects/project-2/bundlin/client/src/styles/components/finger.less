@@ -1,0 +1,21 @@
+.bln-finger {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: none;
+    position: absolute;
+    right: 1px;
+    top: 50px;
+    width: 62px;
+    height: 212px;
+    background-size: 62px;
+    background-image: url(/images/finger.png);
+  }
+}
+
+@media screen and (max-width: (@breakpoint_phone - 1px)) {
+  .bln-finger:after {
+    display: block;
+  }
+}

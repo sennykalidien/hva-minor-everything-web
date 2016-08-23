@@ -1,0 +1,17 @@
+<section class="bln-bundleitem bln-bundleitem-archivedlink bln-bundleitem-figureleft">
+    <div class="bln-bundleitemcontent">
+        <a href="{{bundle._sid | bundleItemLink:item._sid}}" target="_blank">
+            <h2 truncate>
+                {{ item.fields.title }}
+            </h2>
+            <p>
+                <span class="bln-icon bln-icon-dribbble bln-icon-budicon-47"></span>
+                {{ item.fields.author.name }}
+            </p>
+        </a>
+        
+        <figure>
+            <div class="image" ng-style="{'background-image': 'url(' + (item.fields.picture.h500 || item.fields.picture.original) + ')'}"></div>
+        </figure>
+    </div>
+</section>

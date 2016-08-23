@@ -1,0 +1,15 @@
+<section class="bln-bundleitem bln-bundleitem-create">
+    <ng-include src="'/views/partials/bundle/editor/partials/controls_quote.html?v=' + BLN_BUILD_TIMESTAMP"></ng-include>
+    <div class="bln-bundleitemcontent">
+        <div class="bln-smallform">
+            <fieldset>
+                <div class="bln-inputcontainer bln-inputcontainer-quotetext">
+                    <textarea rows="2" ng-model="item.fields.quote" bundle-item-property bundle="bundle" item="item" property="quote" class="bln-input"></textarea>
+                </div>
+                <div class="bln-inputcontainer bln-inputcontainer-quoteauthor">
+                    <input type="text" ng-model="item.fields.quote_author" bundle-item-property bundle="bundle" item="item" property="quote_author" class="bln-input">
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</section>

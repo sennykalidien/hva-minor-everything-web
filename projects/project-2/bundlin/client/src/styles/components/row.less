@@ -1,0 +1,40 @@
+.bln-row {
+  width: 100%;
+  position: relative;
+  display: table;
+  
+  .cell {
+    vertical-align: middle;
+    display: table-cell;
+    white-space: nowrap;
+    padding-right: 10px;
+
+    &.last {
+      padding-right: 0;
+    }
+
+    .bln-button {
+      margin-right: 10px - 3px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &.bottom {
+      vertical-align: bottom;
+    }
+
+    &.maxwidth {
+      max-width: 0;
+    }
+
+    &.stick {
+      padding-right: 0;
+    }
+  }
+  
+  .stretch {
+    width: 100%;
+  }
+}

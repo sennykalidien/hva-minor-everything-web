@@ -1,0 +1,242 @@
+.bln-section {
+  &-intro {
+    padding: 50px 30px;
+    background: #fff;
+
+    .bln-heading {
+      margin-bottom: 20px;
+
+      &-feature {
+        margin-bottom: 10px;
+      }
+    }
+
+    .bln-featurelist {
+      margin-top: 50px;
+    }
+
+    .bln-button {
+      margin-right: 20px;
+    }
+
+    .bln-paragraph {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .bln-teamlist {
+      padding-top: 30px;
+      margin-bottom: 60px - 50px; // 60px with correction
+
+      &:not(:last-child) {
+        padding-bottom: 50px;
+      }
+    }
+
+    &-header {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &-video {
+    max-height: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    transition: max-height .5s, padding .5s, margin .5s;
+
+    &.active {
+      max-height: 560px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      margin-top: -40px;
+    }
+
+    &-intro {
+      .bln-iframewrapper {
+        transition: box-shadow .2s;
+        transition-delay: .3s;
+      }
+
+      &.active {
+        .bln-iframewrapper {
+          transition-delay: 0;
+          box-shadow: 0 0 40px fade(#000, 20%);
+        }
+      }
+    }
+  }
+
+  &-green {
+    background-color: @color_green;
+  }
+
+  &-invitation {
+    .bln-avatar {
+      width: 52px;
+      height: 52px;
+      float: left;
+      margin-right: 10px;
+      transition: all .2s;
+      border-radius: 4px;
+      .grayscale(1);
+      overflow: hidden;
+      margin-bottom: 10px;
+      transform: translateZ(0);
+
+      img {
+        height: 100%;
+      }
+
+      &:hover {
+        .grayscale(0);
+      }
+    }
+  }
+
+  &-feed {
+    position: relative;
+    min-height: 600px;
+    max-height: 800px;
+    background-color: #f9f9f9;
+
+    .captioncontainer {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      text-align: center;
+      padding-top: 30px - 5px; // 30px with correction
+    }
+
+    .bln-horslider {
+      height: 100%;
+      min-height: 600px;
+
+      > ul {
+        height: 100%;
+
+        > li {
+          width: 240px;
+          width: calc(~'100% - 20px');
+          max-width: 300px;
+          height: 100%;
+
+          .bln-bundletile {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_phone) {
+  .bln-section {
+    &-intro {
+      padding: 80px 50px;
+
+      &-header {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+    }
+
+    &-video-intro {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &.active {
+        max-height: 600px;
+        padding-bottom: 60px;
+      }
+    }
+
+    &-feed {
+      .captioncontainer {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+  .bln-section {
+    &-intro {
+      padding: 80px;
+
+      &-header {
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+    }
+
+    &-video-intro {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &.active {
+        max-height: 800px;
+        padding-bottom: 100px;
+      }
+    }
+
+    &-feed {
+      max-height: 1000px;
+      
+      .captioncontainer {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_largedesktop) {
+  .bln-section {
+    &-feed {
+      .bln-horslider {
+        > ul {
+          > li {
+            max-width: 370px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_verylargedesktop) {
+  .bln-section {
+    &-intro {
+      padding: 140px;
+
+      &-header {
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+    }
+
+    &-video-intro {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &.active {
+        max-height: 1000px;
+        padding-bottom: 100px;
+      }
+    }
+
+    &-feed {
+      .captioncontainer {
+        padding-left: 140px;
+        padding-right: 140px;
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.bln-title {
+  font-size: 40px;
+  font-weight: 600;
+
+  &-sub {
+    font-size: 16px;
+    line-height: 1.5em;
+    opacity: .6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+  }
+
+  &-white {
+    color: #fff;
+  }
+
+  &-metacover {
+    color: #fff;
+    font-size: 2em;
+  }
+
+  &-tilecover {
+    color: #fff;
+    font-size: 28px;
+  }
+
+  &-greenmodal {
+    font-size: 28px;
+  }
+
+  &-smaller {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: @breakpoint_tablet) {
+  .bln-title {
+    font-size: 40px;
+
+    &-sub {
+      font-size: 18px;
+    }
+
+    &-metacover {
+      font-size: 40px;
+    }
+
+    &-tilecover {
+      font-size: 28px;
+    }
+
+    &-greenmodal {
+      font-size: 30px;
+    }
+
+    &-smaller {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+  .bln-title {
+    font-size: 56px;
+
+    &-sub {
+      padding-left: 80px;
+      padding-right: 80px;
+      font-size: 18px;
+    }
+
+    &-metacover {
+      font-size: 28px;
+    }
+
+    &-tilecover {
+      font-size: 28px;
+    }
+
+    &-greenmodal {
+      font-size: 34px;
+    }
+
+    &-smaller {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_largedesktop) {
+  .bln-title {
+    &-metacover {
+      font-size: 40px;
+    }
+
+    &-sub {
+      padding: 0;
+    }
+
+    &-greenmodal {
+      font-size: 34px;
+    }
+
+    &-smaller {
+      font-size: 24px;
+    }
+  }
+}

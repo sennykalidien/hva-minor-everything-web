@@ -1,0 +1,258 @@
+.bln-icon {
+
+  .iconclass {
+    display: inline-block;
+    font-family: "bundlin-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: bottom;
+  }
+  .iconclass();
+
+  &-before:before {
+    .iconclass();
+  }
+
+  &-beforeline {
+    margin-right: 8px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  &-afterline {
+    margin-left: 6px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  &-inline {
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  &-tiny {
+    font-size: 12px;
+  }
+
+  &-white {
+    color: #fff;
+  }
+
+  &-green {
+    color: @color_green;
+  }
+
+  &-red {
+    color: @color_red;
+  }
+
+  &-sidebar {
+    font-size: 32px;
+  }
+  
+  &-greenstripe {
+    padding-bottom: 8px;
+    border-bottom: 4px solid @color_green;
+  }
+
+  &-feature {
+    font-size: 32px;
+  }
+
+  &-featurelistarrow {
+    &:before {
+      content: 'b';
+      display: block;
+      text-align: center;
+      padding-bottom: 15px;
+      color: #ccc;
+    }
+  }
+
+  &-header {
+    color: #fff;
+    font-size: 30px;
+    display: block;
+  }
+
+  &-metacover {
+    font-size: 30px;
+    vertical-align: bottom;
+    cursor: pointer;
+  }
+
+  &-darkbutton {
+    background-color: #292929;
+    border-radius: 3px;
+    color: #fff;
+    padding: 7px 10px;
+    cursor: pointer;
+    height: 30px;
+  }
+
+  &-lightbutton {
+    background-color: #fff;
+    border-radius: 3px;
+    color: #292929;
+    padding: 7px 10px;
+    cursor: pointer;
+    height: 30px;
+  }
+
+  &-greenbutton {
+    background-color: @color_green;
+    border-radius: 3px;
+    color: #fff;
+    padding: 8px;
+    cursor: pointer;
+    height: 32px;
+    transition: background .2s;
+
+    &:hover {
+      background-color: darken(@color_green, 5%);
+    }
+  }
+
+  &-bounce {
+    font-size: 32px;
+    animation: sidebaricon_animation .4s ease-out infinite alternate;
+  }
+
+  &-sidebaricon {
+    font-size: 32px;
+    position: fixed;
+    bottom: 22px;
+    left: 22px;
+    animation: sidebaricon_animation .4s ease-out infinite alternate;
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity .2s;
+
+    &:not(.bln-invisible):hover {
+      opacity: 1;
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &-greybutton {
+    background-color: #f1f1f1;
+    color: #999999;
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+    border-radius: 3px;
+    transition: background .2s;
+
+    &:hover {
+      background-color: #e7e7e7;
+    }
+  }
+
+  &-dribbble {
+    color: @color_dribbble;
+  }
+
+  &-soundcloud {
+    color: @color_soundcloud;
+  }
+
+  &-vimeo {
+    color: @color_vimeo;
+  }
+
+  &-youtube {
+    color: @color_youtube;
+  }
+
+  &-twitter {
+    color: @color_twitter;
+  }
+
+  &-vine {
+    color: @color_vine;
+  }
+
+  &-apple {
+    color: @color_apple;
+  }
+
+  &-android {
+    color: @color_android;
+  }
+
+  &-loading {
+    font-size: 0;
+    backface-visibility: hidden;
+
+    span {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border-radius: 50%;
+      transform: translateZ(0);
+      background-color: @color_green;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        border-radius: 50%;
+        background-color: #fff;
+        transform: scale(.9);
+      }
+
+      .start-animation-with-delay(@delay: 0s) {
+        animation: loading_animation .4s ease @delay infinite alternate;
+      }
+
+      &:nth-child(1):after { .start-animation-with-delay(0s); }
+      &:nth-child(2):after { .start-animation-with-delay(.2s); }
+      &:nth-child(3):after { .start-animation-with-delay(.4s); }
+
+      &:last-child { margin-right: 0; }
+    }
+
+    &-gray {
+      span:after {
+        background-color: #f9f9f9;
+      }
+    }
+  }
+
+  @keyframes loading_animation {
+    from { transform: scale(.9); }
+    to { transform: scale(.4); }
+  }
+
+  @keyframes sidebaricon_animation {
+    from { transform: translate3d(0, 10px, 0); }
+    to { transform: translate3d(0, -3px, 0); }
+  }
+}
+
+@media screen and (max-width: (@breakpoint_tablet - 1px)) {
+  .bln-icon {
+    &-mobilesmall {
+      font-size: 16px;
+
+      &.bln-icon-greenstripe {
+        padding-bottom: 0;
+        padding-right: 6px;
+        border-bottom: 0;
+        border-right: 2px solid @color_green;
+      }
+    }
+  }
+}

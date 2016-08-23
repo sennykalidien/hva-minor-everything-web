@@ -1,0 +1,69 @@
+<section class="bln-bundleitem bln-bundleitem-map">
+    <div class="bln-bundleitemcontent" ng-init="item.fields.streetview_is_available = true">
+
+        <switch vars="map,street" default="map" disableactives>
+
+            <header class="header">
+                <div class="bln-row">
+                    <div class="cell stretch maxwidth">
+                        <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+                            <h2 class="title">
+                                <span ng-bind="item.fields.name" class="text"></span>
+                            </h2>
+                            <p class="bln-bundleitemsubtitle" ng-show="item.fields.address.city || item.fields.address.state">
+                                {{
+                                      item.fields.address.city
+                                    + (item.fields.address.city && item.fields.address.state ? ' (' + item.fields.address.state + ')' : '')
+                                    + (!item.fields.address.city && item.fields.address.state ? ' ' + item.fields.address.state : '')
+                                }}
+                            </p>
+                        </a>
+                    </div>
+
+                    <div class="cell last bottom">
+                        <button class="bln-button bln-button-switch" ng-class="{'bln-button-wannabe bln-button-switch-googlemaps bln-button-switch-bigger': switches.map}" ng-click="switch('map')">
+                            <span class="bln-icon bln-icon-budicon-67"></span>
+                        </button>
+                        <button class="bln-button bln-button-switch" ng-show="item.fields.streetview_is_available" ng-class="{'bln-button-wannabe bln-button-switch-streetview bln-button-switch-bigger': switches.street}" ng-click="switch('street')">
+                            <span class="bln-icon bln-icon-budicon-66"></span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <figure class="bln-finger">
+                <div googlemaps latitude="{{item.fields.latitude || '0'}}" longitude="{{item.fields.longitude || '0'}}" name="{{item.fields.name || 'unknown'}}" zoom="{{item.fields.zoom || '11'}}" mode="{{ switches.street ? 'street' : 'map' }}" set-streetview-availability-to="item.fields.streetview_is_available" class="bln-map"></div>
+            </figure>
+
+        </switch>
+
+        <div class="bln-address" ng-show="item.fields.address.city || item.fields.website || item.fields.phone_number">
+            <ul>
+                <li class="address" ng-if="item.fields.address.city">
+                        {{
+                              item.fields.address.city
+                            + (item.fields.address.street ? ', ' + item.fields.address.street : '')
+                            + (item.fields.address.street && item.fields.address.housenumber ? ' ' + item.fields.address.housenumber : '')
+                            + (item.fields.address.zipcode ? ' (' + item.fields.address.zipcode + ')' : '')
+                        }}
+                </li>
+                <li class="website" ng-if="item.fields.website">
+                    <a href="{{item.fields.website}}" target="_blank">
+                        <span class="bln-icon bln-icon-beforeline bln-icon-budicon-46"></span>
+                        <span class="website-content" simplify-website content="item.fields.website"></span>
+                    </a>
+                </li>
+                <li class="phone" ng-if="item.fields.phone_number">
+                    <a ng-href="tel:{{item.fields.phone_number}}">
+                        <span class="bln-icon bln-icon-beforeline bln-icon-budicon-65"></span>
+                        {{item.fields.phone_number}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div ng-include="'/views/partials/bundle/default/partials/comment.html?v=' + BLN_BUILD_TIMESTAMP"></div>
+
+    </div>
+
+</section>

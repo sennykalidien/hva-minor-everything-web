@@ -1,0 +1,66 @@
+.bln-accordion {
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    padding-right: 20px;
+    position: relative;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+    font-weight: 600;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        height: 1px;
+        background-color: #999;
+        margin-left: 20px;
+        transition: background-color .15s;
+    }
+
+    &:before {
+        font-family: "bundlin-icons" !important;
+        content: 'b';
+        color: #999;
+        transition: color .15s;
+        position: absolute;
+        right: 0;
+        background-color: #252525;
+        z-index: 2;
+        font-size: 16px;
+        width: 35px;
+        text-align: right;
+        // transition: opacity 0.15s;
+    }
+
+    &:hover {
+        color: #fff;
+
+        &:before {
+            color: #fff;
+        }
+
+        &:after {
+            background-color: #fff;
+        }
+    }
+}
+.bln-state-open {
+    .bln-accordion {
+        pointer-events: none;
+        &:hover {
+            color: #fff;
+
+            &:before {
+                color: #999;
+            }
+
+            &:after {
+                background-color: #999;
+            }
+        }
+    }
+}

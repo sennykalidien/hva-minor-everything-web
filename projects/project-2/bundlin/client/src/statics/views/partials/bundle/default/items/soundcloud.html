@@ -1,0 +1,10 @@
+<section class="bln-bundleitem">
+    <div class="bln-bundleitemcontent">
+        <div class="bln-iframewrapper bln-iframewrapper-soundcloud">
+            <figure>
+                <iframe scrolling="no" frameborder="no" ng-src="{{ 'https://w.soundcloud.com/player/?url=' + item.fields.uri + '?auto_play=false&hide_related=true&show_reposts=false&visual=false&color=32B38C&show_artwork=true&show_comments=false' + (template.small ? '&visual=true' : '') }}"></iframe>
+            </figure>
+        </div>
+        <div ng-include="'/views/partials/bundle/default/partials/comment.html?v=' + BLN_BUILD_TIMESTAMP"></div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+<section class="bln-bundleitem bln-bundleitem-high">
+    <div class="bln-bundleitemcontent">
+        <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+            <header class="header">
+                <h2 class="title title-big">
+                    <span ng-bind="item.fields.title" class="text"></span>
+                </h2>
+            </header>
+            <figure ng-class="{'border': item.fields.background_is_white || !item.fields.picture.original, 'higher': !mobile}">
+                <div class="image" ng-style="{'background-image': 'url(' + (item.fields.picture.h500 || item.fields.picture.original) + ')'}"></div>
+            </figure>
+        </a>
+        <div ng-include="'/views/partials/bundle/default/partials/comment_description.html?v=' + BLN_BUILD_TIMESTAMP" ng-init="wide = true"></div>
+    </div>
+</section>

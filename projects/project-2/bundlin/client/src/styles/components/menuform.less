@@ -1,0 +1,160 @@
+.bln-menuform {
+    width: 100%;
+    color: #fff;
+    
+    ul {
+        width: 100%;
+
+        li {
+            display: block;
+            border-top: 1px solid #292929;
+            padding: 5px;
+            color: #999;
+            &:hover {
+                color: #fff;
+                label,
+                input,
+                textarea,
+                a,
+                p {
+                    color: #fff;
+                }
+            }
+
+            &:last-child {
+                border-bottom: 1px solid #292929;
+            }
+
+            label {
+                padding: 10px;
+                padding-left: 5px;
+                display: inline-block;
+                width: 115px;
+                color: #999;
+                vertical-align: top;
+                transition: color .15s;
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+            div {
+                display: inline-block;
+                width: 380px;
+                padding-left: 10px;
+
+                figure {
+                    display: inline-block;
+                }
+            }
+            input,
+            textarea,
+            a,
+            p, {
+                font-family: sans-serif;
+                color: #ccc;
+                display: inline-block;
+                width: 100%;
+                padding: 10px;
+                transition: color .15s;
+            }
+            input,
+            textarea {
+                margin-left: -5px;
+            }
+            a,
+            p, div, {
+                padding-left: 5px;
+            }
+            input,
+            textarea,
+            a {
+                &:hover {
+                    color: #fff;
+                }
+            }
+            textarea {
+                line-height: 24px;
+            }
+            a {
+                width: 320px;
+                vertical-align: top;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            input,
+            textarea {
+                margin-top: 3px;
+                background-color: transparent;
+                border-radius: 4px;
+                max-width: 380px;
+                padding: 10px;
+                transition: background-color .15s;
+                border: 0;
+                font-size: 14px;
+                &:hover {
+                    cursor: pointer;
+                }
+                &:focus {
+                    background-color: #333;
+                    color: #fff;
+
+                    &:hover {
+                        cursor: text;
+                    }
+                }
+                &.bln-state-error {
+                    border: 1px solid @color_red;
+                }
+                .placeholderstyle {
+                  font-style: italic;
+                }
+
+                &::-webkit-input-placeholder { .placeholderstyle }
+                &::-moz-input-placeholder { .placeholderstyle }
+                &:-moz-input-placeholder { .placeholderstyle }
+                &:-ms-input-placeholder { .placeholderstyle }
+            }
+
+            .bln-inputerror {
+                color: @color_red;
+                width: 100%;
+                padding-left: 128px;
+                padding-top: 5px;
+                display: block;
+                font-size: 12px;
+            }
+            &.bln-sub-nohover {
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: @breakpoint_phone) {
+    .bln-menuform {
+        ul {
+            li {
+                input,
+                textarea {
+                    margin-left: 0;
+                }
+                a,
+                p, div, {
+                    padding-left: 10px;
+                }
+                input,
+                textarea,
+                a,
+                p, {
+                    width: 380px;
+                }
+                a {
+                    width: 320px;
+                }
+            }
+        }
+    }
+}

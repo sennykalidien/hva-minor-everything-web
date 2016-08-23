@@ -1,0 +1,19 @@
+<div class="bln-bundleitem">
+    <div class="bln-bundleitemcontent">
+        <div class="bln-dribbbleshot">
+            <div class="bln-dribbbleshotauthor header">
+                <img ng-src="{{item.fields.author.picture.original || '/images/default.png'}}" alt="{{item.fields.author.name}}">
+                <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+                    <span class="title text" ng-bind="item.fields.title"></span><br>
+                </a>
+                <span class="bln-icon bln-icon-budicon-47 bln-icon-inline"></span><a ng-href="{{'http://dribbble.com/' + item.fields.author.username}}" class="author" ng-bind="item.fields.author.name"></a>
+            </div>
+            <div class="bln-dribbbleshotcontent">
+                <figure>
+                    <img ng-src="{{item.fields.picture.h500 || item.fields.picture.original || '/images/default.png'}}" alt="{{item.fields.title}}">
+                </figure>
+            </div>
+        </div>
+        <div ng-include="'/views/partials/bundle/default/partials/comment_description.html?v=' + BLN_BUILD_TIMESTAMP"></div>
+    </div>
+</div>

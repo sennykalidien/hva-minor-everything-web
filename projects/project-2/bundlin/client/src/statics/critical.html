@@ -1,0 +1,75 @@
+<!doctype html>
+
+<!--[if lte IE 8]>
+  <script type="text/javascript">
+    alert('This version of Internet Explorer is not supported by Bundlin. Please upgrade your browser to use Bundlin.');
+  </script>
+<![endif]-->
+
+<html lang="en" ng-app="bundlin" id="ng-app">
+    <head>
+        <meta charset="UTF-8">
+        <title ng-bind="SEO.title">Bundlin - the beauty of the web, bundled.</title>
+        <meta name="fragment" content="!" />
+
+        <link rel="stylesheet" href="/css/app.css?v=@@TIMESTAMP@@">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+        <meta name="apple-mobile-web-app-title" content="Bundlin">
+        <link rel="icon" type="image/png" href="/favicons/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+        <meta name="msapplication-TileColor" content="#292929">
+        <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+        <meta name="application-name" content="Bundlin">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <!-- Search Engines -->
+        <meta name="description" content="{{ SEO.description }}" ng-if="SEO.description">
+        <meta name="keywords" content="{{ SEO.keywords }}" ng-if="SEO.keywords">
+        <meta name="author" content="{{ SEO.author }}" ng-if="SEO.author">
+        <meta name="robots" content="{{ SEO.robots }}" ng-if="SEO.robots">
+
+        <!-- Facebook -->
+        <meta property="{{ 'og:' + field }}" content="{{ value }}" ng-repeat="(field, value) in SEO.opengraph">
+
+        <!-- Twitter -->
+        <meta name="{{ 'twitter:' + field }}" content="{{ value }}" ng-repeat="(field, value) in SEO.twitter">
+    </head>
+
+    <body>
+        <div ui-view class="bln-app" id="wrapper top" sidebar-state sideextension-state ng-class="{'bln-state-sidebaractive': sidebarIsActive,'bln-state-sideextensionactive': sideextensionIsActive,'bln-state-modalactive': modalIsActive }">     
+            <main class="page" set-window="height">
+                <header class="bln-homeheader">
+                    <div class="bln-section bln-section-intro bln-section-intro-header">
+                        <div class="bln-maxwidth">
+                                <p class="bln-credits bln-credits-small">
+                                    <img src="/images/intro-handcrafted.png" alt="Handcrafted by" class="handcraftedby">
+                                    <a href="http://lifely.nl?ref=bundlin" target="_blank" class="logo"><img src="/images/logo_lifely.png" alt="Lifely"></a>
+                                </p>
+                            <h1 class="title">The beauty of the web, bundled.</h1>
+                            <p class="subtitle">Create, discover and share Bundles of links about your favorite subjects.</p>
+                        </div>
+                    </div>
+                </header>  
+            </main>              
+        </div> 
+        <div class="bln-tooltips"></div>
+        <ul class="bln-modals"></ul>
+        <div id="bln-toastcontainer"></div>
+
+        <script type="text/javascript" src="/js/vendor.js?v=@@TIMESTAMP@@"></script>
+        <script type="text/javascript" src="/js/app.js?v=@@TIMESTAMP@@"></script>
+    </body>
+</html>

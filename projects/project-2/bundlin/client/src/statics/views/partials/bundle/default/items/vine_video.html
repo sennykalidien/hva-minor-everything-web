@@ -1,0 +1,26 @@
+<section class="bln-bundleitem">
+    <div class="bln-bundleitemcontent">
+        <div class="bln-vine">
+            <header class="bln-vineauthor header">
+                <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+                    <img ng-src="{{ item.fields.author.picture.original || '/images/default.png' }}" alt="{{item.fields.author.name}}">
+                    <span ng-bind="item.fields.author.name" class="title text"></span>
+                </a>
+            </header>
+            <div class="bln-vinecontent">
+                <p ng-bind="item.fields.title"></p>
+                <div class="bln-iframewrapper bln-iframewrapper-vine">
+                    <figure>
+                        <iframe ng-src="{{ 'https://vine.co/v/' + item.fields.video_id + '/embed/simple' }}" reload-on-resize frameborder="0"></iframe>
+                        <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+                    </figure>
+                </div>
+            </div>
+            <div class="bln-vinemeta">
+                <span class="metapart left">{{ item.fields.created_at | bundlinDate }}</span>
+                <span class="bln-icon bln-icon-vine-logo bln-icon-inline"></span>
+                <a ng-href="{{ item.fields.author.url }}" target="_blank" class="metapart right">{{item.fields.author.username}}</a>
+            </div>
+        </div>
+    </div>
+</section>

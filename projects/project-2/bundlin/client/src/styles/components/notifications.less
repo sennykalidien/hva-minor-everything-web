@@ -1,0 +1,31 @@
+.bln-notifications {
+    padding: 20px 0 0 0;
+    height: 100%;
+    
+    h2 {
+        font-size: 34px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 25px;
+        height: 50px;
+        padding-left: 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0 0 25px 0;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: calc(~"100% - 75px");
+    }
+}
+
+@media only screen and (min-width: @breakpoint_phone) {
+    .bln-notifications {
+        padding: 20px 20px 20px 30px;
+        h2 {
+            padding-left: 0;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+#bln-toastcontainer {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  z-index: 999999;
+}
+
+.bln-toast {
+  width: 280px;
+  color: #fff;
+  background-color: #292929;
+  opacity: .9;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 17px 20px;
+
+  &-error {
+    background-color: @color_red;
+  }
+
+  &-success {
+    background-color: @color_green;
+  }
+
+  &-info {
+    background-color: #292929;
+  }
+
+  &-warning {
+    background-color: #eac677;
+  }
+}

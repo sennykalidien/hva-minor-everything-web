@@ -1,0 +1,58 @@
+.fancy-intro {
+  &:not(.fancy-intro-init) {
+    opacity: 0;
+  }
+
+  &-effect {
+    &-move {
+      &-down {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      &-up {
+        transform: translate3d(0, 20px, 0);
+      }
+
+      &-left {
+        transform: translate3d(20px, 0, 0);
+      }
+
+      &-right {
+        transform: translate3d(-20px, 0, 0);
+      }
+    }
+
+    &-distance-long {
+      .fancy-intro-effect {
+        &-move {
+          &-down {
+            transform: translate3d(0, -50px, 0);
+          }
+
+          &-up {
+            transform: translate3d(0, 50px, 0);
+          }
+
+          &-left {
+            transform: translate3d(50px, 0, 0);
+          }
+
+          &-right {
+            transform: translate3d(-50px, 0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  &-init {
+    transform: translate3d(0, 0, 0);
+    transition: opacity .4s ease-out, transform .4s ease-out, border .2s;
+  }
+
+  &-speed {
+    &-slow {
+      transition: opacity .8s ease-out, transform .4s ease-out;
+    }
+  }
+}

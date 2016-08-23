@@ -1,0 +1,145 @@
+.hideplaceholder {
+  .input {
+    .hiddenplaceholderstyle {
+      color: transparent;
+    }
+    &::-webkit-input-placeholder { .hiddenplaceholderstyle }
+    &::-moz-input-placeholder { .hiddenplaceholderstyle }
+    &:-moz-input-placeholder { .hiddenplaceholderstyle }
+    &:-ms-input-placeholder { .hiddenplaceholderstyle }
+  }
+}
+tags-input .host {
+  position: relative;
+  margin: -5px;
+}
+
+tags-input .tags {
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: text;
+  border: none;
+}
+tags-input .tags.focused {
+  /* outline: none; */
+}
+tags-input .tags .tag-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+tags-input .tags .tag-item {
+  margin: 5px 5px 3px 5px;
+  padding: 0 10px;
+  display: inline-block;
+  float: left;
+  height: 28px;
+  line-height: 23px;
+  font-size: 14px;
+  letter-spacing: .5px;
+  background: fade(@color_green, 10%);
+  border: 1px solid fade(#218d6c, 50%);
+  color: @color_green;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 600;
+}
+tags-input .tags .tag-item .remove-button {
+  margin: 0px -2px 0 5px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  vertical-align: middle;
+  color: transparent;
+  display: inline-block;
+
+  &:after {
+    text-transform: none;
+    content: 'f';
+    display: inline-block;
+    color: #218d6c;
+    font-family: "bundlin-icons";
+    font-weight: normal;
+    font-size: 12px;
+    padding-top: 2px;
+    vertical-align: bottom;
+  }
+}
+tags-input .tags .tag-item.selected {
+  background: fade(@color_red, 10%);
+  border: 1px solid fade(#d05557, 50%);
+  color: @color_red;
+
+  .remove-button {
+    &:after {
+      color: @color_red;
+    }
+  }
+}
+tags-input .tags .input {
+  border: none;
+  outline: none;
+  margin: 5px;
+  padding: 0;
+  padding-left: 5px;
+  float: left;
+  height: 26px;
+  background: transparent;
+  font-size: 16px;
+
+  +span {
+    font-size: 16px;
+  }
+}
+tags-input .tags .input::-ms-clear {
+  display: none;
+}
+
+tags-input .autocomplete {
+  margin-top: 14px;
+  margin-left: -25px;
+  position: absolute;
+  z-index: 999;
+  width: calc(~"100% + 40px");
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+tags-input .autocomplete .suggestion-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+tags-input .autocomplete .suggestion-item {
+  padding: 15px 35px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  &:last-child {
+    border-bottom: 1px solid #eee;
+    &:after {
+      display: none;
+    }
+  }
+}
+tags-input .autocomplete .suggestion-item.selected {
+  color: #32b38c;
+}
+tags-input .autocomplete .suggestion-item em {
+  font-style: normal;
+  font-weight: bold;
+}
+// tags-input .autocomplete .suggestion-item em {
+//   color: black;
+// }

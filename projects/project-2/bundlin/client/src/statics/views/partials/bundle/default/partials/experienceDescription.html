@@ -1,0 +1,21 @@
+<div class="bln-bundleitemnote">
+
+    <!-- Comment only -->
+    <div ng-show="item.fields.comment">
+        <ul class="bln-paragraphbuttons">
+            <li class="active">
+                <img ng-src="{{ bundle.author.picture.h64 || bundle.author.picture.original || '/images/default.png' }}" alt="{{ bundle.author.name }}">
+            </li>
+        </ul>
+        <p class="bln-bundleitemdescription switch-paragraph">
+            <span class="author">{{ bundle.author.name }}</span>
+            {{ item.fields.comment }}
+        </p>
+    </div>
+
+    <!-- Description only -->
+    <div ng-show="item.fields.description && !item.fields.comment">
+        <p class="bln-bundleitemdescription" description-content="item.fields.description"></p>
+    </div>
+
+</div>

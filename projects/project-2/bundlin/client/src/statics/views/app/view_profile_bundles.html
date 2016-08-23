@@ -1,0 +1,25 @@
+<!-- bundles -->
+<ul ng-show="bundles.length">
+  <li ng-repeat="bundle in bundles">
+    <state-animation class="bln-stateanimation fade" enter-delay="{{ 750 + 200 * bundle.loadIndex}}" style="height: 100%;">
+      <partial name="bundletile" scope="{'bundle': bundle, 'type': 'home'}"></partial>
+    </state-animation>
+  </li>
+</ul>
+
+<!-- placeholder -->
+<div class="bln-nocontent bln-stateanimation fade" ng-if="generalLoading === 'loaded' && !bundles.length" state-animation leave-delay="650" enter-delay="250">
+    <p ng-if="'app.view_profile.bundles' | isState">
+        <span ng-if="profile._id === user._id">Go on, make some bundles! Duurt lang.</span>
+        <span ng-if="profile._id !== user._id">{{profile.name}} has not done anything on Bundlin yet.</span>
+    </p>
+    <p ng-if="'app.view_profile.collects' | isState">
+        <span ng-if="profile._id === user._id">It seems you've not yet found the collect button.</span>
+        <span ng-if="profile._id !== user._id">{{profile.name}} has not collected any Bundles yet.... I know right!</span>
+    </p>
+    <p ng-if="'app.view_profile.published' | isState">
+        <span ng-if="profile._id === user._id">What are you waiting for? Make some awesome Bundles.</span>
+        <span ng-if="profile._id !== user._id">{{profile.name}} hasn't made any Bundles yet.</span>
+    </p>
+    <p ng-if="'app.view_profile.unpublished' | isState">Keeping your profile nice and clean are we?</p>
+</div>

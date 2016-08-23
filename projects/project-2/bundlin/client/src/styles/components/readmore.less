@@ -1,0 +1,31 @@
+.bln-readmore {
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 36px;
+        height: 14px;
+        background-image: url(/images/readmore.png);
+        background-size: 36px 14px;
+        background-repeat: no-repeat;
+        transition: opacity .2s;
+        transform: translate3d(5px, 4px, 0);
+        opacity: .5;
+    }
+
+    &:hover:after {
+        opacity: 1;
+    }
+
+    &-text {
+        color: @color_green;
+        font-weight: 600;
+        
+        &:after {
+            display: none;
+        }
+    }
+
+    &-truncate {
+        display: none;
+    }
+}

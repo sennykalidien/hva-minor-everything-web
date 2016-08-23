@@ -1,0 +1,129 @@
+.bln-homeheader {
+    position: relative;
+    z-index:9;
+    background: @color_green;
+    color: white;
+    overflow: hidden;
+
+    .bln-section {
+        position: relative;
+        background: transparent;
+        z-index: 1;
+    }
+
+    .bln-credits {
+        position: absolute;
+        bottom: 40px + 2px; // 40px with aligning
+        right: 30px;
+    }
+
+    .title {
+        font-size: 25px;
+        line-height: 1.3em;
+        font-weight: 600;
+        margin-top: -2px; // correction
+    }
+
+    .subtitle {
+        color: white;
+        opacity: .5;
+        margin-top: 30px - 14px; // 30px with correction
+        font-weight: 600;
+        line-height: 1.6em;
+    }
+
+    .buttons {
+        margin-top: 40px - 8px; // 30px with correction
+
+        .playbutton {
+            width: 100%;
+            text-align: center;
+        }
+
+        .signupbutton {
+            margin-left: -22px; // aligning
+            margin-bottom: -20px; // aligning
+            margin-top: 30px - 20px; // 30px with correction
+        }
+    }
+
+    .bln-movinggallery {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 80px;
+        width: 400px;
+        height: 100%;
+    }
+
+}
+
+@media screen and (min-width: @breakpoint_phone) {
+    .bln-homeheader {
+        .bln-credits {
+            bottom: auto;
+            top: 30px;
+        }
+
+        .title {
+            font-size: 35px;
+            margin-top: -9px; // correction
+        }
+
+        .subtitle {
+            width: 80%;
+        }
+
+        .buttons {
+            .playbutton {
+                width: auto;
+            }
+
+            .signupbutton {
+                margin-bottom: 0; // undo aligning
+            }
+        }
+    }
+}
+
+@media screen and (min-width: @breakpoint_tablet) {
+    .bln-homeheader {
+        .bln-movinggallery {
+            display: block;
+            opacity: .5;
+        }
+
+        .title {
+            width: 70%;
+            font-size: 48px;
+            margin-top: -13px; // correction
+        }
+
+        .subtitle {
+            width: 60%;
+            font-size: 18px;
+            margin-top: 6px;
+        }
+
+        .bln-credits {
+            top: 40px;
+            right: 40px;
+        }
+    }
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+    .bln-homeheader {
+        .bln-movinggallery {
+            opacity: 1;
+        }
+
+        .title {
+            width: 90%;
+        }
+
+        .subtitle {
+            width: 80%;
+        }
+    }
+}

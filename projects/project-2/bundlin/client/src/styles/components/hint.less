@@ -1,0 +1,65 @@
+.bln-hintcontainer-intro {
+  display: block;
+  padding-left: 255px; // width of the sign in button plus margin
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
+
+.bln-hint {
+  width: 100%;
+  display: inline-block;
+  font-size: 16px;
+  color: #252525;
+  white-space: nowrap;
+  vertical-align: top;
+  padding-top: 12px;
+  line-height: 1.5em;
+
+  &-white {
+    color: #fff;
+  }
+
+  .bln-icon {
+    vertical-align: top;
+    padding-top: 4px;
+    transition: opacity .2s;
+    opacity: .2;
+  }
+
+  .bln-hinttext {
+    display: inline-block;
+    opacity: 0;
+    padding-left: 10px;
+    padding-right: 0;
+    font-weight: 400;
+    white-space: normal;
+    transition: opacity .2s, padding .2s;
+  }
+}
+
+.no-touch .bln-hint:hover,
+.bln-hint.touchhover {
+  .bln-icon {
+    opacity: .4;
+  }
+
+  .bln-hinttext {
+    padding-left: 0;
+    padding-right: 10px;
+    opacity: .5;
+  }
+}
+
+@media screen and (max-width: (@breakpoint_desktop - 1px)) {
+  .bln-hint {
+    &text {
+      margin-top: -13px;
+    }
+  }
+}
+
+@media screen and (max-width: (@breakpoint_tablet - 1px)) {
+  .bln-section-intro .bln-hintcontainer-intro {
+    display: none;
+  }
+}

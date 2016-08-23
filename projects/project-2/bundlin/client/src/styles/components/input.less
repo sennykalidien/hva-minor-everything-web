@@ -1,0 +1,146 @@
+.bln-input {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  line-height: 1.4em;
+  padding: 8px 12px;
+  background-color: #f9f9f9;
+  border: 0;
+  border-radius: 3px;
+  color: #666;
+
+  &-button {
+    height: 44px;
+  }
+
+  &-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &-area {
+    padding: 20px 20px 35px 20px;
+    height: 130px;
+    resize: none;
+
+    &-bundleitem {
+      height: 5.5em;
+    }
+  }
+
+  &-paragraphbuttons {
+    padding-left: 70px;
+  }
+
+  &-spooky {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &-full {
+    width: 100%;
+  }
+
+  &-smallform {
+    color: #292929;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 10px;
+  }
+
+  .placeholderstyle {
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  &::-webkit-input-placeholder { .placeholderstyle }
+  &::-moz-input-placeholder { .placeholderstyle }
+  &:-moz-input-placeholder { .placeholderstyle }
+  &:-ms-input-placeholder { .placeholderstyle }
+  .input{
+    &::-webkit-input-placeholder { .placeholderstyle }
+    &::-moz-input-placeholder { .placeholderstyle }
+    &:-moz-input-placeholder { .placeholderstyle }
+    &:-ms-input-placeholder { .placeholderstyle }
+  }
+
+  &-bigplaceholder {
+    .bigplaceholderstyle {
+      font-style: normal;
+      font-size: 16px;
+    }
+
+    &::-webkit-input-placeholder { .bigplaceholderstyle }
+    &::-moz-input-placeholder { .bigplaceholderstyle }
+    &:-moz-input-placeholder { .bigplaceholderstyle }
+    &:-ms-input-placeholder { .bigplaceholderstyle }
+    .input{
+      &::-webkit-input-placeholder { .bigplaceholderstyle }
+      &::-moz-input-placeholder { .bigplaceholderstyle }
+      &:-moz-input-placeholder { .bigplaceholderstyle }
+      &:-ms-input-placeholder { .bigplaceholderstyle }
+    }
+  }
+
+  &-whitebordered {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding-bottom: 7px;
+  }
+
+  &-stick {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+  }
+}
+
+@media screen and (min-width: @breakpoint_tablet) {
+  .bln-input {
+    &-area {
+      padding: 20px 20px 35px 30px;
+    }
+
+    &-paragraphbuttons {
+      padding-left: 80px;
+    }
+
+    &-spooky {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_hugedesktop) {
+  .bln-input {
+    font-size: 18px;
+
+    &-smallform {
+      font-size: 16px;
+
+      &-quote {
+        font-size: 18px;
+      }
+
+      &-quote-author {
+        font-size: 14px;
+      }
+    }
+
+    &-area {
+      &-bundleitem {
+        height: 7em;
+      }
+    }
+
+    &-paragraphbuttons {
+      padding-left: 90px;
+    }
+
+    &-whitebordered {
+      font-size: 16px;
+    }
+  }
+}

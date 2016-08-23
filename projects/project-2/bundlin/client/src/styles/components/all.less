@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: none; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+}
+
+html {
+    background-color: #f9f9f9;
+}
+
+.selection {
+  background: @color_green; /* WebKit/Blink Browsers */
+  color: #fff !important;
+}
+
+::selection {
+  .selection; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  .selection; /* Gecko Browsers */
+}
+
+@media (max-width: (@breakpoint_tablet - 1px)) {
+  .uv-icon { // remove user voice on mobile
+    display: none !important;
+  }
+}

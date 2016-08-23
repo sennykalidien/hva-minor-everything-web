@@ -1,0 +1,107 @@
+.bln-header {
+  height: 600px;
+  min-height: 550px;
+  max-height: 1500px;
+  background-color: #333;
+  color: #fff;
+  position: relative;
+
+  .bln-headerbg,
+  .bln-headercontent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .bln-headerbg {
+    background-image: url(/images/intro-header-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top 0px left 68%;
+    background-size: cover;
+    opacity: .6;
+  }
+
+  .bln-headercontent {
+    text-align: center;
+  }
+
+  .bln-title {
+    text-shadow: 0px 0px 80px rgba(0, 0, 0, .3);
+  }
+  
+  .bln-title-sub {
+    margin-top: 10px;
+    text-shadow: 0px 0px 40px rgba(0, 0, 0, .6);
+  }
+
+  .bln-button {
+    margin-top: 50px;
+    text-shadow: 0px 0px 80px rgba(0, 0, 0, .5);
+  }
+
+  .bln-socials {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .bln-credits {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  section {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 230px;
+    margin-top: -115px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.bln-headerlayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(50, 50, 50, .4);
+  background-image: url(/images/intro-header-bg-shadow.jpg);
+  background-repeat: repeat-x;
+  background-position: bottom center;
+}
+
+@media screen and (max-width: (@breakpoint_phone - 1px)) {
+  .bln-header {
+    min-height:550px;
+
+    .bln-handcraftedby {
+      transform: translate(-100px, 37px);
+    }
+
+    section {
+      height: 350px;
+      margin-top: -200px;
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_phone) {
+  .bln-header {
+    .bln-socials {
+      top: 40px;
+      right: 40px;
+    }
+
+    .bln-credits {
+      right: 40px;
+      bottom: 40px;
+    }
+  }
+}

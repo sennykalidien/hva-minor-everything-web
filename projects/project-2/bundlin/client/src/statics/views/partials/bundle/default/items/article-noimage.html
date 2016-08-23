@@ -1,0 +1,12 @@
+<section class="bln-bundleitem">
+    <div class="bln-bundleitemcontent">
+        <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+            <header class="header">
+                <h2 class="title">
+                    <span ng-bind="item.fields.title" class="text"></span>
+                </h2>
+            </header>
+        </a>
+        <div ng-include="'/views/partials/bundle/default/partials/comment_description.html?v=' + BLN_BUILD_TIMESTAMP"></div>
+    </div>
+</section>

@@ -1,0 +1,65 @@
+.bln-sidebarcontainer {
+  position: relative;
+  transition: opacity .5s;
+
+  .bln-sub-toggle {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    padding: 20px;
+    opacity: .5;
+    transition: opacity .2s, transform .35s;
+
+    .bln-icon {
+      width: 37px;
+      color: #ccc;
+      transition: transform .35s, color .2s;
+
+      .open, .close {
+        position: absolute;
+        transition: opacity .35s;
+      }
+
+      .close { opacity: 0; pointer-events: none; }
+    }
+
+    &:hover {
+      opacity: 1;
+
+      .bln-icon {
+        color: #fff;
+      }
+    }
+
+    &.bln-state-ontop {
+      opacity: 1;
+    }
+
+    &.bln-state-open {
+      opacity: 1;
+
+      .bln-icon {
+        transform: translate3d(10px, 0, 0);
+
+        .open { opacity: 0; pointer-events: none; }
+        .close { opacity: 1; pointer-events: auto; }
+      }
+    }
+  }
+
+  &.bln-state-disablemobile {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media only screen and (min-width: @breakpoint_tablet) {
+    .bln-sub-toggle {
+      display: none;
+    }
+
+    &.bln-state-disablemobile {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

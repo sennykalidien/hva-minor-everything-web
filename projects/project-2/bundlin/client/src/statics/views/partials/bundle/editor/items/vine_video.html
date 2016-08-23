@@ -1,0 +1,18 @@
+<section class="bln-bundleitem bln-bundleitem-create bln-bundleitem-figureleft">
+    <div class="bln-bundleitemcontent">
+        <ng-include src="'/views/partials/bundle/editor/partials/controls.html?v=' + BLN_BUILD_TIMESTAMP"></ng-include>
+        <header class="header">
+            <h2 class="title">
+                <p class="text">{{ item.fields.author.name }}</p>
+            </h2>
+            <p class="bln-bundleitemsubtitle">
+                <span class="bln-icon bln-icon-vine bln-icon-vine-logo"></span> 
+                {{item.fields.author.username}}
+            </p>
+        </header>
+        <figure>
+            <div class="image" ng-style="{'background-image': 'url(' + (item.fields.picture.original) + ')'}"></div>
+        </figure>
+        <div ng-include="'/views/partials/bundle/editor/partials/description.html?v=' + BLN_BUILD_TIMESTAMP" ng-init="item.fields.description = item.fields.title"></div>
+    </div>
+</section>

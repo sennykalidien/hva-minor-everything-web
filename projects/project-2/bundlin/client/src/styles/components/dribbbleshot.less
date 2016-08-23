@@ -1,0 +1,48 @@
+.bln-dribbbleshot {
+  &author {
+    margin-bottom: 20px;
+
+    img {
+      float: left;
+      width: 50px;
+      border-radius: 3px;
+      margin-right: 12px;
+    }
+
+    .title {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 18px;
+      color: #333;
+      margin-top: 1px;
+    }
+
+    .bln-icon {
+      display: inline-block;
+      color: fade(@color_dribbble, 50%);
+      margin-right: 7px;
+      font-size: 16px;
+      transition: color .2s;
+      margin-top: 1px;
+    }
+
+    .author {
+      display: inline-block;
+      font-size: 14px;
+      color: #666;
+      vertical-align: bottom;
+    }
+  }
+
+  &content {
+    figure {
+      width: 100%;
+      height: auto;
+      margin-bottom: 13px; // fix for strange bottom space
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+MD2.3.3
+- fixed username match in /profile/username
+
+MD2.3.2
+- progress bar
+- slack notitifications
+- login copy
+- ui-router update
+- fixes
+	- avoid duplicate run of digest
+
+MD2.3.1
+squashed some bugs
+
+MD2.3.0
+a whole new bundlin
+
+MD2.2.3
+(client) use minified versions of js dependencies
+(client) optimize static jpgs/pngs using ImageOptim
+
+MD2.2.2
+(server) set caching time to 1 week instead of 1 day (1 hour for s3), this is for SEO purposes
+
+MD2.2.1
+(server) set cache-control header for images uploaded to amazon s3
+
+MD2.2
+(server/client) save user images as 128h and 64h
+(server) add gzip compression to static file serving
+
+MD2.1.4
+(server/devops) improve serving of snapshots based on user-agents and ?_escaped_fragment_
+(server) fix bug where home snapshot was rendered as a bundle snapshot
+(client) optimize frontend workflow
+
+MD2.1.3
+(client) fixed twitter card meta for homepage and bundle
+(client) last small changes frontend (big title & collected rendering)
+(server) longer snippet generation time (4 sec)
+
+MD2.1.2
+(client) support for resized images
+(client) mouseup logo in edit page
+(client) IE9 logo fallback
+
+MD2.1.1
+(server) fixed title and tags saving problem
+(client) several small frontend fixes
+
+MD2.1
+(client) improve templating algorithm
+(client/server) bug fixes
+
+MD2.0
+(feature) new splash
+(feature) view bundle
+(feature) experience
+(feature) basic edit bundle
+
+MD1.2.1
+(fix) _sid not unique fix
+
+MD1.2
+(client) bundle styling, explore page, new templating engine
+(server) improved scraping, more scrapers, error refactor
+
+MD1.1
+(client) view + experience + create/edit frontend
+(server) view + experience + create/edit backend
+(devops) merged devops scripts, small fixes
+
+MD1.0
+(client) Finalized landings page
+(devops) Small fixes and improvements
+(server) Small fixes and improvements
+
+MD0.1
+(devops) Infrastructure for Vagrant, Staging and Production
+(client) Landings page
+(server) Twitter authentication
+(server) Persistence of users + sessions

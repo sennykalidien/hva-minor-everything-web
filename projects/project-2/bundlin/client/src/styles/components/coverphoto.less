@@ -1,0 +1,137 @@
+.bln-coverphoto {
+  background-color: #fff;
+
+  figure {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .grayscale(1);
+    transition: opacity .2s, filter .2s;
+    -webkit-transition: opacity .2s, -webkit-filter .2s;
+
+    &:hover {
+      .grayscale(0);
+    }
+  }
+
+  &-edit {
+    border: 1px solid #eee;
+
+    .bln-sub-placeholder {
+      position: relative;
+      padding: 50px;
+      height: 100%;
+
+      .bln-title {
+        font-size: 18px;
+        margin-bottom: 20px - 14px;
+      }
+
+      .bln-paragraph {
+        font-size: 16px;
+      }
+
+      .bln-sub-videocontainer {
+        display: block;
+        position: absolute;
+        top: 173px;
+        bottom: 107px;
+        left: 50px;
+        right: 50px;
+
+        video {
+          display: block;
+          height: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 100%;
+        }
+      }
+    }
+
+    figure {
+      filter: none;
+
+      .bln-row {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .75;
+        transition: opacity .2s;
+
+        .cell {
+          padding: 30px;
+
+          .bln-button-input-imagecontrols {
+            .bln-icon {
+              height: 17px;
+            }
+          }
+
+          &.stretch {
+            text-align: center;
+          }
+        }
+      }
+
+      .bln-icon-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: opacity .25s;
+        opacity: 0;
+
+        &.bln-state-active {
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        filter: none;
+
+        .bln-row {
+          opacity: 1;
+        }
+      }
+    }
+
+    .bln-focuspoint {
+      transition: opacity .3s;
+    }
+
+    &.bln-state-disablefocuspoint {
+      .bln-focuspoint {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    &.fp-dragging {
+      cursor: none;
+
+      .bln-row {
+        pointer-events: none;
+        opacity: .1;
+      }
+    }
+
+    &.bln-state-suggesting {
+      .bln-sub-placeholder,
+      .bln-row {
+        opacity: 0 !important;
+        pointer-events: none;
+      }
+
+      .bln-icon-loading {
+        opacity: 1;
+      }
+    }
+  }
+}

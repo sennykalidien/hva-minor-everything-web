@@ -1,0 +1,13 @@
+<section class="bln-bundleitem bln-bundleitem-archivedlink bln-bundleitem-archivedlink-twittertweet bln-bundleitem-figureleft">
+    <div class="bln-bundleitemcontent">
+        <a href="{{bundle._sid | bundleItemLink:item._sid}}" target="_blank">
+            <h2>
+              {{ item.fields.content }}
+            </h2>
+        </a>
+        
+        <figure>
+            <div class="image" ng-style="{'background-image': 'url(' + item.fields.author.picture.original + ')'}"></div>
+        </figure>
+    </div>
+</section>

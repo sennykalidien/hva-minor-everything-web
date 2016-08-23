@@ -1,0 +1,95 @@
+.bln-smallform {
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    padding: 20px;
+
+    .bln-sub-label {
+        display: block;
+        width: 100%;
+        margin-top: -3px;
+
+        p {
+            float: left;
+            font-size: 12px;
+            color: #999;
+            font-weight: 600;
+            margin-bottom: 10px - 5px;
+
+            &.right {
+                float: right;
+            }
+
+            &.invalid {
+                color: @color_red;
+            }
+        }
+
+        ul {
+            float: left;
+
+            li {
+                list-style: none;
+                display: inline-block;
+            }
+        }
+
+        &-extras {
+            margin-top: 10px;
+            margin-bottom: -10px;
+
+            p {
+                margin-top: 5px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                font-size: 0;
+
+                li {
+                    margin-right: 10px;
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+
+                .bln-button {
+                    padding: 5px 8px;
+                    font-size: 12px;
+                    color: #494949;
+                    border-color: #a1a1a1;
+
+                    &:hover {
+                        border-color: darken(#a1a1a1, 50%);
+                        color: darken(#494949, 50%);
+                    }
+                }
+            }
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+
+    fieldset {
+        max-width: 100%;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        background: white;
+        overflow: hidden;
+        box-shadow: 0px 1px 5px -2px fade(black, 30%);
+
+        .bln-input {
+            max-width: 100%;
+            border-radius: 0;
+            border-bottom: 1px solid #ccc;
+            background: white;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

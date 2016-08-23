@@ -1,0 +1,20 @@
+.bln-metacoverfooter {
+  text-align: center;
+
+  .bln-metacoverfootericon,
+  > .bln-numbers {
+    margin-top: 20px;
+  }
+
+  > .bln-author-expanded > .bln-button-secondary {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    > .bln-author-expanded > .bln-button-secondary {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

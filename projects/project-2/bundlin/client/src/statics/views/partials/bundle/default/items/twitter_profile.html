@@ -1,0 +1,26 @@
+<section class="bln-bundleitem">
+    <div class="bln-bundleitemcontent">
+        <div class="bln-twitterprofile bln-twitterprofile-layer" ng-style="{'background-color': '#' + item.fields.color, 'background-image': 'url(' + item.fields.cover_picture.original + ')'}">
+            <div class="background"></div>
+            <div class="shadow"></div>
+            <div class="content">
+                <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+                    <img ng-src="{{ item.fields.picture.h500 || item.fields.picture.original || '/images/default.png' }}" alt="{{item.fields.name}}">
+                    <header class="header">
+                        <p class="name">
+                            <span class="bln-icon bln-icon-budicon-14 bln-icon-inline"></span>
+                            <span class="title text">{{item.fields.name}}</span>
+                        </p>
+                    </header>
+                </a>
+                <p class="bio" twitter-bio-content="item.fields.bio" urls="item.fields.bio_urls" user-mentions="item.fields.bio_user_mentions"></p>
+                <div class="meta">
+                    <span class="bln-icon bln-icon-budicon-17" ng-if="item.fields.location && item.fields.location.length > 0"></span>
+                    <span>{{item.fields.location}}</span>
+                    <span class="bln-icon bln-icon-budicon-46" ng-if="item.fields.website && item.fields.website.length > 0"></span>
+                    <a href="{{item.fields.website}}" target="_blank" simplify-website content="item.fields.website"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

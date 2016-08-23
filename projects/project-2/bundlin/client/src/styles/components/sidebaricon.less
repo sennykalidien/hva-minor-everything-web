@@ -1,0 +1,143 @@
+.bln-sidebaricon {
+  position: relative;
+
+  a {
+    display: block;
+    color: fade(#fff, 50%);
+    text-decoration: none;
+    padding-top: 22px;
+    font-size: 16px;
+    background: transparent;
+    height: 80px;
+    text-align: center;
+    transition: background .2s, color .2s, opacity .2s;
+
+    .bln-icon {
+      opacity: .5;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .bln-numberlabel {
+      display: block;
+      color: @color_red;
+      position: absolute;
+
+      &-link {
+        bottom: 50px;
+        right: 47px;
+      }
+    }
+
+    .bln-sub-dotlabel {
+      background-color: @color_red;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      transition: opacity .2s;
+      opacity: 0;
+      animation: dotlabel_bounce .35s cubic-bezier(.2,.54,.43,.85) 0s infinite alternate;
+
+       @keyframes dotlabel_bounce {
+        from { transform: translateY(0); }
+        to { transform: translateY(-4px); }
+      }
+
+      &.bln-state-active {
+        opacity: 1;
+      }
+
+      &-horn {
+        top: 20px;
+        left: 20px;
+      }
+    }
+
+    &:hover {
+      color: fade(#fff, 65%);
+
+      .bln-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.bln-state-active {
+    a {
+      background-color: #252525;
+      color: fade(#fff, 65%);
+
+      .bln-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-text {
+    a {
+      padding-top: 13px;
+
+      .bln-icon {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+
+    &-small {
+      a {
+        font-size: 12.5px;
+      }
+    }
+  }
+
+  &-avatar {
+    background-size: cover;
+    background-position: center center;
+    height: 80px;
+
+    a {
+      background-color: transparent;
+
+      &:hover {
+        background-color: fade(#383838, 20%);
+      }
+    }
+  }
+
+  &-logo {
+    a {
+      position: relative;
+      height: auto;
+      padding-top: 40px;
+      padding-bottom: 40px - 8px; // with correction
+
+      .bln-icon {
+        position: absolute;
+        left: 7px;
+        top: 50%;
+        margin-top: -7px;
+        opacity: 0;
+        transform: translateX(8px);
+      }
+
+      &:hover {
+        background: transparent;
+
+        .bln-icon {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    .image {
+      display: inline-block;
+      height: 43px;
+    }
+
+    &-nolink {
+      padding-top: 40px;
+      padding-bottom: 40px - 8px; // with correction
+    }
+  }
+}

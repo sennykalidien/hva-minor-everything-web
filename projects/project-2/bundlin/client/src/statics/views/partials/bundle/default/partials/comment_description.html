@@ -1,0 +1,44 @@
+<div class="bln-bundleitemnote" ng-if="item.fields.comment || item.fields.description">
+
+    <!-- Comment/description switch -->
+    <switch vars="author,original" default="author" disableactives ng-show="item.fields.comment && item.fields.description">
+        <ul class="bln-paragraphbuttons" ng-class="{'bln-paragraphbuttons-horizontal': wide && !mobile}">
+            <li ng-class="{active: switches.author}">
+                <a ng-click="switch('author')">
+                    <img ng-src="{{ bundle.author.picture.h64 || bundle.author.picture.original || '/images/default.png' }}" alt="{{ bundle.author.name }}">
+                </a>
+            </li>
+            <li ng-class="{active: switches.original}">
+                <a ng-click="switch('original')">
+                    <span class="bln-icon">N</span>
+                </a>
+            </li>
+        </ul>
+        <p class="bln-bundleitemdescription" get-height-of-contentitem get-height-of-contentitem-class="active" get-height-of-contentitem-watch="{{switches.original + ' ' + switches.author}}">
+            <span class="switch-paragraph" ng-class="{'active': switches.author}">
+                <span class="author">{{ bundle.author.name }}</span>
+                {{ item.fields.comment }}
+            </span>
+            <span class="switch-paragraph" ng-class="{'active': switches.original}" description-content="item.fields.description"></span>
+        </p>
+    </switch>
+
+    <!-- Comment only -->
+    <div ng-show="item.fields.comment && !item.fields.description">
+        <ul class="bln-paragraphbuttons">
+            <li class="active">
+                <img ng-src="{{ bundle.author.picture.h64 || bundle.author.picture.original || '/images/default.png' }}" alt="{{ bundle.author.name }}">
+            </li>
+        </ul>
+        <p class="bln-bundleitemdescription switch-paragraph">
+            <span class="author">{{ bundle.author.name }}</span>
+            {{ item.fields.comment }}
+        </p>
+    </div>
+
+    <!-- Description only -->
+    <div ng-show="item.fields.description && !item.fields.comment">
+        <p class="bln-bundleitemdescription" description-content="item.fields.description"></p>
+    </div>
+
+</div>

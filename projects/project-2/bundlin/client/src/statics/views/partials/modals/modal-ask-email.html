@@ -1,0 +1,37 @@
+<div class="bln-modalcontainer bln-modalcontainer-green">
+    <article class="bln-modal bln-modal-transparent bln-modal-askmail" modal-ask-email>
+        <h2 class="bln-title bln-title-greenmodal">
+            Thank you {{ data.user.name }}, for being one of the first Bundlin users.
+        </h2>
+        <p class="bln-paragraph bln-paragraph-intro bln-paragraph-greenmodal">
+            We're super excited you want to help us with the development of the buggy beta version. Feel free to contact us on <a href="http://twitter.com/bundlin" target="_blank">Twitter</a> or by <a href="mailto:nick@bundlin.com">mail</a> if you have any ideas, requests or found bugs. We appreciate your feedback and will get back to you personally asap. You're currently logged in through Twitter. Please provide us with your email address so we can recover your account in case you forget your password. Don't worry, we won't sell it to secret government agencies.
+        </p>
+        <h3 class="bln-title bln-title-greenmodal bln-title-smaller">
+            What is your email address?
+        </h3>
+        <form class="bln-row" ng-submit="submitEmailForm($event)">
+            <div class="cell stretch stick">
+                <input type="text" class="bln-input bln-input-button bln-input-stick" placeholder="Email address" ng-model="emailAddress" required>
+            </div>
+            <div class="cell last">
+                <button class="bln-button bln-button-input bln-button-input-greenmodal bln-button-input-stick" ng-class="{'bln-button-disabled': !emailAddressValid}">Save</button>
+            </div>
+        </form>
+        <div class="bln-button bln-button-invert bln-button-play" ng-click="playVideo()" ng-if="!videoIsPlaying" ng-class="{'bln-button-played': videoPlayed}">
+            <span class="bln-icon bln-icon-play-button"></span>
+            Play Bundlin video
+        </div>
+        <div class="bln-button bln-button-invert bln-button-stop" ng-click="stopVideo()" ng-if="videoIsPlaying">
+            <span class="bln-icon bln-icon-stop-button"></span>
+            Stop Bundlin video
+        </div>
+
+        <section class="bln-section bln-section-video" ng-class="{ 'active': videoIsPlaying }">
+            <div class="bln-iframewrapper bln-iframewrapper-video">
+              <figure>
+                <iframe src="//player.vimeo.com/video/125583287?color=fff&portrait=0&title=0&byline=0&badge=0&autoplay=0&api=1&player_id=introvideo" class="bln-video" webkitallowfullscreen mozallowfullscreen allowfullscreen video-status="videoIsPlaying" id="modalaskemailvideo"></iframe>
+              </figure>
+            </div>
+        </section>
+    </article>
+</div>

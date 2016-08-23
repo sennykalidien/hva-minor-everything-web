@@ -1,0 +1,37 @@
+.bln-sidemenu {
+    @speed: .35s;
+    width: 500px;
+    height: 100%;
+    background-color: #252525;
+    position: absolute;
+    top:0;
+    left:80px;
+    bottom: 0;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+    transition: opacity @speed, transform @speed;
+    z-index: 1;
+
+    &-content {
+        transition: opacity @speed / 2;
+    }
+}
+.bln-state-show .bln-sidemenu {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+}
+.bln-state-toggle-out .bln-sidemenu {
+    &-content{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+.bln-state-toggle-in .bln-sidemenu {
+    &-content{
+        opacity: 1;
+        pointer-events: none;
+    }
+}

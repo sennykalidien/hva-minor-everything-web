@@ -1,0 +1,2 @@
+echo Forwarding to localhost:3301
+sshpass -p 'vagrant' ssh -L 3301:localhost:80 vagrant@33.33.33.103 -N -g

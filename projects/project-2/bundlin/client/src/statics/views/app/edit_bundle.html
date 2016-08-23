@@ -1,0 +1,239 @@
+<state-animation class="bln-stateanimation fade">
+
+    <article class="bln-bundle bln-bundle-create" ng-hide="error.user">
+
+        <!-- Cover -->
+        <header class="bln-metacover bln-metacover-edit" set-window="height" ng-click="disableSidebar($event)">
+            <ul class="bln-form" fillup>
+                <li fillup-part>
+                    <form name="titleForm" novalidate>
+                        <input type="text" name="bundleTitle" ng-model="bundle.title" ng-minlength="5" ng-maxlength="50" class="bln-input bln-input-bigplaceholder bln-input-spooky bln-input-title" ng-model-options="{ updateOn: 'blur' }" ng-blur="titleForm.$valid && updateBundle({ 'title': bundle.title })" placeholder="Come up with a great title" ng-required>
+                    </form>
+                </li>
+                <li fillup-part>
+                    <ul class="bln-paragraphbuttons">
+                        <li><img ng-src="{{ bundle.author.picture.h64 || bundle.author.picture.original }}" alt="{{ bundle.author.name }}"></li>
+                    </ul>
+                    <form name="descriptionForm" novalidate>
+                        <textarea name="bundleDescription" ng-model="bundle.description" ng-minlength="30" ng-maxlength="250" class="bln-input bln-input-bigplaceholder bln-input-spooky bln-input-area bln-input-paragraphbuttons" ng-blur="titleForm.$valid && updateBundle({description: bundle.description})" placeholder="Why should people check out your Bundle?"></textarea>
+                    </form>
+                </li>
+                <li fillup-part ng-class="{ 'hideplaceholder': bundleTags.length }">
+                    <tags-input ng-model="bundleTags" name="bundleTags" class="bln-input bln-input-bigplaceholder bln-input-spooky bln-input-tags" min-length="2" remove-tag-symbol="&nbsp;" max-length="15" on-tag-added="updateTags(bundleTags)" on-tag-removed="updateTags(bundleTags)" placeholder="Tag your Bundle up!" replace-spaces-with-dashes="false">
+                        <auto-complete source="loadTags($query)" min-length="1"></auto-complete>
+                    </tags-input>
+                </li>
+                <li fillup-element class="coverphoto">
+                    <div class="bln-coverphoto bln-coverphoto-edit" focuspoint focuspoint-x="bundle.picture.focus_x" focuspoint-y="bundle.picture.focus_y" on-focuspoint-release="bundle.setFocusPoint" ng-class="{'bln-state-disablefocuspoint': bundle.loading.changepicture || !bundle.picture.original, 'bln-state-empty': bundle.picture.original, 'bln-state-suggesting': loading.suggestion && !bundle.picture.original}">
+                        <figure ng-style="{ 'background-image': 'url(' + (bundle.picture.h600 || bundle.picture.original) + ')' }">
+
+                            <!-- Placeholder -->
+                            <div class="bln-sub-placeholder" ng-if="!bundle.picture.original">
+                                <p class="bln-title">We'd love to suggest you a cover photo</p>
+                                <p class="bln-paragraph">Please fill in some tags so our minions know what to look for. Enter the most relevant ones first.</p>
+                                <div class="bln-sub-videocontainer">
+                                    <video autoplay loop>
+                                      <source src="/images/wolkengast.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Main actions -->
+                            <div class="bln-row" ng-show="!bundle.uploaded_user_image">
+                                <div class="cell" ng-show="bundle.tags.length">
+                                    <a href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="previousSuggestion()"><span class="bln-icon bln-icon-budicon-68"></span></a>
+                                </div>
+                                <div class="cell stretch">
+                                    <label for="bundlePicture" class="bln-button bln-button-upload bln-button-input bln-button-input-small bln-button-input-primary">
+                                        <span class="bln-icon bln-icon-budicon-75"></span>
+                                        Upload photo
+                                    </label>
+                                </div>
+                                <div class="cell last" ng-show="bundle.tags.length">
+                                    <a href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="nextSuggestion()"><span class="bln-icon bln-icon-budicon-70"></span></a>
+                                </div>
+                            </div>
+
+                            <!-- Custom image uploaded action -->
+                            <div class="bln-row" ng-show="bundle.uploaded_user_image">
+                                <div class="cell">
+                                    <label for="bundlePicture" class="bln-button bln-button-upload bln-button-input bln-button-input-small bln-button-input-primary">
+                                        <span class="bln-icon bln-icon-budicon-75"></span>
+                                        Upload photo
+                                    </label>
+                                </div>
+                                <div class="cell stretch"></div>
+                                <div class="cell last">
+                                    <a ng-if="bundle.tags.length" href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="nextSuggestion()"><span class="bln-icon bln-icon-budicon-5"></span></a>
+                                    <a ng-if="!bundle.tags.length" href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="unsetCoverimage()"><span class="bln-icon bln-icon-budicon-5"></span></a>
+                                </div>
+                            </div>
+
+                            <!-- Loading state -->
+                            <span class="bln-icon bln-icon-loading" ng-class="{'bln-state-active': bundle.loading.changepicture}">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+
+                            <!-- Image -->
+                            <input type="file" nv-file-select uploader="bundle.imageUploader" id="bundlePicture" class="bln-hidden" accept="image/*" ng-if="bundle.imageUploader" />
+                        </figure>
+                    </div>
+                </li>
+            </ul>
+        </header>
+
+        <!-- Content -->
+        <div class="bln-bundlecontent bln-bundlecontent-edit">
+
+            <figure class="bln-sub-createplaceholder" ng-if="!bundle.items.length && !loading.scraper && !loading.page">
+                <div class="bln-row">
+                    <div class="cell stick"><img src="/images/grumpycat.png" alt=""></div>
+                    <div class="cell stretch last">
+                        <section>
+                            <p class="bln-title">Start by adding some great content</p>
+                            <p class="bln-paragraph">Did you know you can add all sorts of content? Try adding articles, quotes, locations on Google Maps, Vimeo and YouTube videos, Dribbble shots, Soundcloud music, Twitter profiles, Tweets, Vines and apps from the Apple and Android store.</p>
+                        </section>
+                    </div>
+                </div>
+            </figure>
+
+            <!-- Publish bar -->
+            <div class="bln-bundleitem bln-bundleitem-publishbundle bln-bundleitem-first" ng-class="{'bln-state-tweeter': bundleValid.valid && !bundle.published, 'bln-state-tweeting': bundle.loading.tweeting}">
+
+                <!-- Tweet loader -->
+                <span class="bln-icon bln-icon-loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+
+                <!-- Compose Tweet -->
+                <div class="bln-sub-tweet">
+                    <div class="bln-smallform">
+                        <label for="tweet" class="bln-sub-label">
+                            <p>Publish your Bundle to share it with your followers on Twitter</p>
+                            <p class="right" ng-class="{ 'invalid': tweet.content.length > 140 }">{{ tweet.content.length }}</p>
+                        </label>
+                        <fieldset>
+                            <textarea id="tweet" rows="3" ng-model="tweet.content" class="bln-input bln-input-smallform"></textarea>
+                        </fieldset>
+                        <div class="bln-sub-label bln-sub-label-extras" ng-if="creatorTwitterHandles.length > 0">
+                            <p>Add the creators of your Bundle's content to your Tweet:</p>
+                            <ul>
+                                <li ng-repeat="handle in creatorTwitterHandles"><a href="#" class="bln-button" ng-click="addHandleToTweet('@' + handle)">@{{ handle }}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+              <!-- Publish bundle -->
+              <div class="bln-row">
+                <div class="cell stretch">
+                    <progressbar class="bln-progressbar" tooltiptoggle tooltiptoggle-template="bundle-validation" tooltiptoggle-angle="bottom" tooltiptoggle-scope="bundleValidations">
+                        <bar class="background" ng-width="100%">
+                            <span ng-if="bundleValid.valid">Awesome</span>
+                            <span ng-if="!bundleValid.valid && progress > 50">Almost ready to publish</span>
+                            <span ng-if="!bundleValid.valid && progress <= 50">Indication of awesomeness</span>
+                        </bar>
+                        <bar class="extra" ng-width="{{Math.min(100, progress)}}%" ng-show="bundleValid.valid">
+                            <span></span>
+                        </bar>
+                        <bar class="normal" ng-width="{{Math.min(PROGRESSBAR_PUBLISH_TRESHOLD, progress)}}%">
+                            <span ng-class="{inactive: progress < PROGRESSBAR_PUBLISH_TRESHOLD}" ng-if="bundleValid.valid">Ready to publish</span>
+                        </bar>
+                        <bar ng-width="0%"><span>{{Math.min(100, progress)}}%</span></bar>
+                    </progressbar>
+                </div>
+                <div class="cell">
+                    <a ui-sref="app.view_bundle({ bundleId: bundle._sid })" class="bln-button bln-button-small">
+                        Preview
+                    </a>
+                </div>
+
+                <!-- Tweet & unpublish -->
+                <div class="cell last">
+                    <button class="bln-button bln-button-small" ng-click="unpublishBundle()" ng-show="bundle.published">
+                        Unpublish
+                    </button>
+                    <button class="bln-button bln-button-primary bln-button-small" ng-click="publishBundle(tweet.content)" ng-show="!bundle.published" ng-class="{'bln-button-disabled': tweet.content.length > 140 || !bundleValid.valid, 'bln-button-primary-filled': bundleValid.valid}">
+                        Publish
+                        <span class="bln-icon bln-icon-afterline bln-icon-twitter-logo"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scraper -->
+        <section class="bln-scraper" ng-class="{'bln-state-loading': loading.scraper }">
+          <form class="bln-row bln-row-addlink" name="newItemForm" ng-submit="newItemSubmit($event)">
+              <div class="cell stretch stick"> <input class="bln-input bln-input-button bln-input-stick" type="text" ng-model="newItemUrl" name="newItemUrl" placeholder="Add a link to your Bundle"></div>
+              <div class="cell">               <button type="submit" class="bln-button bln-button-input bln-button-input-stick bln-button-input-primary" scroll-to=".bln-sub-publisheditem:last-of-type" scroll-to-offset="100" scroll-to-speed="500">Add</button></div>
+              <div class="cell">               <p>or</p></div>
+              <div class="cell last">          <button type="button" class="bln-button bln-button-input bln-button-input-tertiery" ng-click="createEmptyQuote()" scroll-to=".bln-sub-publisheditem:last-of-type" scroll-to-offset="100" scroll-to-speed="500">Quote someone</button></div>
+          </form>
+        </section>
+
+        <section>
+            <!-- Published bundle items -->
+            <div ng-repeat="item in publishedItems | orderBy: 'order'" class="bln-sub-publisheditem">
+                <ng-include src="'/views/partials/bundle/editor/items/' + item.type + '.html?v=' + BLN_BUILD_TIMESTAMP"></ng-include>
+            </div>
+        </section>
+
+        <!-- Loading bundle item -->
+        <section class="bln-bundleitem bln-bundleitem-create bln-bundleitem-figureleft bln-bundleitem-loading" ng-show="loading.scraper">
+            <div class="bln-bundleitemcontent">
+                <header>
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </header>
+                <figure></figure>
+                <div class="bln-bundleitemnote">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <span class="bln-icon bln-icon-loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+        </section>
+
+        <!-- Error bundle item -->
+        <section class="bln-bundleitem bln-bundleitem-error" ng-show="scraperError.active">
+            <div class="bln-bundleitemcontent">
+                <p>{{ scraperError.message }}</p>
+                <a href="#" class="bln-button bln-button-small bln-button-secondary bln-button-secondary-filled" ng-click="closeScraperError()">Close ({{ scraperError.timer }})</a>
+            </div>
+        </section>
+
+        <section ng-show="archivedItems.length > 0">
+            <div class="bln-bundleitem bln-bundleitem-footer bln-bundleitem-title bln-bundleitem-title-archiveditems">
+                <h2>Archived items are only visible to you. Switch to public to add them to your bundle. ({{archivedItems.length}})</h2>
+            </div>
+
+            <!-- Archived bundle items -->
+            <div ng-repeat="item in archivedItems">
+              <ng-include src="'/views/partials/bundle/editor/items/' + item.type + '.html?v=' + BLN_BUILD_TIMESTAMP"></ng-include>
+          </div>
+        </section>
+
+        <!-- Delete bundle -->
+        <section class="bln-bundleitem bln-bundleitem-last" ng-if="bundle.items.length">
+            <p class="bln-paragraph bln-paragraph-small">
+                <a ng-click="deleteBundle()" class="bln-link">Delete this Bundle</a>
+            </p>
+        </section>
+
+        </div>
+    </article>
+
+    <article class="bln-bundle bln-bundle-create-error">
+        <div class="bln-disabled">
+            <p class="bln-paragraph">Creating and editing Bundles is not yet supported on small screens</p>
+            <a class="bln-button" ui-sref="app.view_bundle({bundleId: bundle._sid})">Back to bundle</a>
+        </div>
+    </article>
+
+</state-animation>

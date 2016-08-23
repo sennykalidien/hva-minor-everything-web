@@ -1,0 +1,295 @@
+<!-- Home header -->
+<header class="bln-homeheader">
+    <!-- Title, subtitle and buttons -->
+    <div class="bln-section bln-section-intro bln-section-intro-header">
+        <div class="bln-maxwidth">
+            <p class="bln-credits bln-credits-small">
+                <img src="/images/intro-handcrafted.png" alt="Handcrafted by" class="handcraftedby">
+                <a href="http://lifely.nl?ref=bundlin" target="_blank" class="logo"><img src="/images/logo_lifely.png" alt="Handcrafted by Lifely"></a>
+            </p>
+            <h1 class="title">The beauty of the web, bundled.</h1>
+            <p class="subtitle">Create, discover and share Bundles of links about your favorite subjects.</p>
+            <div class="buttons">
+                <button class="playbutton bln-button bln-button-invert bln-button-play" ng-click="playVideo()" ng-show="!playvideo" ng-class="{'bln-button-played': video_played}">
+                    <span class="bln-icon bln-icon-play-button"></span> What's Bundlin all about?
+                </button>
+                <button class="playbutton bln-button bln-button-invert bln-button-stop" ng-click="stopVideo()" ng-show="playvideo">
+                    <span class="bln-icon bln-icon-stop-button"></span> Stop video
+                </button>
+                <button class="signupbutton bln-button bln-button-signup" scroll-to="#invitation" ng-show="!user.loggedIn || mobile">
+                    Log in / Sign up
+                    <span class="bln-icon bln-icon-budicon-41"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <state-animation class="bln-stateanimation fade" enter-delay="300">
+
+        <!-- Gallery -->
+        <div class="bln-movinggallery" fancy-intro fancy-intro-offset="0" fancy-intro-delay="2000" fancy-intro-effect="move-up" fancy-intro-effect-distance="long" fancy-intro-children="ul > li" fancy-intro-children-delay="150">
+            <ul>
+                <li>
+                    <div class="layer-2" ng-style="{'background-image': 'url(' + '/images/teamphotos/teamphoto-01.jpg' + ')', 'left': '116px', 'top': '-77px'}"></div>
+                </li>
+                <li>
+                    <div class="layer-1 small" ng-style="{'background-image': 'url(' + '/images/teamphotos/teamphoto-02.jpg' + ')', 'left': '46px', 'top': '95px'}"></div>
+                </li>
+                <li>
+                    <div class="layer-2" ng-style="{'background-image': 'url(' + '/images/teamphotos/teamphoto-03.jpg' + ')', 'left': '176px', 'top': '111px'}"></div>
+                </li>
+                <li>
+                    <div class="layer-3 small" ng-style="{'background-image': 'url(' + '/images/teamphotos/teamphoto-04.jpg' + ')', 'left': '234px', 'top': '192px'}"></div>
+                </li>
+                <li>
+                    <div class="layer-2 large" ng-style="{'background-image': 'url(' + '/images/teamphotos/teamphoto-05.jpg' + ')', 'left': '35px', 'top': '243px'}"></div>
+                </li>
+            </ul>
+        </div>
+
+    </state-animation>
+
+    <!-- Video -->
+    <section class="bln-section bln-section-green bln-section-intro bln-section-video bln-section-video-intro" ng-class="{'active': playvideo}">
+        <div class="bln-maxwidth">
+            <div class="bln-iframewrapper bln-iframewrapper-video">
+                <figure>
+                    <iframe src="//player.vimeo.com/video/125583287?color=fff&portrait=0&title=0&byline=0&badge=0&autoplay=0&api=1&player_id=introvideo" class="bln-video" webkitallowfullscreen mozallowfullscreen allowfullscreen video-status="playvideo" id="introvideo"></iframe>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+</header>
+
+<state-animation class="bln-stateanimation fade" enter-delay="1000">
+
+    <!-- Featured bundles -->
+    <section class="bln-section bln-section-feed" set-window id="first-content">
+        <div class="bln-horslider bln-horslider-homefeed" scroll-buttons overflown overflown-element="> ul" scroll-status scroll-status-element="> ul" snap-on-scroll snap-on-scroll-enabled="!Modernizr.touch" snap-on-scroll-treshold="150" snap-on-scroll-element="> ul">
+            <div class="captioncontainer">
+                <div class="bln-feedcaption">
+                    <p>Discover great bundles</p>
+                </div>
+            </div>
+            <div class="shadowbar shadowbar-right" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.right}"></div>
+            <a class="bln-scrollarrow bln-scrollarrow-right" ng-click="scrollRight()" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.right}"></a>
+            <a class="bln-scrollarrow bln-scrollarrow-left" ng-click="scrollLeft()" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.left}"></a>
+            <ul scrolling-element>
+                <li ng-repeat="entry in featured | limitTo : 5" ng-init="bundle = entry">
+                    <state-animation class="bln-stateanimation fade" enter-delay="{{ 750 + 200 * $index}}" style="height: 100%;">
+                        <partial name="bundletile" scope="{'bundle': bundle, 'type': 'home'}"></partial>
+                    </state-animation>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="bln-section bln-section-intro">
+        <div class="bln-maxwidth">
+            <h2 class="bln-heading">Creating the wow experience with bundles of web content.</h2>
+            <p class="bln-paragraph bln-paragraph-intro">You're constantly scouring the web discovering great content, leading to valuable selections of articles, videos and images on any subject of interest. Through Bundlin, you can capture and share these selections, transforming them into stunning looking bundles of indefinite existence.</p>
+            <ul class="bln-featurelist" fancy-intro fancy-intro-offset="300" fancy-intro-delay="0" fancy-intro-effect="move-right" fancy-intro-effect-distance="long" fancy-intro-children="li" fancy-intro-children-delay="200">
+                <li>
+                    <span class="bln-icon bln-icon-green bln-icon-budicon-37 bln-icon-feature"></span>
+                    <h3 class="bln-heading bln-heading-feature">Enjoy the experience</h3>
+                    <p class="bln-paragraph bln-paragraph-intro bln-paragraph-feature">Bundlin offers you a fast, easy and seamless way to create stunning looking bundles of your favorite web content.</p>
+                </li>
+                <li class="bln-icon-before bln-icon-featurelistarrow bln-icon-before">
+                    <span class="bln-icon bln-icon-green bln-icon-budicon bln-icon-feature"></span>
+                    <h3 class="bln-heading bln-heading-feature">Capture great content</h3>
+                    <p class="bln-paragraph bln-paragraph-intro bln-paragraph-feature">Capture the valuable process of finding amazing content into great bundles of indefinite existence.</p>
+                </li>
+                <li class="bln-icon-before bln-icon-featurelistarrow bln-icon-before">
+                    <span class="bln-icon bln-icon-green bln-icon-budicon-36 bln-icon-feature"></span>
+                    <h3 class="bln-heading bln-heading-feature">Add value to content</h3>
+                    <p class="bln-paragraph bln-paragraph-intro bln-paragraph-feature">By selecting links and defining the relationships between those links, you make existing content more valuable.</p>
+                </li>
+                <li class="bln-icon-before bln-icon-featurelistarrow bln-icon-before">
+                    <span class="bln-icon bln-icon-green bln-icon-twitter-logo bln-icon-feature"></span>
+                    <h3 class="bln-heading bln-heading-feature">Share your passion</h3>
+                    <p class="bln-paragraph bln-paragraph-intro bln-paragraph-feature">Use Bundlin to share your passion and thoughts with the world, without having to create content yourself.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Invitation to participate testing program -->
+    <section class="bln-section bln-section-intro bln-section-green" id="invitation">
+        <div class="bln-maxwidth">
+            <h2 class="bln-heading bln-heading-white">Join our awesome group of beta users!</h2>
+            <p class="bln-paragraph bln-paragraph-intro bln-paragraph-white bln-paragraph-opacity">Bundlin is still in an early phase of delevopment. We need your feedback in order to make Bundlin truly amazing. Are you passionate about product development, then please help us by testing bundlin. We only have room for <b>{{ beta_invites_remaining }}</b> more beta accounts, so you better hurry up!</p>
+            <section class="bln-section bln-section-invitation">
+                <div ng-hide="user.loggedIn">
+                    <button class="bln-button bln-button-invert" ng-click="logInWithTwitter()">
+                        <span class="bln-icon bln-icon-twitter-logo bln-icon-beforeline"></span> Log in / Sign up
+                    </button>
+                    <span class="bln-hintcontainer-intro">
+              <span class="bln-hint" touch-hover analytics-on="hover" analytics-event="Hover" analytics-label="Twitter login hint">
+                <span class="bln-icon bln-icon-beforeline bln-icon-info-icon"></span>
+                    <span class="bln-hinttext">Use Twitter to log in</span>
+                    </span>
+                    </span>
+                </div>
+                <p ng-show="user.loggedIn">
+                    <a tabindex="-1" ui-sref="app.view_profile.bundles({ profileScreenName: user.username })" class="bln-avatar" analytics-on="click" analytics-event="Click" analytics-label="Splash page avatar link to Bundlin profile"><img ng-src="{{ user.picture.h128 || user.picture.original || '/images/default.png' }}" alt="{{ user.name }}"></a>
+                    <button class="bln-button bln-button-wannabe bln-button-grey" ng-show="user.loggedIn">
+                        <span ng-show="!user.hasRole('beta', 'admin')">
+                Hi {{ user.name }}, awesome! You're one of the first in line. We'll contact you as soon as it's ready!
+              </span>
+                        <span ng-show="user.hasRole('beta', 'admin')">
+                Thanks {{ user.name }} for signing up to the Bundlin Beta!
+              </span>
+                    </button>
+                </p>
+            </section>
+        </div>
+    </section>
+
+    <!-- Invitation to participate -->
+    <section class="bln-section">
+        <div class="bln-photoroll bln-photoroll-green">
+            <ul photo-roll photo-roll-speed="30">
+                <li><img src="../images/photoroll/intro-photoroll-01.jpg" srcset="../images/photoroll/intro-photoroll-01--s.jpg 480w, ../images/photoroll/intro-photoroll-01--m.jpg 960w, ../images/photoroll/intro-photoroll-01--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-02.jpg" srcset="../images/photoroll/intro-photoroll-02--s.jpg 480w, ../images/photoroll/intro-photoroll-02--m.jpg 960w, ../images/photoroll/intro-photoroll-02--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-03.jpg" srcset="../images/photoroll/intro-photoroll-03--s.jpg 480w, ../images/photoroll/intro-photoroll-03--m.jpg 960w, ../images/photoroll/intro-photoroll-03--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-04.jpg" srcset="../images/photoroll/intro-photoroll-04--s.jpg 480w, ../images/photoroll/intro-photoroll-04--m.jpg 960w, ../images/photoroll/intro-photoroll-04--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-05.jpg" srcset="../images/photoroll/intro-photoroll-05--s.jpg 480w, ../images/photoroll/intro-photoroll-05--m.jpg 960w, ../images/photoroll/intro-photoroll-05--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-06.jpg" srcset="../images/photoroll/intro-photoroll-06--s.jpg 480w, ../images/photoroll/intro-photoroll-06--m.jpg 960w, ../images/photoroll/intro-photoroll-06--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-07.jpg" srcset="../images/photoroll/intro-photoroll-07--s.jpg 480w, ../images/photoroll/intro-photoroll-07--m.jpg 960w, ../images/photoroll/intro-photoroll-07--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-08.jpg" srcset="../images/photoroll/intro-photoroll-08--s.jpg 480w, ../images/photoroll/intro-photoroll-08--m.jpg 960w, ../images/photoroll/intro-photoroll-08--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-09.jpg" srcset="../images/photoroll/intro-photoroll-09--s.jpg 480w, ../images/photoroll/intro-photoroll-09--m.jpg 960w, ../images/photoroll/intro-photoroll-09--l.jpg 1024w" alt="teamphoto" /></li>
+                <li><img src="../images/photoroll/intro-photoroll-10.jpg" srcset="../images/photoroll/intro-photoroll-10--s.jpg 480w, ../images/photoroll/intro-photoroll-10--m.jpg 960w, ../images/photoroll/intro-photoroll-10--l.jpg 1024w" alt="teamphoto" /></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bln-section bln-section-intro">
+        <div class="bln-maxwidth">
+
+            <!-- Team -->
+            <h2 class="bln-heading">Our team of dreamers.</h2>
+            <p class="bln-paragraph bln-paragraph-intro">Bundlin is handcrafted by <a href="http://lifely.nl" target="_blank">Lifely</a>. When we're not working for our awesome clients we spend every waking minute developing Bundlin.</p>
+            <ul class="bln-teamlist" fancy-intro fancy-intro-offset="200" fancy-intro-delay="0" fancy-intro-effect="move-right" fancy-intro-effect-distance="long" fancy-intro-children="li > a" fancy-intro-children-delay="100">
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'pimverlaan'})">
+                        <img src="/images/avatars/pim.jpg" alt="Foto Pim Verlaan">
+                        <span class="bln-name bln-name-profilecard">Pim Verlaan</span>
+                        <span class="bln-role bln-role-profilecard">Founder & design</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'nrdebruijn'})">
+                        <img src="/images/avatars/nick.jpg" alt="Foto Nick de Bruijn">
+                        <span class="bln-name bln-name-profilecard">Nick de Bruijn</span>
+                        <span class="bln-role bln-role-profilecard">Founder</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'peterpeerdeman'})">
+                        <img src="/images/avatars/peter.jpg" alt="Foto Peter Peerdeman">
+                        <span class="bln-name bln-name-profilecard">Peter Peerdeman</span>
+                        <span class="bln-role bln-role-profilecard">Lead Tech</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'bryantebeek'})">
+                        <img src="/images/avatars/bryan.jpg" alt="Foto Bryan te Beek">
+                        <span class="bln-name bln-name-profilecard">Bryan te Beek</span>
+                        <span class="bln-role bln-role-profilecard">Coding</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'jessedvrs'})">
+                        <img src="/images/avatars/jesse.jpg" alt="Foto Jesse de Vries">
+                        <span class="bln-name bln-name-profilecard">Jesse de Vries</span>
+                        <span class="bln-role bln-role-profilecard">Coding</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'nick_koster'})">
+                        <img src="/images/avatars/nick.k.jpg" alt="Foto Nick Koster">
+                        <span class="bln-name bln-name-profilecard">Nick Koster</span>
+                        <span class="bln-role bln-role-profilecard">Coding</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'takeluutzen'})">
+                        <img src="/images/avatars/take.jpg" alt="Foto Take Lijzenga">
+                        <span class="bln-name bln-name-profilecard">Take Lijzenga</span>
+                        <span class="bln-role bln-role-profilecard">Design</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'llaleon'})">
+                        <img src="/images/avatars/leon.jpg" alt="Foto Léon Smit">
+                        <span class="bln-name bln-name-profilecard">Léon Smit</span>
+                        <span class="bln-role bln-role-profilecard">Coding</span>
+                    </a>
+                </li>
+                <li class="bln-profilecard">
+                    <a ui-sref="app.view_profile.bundles({'profileScreenName':'jannaboekema'})">
+                        <img src="/images/avatars/janna.jpg" alt="Foto Janna Boekema">
+                        <span class="bln-name bln-name-profilecard">Janna Boekema</span>
+                        <span class="bln-role bln-role-profilecard">Content strategy</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Static gallery -->
+            <div class="bln-staticgallery shrink" ng-class="{'shrink': !fullGallery}" fancy-intro fancy-intro-offset="150" fancy-intro-delay="400" fancy-intro-children="img, .stretch figure, .loadmorecontainer" fancy-intro-children-delay="200" fancy-intro-effect="move-up" fancy-intro-effect-distance="long">
+                <ul>
+                    <li>
+                        <div class="wrap half left">
+                            <figure><img src="../images/homepictures/team-01.jpg" srcset="../images/homepictures/team-01--s.jpg 480w, ../images/homepictures/team-01--m.jpg 960w, ../images/homepictures/team-01--l.jpg 1024w" alt="teamphoto"></figure>
+                        </div>
+                        <div class="wrap half right stretch">
+                            <figure><img class="team-alt" src="../images/homepictures/team-02.jpg" srcset="../images/homepictures/team-02--s.jpg 480w, ../images/homepictures/team-02--m.jpg 960w, ../images/homepictures/team-02--l.jpg 1024w" alt="teamphoto-alt" /></figure>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <figure><img class="team" src="../images/homepictures/team-03.jpg" srcset="../images/homepictures/team-03--s.jpg 480w, ../images/homepictures/team-03--m.jpg 960w, ../images/homepictures/team-03--l.jpg 1024w" alt="teamphoto" /></figure>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap half left stretch">
+                            <figure><img class="team-alt" src="../images/homepictures/team-04.jpg" srcset="../images/homepictures/team-04--s.jpg 480w, ../images/homepictures/team-04--m.jpg 960w, ../images/homepictures/team-04--l.jpg 1024w" alt="teamphoto" /></figure>
+                        </div>
+                        <div class="half right">
+                            <div class="wrap">
+                                <figure><img class="team" src="../images/homepictures/team-05.jpg" srcset="../images/homepictures/team-05--s.jpg 480w, ../images/homepictures/team-05--m.jpg 960w, ../images/homepictures/team-05--l.jpg 1024w" alt="teamphoto" /></figure>
+                            </div>
+                            <div class="wrap">
+                                <figure><img class="team" src="../images/homepictures/team-06.jpg" srcset="../images/homepictures/team-06--s.jpg 480w, ../images/homepictures/team-06--m.jpg 960w, ../images/homepictures/team-06--l.jpg 1024w" alt="teamphoto" /></figure>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="loadmorecontainer" ng-class="{ 'inactive': fullGallery }">
+                    <div class="fade"></div>
+                    <button class="loadmore" ng-click="fullGallery = true">More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bln-footer bln-footer-intro">
+        <div class="bln-maxwidth">
+            <div class="content">
+                <p class="bln-paragraph bln-paragraph-footer">Made with <span class="bln-hidden">love</span><span class="bln-icon bln-icon-inline bln-icon-red bln-icon-tiny bln-icon-heart-icon"></span> in Amsterdam</p>
+                <p class="bln-paragraph bln-paragraph-footer"><a href="mailto:nick@bundlin.com" analytics-on="click" analytics-event="Click" analytics-label="Contact e-mail button">nick@bundlin.com</a></p>
+            </div>
+            <ul class="bln-socials">
+                <li>
+                    <a href="https://www.facebook.com/lifelyNL?ref=bundlin" target="_blank" class="bln-icon bln-icon-facebook-logo"></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/bundlin?ref=bundlin" target="_blank" class="bln-icon bln-icon-budicon-14"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</state-animation>

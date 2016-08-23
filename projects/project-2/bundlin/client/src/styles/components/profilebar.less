@@ -1,0 +1,155 @@
+.bln-profilebar {
+    z-index: 14;
+    background-color: #fff;
+    width: 100%;
+    border-right: 1px solid #eee;
+    display: inline-block;
+    position: relative;
+
+    .bln-editbutton{
+        opacity: 0;
+        transition: opacity .2s;
+    }
+
+    &:hover {
+        .bln-editbutton {
+            opacity: 1;
+        }
+    }
+
+    > header,
+    > article,
+    > footer {
+        padding: 20px 20px 20px 20px;
+    }
+
+    > header {
+        border-bottom: 2px solid #eeeeee;
+        
+        header {
+            text-align: left;
+            margin-bottom: 10px;
+            padding-top: 50px;
+            .bln-avatar {
+                display: inline-block;
+            }
+
+            .bln-button,
+            .bln-editbutton {
+                float: right;
+                margin-top: 15px;
+            }
+        }
+        
+        article {
+            position: relative;
+            text-align: left;
+            margin-bottom: 20px;
+
+            h3 {
+                font-size: 20px;
+                font-weight: normal;
+                margin-bottom: 5px;
+            }
+        }
+
+        footer {
+            a {
+                span {
+                    transition: color .15s;
+                }
+            }
+            a:hover {
+                span {
+                    text-decoration: underline;
+                    color: #333;
+
+                }
+            }
+        }
+
+    }
+
+    > article {
+        border-bottom: 2px solid #eeeeee;
+        padding: 0;
+
+        ul {
+            list-style: none;
+
+            li {
+
+                a {
+                    padding: 20px 20px 20px 30px;
+                    display: block;
+                    font-size: 14px;
+                    position: relative;
+                    opacity: 0.8;
+                    transition: opacity 0.15s;
+                    
+                    span {
+                        font-size: 16px;
+                        line-height: 16px;
+                        margin-right: 10px;
+                        vertical-align: text-top;
+                        transition: color .15s;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        border-bottom: 1px solid #eee;
+                        left: 30px;
+                        right: 20px;
+                    }
+                    &:hover {
+                        opacity: 1;
+                        span {
+                            color: #32b38c;
+                        }
+                    }
+                    &.location {
+                        pointer-events: none;
+                    }
+                }
+                &:last-child {
+                    a:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    > footer {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: @breakpoint_phone) {
+    .bln-profilebar {
+        width: 320px;
+        height: 100%;
+
+        >header {
+            header {
+                padding-top: 0;
+            }
+        }
+
+        > footer {
+            position: absolute;
+            bottom: 0;
+        }
+
+        > header,
+        > footer {
+            padding: 20px 20px 20px 30px;
+        }
+    }
+}
+@media only screen and (max-height: 780px) {
+    .bln-spirit {
+        position: relative !important;
+    }
+}

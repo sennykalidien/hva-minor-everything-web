@@ -1,0 +1,131 @@
+.bln-twitterprofile {
+  width: 100%;
+  min-height: 110px;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+
+  .content {
+     position: relative;
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  .name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #fff;
+
+    .bln-icon {
+      margin-right: 4px;
+      font-size: 18px;
+      color: #55acee;
+      font-weight: normal;
+      vertical-align: top;
+      margin-top: 4px;
+    }
+  }
+
+  .bio {
+    max-width: 400px;
+    font-size: 14px;
+    margin: 0 auto 12px auto;
+    color: #ccc;
+
+    a {
+      color: #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .meta {
+    font-weight: 600;
+    vertical-align: middle;
+
+    .bln-icon {
+      margin-left: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+      margin-top: -4px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+
+  &-layer {
+    padding: 80px 30px 30px 30px;
+
+    .shadow,
+    .background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .background {
+      background-color: fade(#383838, 50%);
+    }
+
+    .shadow {
+      .gradient-positions(transparent, 50%, fade(#000, 30%), 100%)
+    }
+  }
+
+  &-frame {
+    display: table;
+    height: 100%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, .5);
+      pointer-events: none;
+    }
+
+    .content {
+      display: table-cell;
+      vertical-align: bottom;
+      padding: 40px 40px 80px 40px;
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_phone) {
+  .bln-twitterprofile {
+    &-layer {
+      padding: 80px 40px 40px 40px;
+    }
+  }
+
+  .bln-bundleitem-small {
+    .bln-twitterprofile {
+      &-layer {
+        padding: 80px 30px 30px 30px;
+      }
+    }
+  }
+}

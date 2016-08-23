@@ -1,0 +1,44 @@
+<section class="bln-bundleitem">
+  <div class="bln-bundleitemcontent">
+    <div class="bln-application">
+      <div class="header">
+        <div class="app">
+          <img ng-src="{{ item.fields.icon.original || '/images/default.png' }}" alt="{{ item.fields.title }}">
+        </div>
+        <div class="info">
+          <p class="title">
+            <a ng-href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="link">
+                <span ng-bind="item.fields.title" class="text"></span>
+            </a>
+          </p>
+          <p class="type type-android">
+            <span class="bln-icon bln-icon-inline bln-icon-android-logo"></span>
+            <span class="creator">{{ item.fields.creator_name }}</span>
+          </p>
+        </div>
+        <div class="button">
+          <a href="{{ bundle._sid | bundleItemLink:item._sid }}" target="_blank" class="bln-button bln-button-primary bln-button-installapp">Install</a>
+        </div>
+      </div>
+      <div class="description" expandable>
+        <p class="expand" truncate truncate-after="a.bln-readmore">
+          {{ item.fields.description }}
+          <a class="bln-readmore bln-readmore-text bln-readmore-truncate compile" ng-click="expand()">
+            Continue reading
+            <span class="bln-icon bln-icon-budicon-1 bln-icon-inline" style="padding-bottom:0;"></span>
+          </a>
+        </p>
+      </div>
+      <div class="bln-horslider bln-horslider-screenshots" overflown overflown-element="> ul" ng-click="active = true" ng-class="{'active': active}" scroll-status scroll-status-element="> ul">
+        <div class="shadowbar shadowbar-left" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.left}"></div>
+        <div class="shadowbar shadowbar-right" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.right}"></div>
+        <div class="hover"></div>
+        <ul>
+          <li ng-repeat="screenshot in item.fields.screenshots">
+            <img ng-src="{{ screenshot.original || '/images/default.png' }}" alt="App screenshot {{$index}}">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

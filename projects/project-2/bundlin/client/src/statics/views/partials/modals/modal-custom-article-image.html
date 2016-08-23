@@ -1,0 +1,59 @@
+<div class="bln-modalcontainer">
+    <article class="bln-modal bln-modal-customarticleimage" modal-custom-article-image>
+        <header class="bln-row">
+            <div class="cell stretch"><h3 class="bln-title">Choose a photo you like</h3></div>
+            <div class="cell last">
+                <p><a href="#" ng-click="close()">Close</a></p>
+            </div>
+        </header>
+        <form id="imageForm">
+            <div class="bln-row">
+                <div class="cell">
+                    <label for="imageFileUploadButton" class="bln-button bln-button-upload bln-button-input bln-button-input-small bln-button-input-primary">
+                        <span class="bln-icon bln-icon-budicon-75"></span>
+                        Upload
+                    </label>
+                    <input type="file" id="imageFileUploadButton" ng-model="imageFile" class="bln-hidden" accept="image/*">
+                </div>
+                <div class="cell stretch last">
+                    <div class="bln-row">
+                        <div class="cell stretch stick">
+                            <input type="text" placeholder="Paste image link" class="bln-input bln-input-stick bln-input-whitebordered" ng-model="imageURL">
+                        </div>
+                        <div class="cell last">
+                            <a href="#" class="bln-button bln-button-input bln-button-input-stick bln-button-input-small bln-button-input-primary" ng-class="{'bln-button-disabled': !imageURLValid}" ng-click="setPictureByUrl()">Add</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bln-sub-suggestions" ng-show="picture.type === 'none' || picture.type === 'suggestion'">
+                <ul>
+                    <li ng-repeat="suggestion in suggestions" ng-class="{'bln-state-current': picture.data.url === suggestion.imageUrl}">
+                        <figure ng-style="{'background-image': 'url(' + suggestion.imageUrl + ')'}" ng-click="setPictureBySuggestion(suggestion)"></figure>
+                    </li>
+                </ul>
+                <span class="bln-icon bln-icon-loading bln-icon-loading-gray" ng-class="{'bln-state-active': loading.suggestions}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+            <div class="bln-sub-imagepreview" ng-show="picture.type === 'url' || picture.type === 'upload'">
+                <figure>
+                    <img src="{{ picture.data.base64 || picture.data.url }}" alt="" id="imagePreview">
+                    <a href="" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="unsetPicture()">
+                        <span class="bln-icon bln-icon-budicon-5"></span>
+                    </a>
+                </figure>
+                <span class="bln-icon bln-icon-loading" ng-class="{'bln-state-active': loading.preview}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+        </form>
+        <footer>
+            <a href="#" class="bln-button bln-button-primary" ng-class="{'bln-button-disabled': picture.type === 'none'}" ng-click="close(picture)">Use this photo</a>
+        </footer>
+    </article>
+</div>

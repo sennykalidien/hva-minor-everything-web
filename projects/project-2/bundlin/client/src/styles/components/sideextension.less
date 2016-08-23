@@ -1,0 +1,56 @@
+.bln-sideextension {
+  background-color: #252525;
+  position: fixed;
+  border-right: 10px solid transparent;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: content-box;
+  background-clip: padding-box;
+  z-index: 20;
+  transition: opacity .01s ease .35s, transform .35s;
+  opacity: 0;
+  pointer-events: none;
+
+  .bln-sub-closesideextension {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    opacity: .5;
+    z-index: 10;
+    transform: translateZ(0);
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // Active state
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    transition: transform .35s;
+  }
+
+  @media screen and (min-width: @breakpoint_tablet) {
+    left: 80px;
+    width: 416px;
+    border-right-color: fade(#292929, 10%);
+
+    .bln-sub-closesideextension {
+      display: none;
+    }
+
+    &-notifications,
+    &-settings {
+      width: 560px;
+    }
+  }
+}

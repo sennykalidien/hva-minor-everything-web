@@ -1,0 +1,29 @@
+.fieldwatcher {
+  &-turnaround {
+    transform: rotate(180deg);
+    transition: transform 1s;
+  }
+
+  &-comicsans {
+    font-family: 'comic sans ms';
+  }
+
+  &-pleasebreath {
+    transition: transform .5s;
+
+    .pleasebreath_frames () {
+      from { transform: scale(.8); }
+      to { transform: scale(1.2); }
+    }
+
+    @keyframes pleasebreath_animation { .pleasebreath_frames; }
+
+    &:nth-child(even) {
+      animation: pleasebreath_animation .4s ease infinite alternate; 
+    }
+
+    &:nth-child(odd) {
+      animation: pleasebreath_animation .4s ease infinite alternate-reverse 
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.bln-bundle {
+    position: relative;
+    background-color: #292929;
+    box-shadow: inset -10px 0px 0px 0px rgba(41, 41, 41, .1);
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    &-create {
+        display: none;
+
+        .bln-scraper {
+            position: fixed;
+            bottom: 20px;
+            width: inherit;
+            z-index: 10;
+        }
+    }
+
+    &-create-error {
+        display: block;
+        background-color: transparent;
+    }
+}
+
+// Enter animation
+.state-enter .bln-bundle {
+    .bln-bundlecontent {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: @breakpoint_desktop) {
+    .bln-bundle {
+        background-color: #f9f9f9;
+
+        &-create {
+            display: block
+        }
+
+        &-create-error {
+            display: none
+        }
+    }
+}

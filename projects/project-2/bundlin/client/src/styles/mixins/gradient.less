@@ -1,0 +1,13 @@
+.gradient(@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background: gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: linear-gradient(top, @startColor, @endColor);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startColor}', endColorstr='@{endColor}',GradientType=0 ); /* IE6-9 */
+}
+
+.gradient-positions(@startColor: #eee, @startPosition: 0%, @endColor: white, @endPosition: 100%) {
+  background-color: @startColor;
+  background: gradient(linear, left top, left bottom, color-stop(@startPosition, @startColor), color-stop(@endPosition, @endColor));
+  background: linear-gradient(top, @startColor @startPosition, @endColor @endPosition);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startColor}', endColorstr='@{endColor}',GradientType=0 ); /* IE6-9 */
+}

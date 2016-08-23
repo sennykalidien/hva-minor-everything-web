@@ -1,0 +1,28 @@
+<div class="bln-bundleitemnote">
+
+    <!-- Comment/description switch -->
+    <switch vars="comment,description" default="comment">
+        <ul class="bln-paragraphbuttons">
+            <li ng-class="{active: switches.description}">
+                <a ng-click="switch('description')">
+                    <span class="bln-icon">N</span>
+                </a>
+            </li>
+            <li ng-class="{active: switches.comment}">
+                <a ng-click="switch('comment')">
+                    <img ng-src="{{bundle.author.picture.h64 || bundle.author.picture.original}}" alt="{{bundle.author.name}}">
+                </a>
+            </li>
+        </ul>
+        
+        <p class="bln-bundleitemdescription">
+            <span class="switch-paragraph" ng-class="{'active': switches.comment}">
+                <textarea name="itemDescription" class="bln-input bln-input-spooky bln-input-area bln-input-area-bundleitem bln-input-full" ng-model="item.fields.comment" placeholder="What do you want tell your audience about this item?" ng-maxlength="250" bundle-item-property bundle="bundle" item="item" property="comment"></textarea>
+            </span>
+            <span class="switch-paragraph" ng-class="{'active': switches.description}">
+                <span>{{ item.fields.description }}</span>
+            </span>
+        </p>
+    </switch>
+
+</div>

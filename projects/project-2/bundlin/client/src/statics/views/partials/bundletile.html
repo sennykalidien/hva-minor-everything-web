@@ -1,0 +1,44 @@
+<div class="bln-bundletile bln-bundletile-original {{type ? 'bln-bundletile-' + type : ''}}" expandable ng-init="!bundle.picture.original && setFocuspointForPlaceholder(bundle)">
+    <!-- cover -->
+    <a ui-sref="app.view_bundle({ 'bundleId': bundle._sid })" class="cover">
+        <div class="background" ng-style="{'background-image': 'url(' + (bundle.picture.h600 || bundle.picture.original || '/images/bundle-placeholder.jpg') + ')'}" focuspicture focuspicture-x="{{ bundle.picture.focus_x }}" focuspicture-y="{{ bundle.picture.focus_y }}"></div>
+        <!-- <div ng-if="!bundle.picture.h600 || !bundle.picture.original" class="background" ng-style="{'background-image': 'url(' + '/images/bundle-placeholder.jpg' + ')'}" focuspicture focuspicture-x="0" focuspicture-y="100"></div> -->
+        <div class="shadows">
+            <div class="layer layer-top"></div>
+            <div class="layer layer-bottom"></div>
+        </div>
+        <h3 class="title">{{ bundle.title }}</h3>
+        <span class="bln-icon bln-bundleicon bln-bundleicon-collected" ng-if="bundle.collectedByCurrentUser"></span>
+        <span class="bln-icon bln-bundleicon bln-bundleicon-unpublished" ng-if="bundle.unpublishedByCurrentUser"></span>
+    </a>
+
+    <!-- footer -->
+    <footer class="footer">
+        <!-- <p class="relation" ng-if="relation === 'rebundle'">
+            <span class="bln-icon bln-icon-budicon-54 bln-icon-beforeline"></span>
+            Rebundle
+        </p> -->
+        <p class="relation" ng-if="relation === 'original_bundle'">
+            <span class="bln-icon bln-icon-budicon-54 bln-icon-beforeline"></span>
+            Original
+        </p>
+        <ul class="bln-tags" ng-if="!relation">
+            <li ng-repeat="tag in bundle.tags">{{tag}}</li>
+        </ul>
+        <p class="comment">
+            <span class="commentheader">
+                <a class="author" ui-sref="app.view_profile.bundles({ profileScreenName: bundle.author.username })">
+                    <img ng-src="{{ bundle.author.picture.h64 || bundle.author.picture.original || '/images/default.png' }}" alt="{{ bundle.author.name }}">
+                    <span class="name">{{ bundle.author.name }}</span>
+                </a>
+                <a ng-show="bundle.author._id == user._id" ui-sref="app.edit_bundle({ 'bundleId': bundle._sid })" class="bln-editbutton">
+                    <span class="bln-icon bln-icon-greybutton bln-icon-budicon-56"></span>
+                </a>
+            </span>
+            <span class="description expand" truncate truncate-after="a.bln-readmore">
+                {{ bundle.description }}
+                <a title="Read more" class="bln-readmore bln-readmore-truncate compile" ng-click="expand()"></a>
+            </span>
+        </p>
+    </footer>
+</div>

@@ -1,0 +1,49 @@
+.bln-teamlist {
+  list-style: none;
+
+  li {
+    width: 100%;
+
+    &:nth-child(n+2) {
+      margin-top: 30px;      
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@media screen and (min-width: @breakpoint_phone) {
+  .bln-teamlist {
+    li {
+      width: 50%;
+      float: left;
+
+      &:nth-child(n+2) {
+        margin-top: 0;
+      }
+
+      &:nth-child(n+3) {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: @breakpoint_largedesktop) {
+  .bln-teamlist {
+    li {
+      width: 25%;
+      &:nth-child(n+3) {
+        margin-top: 0 
+      }
+
+      &:nth-child(n+5) {
+        margin-top: 50px;
+      }
+    }
+  }
+}

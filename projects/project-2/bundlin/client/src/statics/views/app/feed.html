@@ -1,0 +1,24 @@
+<article class="bln-horizontal" auto-horizontal-scroll scroll-end-callback="loadBundles()" overflown scroll-status scroll-buttons-ie>
+    <div class="shadowbar shadowbar-right" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.right}"></div>
+    <a ng-show="ie" class="bln-scrollarrow bln-scrollarrow-right" ng-click="scrollRight()" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.right}"></a>
+    <a ng-show="ie" class="bln-scrollarrow bln-scrollarrow-left" ng-click="scrollLeft()" ng-class="{'active': overflown.horizontal && scrollStatus && !scrollStatus.horizontal.scroll.left}"></a>
+
+    <!-- tabs -->
+    <ul state-animation class="bln-tabs bln-stateanimation fade move-down" leave-delay="650" dropdown-toggler>
+        <li ng-class="{ 'bln-state-active': ('app.home.feed.popular' | isState) }"><a ui-sref="app.home.feed.popular" ui-sref-active="bln-state-active">Trending</a></li>
+        <li ng-class="{ 'bln-state-active': ('app.home.feed.new' | isState) }"><a ui-sref="app.home.feed.new" ui-sref-active="bln-state-active">Latest</a></li>
+        <li ng-class="{ 'bln-state-active': ('app.home.feed.following' | isState) }"><a ui-sref="app.home.feed.following" ui-sref-active="bln-state-active">Following</a></li>
+    </ul>
+
+    <!-- feed -->
+    <section ui-view="bundles" class="bln-feed" id="first-content">
+    </section>
+    <!-- loading -->
+    <div class="bln-pageloader" ng-class="{' bln-pageloader-disabled': pageLoading === 'loaded' }">
+        <span class="bln-icon bln-icon-loading bln-icon-loading-gray">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </div>
+</article>

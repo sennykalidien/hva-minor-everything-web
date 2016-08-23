@@ -1,0 +1,16 @@
+<section id="houseDetail">
+{{#.}}
+<h2>{{title}}</h2>
+    <article>
+        <div class="photos">
+        {{#photos}}
+            <figure><img src="{{photo}}" alt="" /></figure>
+        {{/photos}}
+        </div>
+        <div class="description">
+            <p class="price">Prijs: €{{price}}</p>
+            <button><a href="{{url}}" target="_blank">Bekijk op funda.nl</a></button>
+        </div>
+    </article>
+{{/.}}
+</section>

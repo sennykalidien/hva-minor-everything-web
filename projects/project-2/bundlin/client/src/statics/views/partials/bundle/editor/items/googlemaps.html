@@ -1,0 +1,21 @@
+<section class="bln-bundleitem bln-bundleitem-create bln-bundleitem-figureleft">
+    <div class="bln-bundleitemcontent">
+        <ng-include src="'/views/partials/bundle/editor/partials/controls.html?v=' + BLN_BUILD_TIMESTAMP"></ng-include>
+        <header class="header">
+            <h2 class="title">
+                <span ng-bind="item.fields.name" class="text"></span>
+            </h2>
+            <p class="bln-bundleitemsubtitle" ng-show="item.fields.address.city || item.fields.address.state">
+                {{
+                      item.fields.address.city
+                    + (item.fields.address.city && item.fields.address.state ? ' (' + item.fields.address.state + ')' : '')
+                    + (!item.fields.address.city && item.fields.address.state ? ' ' + item.fields.address.state : '')
+                }}
+            </p>
+        </header>
+        <figure>
+            <div class="image" ng-style="{ 'background-image': 'url(' + item.fields.picture.original + ')' }"></div>
+        </figure>
+        <div ng-include="'/views/partials/bundle/editor/partials/comment.html?v=' + BLN_BUILD_TIMESTAMP"></div>
+    </div>
+</section>

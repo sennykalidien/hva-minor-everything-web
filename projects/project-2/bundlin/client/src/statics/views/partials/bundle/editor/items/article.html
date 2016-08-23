@@ -1,0 +1,68 @@
+<section class="bln-bundleitem bln-bundleitem-create bln-bundleitem-figureleft">
+    <div class="bln-bundleitemcontent">
+        <ng-include src="'/views/partials/bundle/editor/partials/controls.html?v=' + BLN_BUILD_TIMESTAMP"></ng-include>
+        <header class="header">
+            <h2 class="title">
+                <textarea ng-model="item.fields.title" ng-minlength="5" ng-maxlength="80" bundle-item-property bundle="bundle" item="item" property="title"></textarea>
+            </h2>
+        </header>
+        <figure ng-class="{'border': item.fields.background_is_white || !item.fields.picture.original}">
+            <a class="bln-bordertoggle" ng-class="{ 'bln-bordertoggle-active': item.fields.background_is_white }" ng-click="updateItem(item, { fields: { background_is_white: !item.fields.background_is_white }})">
+                <p>Toggle border</p>
+            </a>
+
+            <!-- If the current image is a crawled one -->
+            <div class="bln-row" ng-if="item.fields.selected_crawled_image_index > -1">
+
+                <!-- Select previous crawled image -->
+                <div class="cell" ng-if="item.fields.pictures.length">
+                    <a href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="selectPreviousCrawledImage(item)"><span class="bln-icon bln-icon-budicon-68"></span></a>
+                </div>
+
+                <!-- Open image modal -->
+                <div class="cell stretch">
+                    <a href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="selectCustomImage(item)">Change</a>
+                </div>
+
+                <!-- Select next crawled image -->
+                <div class="cell last" ng-if="item.fields.pictures.length">
+                    <a href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-click="selectNextCrawledImage(item)"><span class="bln-icon bln-icon-budicon-70"></span></a>
+                </div>
+
+            </div>
+
+            <!-- If the current image is a custom one -->
+            <div class="bln-row" ng-if="item.fields.selected_crawled_image_index < 0">
+                <div class="cell stretch">
+
+                    <!-- Open image modal -->
+                    <a href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-if="!item.fields.pictures.length" ng-click="selectCustomImage(item)">Change</a>
+
+                </div>
+                <div class="cell last">
+
+                    <!-- Select first crawled image -->
+                    <a href="#" class="bln-button bln-button-input bln-button-input-imagecontrols" ng-if="item.fields.pictures.length" ng-click="closeCustomImage(item)"><span class="bln-icon bln-icon-budicon-5"></span></a>
+
+                </div>
+            </div>
+
+            <!-- Loading state -->
+            <span class="bln-icon bln-icon-loading" ng-class="{'bln-state-active': item.loading.changepicture}">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <div class="image" ng-style="{'background-image': 'url(' + (item.fields.picture.h500 || item.fields.picture.original) + ')'}"></div>
+        </figure>
+        <div ng-include="'/views/partials/bundle/editor/partials/comment_description.html?v=' + BLN_BUILD_TIMESTAMP"></div>
+    </div>
+
+    <!-- BACKUP -->
+    <!--
+        Option 1, image URL:    <input type="text" ng-model="item.fields.pictureUrl" ng-blur="sendItemPictureUrl(item, item.fields.pictureUrl)" style="padding:5px"><br><br>
+        Option 2, image upload: <input type="file" nv-file-select uploader="item.imageUploader" options="{url: '/api/bundles/' + bundle._sid + '/items/' + item._sid + '/picture', onSuccess: item.pictureUploadSuccess}" accept="image/*" /><br><br>
+    -->
+    
+</section>
